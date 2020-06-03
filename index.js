@@ -172,9 +172,28 @@ const arrayEqual = (arrA, arrB) => {
     return arrA.join(',') === arrB.join(',');
 };
 
+const assert = (value, message, status, options = {}) => {
+    if (!value) {
+        throw Object.assign(new Error(message), { status }, options);
+    }
+};
+
 module.exports = {
+    arrayEqual,
+    assembleUrl,
+    assert,
+    asyncTimeout,
+    base64Decode,
+    base64Encode,
+    base64Pack,
+    base64Unpack,
+    byteToHexString,
     clone,
+    convertBase,
+    convertFrom16to10,
+    getRandomInArray,
     getRandomInt,
+    getShortestInArray,
     getType,
     is,
     isArray,
@@ -182,22 +201,10 @@ module.exports = {
     isBuffer,
     isDate,
     isObject,
-    verifyUuid,
-    verifyUrl,
-    verifyEmail,
-    verifyPhone,
-    assembleUrl,
     prettyJson,
     timeout,
-    asyncTimeout,
-    convertBase,
-    convertFrom16to10,
-    base64Encode,
-    base64Decode,
-    base64Pack,
-    base64Unpack,
-    getRandomInArray,
-    byteToHexString,
-    getShortestInArray,
-    arrayEqual,
+    verifyEmail,
+    verifyPhone,
+    verifyUrl,
+    verifyUuid,
 };
