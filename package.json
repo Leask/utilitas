@@ -1,0 +1,10 @@
+{
+    "name": "utilis",
+    "description": "Just another common utility for Node.js.",
+    "version": "1989.06.04",
+    "private": false,
+    "homepage": "https://github.com/Leask/utilis",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {}
+}
