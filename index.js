@@ -55,6 +55,10 @@ const isObject = (object) => {
     return is(object, 'Object');
 };
 
+const isUndefined = (object) => {
+    return is(object, 'Undefined');
+};
+
 const verifyUuid = (uuid) => {
     return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
         uuid
@@ -172,10 +176,12 @@ const arrayEqual = (arrA, arrB) => {
     return arrA.join(',') === arrB.join(',');
 };
 
-const assert = (value, message, status, options = {}) => {
-    if (!value) {
-        throw Object.assign(new Error(message), { status }, options);
-    }
+const throwError = (message, status, options = {}) => {
+    throw Object.assign(new Error(message), { status }, options);
+};
+
+const assert = (value, message, status, options) => {
+    return value || throwError(message, status, options);
 };
 
 module.exports = {
@@ -201,7 +207,9 @@ module.exports = {
     isBuffer,
     isDate,
     isObject,
+    isUndefined,
     prettyJson,
+    throwError,
     timeout,
     verifyEmail,
     verifyPhone,
