@@ -105,3 +105,7 @@ dist
 
 # IDE - VSCode
 .history/*
+
+# OS
+.DS_Store
+
