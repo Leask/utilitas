@@ -1,3 +1,4 @@
 .history
+build.sh
+debug.js
 package-lock.json
-ci-npm.sh
