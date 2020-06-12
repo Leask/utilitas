@@ -7,7 +7,7 @@
     "main": "index.js",
     "scripts": {
         "debug": "node --inspect debug.js",
-        "prepublishOnly": "npm version patch && npm upgrade uuid && ( git commit -am 'npm upgrade uuid' || true ) && git pull && git push"
+        "prepublishOnly": "npm version patch && npm upgrade && ( git commit -am 'npm upgrade' || true ) && git pull && git push"
     },
     "dependencies": {
         "uuid": "^8.1.0"
