@@ -10,9 +10,10 @@
         "debug": "node --inspect debug.js",
         "prepublishOnly": "npm version patch && npm update && ( git commit -am 'npm update' || true ) && git pull && git push"
     },
+    "author": "Leask Wong <i@leaskh.com>",
+    "license": "MIT",
     "dependencies": {
         "uuid": "^8.1.0"
     },
-    "devDependencies": {},
-    "license": "MIT"
+    "devDependencies": {}
 }
