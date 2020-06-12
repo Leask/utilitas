@@ -5,6 +5,9 @@
     "private": false,
     "homepage": "https://github.com/Leask/utilitas",
     "main": "index.js",
+    "scripts": {
+        "debug": "node --inspect debug.js"
+    },
     "dependencies": {
         "uuid": "^8.1.0"
     },
