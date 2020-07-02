@@ -17,7 +17,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
-        "uuid": "^8.1.0"
+        "uuid": "^8.2.0"
     },
     "devDependencies": {}
 }
