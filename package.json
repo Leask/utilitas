@@ -17,6 +17,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
+        "ping": "^0.2.3",
         "uuid": "^8.2.0"
     },
     "devDependencies": {}
