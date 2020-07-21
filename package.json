@@ -7,7 +7,7 @@
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
-        "debug": "node --inspect debug.js",
+        "debug": "node --inspect --trace-warnings debug.js",
         "prepublishOnly": "npm version patch && npm update && ( git commit -am 'npm update' || true ) && git pull && git push"
     },
     "author": "Leask Wong <i@leaskh.com>",
