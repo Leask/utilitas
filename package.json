@@ -17,6 +17,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
+        "mailgun-js": "^0.22.0",
         "mysql2": "^2.2.5",
         "ping": "^0.2.3",
         "uuid": "^8.3.1"
