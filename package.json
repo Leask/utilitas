@@ -17,6 +17,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
+        "colors": "^1.4.0",
         "mailgun-js": "^0.22.0",
         "mysql2": "^2.2.5",
         "node-mailjet": "^3.3.1",
