@@ -5,6 +5,14 @@ const fs = require('fs');
 
 const libPath = path.join(__dirname, 'lib');
 
+module.exports = {
+    mailgun: require('mailgun-js'),
+    mysql: require('mysql2/promise'),
+    mailjet: require('node-mailjet'),
+    ping: require('ping'),
+    uuid: require('uuid'),
+};
+
 fs.readdirSync(libPath).filter((file) => {
     return /\.js$/i.test(file) && file.indexOf('.') !== 0;
 }).forEach((file) => {
