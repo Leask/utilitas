@@ -7,8 +7,9 @@ const libPath = path.join(__dirname, 'lib');
 
 module.exports = {
     mailgun: require('mailgun-js'),
-    mysql: require('mysql2/promise'),
     mailjet: require('node-mailjet'),
+    colors: require('colors/safe'),
+    mysql: require('mysql2/promise'),
     ping: require('ping'),
     uuid: require('uuid'),
 };
