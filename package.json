@@ -10,7 +10,7 @@
         "debug": "node --inspect --trace-warnings debug.js",
         "updep": "npx ncu -u && npm install && ( git commit -am 'update dependencies' || true )",
         "gitsync": "git pull && git push",
-        "prepare": "npm version patch && npm run updep && npm run gitsync"
+        "prepublishOnly": "npm version patch && npm run updep && npm run gitsync"
     },
     "author": "Leask Wong <i@leaskh.com>",
     "license": "MIT",
