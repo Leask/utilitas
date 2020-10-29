@@ -8,6 +8,7 @@
     "scripts": {
         "start": "node index.js",
         "debug": "node --inspect --trace-warnings debug.js",
+        "test": "node --inspect --trace-warnings test.js",
         "updep": "npx ncu -u && npm install && ( git commit -am 'update dependencies' || true )",
         "gitsync": "git pull && git push",
         "prepublishOnly": "npm version patch && npm run updep && npm run gitsync"
