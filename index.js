@@ -8,6 +8,7 @@ const libPath = path.join(__dirname, 'lib');
 module.exports = {
     base64url: require('base64url'),
     colors: require('colors/safe'),
+    jsonwebtoken: require('jsonwebtoken'),
     mailgun: require('mailgun-js'),
     mailjet: require('node-mailjet'),
     mysql: require('mysql2/promise'),
