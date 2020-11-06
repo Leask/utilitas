@@ -20,6 +20,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
+        "base64url": "^3.0.1",
         "colors": "^1.4.0",
         "ioredis": "^4.19.2",
         "mailgun-js": "^0.22.0",
