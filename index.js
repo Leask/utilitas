@@ -6,11 +6,16 @@ const fs = require('fs');
 const libPath = path.join(__dirname, 'lib');
 
 module.exports = {
+    base64url: require('base64url'),
+    colors: require('colors/safe'),
     mailgun: require('mailgun-js'),
     mailjet: require('node-mailjet'),
-    colors: require('colors/safe'),
     mysql: require('mysql2/promise'),
     ping: require('ping'),
+    qs: require('qs'),
+    redis: require('ioredis'),
+    telesign: require('telesignsdk'),
+    twilio: require('twilio'),
     uuid: require('uuid'),
 };
 
