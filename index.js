@@ -8,9 +8,11 @@ const libPath = path.join(__dirname, 'lib');
 module.exports = {
     base64url: require('base64url'),
     colors: require('colors/safe'),
+    fetch: require('node-fetch'),
     jsonwebtoken: require('jsonwebtoken'),
     mailgun: require('mailgun-js'),
     mailjet: require('node-mailjet'),
+    mathjs: require('mathjs'),
     mysql: require('mysql2/promise'),
     ping: require('ping'),
     qs: require('qs'),
