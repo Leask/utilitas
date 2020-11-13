@@ -20,6 +20,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
+        "@sentry/node": "^5.27.4",
         "base64url": "^3.0.1",
         "colors": "^1.4.0",
         "ioredis": "^4.19.2",
