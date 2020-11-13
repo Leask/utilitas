@@ -17,7 +17,7 @@ module.exports = {
     ping: require('ping'),
     qs: require('qs'),
     redis: require('ioredis'),
-    sentry = require('@sentry/node'),
+    sentry: require('@sentry/node'),
     telesign: require('telesignsdk'),
     twilio: require('twilio'),
     uuid: require('uuid'),
