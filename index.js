@@ -21,6 +21,8 @@ module.exports = {
     telesign: require('telesignsdk'),
     twilio: require('twilio'),
     uuid: require('uuid'),
+    winston: require('winston'),
+    winstonPapertrail: require('winston-3-papertrail'),
 };
 
 fs.readdirSync(libPath).filter((file) => {
