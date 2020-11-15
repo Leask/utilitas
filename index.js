@@ -22,7 +22,7 @@ module.exports = {
     twilio: require('twilio'),
     uuid: require('uuid'),
     winston: require('winston'),
-    winstonPapertrail: require('winston-3-papertrail'),
+    winstonPapertrail: require('winston-papertrail-mproved'),
 };
 
 fs.readdirSync(libPath).filter((file) => {
