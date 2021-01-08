@@ -1,11 +1,7 @@
 'use strict';
 
-const path = require('path');
-const fs = require('fs');
-
-const libPath = path.join(__dirname, 'lib');
-
 module.exports = {
+    // dependencies
     base64url: require('base64url'),
     colors: require('colors/safe'),
     fetch: require('node-fetch'),
@@ -25,11 +21,19 @@ module.exports = {
     uuid: require('uuid'),
     winston: require('winston'),
     winstonPapertrail: require('winston-papertrail-mproved'),
+    // features
+    sentinel: require('./lib/sentinel'),
+    cache: require('./lib/cache'),
+    dbio: require('./lib/dbio'),
+    email: require('./lib/email'),
+    encryption: require('./lib/encryption'),
+    event: require('./lib/event'),
+    network: require('./lib/network'),
+    shell: require('./lib/shell'),
+    shot: require('./lib/shot'),
+    sms: require('./lib/sms'),
+    storage: require('./lib/storage'),
+    tape: require('./lib/tape'),
+    uoid: require('./lib/uoid'),
+    utilitas: require('./lib/utilitas'),
 };
-
-fs.readdirSync(libPath).filter((file) => {
-    return /\.js$/i.test(file) && file.indexOf('.') !== 0;
-}).forEach((file) => {
-    module.exports[file.replace(/^(.*)\.js$/, '$1')]
-        = require(path.join(libPath, file));
-});
