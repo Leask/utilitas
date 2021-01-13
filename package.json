@@ -24,7 +24,7 @@
         "@sentry/node": "^5.29.2",
         "base64url": "^3.0.1",
         "colors": "^1.4.0",
-        "fast-geoip": "^1.0.30",
+        "fast-geoip": "^1.0.31",
         "ioredis": "^4.19.4",
         "jsonwebtoken": "^8.5.1",
         "mailgun-js": "^0.22.0",
