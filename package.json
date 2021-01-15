@@ -21,7 +21,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
-        "@sentry/node": "^5.29.2",
+        "@sentry/node": "^5.30.0",
         "base64url": "^3.0.1",
         "colors": "^1.4.0",
         "fast-geoip": "^1.0.31",
@@ -34,9 +34,9 @@
         "node-mailjet": "^3.3.1",
         "ping": "^0.4.0",
         "public-ip": "^4.0.3",
-        "qs": "^6.9.4",
+        "qs": "^6.9.6",
         "telesignsdk": "^2.2.1",
-        "twilio": "^3.54.2",
+        "twilio": "^3.55.0",
         "uuid": "^8.3.2",
         "winston": "^3.3.3",
         "winston-papertrail-mproved": "^1.0.7"
