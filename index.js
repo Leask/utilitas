@@ -5,6 +5,7 @@ module.exports = {
     base64url: require('base64url'),
     colors: require('colors/safe'),
     fetch: require('node-fetch').default,
+    fileType: require('file-type'),
     geoIp: require('fast-geoip'),
     jwt: require('jsonwebtoken'),
     mailgun: require('mailgun-js'),

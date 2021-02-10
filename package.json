@@ -25,6 +25,7 @@
         "base64url": "^3.0.1",
         "colors": "^1.4.0",
         "fast-geoip": "^1.1.5",
+        "file-type": "^16.2.0",
         "ioredis": "^4.22.0",
         "jsonwebtoken": "^8.5.1",
         "mailgun-js": "^0.22.0",
