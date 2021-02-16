@@ -37,7 +37,7 @@
         "public-ip": "^4.0.3",
         "qs": "^6.9.6",
         "telesignsdk": "^2.2.1",
-        "twilio": "^3.55.1",
+        "twilio": "^3.56.0",
         "uuid": "^8.3.2",
         "winston": "^3.3.3",
         "winston-papertrail-mproved": "^1.0.7"
