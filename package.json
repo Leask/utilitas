@@ -21,10 +21,10 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
-        "@sentry/node": "^6.3.1",
+        "@sentry/node": "^6.3.5",
         "base64url": "^3.0.1",
         "colors": "^1.4.0",
-        "fast-geoip": "^1.1.15",
+        "fast-geoip": "^1.1.16",
         "file-type": "^16.3.0",
         "ioredis": "^4.27.1",
         "jsonwebtoken": "^8.5.1",
