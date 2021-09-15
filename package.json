@@ -10,7 +10,7 @@
         "debug": "node --inspect --trace-warnings debug.js",
         "test": "node --inspect --trace-warnings test.js",
         "ncuinit": "npm install -g npm-check-updates",
-        "updep": "npx ncu -u && npm install && ( git commit -am 'update dependencies' || true )",
+        "updep": "npx ncu -u && npm install && npm install node-fetch@2 && ( git commit -am 'update dependencies' || true )",
         "gitsync": "git pull && git push",
         "prepublishOnly": "npm version patch && npm run updep && npm run gitsync"
     },
@@ -31,7 +31,7 @@
         "mailgun-js": "^0.22.0",
         "mathjs": "^9.4.5",
         "mysql2": "^2.3.0",
-        "node-fetch": "^3.0.0",
+        "node-fetch": "^2.6.2",
         "node-mailjet": "^3.3.4",
         "ping": "^0.4.1",
         "public-ip": "^4.0.4",
