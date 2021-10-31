@@ -7,6 +7,7 @@ module.exports = {
     fetch: require('node-fetch').default,
     fileType: require('file-type'),
     geoIp: require('fast-geoip'),
+    ini: require('ini'),
     jwt: require('jsonwebtoken'),
     mailgun: require('mailgun-js'),
     mailjet: require('node-mailjet'),

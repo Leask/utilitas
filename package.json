@@ -26,6 +26,7 @@
         "colors": "^1.4.0",
         "fast-geoip": "^1.1.43",
         "file-type": "^16.5.3",
+        "ini": "^2.0.0",
         "ioredis": "^4.28.0",
         "jsonwebtoken": "^8.5.1",
         "mailgun-js": "^0.22.0",
