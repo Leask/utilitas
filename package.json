@@ -25,7 +25,7 @@
         "base64url": "^3.0.1",
         "colors": "^1.4.0",
         "fast-geoip": "^1.1.47",
-        "file-type": "^16.5.3",
+        "file-type": "^17.0.0",
         "ini": "github:Leask/ini",
         "ioredis": "^4.28.1",
         "jsonwebtoken": "^8.5.1",
