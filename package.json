@@ -13,7 +13,7 @@
         "updep": "npx ncu -u && npm install && npm install file-type@16 && npm install node-fetch@2 && npm install public-ip@4 && npm install colors@1.4.0 && ( git commit -am 'update dependencies' || true )",
         "gitsync": "git pull && git push",
         "prepublishOnlyOld": "npm version patch && npm run updep && npm run gitsync",
-        "prepublishOnly": "npm version patch && npm run updep && npm run gitsync"
+        "prepublishOnly": "npm version patch && npm run gitsync"
     },
     "author": "Leask Wong <i@leaskh.com>",
     "license": "MIT",
