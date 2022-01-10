@@ -10,7 +10,7 @@
         "debug": "node --inspect --trace-warnings debug.js",
         "test": "node --inspect --trace-warnings test.js",
         "ncuinit": "npm install -g npm-check-updates",
-        "updep": "npx ncu -u && npm install && npm install file-type@16 && npm install node-fetch@2 && npm install public-ip@4 && ( git commit -am 'update dependencies' || true )",
+        "updep": "npx ncu -u && npm install && npm install file-type@16 && npm install node-fetch@2 && npm install public-ip@4 && npm install colors@1.4.0 && ( git commit -am 'update dependencies' || true )",
         "gitsync": "git pull && git push",
         "prepublishOnly": "npm version patch && npm run updep && npm run gitsync"
     },
@@ -23,7 +23,7 @@
     "dependencies": {
         "@sentry/node": "^6.16.1",
         "base64url": "^3.0.1",
-        "colors": "^1.4.2",
+        "colors": "^1.4.0",
         "fast-geoip": "^1.1.53",
         "file-type": "^16.5.3",
         "ini": "github:Leask/ini",
