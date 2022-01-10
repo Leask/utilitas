@@ -23,7 +23,7 @@
     "dependencies": {
         "@sentry/node": "^6.16.1",
         "base64url": "^3.0.1",
-        "colors": "^1.4.0",
+        "colors": "^1.4.2",
         "fast-geoip": "^1.1.53",
         "file-type": "^16.5.3",
         "ini": "github:Leask/ini",
@@ -40,7 +40,7 @@
         "telesignsdk": "^2.2.1",
         "twilio": "^3.72.0",
         "uuid": "^8.3.2",
-        "winston": "^3.3.3",
+        "winston": "^3.3.4",
         "winston-papertrail-mproved": "^1.0.7"
     }
 }
