@@ -34,7 +34,7 @@ import utilitas from './lib/utilitas.mjs';
 import winston from 'winston';
 import winstonPapertrail from 'winston-papertrail-mproved';
 
-export default {
+export {
     // dependencies
     base64url,
     colors,
