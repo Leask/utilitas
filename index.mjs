@@ -36,4 +36,4 @@ export * as storage from './lib/storage.mjs';
 export * as tape from './lib/tape.mjs';
 export * as uoid from './lib/uoid.mjs';
 export * as utilitas from './lib/utilitas.mjs';
-export { default as default } from './lib/utilitas.mjs';
+export * as default from './lib/utilitas.mjs';
