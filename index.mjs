@@ -1,6 +1,5 @@
 // dependencies
 export * as base64url from 'base64url';
-export * as colors from 'colors/safe.js';
 export * as fetch from 'node-fetch';
 export * as fileType from 'file-type';
 export * as geoIp from 'fast-geoip';
@@ -20,6 +19,7 @@ export * as twilio from 'twilio';
 export * as uuid from 'uuid';
 export * as winston from 'winston';
 export * as winstonPapertrail from 'winston-papertrail-mproved';
+export { default as colors } from 'colors/safe.js';
 
 // features
 export * as cache from './lib/cache.mjs';
