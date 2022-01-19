@@ -60,6 +60,7 @@ export {
     // features
     cache,
     dbio,
+    utilitas as default,
     email,
     encryption,
     event,
