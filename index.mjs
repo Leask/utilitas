@@ -10,7 +10,6 @@ export * as mailjet from 'node-mailjet';
 export * as math from 'mathjs';
 export * as mysql from 'mysql2/promise';
 export * as ping from 'ping';
-export * as publicIp from 'public-ip';
 export * as qs from 'qs';
 export * as redis from 'ioredis';
 export * as sentry from '@sentry/node';
