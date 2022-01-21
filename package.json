@@ -39,7 +39,6 @@
         "node-fetch": "^2.6.7",
         "node-mailjet": "^3.3.5",
         "ping": "^0.4.1",
-        "public-ip": "^5.0.0",
         "qs": "^6.10.3",
         "telesignsdk": "^2.2.1",
         "twilio": "^3.73.0",
