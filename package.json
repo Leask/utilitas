@@ -6,6 +6,9 @@
     "homepage": "https://github.com/Leask/utilitas",
     "main": "index.mjs",
     "type": "module",
+    "engines": {
+        "node": ">=16.x"
+    },
     "scripts": {
         "start": "node index.mjs",
         "debug": "node --inspect --trace-warnings debug.mjs",
