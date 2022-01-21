@@ -37,7 +37,7 @@
         "mathjs": "^10.1.0",
         "mysql2": "^2.3.3",
         "node-fetch": "^2.6.7",
-        "node-mailjet": "^3.3.4",
+        "node-mailjet": "^3.3.5",
         "ping": "^0.4.1",
         "public-ip": "^5.0.0",
         "qs": "^6.10.3",
