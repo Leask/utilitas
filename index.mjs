@@ -14,6 +14,7 @@ export * as ping from 'ping';
 export * as qs from 'qs';
 export * as redis from 'ioredis';
 export * as sentry from '@sentry/node';
+export * as telegraf from 'telegraf';
 export * as telesign from 'telesignsdk';
 export * as twilio from 'twilio';
 export * as uuid from 'uuid';
