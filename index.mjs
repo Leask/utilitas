@@ -18,8 +18,6 @@ export * as telegraf from 'telegraf';
 export * as telesign from 'telesignsdk';
 export * as twilio from 'twilio';
 export * as uuid from 'uuid';
-export * as winston from 'winston';
-export * as winstonPapertrail from 'winston-papertrail-mproved';
 
 // features
 export * as bot from './lib/bot.mjs';

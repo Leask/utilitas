@@ -43,8 +43,6 @@
         "telegraf": "^4.7.0",
         "telesignsdk": "^2.2.1",
         "twilio": "^3.74.0",
-        "uuid": "^8.3.2",
-        "winston": "^3.5.1",
-        "winston-papertrail-mproved": "^1.0.7"
+        "uuid": "^8.3.2"
     }
 }
