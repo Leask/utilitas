@@ -22,6 +22,7 @@ export * as winston from 'winston';
 export * as winstonPapertrail from 'winston-papertrail-mproved';
 
 // features
+export * as bot from './lib/bot.mjs';
 export * as cache from './lib/cache.mjs';
 export * as dbio from './lib/dbio.mjs';
 export * as email from './lib/email.mjs';
