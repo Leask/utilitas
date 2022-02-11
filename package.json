@@ -25,7 +25,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
-        "@sentry/node": "^6.17.6",
+        "@sentry/node": "^6.17.7",
         "base64url": "^3.0.1",
         "colors": "1.4.0",
         "fast-geoip": "^1.1.58",
