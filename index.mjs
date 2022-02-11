@@ -1,6 +1,7 @@
 // dependencies
 export { default as colors } from 'colors/safe.js';
 export { default as fetch } from 'node-fetch';
+export { Tail as tail } from 'tail';
 export * as base64url from 'base64url';
 export * as fileType from 'file-type';
 export * as geoIp from 'fast-geoip';
