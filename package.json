@@ -28,7 +28,7 @@
         "@sentry/node": "^6.18.2",
         "base64url": "^3.0.1",
         "colors": "1.4.0",
-        "fast-geoip": "^1.1.62",
+        "fast-geoip": "^1.1.63",
         "file-type": "^17.1.1",
         "ini": "github:Leask/ini",
         "ioredis": "^4.28.5",
