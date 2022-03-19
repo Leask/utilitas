@@ -53,15 +53,11 @@ export default {
         { 'node:buffer': '{}' },
         { 'node:stream': '{}' },
     ],
-    // ignoreWarnings: [warning => {
-    //     return ((warning?.loc?.start?.line === 83 // utilitas.event
-    //         && warning?.loc?.start?.column === 31
-    //         && warning?.loc?.end?.line === 83
-    //         && warning?.loc?.end?.column === 62
-    //     ) || (warning?.loc?.start?.line === 75 // utilitas.bot
-    //         && warning?.loc?.start?.column === 32
-    //         && warning?.loc?.end?.line === 75
-    //         && warning?.loc?.end?.column === 63
-    //         ));
-    // }],
+    ignoreWarnings: [warning => {
+        return ((warning?.loc?.start?.line === 83 // utilitas.event
+            && warning?.loc?.start?.column === 31
+            && warning?.loc?.end?.line === 83
+            && warning?.loc?.end?.column === 62
+        ));
+    }],
 };
