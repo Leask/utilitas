@@ -48,7 +48,7 @@ const base = {
     //         && warning?.loc?.end?.column === 63
     //         ));
     // }],
-    // node: { __dirname: false, __filename: false },
+    node: { __dirname: false, __filename: false },
 };
 
 export default [
@@ -73,7 +73,6 @@ export default [
                 asyncChunks,
             },
             plugins: [
-                // new webpack.ProvidePlugin({ process: 'process/browser.js' }),
                 new NodePolyfillPlugin()
             ],
             resolve: {
