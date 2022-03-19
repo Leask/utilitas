@@ -28,12 +28,9 @@ const base = {
             'mysql2': false,
             'node-mailjet': false,
             'readline-sync': false,
-            // 'solc': false, // @todo: because solc is not a node module yet
-            // 'table': false,
-            // 'telegraf': false,
+            'telegraf': false,
             'telesignsdk': false,
             'twilio': false,
-            // 'yargs': false,
         },
     },
     externals: [
@@ -86,6 +83,7 @@ export default [
                     child_process: false,
                     // module: false,
                     ping: false,
+                    tail: false,
                 },
                 fallback: {
                     fs: require.resolve('browserify-fs'),
