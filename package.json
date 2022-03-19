@@ -17,7 +17,7 @@
         "updep": "npx ncu -u && npm install && npm install node-fetch@2 && ( git commit -am 'update dependencies' || true )",
         "gitsync": "git pull && git push",
         "build": "npx webpack-cli --config webpack.config.mjs",
-        "prepublishOnly": "npm build && npm version patch && npm run updep && npm run gitsync"
+        "prepublishOnly": "npm run build && npm version patch && npm run updep && npm run gitsync"
     },
     "author": "Leask Wong <i@leaskh.com>",
     "license": "MIT",
