@@ -57,18 +57,6 @@ const base = {
 };
 
 export default [
-    // {
-    //     ...base, ...{
-    //         target: ['node16'], // , 'electron16-main'
-    //         experiments: { ...base.experiments, outputModule: true },
-    //         output: {
-    //             path: dist,
-    //             filename: 'index.mjs',
-    //             asyncChunks,
-    //             library: { type: 'module' },
-    //         },
-    //     },
-    // },
     {
         ...base, ...{
             target: ['web'],
