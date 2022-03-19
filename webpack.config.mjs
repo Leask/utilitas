@@ -3,31 +3,40 @@
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import path from 'path';
-import webpack from 'webpack';
+// import webpack from 'webpack';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const require = createRequire(import.meta.url);
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
-const dist = path.resolve(__dirname, 'dist');
-const asyncChunks = false;
 
-const base = {
-    mode: 'production',
+export default {
     entry: './index.mjs',
-    optimization: { minimize: true },
     experiments: { topLevelAwait: true },
+    mode: 'production',
+    node: { __dirname: false, __filename: false },
+    optimization: { minimize: true },
+    plugins: [new NodePolyfillPlugin()],
+    target: ['web'],
+    output: {
+        asyncChunks: false,
+        filename: 'utilitas.lite.mjs',
+        path: path.resolve(__dirname, 'dist'),
+    },
     resolve: {
         extensions: ['.mjs', '.cjs', '.js', '.json', '.node'],
+        fallback: { fs: require.resolve('browserify-fs') },
         alias: {
-            // 'tape.mjs': false,
             '@sentry/node': false,
+            'child_process': false,
             'fast-geoip': false,
             'ioredis': false,
             'mailgun-js': false,
             'mysql2': false,
             'node-mailjet': false,
+            'ping': false,
             'readline-sync': false,
+            'tail': false,
             'telegraf': false,
             'telesignsdk': false,
             'twilio': false,
@@ -41,6 +50,8 @@ const base = {
         { './lib/sentinel.mjs': '{}' },
         { './lib/sms.mjs': '{}' },
         { './lib/tape.mjs': '{}' },
+        { 'node:buffer': '{}' },
+        { 'node:stream': '{}' },
     ],
     // ignoreWarnings: [warning => {
     //     return ((warning?.loc?.start?.line === 83 // utilitas.event
@@ -53,38 +64,4 @@ const base = {
     //         && warning?.loc?.end?.column === 63
     //         ));
     // }],
-    node: { __dirname: false, __filename: false },
 };
-
-export default [
-    {
-        ...base, ...{
-            target: ['web'],
-            output: {
-                path: dist,
-                filename: 'index.web.mjs',
-                asyncChunks,
-            },
-            plugins: [
-                new NodePolyfillPlugin()
-            ],
-            resolve: {
-                ...base.resolve,
-                alias: {
-                    ...base.resolve.alias,
-                    child_process: false,
-                    ping: false,
-                    tail: false,
-                },
-                fallback: {
-                    fs: require.resolve('browserify-fs'),
-                },
-            },
-            externals: [
-                ...base.externals,
-                { 'node:buffer': '{}' },
-                { 'node:stream': '{}' },
-            ]
-        },
-    }
-];
