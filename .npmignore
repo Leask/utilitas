@@ -1,3 +1,5 @@
 .history
 debug.mjs
+dist
 package-lock.json
+webpack.config.mjs
