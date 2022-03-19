@@ -15,7 +15,7 @@ const asyncChunks = false;
 const base = {
     mode: 'production',
     entry: './index.mjs',
-    // optimization: { minimize: true },
+    optimization: { minimize: true },
     experiments: { topLevelAwait: true },
     resolve: {
         extensions: ['.mjs', '.cjs', '.js', '.json', '.node'],
@@ -85,7 +85,6 @@ export default [
                 alias: {
                     ...base.resolve.alias,
                     child_process: false,
-                    // module: false,
                     ping: false,
                     tail: false,
                 },
@@ -97,8 +96,6 @@ export default [
                 ...base.externals,
                 { 'node:buffer': '{}' },
                 { 'node:stream': '{}' },
-                // { './lib/dbio.mjs': '{}' },
-
             ]
         },
     }
