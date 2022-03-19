@@ -18,7 +18,7 @@
         "gitsync": "git pull && git push",
         "prepublishOnly": "npm version patch && npm run updep && npm run gitsync",
         "xxx_build": "npx esbuild index.mjs --bundle --outfile=out.js",
-        "pack": "./node_modules/.bin/webpack-cli --config webpack.config.mjs"
+        "pack": "npx webpack-cli --config webpack.config.mjs"
     },
     "author": "Leask Wong <i@leaskh.com>",
     "license": "MIT",
@@ -51,7 +51,6 @@
     "devDependencies": {
         "browserify-fs": "^1.0.0",
         "node-polyfill-webpack-plugin": "^1.1.4",
-        "webpack": "^5.70.0",
         "webpack-cli": "^4.9.2"
     }
 }
