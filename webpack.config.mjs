@@ -34,8 +34,13 @@ const base = {
         },
     },
     externals: [
-        // 'tape.mjs',
-        // /cardinal/, { got: 'commonjs got' }
+        { './lib/bot.mjs': '{}' },
+        { './lib/cache.mjs': '{}' },
+        { './lib/dbio.mjs': '{}' },
+        { './lib/email.mjs': '{}' },
+        { './lib/sentinel.mjs': '{}' },
+        { './lib/sms.mjs': '{}' },
+        { './lib/tape.mjs': '{}' },
     ],
     // ignoreWarnings: [warning => {
     //     return ((warning?.loc?.start?.line === 83 // utilitas.event
@@ -92,6 +97,8 @@ export default [
                 ...base.externals,
                 { 'node:buffer': '{}' },
                 { 'node:stream': '{}' },
+                // { './lib/dbio.mjs': '{}' },
+
             ]
         },
     }
