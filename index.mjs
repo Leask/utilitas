@@ -90,36 +90,8 @@ const pack = {
 if (runningInBrowser) {
     window._utilitas = pack;
     window.utilitas = {
-        // dependencies
-        colors,
-        fetch,
-        tail,
-        base64url,
-        fileType,
-        geoIp,
-        ini,
-        jwt,
-        mailgun,
-        mailjet,
-        math,
-        mysql,
-        ping,
-        qs,
-        redis,
-        sentry,
-        telegraf,
-        telesign,
-        twilio,
-        uuid,
-        // features
-        encryption,
-        event,
-        network,
-        shell,
-        shot,
-        storage,
-        uoid,
-        utilitas,
+        base64url, colors, encryption, event, fetch, fileType, ini, jwt, math,
+        network, qs, shell, shot, storage, uoid, utilitas, uuid,
     };
     console.log('[UTILITAS](https://github.com/Leask/utilitas) is ready!');
 } else { global._utilitas = pack; }
