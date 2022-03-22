@@ -1,6 +1,6 @@
 {
     "name": "utilitas",
-    "description": "Just another common utility for Node.js.",
+    "description": "Just another common utility for JavaScript.",
     "version": "1989.10.14",
     "private": false,
     "homepage": "https://github.com/Leask/utilitas",
@@ -15,7 +15,7 @@
         "test": "node --inspect --trace-warnings test.mjs",
         "ncuinit": "npm install -g npm-check-updates",
         "updep": "npx ncu -u && npm install",
-        "gitsync": "( git commit -am '🍻 Released!' || true ) && git pull && git push",
+        "gitsync": "( git commit -am 'Released @ `date`' || true ) && git pull && git push",
         "build": "npm run updep && npm version patch && node build.mjs && ./node_modules/.bin/webpack-cli --config webpack.config.mjs",
         "prepublishOnly": "npm run build && npm run gitsync"
     },

@@ -1,6 +1,6 @@
 # utilitas
 
-Just another common utility for Node.js.
+Just another common utility for JavaScript.
 
 ## Todo
 
