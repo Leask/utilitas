@@ -35,8 +35,8 @@ import * as storage from './lib/storage.mjs';
 import * as tape from './lib/tape.mjs';
 import * as uoid from './lib/uoid.mjs';
 import * as utilitas from './lib/utilitas.mjs';
-import manifest from './lib/manifest.mjs';
-
+// import manifest from './lib/manifest.mjs';
+const manifest = {};
 // Export
 export * as default from './lib/utilitas.mjs';
 export {
