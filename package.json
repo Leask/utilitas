@@ -26,7 +26,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
-        "@sentry/node": "^6.19.0",
+        "@sentry/node": "^6.19.1",
         "base64url": "^3.0.1",
         "colors": "1.4.0",
         "fast-geoip": "^1.1.63",
@@ -37,7 +37,7 @@
         "mailgun-js": "^0.22.0",
         "mathjs": "^10.4.0",
         "mysql2": "^2.3.3",
-        "node-fetch": "^2.6.7",
+        "node-fetch": "^3.2.3",
         "node-mailjet": "^3.3.7",
         "ping": "^0.4.1",
         "qs": "^6.10.3",
