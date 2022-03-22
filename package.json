@@ -16,7 +16,8 @@
         "updep": "npx ncu -u && npm install",
         "gitsync": "( git commit -am \"Released @ `date`\" || true ) && git pull && git push",
         "build": "npm run updep && npm version patch && node build.mjs && ./node_modules/.bin/webpack-cli --config webpack.config.mjs",
-        "prepublishOnly": "npm run build && npm run gitsync"
+        "prepublishOnly": "npm run build && npm run gitsync",
+        "beta": "npm publish --tag beta"
     },
     "author": "Leask Wong <i@leaskh.com>",
     "license": "MIT",
