@@ -15,7 +15,7 @@ export default {
     experiments: { topLevelAwait: true },
     mode: 'production',
     node: { __dirname: false, __filename: false },
-    optimization: { minimize: true },
+    optimization: { minimize: false },
     plugins: [new NodePolyfillPlugin()],
     target: ['web'],
     output: {
