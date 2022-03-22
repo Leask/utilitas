@@ -36,9 +36,7 @@ import * as storage from './lib/storage.mjs';
 import * as tape from './lib/tape.mjs';
 import * as uoid from './lib/uoid.mjs';
 import * as utilitas from './lib/utilitas.mjs';
-// import manifest from './package.json' assert { type: 'json' };
-// https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
-import { default as manifest } from './manifest.mjs';
+import manifest from './lib/manifest.mjs';
 
 // Export
 export * as default from './lib/utilitas.mjs';
