@@ -31,7 +31,7 @@ export default {
             'child_process': false,
             'fast-geoip': false,
             'ioredis': false,
-            'mailgun-js': false,
+            'mailgun.js': false,
             'mysql2': false,
             'node-mailjet': false,
             'ping': false,

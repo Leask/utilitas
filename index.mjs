@@ -1,14 +1,15 @@
 // dependencies
 import { default as colors } from 'colors/safe.js';
 import { default as fetch } from 'node-fetch';
+import { default as formData } from 'form-data';
+import { default as mailgun } from 'mailgun.js';
+import { default as mailjet } from 'node-mailjet';
 import { Tail as tail } from 'tail';
 import * as base64url from 'base64url';
 import * as fileType from 'file-type';
 import * as geoIp from 'fast-geoip';
 import * as ini from 'ini';
 import * as jwt from 'jsonwebtoken';
-import * as mailgun from 'mailgun-js';
-import * as mailjet from 'node-mailjet';
 import * as math from 'mathjs';
 import * as mysql from 'mysql2/promise';
 import * as ping from 'ping';
@@ -40,11 +41,11 @@ import * as utilitas from './lib/utilitas.mjs';
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
+    base64url,
     colors,
     fetch,
-    tail,
-    base64url,
     fileType,
+    formData,
     geoIp,
     ini,
     jwt,
@@ -56,6 +57,7 @@ export {
     qs,
     redis,
     sentry,
+    tail,
     telegraf,
     telesign,
     twilio,
@@ -90,8 +92,8 @@ const pack = {
 if (runningInBrowser) {
     window._utilitas = pack;
     window.utilitas = {
-        base64url, colors, encryption, event, fetch, fileType, ini, jwt, math,
-        network, qs, shell, shot, storage, uoid, utilitas, uuid,
+        base64url, colors, encryption, event, fetch, fileType, formData, ini,
+        jwt, math, network, qs, shell, shot, storage, uoid, utilitas, uuid,
     };
     console.log('[UTILITAS](https://github.com/Leask/utilitas) is ready!');
 } else { global._utilitas = pack; }
