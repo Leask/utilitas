@@ -36,64 +36,27 @@ import * as storage from './lib/storage.mjs';
 import * as tape from './lib/tape.mjs';
 import * as uoid from './lib/uoid.mjs';
 import * as utilitas from './lib/utilitas.mjs';
+// import manifest from './package.json' assert { type: 'json' };
+// https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
+import { default as manifest } from './manifest.mjs';
 
 // Export
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
-    base64url,
-    colors,
-    fetch,
-    fileType,
-    formData,
-    geoIp,
-    ini,
-    jwt,
-    mailgun,
-    mailjet,
-    math,
-    mysql,
-    ping,
-    qs,
-    redis,
-    sentry,
-    tail,
-    telegraf,
-    telesign,
-    twilio,
-    uuid,
+    base64url, colors, fetch, fileType, formData, geoIp, ini, jwt, mailgun,
+    mailjet, math, mysql, ping, qs, redis, sentry, tail, telegraf, telesign,
+    twilio, uuid,
     // features
-    bot,
-    cache,
-    dbio,
-    email,
-    encryption,
-    event,
-    network,
-    sentinel,
-    shell,
-    shot,
-    sms,
-    storage,
-    tape,
-    uoid,
-    utilitas,
+    bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
+    shell, shot, sms, storage, tape, uoid, utilitas,
 };
 
-// Browser
-let runningInBrowser = false;
-try { runningInBrowser = !!window; } catch (e) { }
-// import * as package from './package.json';
-// https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
-const pack = {
-    ...await storage.readJson('./package.json'),
-    runningInBrowser,
-};
-if (runningInBrowser) {
-    window._utilitas = pack;
+if (utilitas.inBrowser()) {
     window.utilitas = {
         base64url, colors, encryption, event, fetch, fileType, formData, ini,
-        jwt, math, network, qs, shell, shot, storage, uoid, utilitas, uuid,
+        jwt, manifest, math, network, qs, shell, shot, storage, uoid, utilitas,
+        uuid,
     };
-    console.log('[UTILITAS](https://github.com/Leask/utilitas) is ready!');
-} else { global._utilitas = pack; }
+    console.log(`[${manifest.name.toUpperCase()} ${manifest.version}](${manifest.homepage}) is ready!`);
+}

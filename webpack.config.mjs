@@ -33,6 +33,7 @@ export default {
             'ioredis': false,
             'mailgun.js': false,
             'mysql2': false,
+            'node-fetch': false,
             'node-mailjet': false,
             'ping': false,
             'readline-sync': false,
@@ -40,6 +41,7 @@ export default {
             'telegraf': false,
             'telesignsdk': false,
             'twilio': false,
+            'worker_threads': false,
         },
     },
     externals: [
@@ -52,6 +54,16 @@ export default {
         { './lib/tape.mjs': '{}' },
         { 'node:buffer': '{}' },
         { 'node:stream': '{}' },
+        // { 'node:fs': '{}' },
+        // { 'node:http': '{}' },
+        // { 'node:https': '{}' },
+        // { 'node:net': '{}' },
+        // { 'node:path': '{}' },
+        // { 'node:process': '{}' },
+        // { 'node:stream/web': '{}' },
+        // { 'node:url': '{}' },
+        // { 'node:util': '{}' },
+        // { 'node:zlib': '{}' },
     ],
     ignoreWarnings: [warning => {
         return ((warning?.loc?.start?.line === 83 // utilitas.event
