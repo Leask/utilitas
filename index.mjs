@@ -13,7 +13,6 @@ import * as jwt from 'jsonwebtoken';
 import * as math from 'mathjs';
 import * as mysql from 'mysql2/promise';
 import * as ping from 'ping';
-import * as qs from 'qs';
 import * as redis from 'ioredis';
 import * as sentry from '@sentry/node';
 import * as telegraf from 'telegraf';
@@ -43,7 +42,7 @@ export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
     base64url, colors, fetch, fileType, formData, geoIp, ini, jwt, mailgun,
-    mailjet, math, mysql, ping, qs, redis, sentry, tail, telegraf, telesign,
+    mailjet, math, mysql, ping, redis, sentry, tail, telegraf, telesign,
     twilio, uuid,
     // features
     bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
@@ -53,7 +52,7 @@ export {
 if (utilitas.inBrowser()) {
     window.utilitas = {
         base64url, colors, encryption, event, fetch, fileType, formData, ini,
-        jwt, manifest, math, network, qs, shell, shot, storage, uoid, utilitas,
+        jwt, manifest, math, network, shell, shot, storage, uoid, utilitas,
         uuid,
     };
     console.log(`[${manifest.name.toUpperCase()} ${manifest.version}](${manifest.homepage}) is ready!`);
