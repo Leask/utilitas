@@ -1,9 +1,9 @@
 // dependencies
 import { default as colors } from 'colors/safe.js';
-import { default as fetch } from 'node-fetch';
 import { default as formData } from 'form-data';
 import { default as mailgun } from 'mailgun.js';
 import { default as mailjet } from 'node-mailjet';
+import { Telegraf as telegraf } from 'telegraf';
 import { Tail as tail } from 'tail';
 import * as base64url from 'base64url';
 import * as fileType from 'file-type';
@@ -15,10 +15,11 @@ import * as mysql from 'mysql2/promise';
 import * as ping from 'ping';
 import * as redis from 'ioredis';
 import * as sentry from '@sentry/node';
-import * as telegraf from 'telegraf';
 import * as telesign from 'telesignsdk';
 import * as twilio from 'twilio';
 import * as uuid from 'uuid';
+const Buffer = utilitas.inBrowser() ? (await import('buffer/index.js')).Buffer : global.Buffer;
+const fetch = utilitas.inBrowser() ? window.fetch : (await import('node-fetch')).default;
 // features
 import * as bot from './lib/bot.mjs';
 import * as cache from './lib/cache.mjs';
@@ -51,9 +52,8 @@ export {
 
 if (utilitas.inBrowser()) {
     window.utilitas = {
-        base64url, colors, encryption, event, fetch, fileType, formData, ini,
-        jwt, manifest, math, network, shell, shot, storage, uoid, utilitas,
-        uuid,
+        base64url, Buffer, colors, encryption, event, fetch, manifest, math,
+        shot, storage, uoid, utilitas, uuid,
     };
     console.log(`[${manifest.name.toUpperCase()} ${manifest.version}](${manifest.homepage}) is ready!`);
 }
