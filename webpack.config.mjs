@@ -14,8 +14,9 @@ export default {
     entry: './index.mjs',
     experiments: { topLevelAwait: true },
     mode: 'production',
+    devtool: 'source-map',
     node: { __dirname: false, __filename: false },
-    optimization: { minimize: false },
+    optimization: { minimize: true },
     plugins: [new NodePolyfillPlugin()],
     target: ['web'],
     output: {
