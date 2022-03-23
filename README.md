@@ -2,6 +2,11 @@
 
 Just another common utility for JavaScript.
 
-## Todo
+Works in Node.js and modern browsers.
 
-- When move forward to node-fetch v3 be sure to upgrade timeout options.
+## Features
+
+tbd...
+## TOTO
+
+tbd...
