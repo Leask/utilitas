@@ -1,5 +1,4 @@
 // dependencies
-import { default as colors } from 'colors/safe.js';
 import { default as formData } from 'form-data';
 import { default as mailgun } from 'mailgun.js';
 import { default as mailjet } from 'node-mailjet';
@@ -21,6 +20,7 @@ import * as uuid from 'uuid';
 const Buffer = utilitas.inBrowser() ? (await import('buffer/index.js')).Buffer : global.Buffer;
 const fetch = utilitas.inBrowser() ? window.fetch : (await import('node-fetch')).default;
 // features
+import { default as color } from './lib/color.mjs';
 import * as bot from './lib/bot.mjs';
 import * as cache from './lib/cache.mjs';
 import * as dbio from './lib/dbio.mjs';
@@ -42,7 +42,7 @@ import manifest from './lib/manifest.mjs';
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
-    base64url, colors, fetch, fileType, formData, geoIp, ini, jwt, mailgun,
+    base64url, color, fetch, fileType, formData, geoIp, ini, jwt, mailgun,
     mailjet, math, mysql, ping, redis, sentry, tail, telegraf, telesign,
     twilio, uuid,
     // features
@@ -52,8 +52,11 @@ export {
 
 if (utilitas.inBrowser()) {
     window.utilitas = {
-        base64url, Buffer, colors, encryption, event, fetch, manifest, math,
+        base64url, Buffer, color, encryption, event, fetch, manifest, math,
         shot, storage, uoid, utilitas, uuid,
     };
-    console.log(`[${manifest.name.toUpperCase()} ${manifest.version}](${manifest.homepage}) is ready!`);
+    utilitas.modLog(
+        `(${manifest.homepage}) is ready!`,
+        `${(await utilitas.which(manifest)).title}.*`
+    );
 }

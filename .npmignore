@@ -2,5 +2,6 @@
 # dist
 build.mjs
 debug.mjs
+index.html
 package-lock.json
 webpack.config.mjs
