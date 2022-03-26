@@ -1,4 +1,4 @@
-import { writeFile } from './lib/storage.mjs';
+import { storage } from './index.mjs';
 import manifest from './package.json' assert { type: 'json' };
 
 // https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
@@ -8,4 +8,4 @@ const strManifest = [
     'export default manifest;',
 ].join('\n\n');
 
-await writeFile('./lib/manifest.mjs', strManifest);
+await storage.writeFile('./lib/manifest.mjs', strManifest);
