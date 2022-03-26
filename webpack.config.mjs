@@ -5,7 +5,7 @@ import { utilitas } from './index.mjs';
 import path from 'path';
 // import webpack from 'webpack';
 
-const { __dirname } = utilitas.__(import.meta);
+const { __dirname } = utilitas.__(import.meta.url);
 const require = createRequire(import.meta.url);
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
@@ -76,7 +76,7 @@ export default {
         // { 'node:zlib': '{}' },
     ],
     ignoreWarnings: [warning => {
-        return ((warning?.loc?.start?.line === 83 // utilitas.event
+        return ((warning?.loc?.start?.line === 81 // utilitas.event
             && warning?.loc?.start?.column === 31
             && warning?.loc?.end?.line === 83
             && warning?.loc?.end?.column === 62
