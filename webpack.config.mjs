@@ -1,12 +1,11 @@
 // @todo: https://github.com/webpack/webpack/issues/2933#issuecomment-774253975
 
 import { createRequire } from 'module';
-import { fileURLToPath } from 'url';
+import { utilitas } from './index.mjs';
 import path from 'path';
 // import webpack from 'webpack';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const { __dirname } = utilitas.__(import.meta);
 const require = createRequire(import.meta.url);
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 

@@ -2,8 +2,8 @@
 import { default as formData } from 'form-data';
 import { default as mailgun } from 'mailgun.js';
 import { default as mailjet } from 'node-mailjet';
-import { Telegraf as telegraf } from 'telegraf';
 import { Tail as tail } from 'tail';
+import { Telegraf as telegraf } from 'telegraf';
 import * as base64url from 'base64url';
 import * as fileType from 'file-type';
 import * as geoIp from 'fast-geoip';
@@ -17,9 +17,8 @@ import * as sentry from '@sentry/node';
 import * as telesign from 'telesignsdk';
 import * as twilio from 'twilio';
 import * as uuid from 'uuid';
-const Buffer = utilitas.inBrowser() ? (await import('buffer/index.js')).Buffer : global.Buffer;
-const fetch = utilitas.inBrowser() ? window.fetch : (await import('node-fetch')).default;
 // features
+import _ from './lib/horizon.mjs'
 import { default as color } from './lib/color.mjs';
 import * as bot from './lib/bot.mjs';
 import * as cache from './lib/cache.mjs';
@@ -42,9 +41,8 @@ import manifest from './lib/manifest.mjs';
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
-    base64url, color, fetch, fileType, formData, geoIp, ini, jwt, mailgun,
-    mailjet, math, mysql, ping, redis, sentry, tail, telegraf, telesign,
-    twilio, uuid,
+    base64url, color, fileType, formData, geoIp, ini, jwt, mailgun, mailjet,
+    math, mysql, ping, redis, sentry, tail, telegraf, telesign, twilio, uuid,
     // features
     bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
     shell, shot, sms, storage, tape, uoid, utilitas,
@@ -52,8 +50,8 @@ export {
 
 if (utilitas.inBrowser()) {
     window.utilitas = {
-        base64url, Buffer, color, encryption, event, fetch, manifest, math,
-        shot, storage, uoid, utilitas, uuid,
+        base64url, color, encryption, event, manifest, math, shot, storage,
+        uoid, utilitas, uuid,
     };
     utilitas.modLog(
         `(${manifest.homepage}) is ready!`,
