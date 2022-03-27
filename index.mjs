@@ -49,7 +49,7 @@ export {
 };
 
 if (utilitas.inBrowser()) {
-    window.utilitas = {
+    globalThis.utilitas = {
         base64url, color, encryption, event, manifest, math, shot, storage,
         uoid, utilitas, uuid,
     };
