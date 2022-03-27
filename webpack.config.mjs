@@ -78,7 +78,7 @@ export default {
     ignoreWarnings: [warning => {
         return ((warning?.loc?.start?.line === 81 // utilitas.event
             && warning?.loc?.start?.column === 31
-            && warning?.loc?.end?.line === 83
+            && warning?.loc?.end?.line === 81
             && warning?.loc?.end?.column === 62
         ));
     }],
