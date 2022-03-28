@@ -48,8 +48,8 @@ export {
     shell, shot, sms, storage, tape, uoid, utilitas,
 };
 
-if (utilitas.inBrowser()) {
-    globalThis.utilitas = globalThis.utilitas || {
+if (utilitas.inBrowser() && !globalThis.utilitas) {
+    globalThis.utilitas = {
         base64url, color, encryption, event, manifest, math, shot, storage,
         uoid, utilitas, uuid,
     };
