@@ -48,13 +48,25 @@ export {
     shell, shot, sms, storage, tape, uoid, utilitas,
 };
 
-if (utilitas.inBrowser()) {
-    globalThis.utilitas = {
+globalThis.utilitas = globalThis.utilitas || (
+    utilitas.inBrowser() ? {
         base64url, color, encryption, event, manifest, math, shot, storage,
         uoid, utilitas, uuid,
-    };
-    utilitas.modLog(
-        `(${manifest.homepage}) is ready!`,
-        `${(await utilitas.which(manifest)).title}.*`
-    );
-}
+    } : {
+        // dependencies
+        base64url, color, fileType, formData, geoIp, ini, jwt, mailgun, mailjet,
+        math, mysql, ping, redis, sentry, tail, telegraf, telesign, twilio, uuid,
+        // features
+        bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
+        shell, shot, sms, storage, tape, uoid, utilitas,
+    }
+);
+
+setImmediate(async () => {
+    if (!globalThis?._utilitas?.silent) {
+        utilitas.modLog(
+            `(${manifest.homepage}) is ready!`,
+            `${(await utilitas.which(manifest)).title}.*`
+        );
+    }
+});
