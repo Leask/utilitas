@@ -2,6 +2,7 @@
 import { default as formData } from 'form-data';
 import { default as mailgun } from 'mailgun.js';
 import { default as mailjet } from 'node-mailjet';
+import { default as qrcode } from 'qrcode';
 import { Tail as tail } from 'tail';
 import { Telegraf as telegraf } from 'telegraf';
 import * as base64url from 'base64url';
@@ -42,7 +43,8 @@ export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
     base64url, color, fileType, formData, geoIp, ini, jwt, mailgun, mailjet,
-    math, mysql, ping, redis, sentry, tail, telegraf, telesign, twilio, uuid,
+    math, mysql, ping, qrcode, redis, sentry, tail, telegraf, telesign, twilio,
+    uuid,
     // features
     bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
     shell, shot, sms, storage, tape, uoid, utilitas,
