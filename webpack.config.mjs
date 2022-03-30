@@ -44,6 +44,7 @@ export default {
             'node-fetch': false,
             'node-mailjet': false,
             'ping': false,
+            'qrcode': false,
             'readline-sync': false,
             'tail': false,
             'telegraf': false,
