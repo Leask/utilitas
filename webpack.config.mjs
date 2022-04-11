@@ -78,10 +78,10 @@ export default {
         // { 'node:zlib': '{}' },
     ],
     ignoreWarnings: [warning => {
-        return ((warning?.loc?.start?.line === 81 // utilitas.event
+        return ((warning?.loc?.start?.line === 77 // utilitas.event
             && warning?.loc?.start?.column === 31
-            && warning?.loc?.end?.line === 81
-            && warning?.loc?.end?.column === 62
+            && warning?.loc?.end?.line === 77
+            && warning?.loc?.end?.column === 57
         ));
     }],
     // stats: 'detailed',
