@@ -1,7 +1,8 @@
 .history
+/build.mjs
+/debug.mjs
+/index.html
+/package-lock.json
+/test.mjs
+/webpack.config.mjs
 # dist
-build.mjs
-debug.mjs
-index.html
-package-lock.json
-webpack.config.mjs
