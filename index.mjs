@@ -14,6 +14,7 @@ import * as sentry from '@sentry/node';
 import * as telesign from 'telesignsdk';
 import * as twilio from 'twilio';
 import * as uuid from 'uuid';
+import * as yargsParser from 'yargs-parser';
 import formData from 'form-data';
 import mailgun from 'mailgun.js';
 import mailjet from 'node-mailjet';
@@ -44,7 +45,7 @@ export {
     // dependencies
     base64url, color, fileType, formData, geoIp, ini, jwt, mailgun, mailjet,
     math, mysql, ping, qrcode, redis, sentry, tail, telegraf, telesign, twilio,
-    uuid,
+    uuid, yargsParser,
     // features
     bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
     shell, shot, sms, storage, tape, uoid, utilitas,

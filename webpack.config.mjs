@@ -51,6 +51,7 @@ export default {
             'telesignsdk': false,
             'twilio': false,
             'worker_threads': false,
+            'yargs-parser': false,
         },
     },
     externals: [

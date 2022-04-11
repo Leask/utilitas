@@ -47,7 +47,8 @@
         "telegraf": "^4.7.0",
         "telesignsdk": "^2.2.1",
         "twilio": "^3.76.1",
-        "uuid": "^8.3.2"
+        "uuid": "^8.3.2",
+        "yargs-parser": "^21.0.1"
     },
     "devDependencies": {
         "browserify-fs": "^1.0.0",
