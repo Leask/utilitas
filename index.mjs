@@ -3,7 +3,6 @@ import { Tail as tail } from 'tail';
 import { Telegraf as telegraf } from 'telegraf';
 import * as base64url from 'base64url';
 import * as fileType from 'file-type';
-import * as geoIp from 'fast-geoip';
 import * as ini from 'ini';
 import * as jwt from 'jsonwebtoken';
 import * as math from 'mathjs';
@@ -14,11 +13,12 @@ import * as sentry from '@sentry/node';
 import * as telesign from 'telesignsdk';
 import * as twilio from 'twilio';
 import * as uuid from 'uuid';
-import * as yargsParser from 'yargs-parser';
 import formData from 'form-data';
+import geoIp from 'fast-geoip';
 import mailgun from 'mailgun.js';
 import mailjet from 'node-mailjet';
 import qrcode from 'qrcode';
+import yargsParser from 'yargs-parser';
 // features
 import _ from './lib/horizon.mjs'
 import * as bot from './lib/bot.mjs';
@@ -56,7 +56,7 @@ if (utilitas.inBrowser() && !globalThis.utilitas) {
         base64url, color, encryption, event, manifest, math, shot, storage,
         uoid, utilitas, uuid,
     };
-    utilitas.modLog(
+    utilitas.log(
         `(${manifest.homepage}) is ready!`,
         `${(await utilitas.which(manifest)).title}.*`
     );
