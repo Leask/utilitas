@@ -1,13 +1,13 @@
 // @todo: https://github.com/webpack/webpack/issues/2933#issuecomment-774253975
 
 import { createRequire } from 'module';
+import { resolve } from 'path';
 import { utilitas } from './index.mjs';
-import path from 'path';
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 // import webpack from 'webpack';
 
 const { __dirname } = utilitas.__(import.meta.url);
 const require = createRequire(import.meta.url);
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 export default {
     entry: './index.mjs',
@@ -21,7 +21,7 @@ export default {
     output: {
         asyncChunks: false,
         filename: 'utilitas.lite.mjs',
-        path: path.resolve(__dirname, 'dist'),
+        path: resolve(__dirname, 'dist'),
     },
     resolve: {
         extensions: ['.mjs', '.cjs', '.js', '.json', '.node'],
