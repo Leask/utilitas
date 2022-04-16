@@ -78,9 +78,9 @@ export default {
         // { 'node:zlib': '{}' },
     ],
     ignoreWarnings: [warning => {
-        return ((warning?.loc?.start?.line === 77 // utilitas.event
+        return ((warning?.loc?.start?.line === 76 // utilitas.event
             && warning?.loc?.start?.column === 31
-            && warning?.loc?.end?.line === 77
+            && warning?.loc?.end?.line === 76
             && warning?.loc?.end?.column === 57
         ));
     }],
