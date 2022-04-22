@@ -43,6 +43,7 @@ export default {
             'mysql2/promise': false,
             'node-fetch': false,
             'node-mailjet': false,
+            'nopt': false,
             'ping': false,
             'qrcode': false,
             'readline-sync': false,
@@ -51,7 +52,6 @@ export default {
             'telesignsdk': false,
             'twilio': false,
             'worker_threads': false,
-            'yargs-parser': false,
         },
     },
     externals: [

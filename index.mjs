@@ -17,8 +17,8 @@ import formData from 'form-data';
 import geoIp from 'fast-geoip';
 import mailgun from 'mailgun.js';
 import mailjet from 'node-mailjet';
+import nopt from 'nopt';
 import qrcode from 'qrcode';
-import yargsParser from 'yargs-parser';
 // features
 import _ from './lib/horizon.mjs'
 import * as bot from './lib/bot.mjs';
@@ -44,8 +44,8 @@ export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
     base64url, color, fileType, formData, geoIp, ini, jwt, mailgun, mailjet,
-    math, mysql, ping, qrcode, redis, sentry, tail, telegraf, telesign, twilio,
-    uuid, yargsParser,
+    math, mysql, nopt, ping, qrcode, redis, sentry, tail, telegraf, telesign,
+    twilio, uuid,
     // features
     bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
     shell, shot, sms, storage, tape, uoid, utilitas,
