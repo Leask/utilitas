@@ -41,7 +41,6 @@ export default {
             'mathjs': false,
             'mysql2': false,
             'mysql2/promise': false,
-            'node-fetch': false,
             'node-mailjet': false,
             'nopt': false,
             'ping': false,

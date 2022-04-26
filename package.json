@@ -7,7 +7,7 @@
     "main": "index.mjs",
     "type": "module",
     "engines": {
-        "node": ">=16.x"
+        "node": ">=18.x"
     },
     "scripts": {
         "start": "node index.mjs",
@@ -39,7 +39,6 @@
         "mailgun.js": "^5.2.2",
         "mathjs": "^10.5.0",
         "mysql2": "^2.3.3",
-        "node-fetch": "^3.2.3",
         "node-mailjet": "^3.3.13",
         "nopt": "^5.0.0",
         "ping": "^0.4.1",
