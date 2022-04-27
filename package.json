@@ -16,8 +16,8 @@
         "updep": "npx ncu -u && npm install && wget https://raw.githubusercontent.com/Marak/colors.js/master/lib/styles.js -O ./lib/style.cjs",
         "gitsync": "( git commit -am \"Released @ `date`\" || true ) && git pull && git push",
         "pack": "./node_modules/.bin/webpack-cli --config webpack.config.mjs",
-        "build": "npm run updep && ( git commit -am 'update dependencies' || true ) && npm version patch && node build.mjs && npm run pack",
-        "xprepublishOnly": "npm run build && npm run gitsync",
+        "build": "npm run updep && ( git commit -am 'update dependencies' || true ) && node build.mjs && npm run pack",
+        "pub": "npm run build && npm run gitsync",
         "beta": "npm publish --tag beta"
     },
     "author": "Leask Wong <i@leaskh.com>",
