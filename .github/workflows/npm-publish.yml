@@ -10,26 +10,20 @@ on:
     branches: [ master ]
 
 jobs:
-  version:
+  build:
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
     steps:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - run: git config --global user.name 'Leask Wong'
       - run: git config --global user.email 'i@leaskh.com'
       - run: npm version patch -m "[RELEASE] %s"
       - run: git push
-
-  build:
-    runs-on: ubuntu-latest
-    needs: version
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
       - run: npm test
 
   publish-npm:
