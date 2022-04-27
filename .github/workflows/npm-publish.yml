@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: git config --global user.name 'Leask Wong'
       - run: git config --global user.email 'i@leaskh.com'
       - run: npm version patch -m "[RELEASE] %s"
