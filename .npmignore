@@ -1,8 +1,8 @@
 .history
+/.github
 /build.mjs
 /debug.mjs
 /index.html
 /package-lock.json
 /test.mjs
 /webpack.config.mjs
-# dist
