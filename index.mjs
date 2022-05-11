@@ -29,6 +29,7 @@ import * as encryption from './lib/encryption.mjs';
 import * as event from './lib/event.mjs';
 import * as network from './lib/network.mjs';
 import * as sentinel from './lib/sentinel.mjs';
+import * as shekel from './lib/shekel.mjs';
 import * as shell from './lib/shell.mjs';
 import * as shot from './lib/shot.mjs';
 import * as sms from './lib/sms.mjs';
@@ -48,13 +49,13 @@ export {
     twilio, uuid,
     // features
     bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
-    shell, shot, sms, storage, tape, uoid, utilitas,
+    shekel, shell, shot, sms, storage, tape, uoid, utilitas,
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
     globalThis.utilitas = {
-        base64url, color, encryption, event, manifest, math, shot, storage,
-        uoid, utilitas, uuid,
+        base64url, color, encryption, event, manifest, math, shekel, shot,
+        storage, uoid, utilitas, uuid,
     };
     utilitas.log(
         `(${manifest.homepage}) is ready!`,
