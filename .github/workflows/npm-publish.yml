@@ -25,8 +25,9 @@ jobs:
       - run: git config --global user.email 'i@leaskh.com'
       - run: npm version patch -m "[RELEASE] %s"
       - run: git push
-      - run: npm install
+      - run: npm install --production=false
       - run: node build.mjs
+      - run: npm run pack
       - run: npm test
       - run: npm publish
         env:
