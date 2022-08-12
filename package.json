@@ -27,31 +27,31 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
-        "@sentry/node": "^6.19.7",
+        "@sentry/node": "^7.10.0",
         "base64url": "^3.0.1",
         "buffer": "^6.0.3",
-        "fast-geoip": "^1.1.68",
-        "file-type": "^17.1.1",
+        "fast-geoip": "^1.1.88",
+        "file-type": "^17.1.6",
         "form-data": "^4.0.0",
         "ini": "github:Leask/ini",
-        "ioredis": "^5.0.4",
+        "ioredis": "^5.2.2",
         "jsonwebtoken": "^8.5.1",
-        "mailgun.js": "^5.2.2",
-        "mathjs": "^10.5.0",
+        "mailgun.js": "^8.0.0",
+        "mathjs": "^11.0.1",
         "mysql2": "^2.3.3",
-        "node-mailjet": "^3.3.13",
-        "nopt": "^5.0.0",
+        "node-mailjet": "^5.1.1",
+        "nopt": "^6.0.0",
         "ping": "^0.4.2",
-        "qrcode": "^1.5.0",
+        "qrcode": "^1.5.1",
         "tail": "^2.2.4",
-        "telegraf": "^4.7.0",
+        "telegraf": "^4.8.6",
         "telesignsdk": "^2.2.1",
-        "twilio": "^3.76.1",
+        "twilio": "^3.80.1",
         "uuid": "^8.3.2"
     },
     "devDependencies": {
         "browserify-fs": "^1.0.0",
-        "node-polyfill-webpack-plugin": "^1.1.4",
-        "webpack-cli": "^4.9.2"
+        "node-polyfill-webpack-plugin": "^2.0.1",
+        "webpack-cli": "^4.10.0"
     }
 }
