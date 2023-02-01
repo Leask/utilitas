@@ -38,6 +38,7 @@
         "jsonwebtoken": "^9.0.0",
         "mailgun.js": "^8.0.6",
         "mathjs": "^11.5.0",
+        "moment": "^2.29.4",
         "mysql2": "^3.1.0",
         "node-mailjet": "^6.0.2",
         "nopt": "^7.0.0",

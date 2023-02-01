@@ -17,6 +17,7 @@ import formData from 'form-data';
 import geoIp from 'fast-geoip';
 import mailgun from 'mailgun.js';
 import mailjet from 'node-mailjet';
+import moment from 'moment';
 import nopt from 'nopt';
 import qrcode from 'qrcode';
 // features
@@ -45,8 +46,8 @@ export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
     base64url, color, fileType, formData, geoIp, ini, jwt, mailgun, mailjet,
-    math, mysql, nopt, ping, qrcode, redis, sentry, tail, telegraf, telesign,
-    twilio, uuid,
+    math, moment, mysql, nopt, ping, qrcode, redis, sentry, tail, telegraf,
+    telesign, twilio, uuid,
     // features
     bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
     shekel, shell, shot, sms, storage, tape, uoid, utilitas,
@@ -54,8 +55,8 @@ export {
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
     globalThis.utilitas = {
-        base64url, color, encryption, event, manifest, math, shekel, shot,
-        storage, uoid, utilitas, uuid,
+        base64url, color, encryption, event, manifest, math, moment, shekel,
+        shot, storage, uoid, utilitas, uuid,
     };
     utilitas.log(
         `(${manifest.homepage}) is ready!`,
