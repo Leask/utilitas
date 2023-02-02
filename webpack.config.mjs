@@ -44,6 +44,7 @@ export default {
             'node-mailjet': false,
             'nopt': false,
             'ping': false,
+            'portfinder': false,
             'qrcode': false,
             'readline-sync': false,
             'tail': false,
