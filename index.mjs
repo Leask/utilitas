@@ -9,6 +9,7 @@ import * as luxon from 'luxon';
 import * as math from 'mathjs';
 import * as mysql from 'mysql2/promise';
 import * as ping from 'ping';
+import * as portfinder from 'portfinder';
 import * as redis from 'ioredis';
 import * as sentry from '@sentry/node';
 import * as telesign from 'telesignsdk';
@@ -46,8 +47,8 @@ export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
     base64url, color, fileType, formData, geoIp, ini, jwt, luxon, mailgun,
-    mailjet, math, mysql, nopt, ping, qrcode, redis, sentry, tail, telegraf,
-    telesign, twilio, uuid,
+    mailjet, math, mysql, nopt, ping, portfinder, qrcode, redis, sentry, tail,
+    telegraf, telesign, twilio, uuid,
     // features
     bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
     shekel, shell, shot, sms, storage, tape, uoid, utilitas,
