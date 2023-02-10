@@ -27,7 +27,7 @@
         "url": "https://github.com/Leask/utilitas.git"
     },
     "dependencies": {
-        "@sentry/node": "^7.36.0",
+        "@sentry/node": "^7.37.1",
         "base64url": "^3.0.1",
         "buffer": "^6.0.3",
         "fast-geoip": "^1.1.88",
@@ -39,7 +39,7 @@
         "luxon": "^3.2.1",
         "mailgun.js": "^8.0.6",
         "mathjs": "^11.5.1",
-        "mysql2": "^3.1.0",
+        "mysql2": "^3.1.2",
         "node-mailjet": "^6.0.2",
         "nopt": "^7.0.0",
         "ping": "^0.4.2",
@@ -48,7 +48,7 @@
         "tail": "^2.2.6",
         "telegraf": "^4.11.2",
         "telesignsdk": "^2.2.3",
-        "twilio": "^3.84.1",
+        "twilio": "^4.7.2",
         "uuid": "^9.0.0"
     },
     "devDependencies": {
