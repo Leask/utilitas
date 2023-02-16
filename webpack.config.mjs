@@ -25,7 +25,10 @@ export default {
     },
     resolve: {
         extensions: ['.mjs', '.cjs', '.js', '.json', '.node'],
-        fallback: { fs: require.resolve('browserify-fs') },
+        fallback: {
+            fs: require.resolve('browserify-fs'),
+            os: require.resolve('os-browserify'),
+        },
         alias: {
             '@sentry': false,
             '@sentry/node': false,

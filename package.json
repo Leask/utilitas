@@ -54,6 +54,7 @@
     "devDependencies": {
         "browserify-fs": "^1.0.0",
         "node-polyfill-webpack-plugin": "^2.0.1",
+        "os-browserify": "^0.3.0",
         "webpack-cli": "^5.0.1"
     }
 }
