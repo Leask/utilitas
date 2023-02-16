@@ -25,10 +25,7 @@ export default {
     },
     resolve: {
         extensions: ['.mjs', '.cjs', '.js', '.json', '.node'],
-        fallback: {
-            fs: require.resolve('browserify-fs'),
-            os: require.resolve('os-browserify'),
-        },
+        fallback: { fs: require.resolve('browserify-fs') },
         alias: {
             '@sentry': false,
             '@sentry/node': false,
@@ -46,6 +43,7 @@ export default {
             'mysql2/promise': false,
             'node-mailjet': false,
             'nopt': false,
+            'os': false,
             'ping': false,
             'portfinder': false,
             'qrcode': false,
@@ -81,9 +79,9 @@ export default {
         // { 'node:zlib': '{}' },
     ],
     ignoreWarnings: [warning => {
-        return ((warning?.loc?.start?.line === 76 // utilitas.event
+        return ((warning?.loc?.start?.line === 75 // utilitas.event
             && warning?.loc?.start?.column === 31
-            && warning?.loc?.end?.line === 76
+            && warning?.loc?.end?.line === 75
             && warning?.loc?.end?.column === 57
         ));
     }],
