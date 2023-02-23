@@ -24,13 +24,12 @@ for (let file of files) {
     const filename = `./lib/${file}`;
     const module = await import(filename);
     const desc = utilitas.analyzeModule(module);
-    // console.table(desc);
     readme += `\n### [${basename(file).replace(/\.mjs$/ig, '')}](${filename})\n\n`
         + ['', 'name', 'type', 'params / value', ''].join(mdTableSplit) + '\n'
         + ['', alignedLeft, alignedLeft, alignedLeft, ''].join(mdTableSplit) + '\n'
 
     for (let key in desc) {
-        readme += ['', key, desc[key].type, desc[key].params || desc[key].value, ''].join(mdTableSplit) + '\n';
+        readme += ['', key, desc[key].type, desc[key]?.params?.join?.(', ') || desc[key].value, ''].join(mdTableSplit) + '\n';
     }
 };
 await storage.writeFile(target, readme);
