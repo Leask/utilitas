@@ -11,7 +11,7 @@ Works in Node.js and modern browsers.
 
 ### [bot](./lib/bot.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | AsyncFunction | options | 
  | end | AsyncFunction | options | 
@@ -20,14 +20,14 @@ Works in Node.js and modern browsers.
 
 ### [cache](./lib/cache.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | AsyncFunction | options | 
  | init | AsyncFunction | options | 
 
 ### [callosum](./lib/callosum.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | boardcast | Function | action, data | 
  | default | AsyncFunction | func, interval, tout, delay, name, options | 
@@ -43,13 +43,13 @@ Works in Node.js and modern browsers.
 
 ### [color](./lib/color.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | Object | {} | 
 
 ### [dbio](./lib/dbio.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | assembleInsert | Function | table, data, options | 
  | assembleQuery | Function | table, options | 
@@ -79,7 +79,7 @@ Works in Node.js and modern browsers.
 
 ### [email](./lib/email.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | AsyncFunction | options | 
  | getSenderName | Function |  | 
@@ -89,7 +89,7 @@ Works in Node.js and modern browsers.
 
 ### [encryption](./lib/encryption.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | defaultAlgorithm | String | sha256 | 
  | digestObject | Function | object, algorithm | 
@@ -105,7 +105,7 @@ Works in Node.js and modern browsers.
 
 ### [event](./lib/event.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | bulk | AsyncFunction | absDir, options | 
  | default | AsyncFunction | func, interval, tout, delay, name, options | 
@@ -116,13 +116,13 @@ Works in Node.js and modern browsers.
 
 ### [horizon](./lib/horizon.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | Object | {} | 
 
 ### [network](./lib/network.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | getCurrentPosition | AsyncFunction |  | 
  | httping | AsyncFunction | url, options | 
@@ -133,20 +133,20 @@ Works in Node.js and modern browsers.
 
 ### [sentinel](./lib/sentinel.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | AsyncFunction | options | 
  | init | AsyncFunction | options | 
 
 ### [shekel](./lib/shekel.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | getExchangeRate | AsyncFunction | to, from, amount | 
 
 ### [shell](./lib/shell.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | assertExist | AsyncFunction | bin, er, code | 
  | default | AsyncFunction | command, options | 
@@ -156,7 +156,7 @@ Works in Node.js and modern browsers.
 
 ### [shot](./lib/shot.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | checkVersion | AsyncFunction | pack | 
  | default | AsyncFunction | url, options | 
@@ -167,7 +167,7 @@ Works in Node.js and modern browsers.
 
 ### [sms](./lib/sms.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | AsyncFunction | options | 
  | init | AsyncFunction | options | 
@@ -175,7 +175,7 @@ Works in Node.js and modern browsers.
 
 ### [storage](./lib/storage.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | assertPath | AsyncFunction | path, type, mode, msg, code, options | 
  | encodeBase64DataURL | Function | mime, buffer | 
@@ -198,7 +198,7 @@ Works in Node.js and modern browsers.
 
 ### [tape](./lib/tape.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | addChatId | Function | id | 
  | default | AsyncFunction | options | 
@@ -208,7 +208,7 @@ Works in Node.js and modern browsers.
 
 ### [uoid](./lib/uoid.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | bigIntToUuid | Function |  | 
  | compactUuid | Function | str | 
@@ -225,7 +225,7 @@ Works in Node.js and modern browsers.
 
 ### [utilitas](./lib/utilitas.mjs)
 
- | name | type | params / value | 
+ | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | __ | Function | url, r | 
  | analyzeModule | Function | obj | 
