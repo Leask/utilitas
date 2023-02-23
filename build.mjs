@@ -26,7 +26,7 @@ for (let file of files) {
     const module = await import(filename);
     const desc = utilitas.analyzeModule(module);
     readme += `\n### [${basename(file).replace(/\.mjs$/ig, '')}](${filename})\n\n`
-        + ['', 'name', 'type', 'params / value', ''].join(mdTableSplit) + '\n'
+        + ['', 'symbol', 'type', 'params / value', ''].join(mdTableSplit) + '\n'
         + ['', alignedLeft, alignedLeft, alignedLeft, ''].join(mdTableSplit) + '\n'
 
     for (let key in desc) {
