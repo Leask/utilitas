@@ -211,7 +211,7 @@ Works in Node.js and modern browsers.
  | name | type | params / value | 
  | :--- | :--- | :--- | 
  | bigIntToUuid | Function |  | 
- | compactUuid | Function | str, '' | 
+ | compactUuid | Function | str | 
  | create | Function | options | 
  | default | Function | options | 
  | expandUuid | Function |  | 
