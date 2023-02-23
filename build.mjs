@@ -15,23 +15,31 @@ await storage.writeFile('./lib/manifest.mjs', strManifest);
 
 // Update README.md {
 // https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables
-const [template, target] = ['./template.md', './README.md'];
-const ignore = new Set(['manifest.mjs']);
-const [alignedNone, alignedLeft, alignedCenter, alignedRight, mdTableSplit]
-    = ['---', ':---', ':---:', '---:', ' | '];
-let readme = await storage.readFile(template);
-const files = (await readdir('./lib')).filter(f => extname(f) === '.mjs' && !ignore.has(f));
+const [lib, fileType, ignore] = ['./lib', '.mjs', new Set(['manifest.mjs'])];
+const concat = arr => arr.join(mdSpace);
+const extReg = new RegExp(RegExp.escape(fileType), 'ig');
+const getBasename = file => basename(file).replace(extReg, '');
+const newTr = arr => [mdSpace, ...arr, mdSpace].join(mdSplit) + newLine;
+const [mdSplit, mdSpace, mdThirdTitle, newLine] = [' | ', '', '###', '\n'];
+const [alignedNone, alignedLeft, alignedCenter, alignedRight, dulLine]
+    = ['---', ':---', ':---:', '---:', `${newLine}${newLine}`];
+const files = (await readdir(lib)).filter(
+    f => extname(f) === fileType && !ignore.has(f)
+);
+const mdTableHead = concat([
+    ['symbol', 'type', 'params / value'],
+    [alignedLeft, alignedLeft, alignedLeft]
+].map(newTr));
+const readme = [await storage.readFile('./template.md')];
 for (let file of files) {
-    const filename = `./lib/${file}`;
-    const module = await import(filename);
-    const desc = utilitas.analyzeModule(module);
-    readme += `\n### [${basename(file).replace(/\.mjs$/ig, '')}](${filename})\n\n`
-        + ['', 'symbol', 'type', 'params / value', ''].join(mdTableSplit) + '\n'
-        + ['', alignedLeft, alignedLeft, alignedLeft, ''].join(mdTableSplit) + '\n'
-
-    for (let key in desc) {
-        readme += ['', key, desc[key].type, desc[key]?.params?.join?.(', ') || desc[key].value, ''].join(mdTableSplit) + '\n';
-    }
+    const filename = `${lib}/${file}`;
+    const mod = utilitas.analyzeModule(await import(filename));
+    readme.push(
+        `${newLine}${mdThirdTitle} [${getBasename(file)}](${filename})`
+        + `${dulLine}${mdTableHead}` + concat(Object.keys(mod).map(k => newTr(
+            [k, mod[k].type, mod[k]?.params?.join?.(', ') || mod[k].value]
+        )))
+    );
 };
-await storage.writeFile(target, readme);
+await storage.writeFile('./README.md', concat(readme));
 // }
