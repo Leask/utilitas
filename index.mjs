@@ -25,6 +25,7 @@ import qrcode from 'qrcode';
 import _ from './lib/horizon.mjs'
 import * as bot from './lib/bot.mjs';
 import * as cache from './lib/cache.mjs';
+import * as callosum from './lib/callosum.mjs';
 import * as dbio from './lib/dbio.mjs';
 import * as email from './lib/email.mjs';
 import * as encryption from './lib/encryption.mjs';
@@ -50,8 +51,8 @@ export {
     mailjet, math, mysql, nopt, ping, portfinder, qrcode, redis, sentry, tail,
     telegraf, telesign, twilio, uuid,
     // features
-    bot, cache, dbio, email, encryption, event, manifest, network, sentinel,
-    shekel, shell, shot, sms, storage, tape, uoid, utilitas,
+    bot, cache, callosum, dbio, email, encryption, event, manifest, network,
+    sentinel, shekel, shell, shot, sms, storage, tape, uoid, utilitas,
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
