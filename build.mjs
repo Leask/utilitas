@@ -14,6 +14,7 @@ await storage.writeFile('./lib/manifest.mjs', strManifest);
 // }
 
 // Update README.md {
+// https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables
 const [template, target] = ['./template.md', './README.md'];
 const ignore = new Set(['manifest.mjs']);
 const [alignedNone, alignedLeft, alignedCenter, alignedRight, mdTableSplit]
