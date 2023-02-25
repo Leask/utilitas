@@ -34,7 +34,6 @@ export default {
             'fast-geoip': false,
             'file-type': false,
             'form-data': false,
-            'ini': false,
             'ioredis': false,
             'mailgun.js': false,
             'mathjs': false,
