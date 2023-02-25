@@ -34,7 +34,6 @@
         "form-data": "^4.0.0",
         "ini": "github:Leask/ini",
         "ioredis": "^5.3.0",
-        "jsonwebtoken": "^9.0.0",
         "mailgun.js": "^8.0.6",
         "mathjs": "^11.5.1",
         "mysql2": "^3.1.2",

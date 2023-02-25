@@ -36,7 +36,6 @@ export default {
             'form-data': false,
             'ini': false,
             'ioredis': false,
-            'jsonwebtoken': false,
             'mailgun.js': false,
             'mathjs': false,
             'mysql2': false,
