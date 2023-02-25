@@ -4,7 +4,7 @@ import { createRequire } from 'module';
 import { resolve } from 'path';
 import { utilitas } from './index.mjs';
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
-// import webpack from 'webpack';
+import webpack from 'webpack';
 
 const { __dirname } = utilitas.__(import.meta.url);
 const require = createRequire(import.meta.url);
@@ -16,7 +16,18 @@ export default {
     devtool: 'source-map',
     node: { __dirname: false, __filename: false },
     optimization: { minimize: true },
-    plugins: [new NodePolyfillPlugin()],
+    plugins: [
+        new NodePolyfillPlugin(),
+        new webpack.ProvidePlugin({ Buffer: ['buffer', 'Buffer'] }),
+        new webpack.NormalModuleReplacementPlugin(/node:/, (resource) => {
+            const mod = resource.request.replace(/^node:/, '');
+            switch (mod) {
+                case 'buffer': resource.request = 'buffer'; break;
+                case 'stream': resource.request = 'readable-stream'; break;
+                default: throw new Error(`Not found ${mod}`);
+            }
+        }),
+    ],
     target: ['web'],
     output: {
         asyncChunks: false,
@@ -25,14 +36,16 @@ export default {
     },
     resolve: {
         extensions: ['.mjs', '.cjs', '.js', '.json', '.node'],
-        fallback: { fs: require.resolve('browserify-fs') },
+        fallback: {
+            buffer: require.resolve('buffer/'),
+            fs: require.resolve('browserify-fs'),
+        },
         alias: {
             '@sentry': false,
             '@sentry/node': false,
             'child_process': false,
             'crypto': false,
             'fast-geoip': false,
-            'file-type': false,
             'form-data': false,
             'mailgun.js': false,
             'mathjs': false,
