@@ -11,7 +11,6 @@ import formData from 'form-data';
 import geoIp from 'fast-geoip';
 import mailgun from 'mailgun.js';
 import mailjet from 'node-mailjet';
-import nopt from 'nopt';
 // features
 import _ from './lib/horizon.mjs'
 import * as bot from './lib/bot.mjs';
@@ -38,8 +37,8 @@ import manifest from './lib/manifest.mjs';
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
-    color, fileType, formData, geoIp, mailgun, mailjet, math, mysql, nopt,
-    sentry, telegraf, telesign, twilio, uuid,
+    color, fileType, formData, geoIp, mailgun, mailjet, math, mysql, sentry,
+    telegraf, telesign, twilio, uuid,
     // features
     bot, cache, callosum, dbio, email, encryption, event, manifest, network,
     sentinel, shekel, shell, shot, sms, storage, tape, uoid, utilitas,

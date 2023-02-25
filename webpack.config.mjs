@@ -39,7 +39,6 @@ export default {
             'mysql2': false,
             'mysql2/promise': false,
             'node-mailjet': false,
-            'nopt': false,
             'os': false,
             'readline-sync': false,
             'telegraf': false,
