@@ -31,6 +31,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | default | AsyncFunction | options | 
  | boardcast | Function | action, data | 
+ | end | AsyncFunction |  | 
  | engage | Function | worker, action, data | 
  | get | Function |  | 
  | getListeners | Function | i | 
@@ -42,6 +43,8 @@ Works in Node.js and modern browsers.
  | once | Function | action, cbf, opts | 
  | report | Function | action, data | 
  | set | Function | key, value | 
+ | worker | Undefined |  | 
+ | workers | Object | {} | 
 
 ### [color](./lib/color.mjs)
 
@@ -310,7 +313,7 @@ Works in Node.js and modern browsers.
  | shiftTime | Function | dif, base | 
  | split | Function | str, options | 
  | throwError | Function | msg, status, opt | 
- | timeout | Function | ms | 
+ | timeout | Function |  | 
  | toExponential | Function | x, f | 
  | toString | Function | any, options | 
  | trim | Function | str, opts | 
