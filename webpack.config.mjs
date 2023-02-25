@@ -45,7 +45,6 @@ export default {
             'nopt': false,
             'os': false,
             'ping': false,
-            'qrcode': false,
             'readline-sync': false,
             'tail': false,
             'telegraf': false,
