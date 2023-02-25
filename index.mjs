@@ -28,10 +28,10 @@ import manifest from './lib/manifest.mjs';
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
-    color, fileType, math, uuid,
+    fileType, math, uuid,
     // features
-    bot, cache, callosum, dbio, email, encryption, event, manifest, network,
-    sentinel, shekel, shell, shot, sms, storage, tape, uoid, utilitas,
+    bot, cache, callosum, color, dbio, email, encryption, event, manifest,
+    network, sentinel, shekel, shell, shot, sms, storage, tape, uoid, utilitas,
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
