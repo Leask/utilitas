@@ -1,7 +1,6 @@
 // dependencies
 import { Tail as tail } from 'tail';
 import { Telegraf as telegraf } from 'telegraf';
-import * as base64url from 'base64url';
 import * as fileType from 'file-type';
 import * as ini from 'ini';
 import * as jwt from 'jsonwebtoken';
@@ -44,7 +43,7 @@ import manifest from './lib/manifest.mjs';
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
-    base64url, color, fileType, formData, geoIp, ini, jwt, mailgun, mailjet,
+    color, fileType, formData, geoIp, ini, jwt, mailgun, mailjet,
     math, mysql, nopt, ping, redis, sentry, tail, telegraf, telesign, twilio,
     uuid,
     // features
@@ -54,8 +53,8 @@ export {
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
     globalThis.utilitas = {
-        base64url, color, encryption, event, manifest, math, shekel, shot,
-        storage, uoid, utilitas, uuid,
+        color, encryption, event, manifest, math, shekel, shot, storage, uoid,
+        utilitas, uuid,
     };
     utilitas.log(
         `(${manifest.homepage}) is ready!`,
