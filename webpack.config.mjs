@@ -45,7 +45,6 @@ export default {
             'os': false,
             'ping': false,
             'readline-sync': false,
-            'tail': false,
             'telegraf': false,
             'telesignsdk': false,
             'twilio': false,
