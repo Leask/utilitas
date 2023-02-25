@@ -7,16 +7,15 @@ import manifest from './package.json' assert { type: 'json' };
 // shared const
 const [lib, _manifest, n, nn] = ['./lib', 'manifest.mjs', '\n', '\n\n'];
 
-// Update manifest {
+// Update manifest
 delete manifest.scripts;
 const strManifest = [
     `const manifest = ${JSON.stringify(manifest, null, 4)};`,
     'export default manifest;',
 ].join(nn);
 await storage.writeFile(`${lib}/${_manifest}`, strManifest);
-// }
 
-// Update README.md {
+// Update README.md
 // https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables
 const [ignore, DEFAULT, fileTypes]
     = [new Set([_manifest]), 'default', ['.cjs', '.mjs']];
@@ -46,4 +45,3 @@ for (let file of files) {
     );
 };
 await storage.writeFile('./README.md', concat(readme));
-// }
