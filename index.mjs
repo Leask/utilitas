@@ -5,7 +5,6 @@ import * as base64url from 'base64url';
 import * as fileType from 'file-type';
 import * as ini from 'ini';
 import * as jwt from 'jsonwebtoken';
-import * as luxon from 'luxon';
 import * as math from 'mathjs';
 import * as mysql from 'mysql2/promise';
 import * as ping from 'ping';
@@ -47,9 +46,9 @@ import manifest from './lib/manifest.mjs';
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
-    base64url, color, fileType, formData, geoIp, ini, jwt, luxon, mailgun,
-    mailjet, math, mysql, nopt, ping, portfinder, qrcode, redis, sentry, tail,
-    telegraf, telesign, twilio, uuid,
+    base64url, color, fileType, formData, geoIp, ini, jwt, mailgun, mailjet,
+    math, mysql, nopt, ping, portfinder, qrcode, redis, sentry, tail, telegraf,
+    telesign, twilio, uuid,
     // features
     bot, cache, callosum, dbio, email, encryption, event, manifest, network,
     sentinel, shekel, shell, shot, sms, storage, tape, uoid, utilitas,
@@ -57,8 +56,8 @@ export {
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
     globalThis.utilitas = {
-        base64url, color, encryption, event, luxon, manifest, math, shekel,
-        shot, storage, uoid, utilitas, uuid,
+        base64url, color, encryption, event, manifest, math, shekel, shot,
+        storage, uoid, utilitas, uuid,
     };
     utilitas.log(
         `(${manifest.homepage}) is ready!`,
