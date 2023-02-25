@@ -13,6 +13,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
  | end | AsyncFunction | options | 
  | init | AsyncFunction | options | 
@@ -22,6 +23,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | _NEED | Array | ioredis | 
  | default | AsyncFunction | options | 
  | init | AsyncFunction | options | 
 
@@ -56,6 +58,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | _NEED | Array | mysql2 | 
  | default | AsyncFunction | options | 
  | assembleInsert | Function | table, data, options | 
  | assembleQuery | Function | table, options | 
@@ -86,6 +89,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | _NEED | Array | form-data,mailgun.js,node-mailjet | 
  | default | AsyncFunction | options | 
  | getSenderName | Function |  | 
  | init | AsyncFunction | options | 
@@ -129,6 +133,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | _NEED | Array | fast-geoip,ping | 
  | getCurrentPosition | AsyncFunction |  | 
  | httping | AsyncFunction | url, options | 
  | isLocalhost | Function | host | 
@@ -140,6 +145,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | _NEED | Array | @sentry/node | 
  | default | AsyncFunction | options | 
  | init | AsyncFunction | options | 
 
@@ -174,6 +180,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | _NEED | Array | twilio,telesignsdk | 
  | default | AsyncFunction | options | 
  | init | AsyncFunction | options | 
  | send | AsyncFunction | to, body | 
@@ -285,7 +292,6 @@ Works in Node.js and modern browsers.
  | hexEncode | Function | object, isBuf | 
  | humanReadableBoolean | Function | any | 
  | ignoreErrFunc | AsyncFunction | func, options | 
- | importModule | AsyncFunction | name | 
  | inBrowser | Function |  | 
  | insensitiveCompare | Function | strA, strB, options | 
  | is | Function | type, any | 
@@ -300,6 +306,7 @@ Works in Node.js and modern browsers.
  | mask | Function | str, options | 
  | matchVersion | Function | curVer, tgtVer | 
  | mergeAtoB | Function | objA, objB, o | 
+ | need | AsyncFunction | name, options | 
  | newError | Function | msg, status, opt | 
  | once | Function | fn, context | 
  | parseJson | Function | any, fallback | 

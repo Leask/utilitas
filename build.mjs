@@ -17,8 +17,8 @@ await storage.writeFile(`${lib}/${_manifest}`, strManifest);
 
 // Update README.md
 // https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables
-const [ignore, DEFAULT, fileTypes]
-    = [new Set([_manifest]), 'default', ['.cjs', '.mjs']];
+const [ignore, DEFAULT, _NEED, fileTypes]
+    = [new Set([_manifest]), 'default', '_NEED', ['.cjs', '.mjs']];
 const concat = arr => arr.join('');
 const extReg = new RegExp(fileTypes.map(RegExp.escape).join('|'), 'ig');
 const getBasename = file => basename(file).replace(extReg, '');
@@ -39,8 +39,9 @@ for (let file of files) {
     readme.push(
         `${n}### [${getBasename(file)}](${filename})${nn}${mdTableHead}`
         + concat([
+            ...m[_NEED] ? [_NEED] : [],
             ...m[DEFAULT] ? [DEFAULT] : [],
-            ...Object.keys(m).filter(k => k !== DEFAULT)
+            ...Object.keys(m).filter(k => ![_NEED, DEFAULT].includes(k))
         ].map(k => tr([k, m[k].type, m[k].params?.join(', ') || m[k].value])))
     );
 };
