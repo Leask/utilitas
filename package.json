@@ -42,7 +42,6 @@
         "node-mailjet": "^6.0.2",
         "nopt": "^7.0.0",
         "ping": "^0.4.2",
-        "portfinder": "^1.0.32",
         "qrcode": "^1.5.1",
         "tail": "^2.2.6",
         "telegraf": "^4.11.2",
