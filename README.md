@@ -29,13 +29,15 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | default | AsyncFunction | options | 
  | boardcast | Function | action, data | 
- | default | AsyncFunction | func, interval, tout, delay, name, options | 
  | engage | Function | worker, action, data | 
  | get | Function |  | 
  | getListeners | Function | i | 
  | ignore | Function | i | 
  | init | AsyncFunction | options | 
+ | isPrimary | Boolean | true | 
+ | isWorker | Boolean | false | 
  | on | Function | action, callback, options | 
  | once | Function | action, cbf, opts | 
  | report | Function | action, data | 
@@ -51,6 +53,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | default | AsyncFunction | options | 
  | assembleInsert | Function | table, data, options | 
  | assembleQuery | Function | table, options | 
  | assembleSet | Function | data, options | 
@@ -58,7 +61,6 @@ Works in Node.js and modern browsers.
  | assembleUpdate | Function | table, data, options | 
  | countAll | AsyncFunction | table | 
  | countByKeyValue | AsyncFunction | table, key, value | 
- | default | AsyncFunction | options | 
  | deleteAll | AsyncFunction | table, options | 
  | deleteById | Function | table, id, options | 
  | deleteByKeyValue | AsyncFunction | table, key, value, options | 
@@ -107,8 +109,8 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | bulk | AsyncFunction | absDir, options | 
  | default | AsyncFunction | func, interval, tout, delay, name, options | 
+ | bulk | AsyncFunction | absDir, options | 
  | end | AsyncFunction | name | 
  | list | Function |  | 
  | load | AsyncFunction | module, options | 
@@ -148,8 +150,8 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | assertExist | AsyncFunction | bin, er, code | 
  | default | AsyncFunction | command, options | 
+ | assertExist | AsyncFunction | bin, er, code | 
  | exec | AsyncFunction | command, options | 
  | exist | Function | bin | 
  | which | AsyncFunction | bin | 
@@ -158,8 +160,8 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | checkVersion | AsyncFunction | pack | 
  | default | AsyncFunction | url, options | 
+ | checkVersion | AsyncFunction | pack | 
  | get | AsyncFunction | url, options | 
  | getCurrentIp | AsyncFunction | options | 
  | getCurrentPosition | AsyncFunction |  | 
@@ -196,12 +198,18 @@ Works in Node.js and modern browsers.
  | writeJson | Function | f, data, opts | 
  | writeTempFile | AsyncFunction | data, options | 
 
+### [style](./lib/style.cjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | default | Object | {"reset":[],"bold":[],"dim":[],"italic":[],"underline":[],"inverse":[],"hidden":[],"strikethrough":[],"black":[],"red":[],"green":[],"yellow":[],"blue":[],"magenta":[],"cyan":[],"white":[],"gray":[],"grey":[],"brightRed":[],"brightGreen":[],"brightYellow":[],"brightBlue":[],"brightMagenta":[],"brightCyan":[],"brightWhite":[],"bgBlack":[],"bgRed":[],"bgGreen":[],"bgYellow":[],"bgBlue":[],"bgMagenta":[],"bgCyan":[],"bgWhite":[],"bgGray":[],"bgGrey":[],"bgBrightRed":[],"bgBrightGreen":[],"bgBrightYellow":[],"bgBrightBlue":[],"bgBrightMagenta":[],"bgBrightCyan":[],"bgBrightWhite":[],"blackBG":[],"redBG":[],"greenBG":[],"yellowBG":[],"blueBG":[],"magentaBG":[],"cyanBG":[],"whiteBG":[]} | 
+
 ### [tape](./lib/tape.mjs)
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | addChatId | Function | id | 
  | default | AsyncFunction | options | 
+ | addChatId | Function | id | 
  | end | AsyncFunction |  | 
  | init | AsyncFunction | options | 
  | removeChatId | Function | id | 
@@ -210,10 +218,10 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | default | Function | options | 
  | bigIntToUuid | Function |  | 
  | compactUuid | Function | str | 
  | create | Function | options | 
- | default | Function | options | 
  | expandUuid | Function |  | 
  | fakeUuid | Function | any | 
  | getRfcUrlNamespaceUuid | Function | url | 

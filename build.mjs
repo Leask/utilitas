@@ -15,16 +15,17 @@ await storage.writeFile('./lib/manifest.mjs', strManifest);
 
 // Update README.md {
 // https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables
-const [lib, fileType, ignore] = ['./lib', '.mjs', new Set(['manifest.mjs'])];
+const [lib, ignore, DEFAULT] = ['./lib', new Set(['manifest.mjs']), 'default'];
+const fileTypes = ['.cjs', '.mjs'];
 const concat = arr => arr.join('');
-const extReg = new RegExp(RegExp.escape(fileType), 'ig');
+const extReg = new RegExp(fileTypes.map(RegExp.escape).join('|'), 'ig');
 const getBasename = file => basename(file).replace(extReg, '');
 const newTr = arr => ['', ...arr, ''].join(' | ') + '\n';
 const readme = [await storage.readFile('./template.md')];
 const [alignedNone, alignedLeft, alignedCenter, alignedRight]
     = ['---', ':---', ':---:', '---:'];
 const files = (await readdir(lib)).filter(
-    f => extname(f) === fileType && !ignore.has(f)
+    f => fileTypes.includes(extname(f)) && !ignore.has(f)
 );
 const mdTableHead = concat([
     ['symbol', 'type', 'params / value'],
@@ -32,12 +33,12 @@ const mdTableHead = concat([
 ].map(newTr));
 for (let file of files) {
     const filename = `${lib}/${file}`;
-    const mod = utilitas.analyzeModule(await import(filename));
+    const m = utilitas.analyzeModule(await import(filename));
     readme.push(
-        `\n### [${getBasename(file)}](${filename})\n\n${mdTableHead}`
-        + concat(Object.keys(mod).map(k => newTr(
-            [k, mod[k].type, mod[k]?.params?.join?.(', ') || mod[k].value]
-        )))
+        `\n### [${getBasename(file)}](${filename})\n\n${mdTableHead}` + concat([
+            ...m[DEFAULT] ? [DEFAULT] : [],
+            ...Object.keys(m).filter(k => k !== DEFAULT)
+        ].map(k => newTr([k, m[k].type, m[k].params?.join(', ') || m[k].value])))
     );
 };
 await storage.writeFile('./README.md', concat(readme));
