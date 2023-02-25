@@ -41,19 +41,10 @@ export default {
             fs: require.resolve('browserify-fs'),
         },
         alias: {
-            '@sentry': false,
-            '@sentry/node': false,
             'child_process': false,
             'crypto': false,
-            'fast-geoip': false,
             'mathjs': false,
-            'mysql2': false,
-            'mysql2/promise': false,
             'os': false,
-            'readline-sync': false,
-            'telegraf': false,
-            'telesignsdk': false,
-            'twilio': false,
             'worker_threads': false,
         },
     },
@@ -82,11 +73,15 @@ export default {
         // { 'node:zlib': '{}' },
     ],
     ignoreWarnings: [warning => {
-        return ((warning?.loc?.start?.line === 75 // utilitas.event
+        return ((warning?.loc?.start?.line === 75 // event
             && warning?.loc?.start?.column === 31
             && warning?.loc?.end?.line === 75
             && warning?.loc?.end?.column === 57
-        ));
+        ) || (warning?.loc?.start?.line === 554 // utilitas
+            && warning?.loc?.start?.column === 44
+            && warning?.loc?.end?.line === 554
+            && warning?.loc?.end?.column === 56
+            ));
     }],
     // stats: 'detailed',
 };

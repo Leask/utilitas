@@ -1,16 +1,7 @@
 // dependencies
-import { Telegraf as telegraf } from 'telegraf';
 import * as fileType from 'file-type';
 import * as math from 'mathjs';
-import * as mysql from 'mysql2/promise';
-import * as sentry from '@sentry/node';
-import * as telesign from 'telesignsdk';
-import * as twilio from 'twilio';
 import * as uuid from 'uuid';
-import formData from 'form-data';
-import geoIp from 'fast-geoip';
-import mailgun from 'mailgun.js';
-import mailjet from 'node-mailjet';
 // features
 import _ from './lib/horizon.mjs'
 import * as bot from './lib/bot.mjs';
@@ -37,8 +28,7 @@ import manifest from './lib/manifest.mjs';
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
-    color, fileType, formData, geoIp, mailgun, mailjet, math, mysql, sentry,
-    telegraf, telesign, twilio, uuid,
+    color, fileType, math, uuid,
     // features
     bot, cache, callosum, dbio, email, encryption, event, manifest, network,
     sentinel, shekel, shell, shot, sms, storage, tape, uoid, utilitas,
