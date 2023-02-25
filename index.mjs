@@ -3,7 +3,6 @@ import { Telegraf as telegraf } from 'telegraf';
 import * as fileType from 'file-type';
 import * as math from 'mathjs';
 import * as mysql from 'mysql2/promise';
-import * as ping from 'ping';
 import * as redis from 'ioredis';
 import * as sentry from '@sentry/node';
 import * as telesign from 'telesignsdk';
@@ -40,7 +39,7 @@ import manifest from './lib/manifest.mjs';
 export * as default from './lib/utilitas.mjs';
 export {
     // dependencies
-    color, fileType, formData, geoIp, mailgun, mailjet, math, mysql, nopt, ping,
+    color, fileType, formData, geoIp, mailgun, mailjet, math, mysql, nopt,
     redis, sentry, telegraf, telesign, twilio, uuid,
     // features
     bot, cache, callosum, dbio, email, encryption, event, manifest, network,

@@ -42,7 +42,6 @@ export default {
             'node-mailjet': false,
             'nopt': false,
             'os': false,
-            'ping': false,
             'readline-sync': false,
             'telegraf': false,
             'telesignsdk': false,

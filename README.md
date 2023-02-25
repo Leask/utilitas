@@ -188,16 +188,15 @@ Works in Node.js and modern browsers.
  | getConfig | AsyncFunction | options | 
  | getConfigFilename | AsyncFunction | options | 
  | getTempPath | Function | options | 
+ | handleError | Function | err, opts | 
  | isTextFile | AsyncFunction | filename, options | 
  | legalFilename | Function | filename | 
  | mapFilename | Function | name | 
  | readFile | Function | name, opts | 
- | readIni | AsyncFunction | filename, options | 
  | readJson | AsyncFunction | filename, options | 
  | setConfig | AsyncFunction | data, options | 
  | touchPath | AsyncFunction | path, options | 
  | writeFile | Function | f, data, o | 
- | writeIni | Function | f, data, o | 
  | writeJson | Function | f, data, opts | 
  | writeTempFile | AsyncFunction | data, options | 
 
@@ -286,6 +285,7 @@ Works in Node.js and modern browsers.
  | hexEncode | Function | object, isBuf | 
  | humanReadableBoolean | Function | any | 
  | ignoreErrFunc | AsyncFunction | func, options | 
+ | importModule | AsyncFunction | name | 
  | inBrowser | Function |  | 
  | insensitiveCompare | Function | strA, strB, options | 
  | is | Function | type, any | 
