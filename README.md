@@ -43,8 +43,11 @@ Works in Node.js and modern browsers.
  | isWorker | Boolean | false | 
  | on | Function | action, callback, options | 
  | once | Function | action, cbf, opts | 
+ | push | Function | key, val, o | 
+ | queue | Function | key, val, o | 
  | report | Function | action, data | 
- | set | Function | key, value | 
+ | set | Function | key, value, options | 
+ | unshift | Function | key, val, o | 
  | worker | Undefined |  | 
  | workers | Object | {} | 
 
@@ -312,6 +315,7 @@ Works in Node.js and modern browsers.
  | parseJson | Function | any, fallback | 
  | parseVersion | Function | verstr | 
  | prettyJson | Function | object, opt | 
+ | promiseCallback | Function | fn, ...args | 
  | purgeEmoji | Function | any, replace | 
  | range | Function | from, to, options | 
  | renderCode | Function | code, options | 
