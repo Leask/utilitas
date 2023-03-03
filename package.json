@@ -33,6 +33,7 @@
     },
     "devDependencies": {
         "@sentry/node": "^7.37.1",
+        "@waylaidwanderer/chatgpt-api": "^1.22.5",
         "browserify-fs": "^1.0.0",
         "buffer": "^6.0.3",
         "fast-geoip": "^1.1.88",

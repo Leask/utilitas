@@ -11,6 +11,7 @@ import * as dbio from './lib/dbio.mjs';
 import * as email from './lib/email.mjs';
 import * as encryption from './lib/encryption.mjs';
 import * as event from './lib/event.mjs';
+import * as hal from './lib/hal.mjs';
 import * as network from './lib/network.mjs';
 import * as sentinel from './lib/sentinel.mjs';
 import * as shekel from './lib/shekel.mjs';
@@ -30,7 +31,7 @@ export {
     // dependencies
     fileType, math, uuid,
     // features
-    bot, cache, callosum, color, dbio, email, encryption, event, manifest,
+    bot, cache, callosum, color, dbio, email, encryption, event, hal, manifest,
     network, sentinel, shekel, shell, shot, sms, storage, tape, uoid, utilitas,
 };
 
