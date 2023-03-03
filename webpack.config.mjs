@@ -54,6 +54,7 @@ export default {
         { './lib/callosum.mjs': '{}' },
         { './lib/dbio.mjs': '{}' },
         { './lib/email.mjs': '{}' },
+        { './lib/hal.mjs': '{}' },
         { './lib/network.mjs': '{}' },
         { './lib/sentinel.mjs': '{}' },
         { './lib/shell.mjs': '{}' },
