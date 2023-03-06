@@ -32,19 +32,19 @@
         "uuid": "^9.0.0"
     },
     "devDependencies": {
-        "@sentry/node": "^7.40.0",
-        "@waylaidwanderer/chatgpt-api": "^1.25.2",
+        "@sentry/node": "^7.41.0",
+        "@waylaidwanderer/chatgpt-api": "^1.26.1",
         "browserify-fs": "^1.0.0",
         "buffer": "^6.0.3",
         "fast-geoip": "^1.1.88",
         "form-data": "^4.0.0",
         "ioredis": "^5.3.1",
-        "mailgun.js": "^8.2.0",
+        "mailgun.js": "^8.2.1",
         "mysql2": "^3.2.0",
         "node-mailjet": "^6.0.2",
         "node-polyfill-webpack-plugin": "^2.0.1",
         "ping": "^0.4.2",
-        "telegraf": "^4.11.2",
+        "telegraf": "^4.12.0",
         "telesignsdk": "^2.2.3",
         "twilio": "^4.8.0",
         "webpack-cli": "^5.0.1"
