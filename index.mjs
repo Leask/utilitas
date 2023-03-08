@@ -40,8 +40,11 @@ if (utilitas.inBrowser() && !globalThis.utilitas) {
         color, encryption, event, manifest, math, shekel, shot, storage, uoid,
         utilitas, uuid,
     };
-    utilitas.log(
-        `(${manifest.homepage}) is ready!`,
-        `${(await utilitas.which(manifest)).title}.*`
-    );
+    // top-level await workaround
+    (async () => {
+        utilitas.log(
+            `(${manifest.homepage}) is ready!`,
+            `${(await utilitas.which(manifest)).title}.*`
+        );
+    })();
 }
