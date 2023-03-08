@@ -24,6 +24,7 @@ export default {
             switch (mod) {
                 case 'buffer': resource.request = 'buffer'; break;
                 case 'stream': resource.request = 'readable-stream'; break;
+                case 'url': resource.request = 'url'; break;
                 default: throw new Error(`Not found ${mod}`);
             }
         }),
