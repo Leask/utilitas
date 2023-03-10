@@ -32,8 +32,8 @@
         "uuid": "^9.0.0"
     },
     "devDependencies": {
-        "@sentry/node": "^7.41.0",
-        "@waylaidwanderer/chatgpt-api": "^1.26.1",
+        "@sentry/node": "^7.42.0",
+        "@waylaidwanderer/chatgpt-api": "^1.28.3",
         "browserify-fs": "^1.0.0",
         "buffer": "^6.0.3",
         "fast-geoip": "^1.1.88",
@@ -44,7 +44,7 @@
         "node-mailjet": "^6.0.2",
         "node-polyfill-webpack-plugin": "^2.0.1",
         "ping": "^0.4.2",
-        "telegraf": "^4.12.0",
+        "telegraf": "^4.12.2",
         "telesignsdk": "^2.2.3",
         "twilio": "^4.8.0",
         "url": "github:Leask/node-url",
