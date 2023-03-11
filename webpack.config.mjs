@@ -60,6 +60,7 @@ export default {
         { './lib/sentinel.mjs': '{}' },
         { './lib/shell.mjs': '{}' },
         { './lib/sms.mjs': '{}' },
+        { './lib/speech.mjs': '{}' },
         { './lib/tape.mjs': '{}' },
         // { 'node:buffer': '{}' },
         // { 'node:stream': '{}' },

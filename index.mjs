@@ -18,6 +18,7 @@ import * as shekel from './lib/shekel.mjs';
 import * as shell from './lib/shell.mjs';
 import * as shot from './lib/shot.mjs';
 import * as sms from './lib/sms.mjs';
+import * as speech from './lib/speech.mjs';
 import * as storage from './lib/storage.mjs';
 import * as tape from './lib/tape.mjs';
 import * as uoid from './lib/uoid.mjs';
@@ -32,7 +33,8 @@ export {
     fileType, math, uuid,
     // features
     bot, cache, callosum, color, dbio, email, encryption, event, hal, manifest,
-    network, sentinel, shekel, shell, shot, sms, storage, tape, uoid, utilitas,
+    network, sentinel, shekel, shell, shot, sms, speech, storage, tape, uoid,
+    utilitas,
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {

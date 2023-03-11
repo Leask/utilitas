@@ -32,6 +32,9 @@
         "uuid": "^9.0.0"
     },
     "devDependencies": {
+        "@google-cloud/speech": "^5.4.0",
+        "@google-cloud/text-to-speech": "^4.2.1",
+        "@google-cloud/vision": "^3.1.2",
         "@sentry/node": "^7.42.0",
         "@waylaidwanderer/chatgpt-api": "^1.28.3",
         "browserify-fs": "^1.0.0",
