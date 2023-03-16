@@ -28,14 +28,14 @@
     },
     "dependencies": {
         "file-type": "^18.2.1",
-        "mathjs": "^11.6.0",
+        "mathjs": "^11.7.0",
         "uuid": "^9.0.0"
     },
     "devDependencies": {
         "@google-cloud/speech": "^5.4.0",
         "@google-cloud/text-to-speech": "^4.2.1",
-        "@sentry/node": "^7.42.0",
-        "@waylaidwanderer/chatgpt-api": "^1.28.3",
+        "@sentry/node": "^7.43.0",
+        "@waylaidwanderer/chatgpt-api": "^1.30.0",
         "browserify-fs": "^1.0.0",
         "buffer": "^6.0.3",
         "fast-geoip": "^1.1.88",
@@ -45,7 +45,7 @@
         "mysql2": "^3.2.0",
         "node-mailjet": "^6.0.2",
         "node-polyfill-webpack-plugin": "^2.0.1",
-        "ping": "^0.4.2",
+        "ping": "^0.4.4",
         "telegraf": "^4.12.2",
         "telesignsdk": "^2.2.3",
         "twilio": "^4.8.0",
