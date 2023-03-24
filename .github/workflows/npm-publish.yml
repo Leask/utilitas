@@ -26,6 +26,8 @@ jobs:
       - run: npm version patch -m "[RELEASE] %s"
       - run: npm install --production=false
       - run: node build.mjs
+      - run: git add .
+      - run: git commit -m "[BUILD] ${{ github.sha }}"
       - run: git push
       - run: npm run pack
       - run: npm test
