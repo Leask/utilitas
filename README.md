@@ -32,10 +32,12 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | AsyncFunction | options | 
+ | assign | Function | key, val, o | 
  | boardcast | Function | action, data | 
+ | del | Function | k, s, o | 
  | end | AsyncFunction |  | 
  | engage | Function | worker, action, data | 
- | get | Function |  | 
+ | get | AsyncFunction | ...key | 
  | getListeners | Function | i | 
  | ignore | Function | i | 
  | init | AsyncFunction | options | 
@@ -46,7 +48,7 @@ Works in Node.js and modern browsers.
  | push | Function | key, val, o | 
  | queue | Function | key, val, o | 
  | report | Function | action, data | 
- | set | Function | key, value, options | 
+ | set | AsyncFunction | key, value, options | 
  | unshift | Function | key, val, o | 
  | worker | Undefined |  | 
  | workers | Object | {} | 
@@ -74,16 +76,17 @@ Works in Node.js and modern browsers.
  | deleteById | Function | table, id, options | 
  | deleteByKeyValue | AsyncFunction | table, key, value, options | 
  | end | AsyncFunction | options | 
- | execute | AsyncFunction |  | 
+ | execute | AsyncFunction | ...args | 
  | init | AsyncFunction | options | 
  | insert | AsyncFunction | table, fields, options | 
- | query | AsyncFunction |  | 
+ | query | AsyncFunction | ...args | 
  | queryAll | Function | table, options | 
  | queryById | AsyncFunction | table, id, options | 
  | queryByKeyValue | AsyncFunction | table, key, value, options | 
+ | queryOne | AsyncFunction | ...args | 
  | rawAssembleKeyValue | Function | key, value, options | 
- | rawExecute | AsyncFunction |  | 
- | rawQuery | AsyncFunction |  | 
+ | rawExecute | AsyncFunction | ...args | 
+ | rawQuery | AsyncFunction | ...args | 
  | updateById | AsyncFunction | table, id, fields, options | 
  | updateByKeyValue | AsyncFunction | table, key, value, fields, options | 
  | upsert | Function | table, fields, options | 
@@ -125,6 +128,14 @@ Works in Node.js and modern browsers.
  | list | Function |  | 
  | load | AsyncFunction | module, options | 
  | loop | AsyncFunction | func, interval, tout, delay, name, options | 
+
+### [hal](./lib/hal.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | @waylaidwanderer/chatgpt-api | 
+ | default | AsyncFunction | options | 
+ | init | AsyncFunction | options | 
 
 ### [horizon](./lib/horizon.mjs)
 
@@ -188,6 +199,16 @@ Works in Node.js and modern browsers.
  | init | AsyncFunction | options | 
  | send | AsyncFunction | to, body | 
 
+### [speech](./lib/speech.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech | 
+ | default | AsyncFunction | options | 
+ | init | AsyncFunction | options | 
+ | stt | AsyncFunction | audio, options | 
+ | tts | AsyncFunction | text, options | 
+
 ### [storage](./lib/storage.mjs)
 
  | symbol | type | params / value | 
@@ -202,12 +223,12 @@ Works in Node.js and modern browsers.
  | isTextFile | AsyncFunction | filename, options | 
  | legalFilename | Function | filename | 
  | mapFilename | Function | name | 
- | readFile | Function | name, opts | 
+ | readFile | AsyncFunction | name, options | 
  | readJson | AsyncFunction | filename, options | 
  | setConfig | AsyncFunction | data, options | 
  | touchPath | AsyncFunction | path, options | 
- | writeFile | Function | f, data, o | 
- | writeJson | Function | f, data, opts | 
+ | writeFile | AsyncFunction | filename, data, options | 
+ | writeJson | AsyncFunction | filename, data, options | 
  | writeTempFile | AsyncFunction | data, options | 
 
 ### [style](./lib/style.cjs)
@@ -268,17 +289,20 @@ Works in Node.js and modern browsers.
  | base64Unpack | Function | string | 
  | basename | Function | filename | 
  | byteToHexString | Function | byteArray | 
+ | call | Function | f, ...a | 
  | checkInterval | Function | itv, sed | 
  | clone | Function | any | 
  | convertBase | Function | ipt, from, to | 
  | convertFrom16to10 | Function | ipt | 
+ | countKeys | Function | any | 
  | distill | Function | any, strict | 
- | ensureArray | Function |  | 
+ | ensureArray | Function | any | 
  | ensureDate | Function | dt, options | 
  | ensureInt | Function | any, options | 
  | ensureString | Function | str, options | 
+ | exclude | Function | obj, keys | 
  | extError | Function | err, status, opt | 
- | extract | Function |  | 
+ | extract | Function | ...path | 
  | fileURLToPath | Function | path | 
  | fullLengthLog | Function | string, options | 
  | getDateByUnixTimestamp | Function | timestamp | 
@@ -297,12 +321,14 @@ Works in Node.js and modern browsers.
  | ignoreErrFunc | AsyncFunction | func, options | 
  | inBrowser | Function |  | 
  | insensitiveCompare | Function | strA, strB, options | 
+ | insensitiveHas | Function | list, srt, options | 
  | is | Function | type, any | 
  | isAscii | Function | str | 
  | isModule | Function | module | 
  | isNull | Function | object | 
  | isSet | Function | o, strict | 
  | isUndefined | Function | any | 
+ | lineSplit | Function | string, options | 
  | log | Function | content, filename, options | 
  | makeStringByLength | Function | string, length | 
  | mapKeys | Function | any, map, strict, path | 
@@ -315,10 +341,10 @@ Works in Node.js and modern browsers.
  | parseJson | Function | any, fallback | 
  | parseVersion | Function | verstr | 
  | prettyJson | Function | object, opt | 
- | promiseCallback | Function | fn, ...args | 
  | purgeEmoji | Function | any, replace | 
  | range | Function | from, to, options | 
  | renderCode | Function | code, options | 
+ | renderText | Function | text, options | 
  | resolve | AsyncFunction | resp | 
  | rotate | Function | any, step, opts | 
  | shiftTime | Function | dif, base | 
