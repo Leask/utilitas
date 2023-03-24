@@ -19,6 +19,20 @@ Works in Node.js and modern browsers.
  | init | AsyncFunction | options | 
  | send | AsyncFunction | chatId, content, options | 
 
+### [boxes](./lib/boxes.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | default | Object | {"topLeft":"╭","top":"─","topRight":"╮","right":"│","bottomRight":"╯","bottom":"─","bottomLeft":"╰","left":"│"} | 
+ | arrow | Object | {"topLeft":"↘","top":"↓","topRight":"↙","right":"←","bottomRight":"↖","bottom":"↑","bottomLeft":"↗","left":"→"} | 
+ | bold | Object | {"topLeft":"┏","top":"━","topRight":"┓","right":"┃","bottomRight":"┛","bottom":"━","bottomLeft":"┗","left":"┃"} | 
+ | classic | Object | {"topLeft":"+","top":"-","topRight":"+","right":"|","bottomRight":"+","bottom":"-","bottomLeft":"+","left":"|"} | 
+ | double | Object | {"topLeft":"╔","top":"═","topRight":"╗","right":"║","bottomRight":"╝","bottom":"═","bottomLeft":"╚","left":"║"} | 
+ | doubleSingle | Object | {"topLeft":"╒","top":"═","topRight":"╕","right":"│","bottomRight":"╛","bottom":"═","bottomLeft":"╘","left":"│"} | 
+ | round | Object | {"topLeft":"╭","top":"─","topRight":"╮","right":"│","bottomRight":"╯","bottom":"─","bottomLeft":"╰","left":"│"} | 
+ | single | Object | {"topLeft":"┌","top":"─","topRight":"┐","right":"│","bottomRight":"┘","bottom":"─","bottomLeft":"└","left":"│"} | 
+ | singleDouble | Object | {"topLeft":"╓","top":"─","topRight":"╖","right":"║","bottomRight":"╜","bottom":"─","bottomLeft":"╙","left":"║"} | 
+
 ### [cache](./lib/cache.mjs)
 
  | symbol | type | params / value | 
@@ -299,6 +313,7 @@ Works in Node.js and modern browsers.
  | ensureArray | Function | any | 
  | ensureDate | Function | dt, options | 
  | ensureInt | Function | any, options | 
+ | ensureLines | Function | any, op | 
  | ensureString | Function | str, options | 
  | exclude | Function | obj, keys | 
  | extError | Function | err, status, opt | 
@@ -329,6 +344,7 @@ Works in Node.js and modern browsers.
  | isSet | Function | o, strict | 
  | isUndefined | Function | any | 
  | lineSplit | Function | string, options | 
+ | locate | AsyncFunction | rootPack | 
  | log | Function | content, filename, options | 
  | makeStringByLength | Function | string, length | 
  | mapKeys | Function | any, map, strict, path | 
@@ -343,6 +359,7 @@ Works in Node.js and modern browsers.
  | prettyJson | Function | object, opt | 
  | purgeEmoji | Function | any, replace | 
  | range | Function | from, to, options | 
+ | renderBox | Function | content, options | 
  | renderCode | Function | code, options | 
  | renderText | Function | text, options | 
  | resolve | AsyncFunction | resp | 

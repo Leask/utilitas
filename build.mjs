@@ -1,11 +1,28 @@
 import { basename, extname } from 'path';
 import { readdir } from 'fs/promises';
-import { storage, utilitas } from './index.mjs';
+import { shot, storage, utilitas } from './index.mjs';
 // https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
 import manifest from './package.json' assert { type: 'json' };
 
 // shared const
 const [lib, _manifest, n, nn] = ['./lib', 'manifest.mjs', '\n', '\n\n'];
+
+// Update boxes.json
+let style = (await shot.get(
+    'https://raw.githubusercontent.com/sindresorhus/cli-boxes/main/boxes.json'
+)).content;
+assert(style, 'Failed to fetch `boxes`.');
+style = JSON.parse(style);
+const boxes = [
+    '// Based on: https://github.com/sindresorhus/cli-boxes',
+    '// Repackaged to ESM by: @Leask', '',
+];
+for (let i in style) {
+    boxes.push(`const ${i} = ${JSON.stringify(style[i], null, 4)};`, '');
+}
+boxes.push(`export default round;`);
+boxes.push(`export {\n    ${Object.keys(style).join(',\n    ')},\n};`, '');
+await storage.writeFile(`${lib}/boxes.mjs`, `${boxes.join('\n')}`);
 
 // Update manifest
 delete manifest.scripts;

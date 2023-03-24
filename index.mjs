@@ -5,6 +5,7 @@ import * as uuid from 'uuid';
 // features
 import _ from './lib/horizon.mjs'
 import * as bot from './lib/bot.mjs';
+import * as boxes from './lib/boxes.mjs';
 import * as cache from './lib/cache.mjs';
 import * as callosum from './lib/callosum.mjs';
 import * as dbio from './lib/dbio.mjs';
@@ -32,15 +33,15 @@ export {
     // dependencies
     fileType, math, uuid,
     // features
-    bot, cache, callosum, color, dbio, email, encryption, event, hal, manifest,
-    network, sentinel, shekel, shell, shot, sms, speech, storage, tape, uoid,
-    utilitas,
+    bot, boxes, cache, callosum, color, dbio, email, encryption, event, hal,
+    manifest, network, sentinel, shekel, shell, shot, sms, speech, storage,
+    tape, uoid, utilitas,
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
     globalThis.utilitas = {
-        color, encryption, event, manifest, math, shekel, shot, storage, uoid,
-        utilitas, uuid,
+        boxes, color, encryption, event, manifest, math, shekel, shot, storage,
+        uoid, utilitas, uuid,
     };
     // top-level await workaround
     (async () => {
