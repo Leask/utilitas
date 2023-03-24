@@ -299,6 +299,7 @@ Works in Node.js and modern browsers.
  | ensureArray | Function | any | 
  | ensureDate | Function | dt, options | 
  | ensureInt | Function | any, options | 
+ | ensureLines | Function | any, op | 
  | ensureString | Function | str, options | 
  | exclude | Function | obj, keys | 
  | extError | Function | err, status, opt | 
@@ -329,6 +330,7 @@ Works in Node.js and modern browsers.
  | isSet | Function | o, strict | 
  | isUndefined | Function | any | 
  | lineSplit | Function | string, options | 
+ | locate | AsyncFunction | rootPack | 
  | log | Function | content, filename, options | 
  | makeStringByLength | Function | string, length | 
  | mapKeys | Function | any, map, strict, path | 
