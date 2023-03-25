@@ -361,6 +361,7 @@ Works in Node.js and modern browsers.
  | range | Function | from, to, options | 
  | renderBox | Function | content, options | 
  | renderCode | Function | code, options | 
+ | renderObject | Function | obj, options | 
  | renderText | Function | text, options | 
  | resolve | AsyncFunction | resp | 
  | rotate | Function | any, step, opts | 
