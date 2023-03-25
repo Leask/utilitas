@@ -315,6 +315,7 @@ Works in Node.js and modern browsers.
  | ensureInt | Function | any, options | 
  | ensureLines | Function | any, op | 
  | ensureString | Function | str, options | 
+ | escapeHtml | Function |  | 
  | exclude | Function | obj, keys | 
  | extError | Function | err, status, opt | 
  | extract | Function | ...path | 
