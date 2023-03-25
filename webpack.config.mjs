@@ -61,6 +61,7 @@ export default {
         { './lib/shell.mjs': '{}' },
         { './lib/sms.mjs': '{}' },
         { './lib/speech.mjs': '{}' },
+        { './lib/ssl.mjs': '{}' },
         { './lib/tape.mjs': '{}' },
         // { 'node:buffer': '{}' },
         // { 'node:stream': '{}' },

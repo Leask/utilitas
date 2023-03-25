@@ -36,6 +36,7 @@
         "@google-cloud/text-to-speech": "^4.2.1",
         "@sentry/node": "^7.45.0",
         "@waylaidwanderer/chatgpt-api": "^1.32.8",
+        "acme-client": "^5.0.0",
         "browserify-fs": "^1.0.0",
         "buffer": "^6.0.3",
         "fast-geoip": "^1.1.88",
