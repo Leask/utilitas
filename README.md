@@ -233,6 +233,7 @@ Works in Node.js and modern browsers.
  | ensureCert | AsyncFunction | domain, challengeCreate, challengeRemove, options | 
  | getCert | AsyncFunction |  | 
  | init | AsyncFunction | domain, options | 
+ | isLocalhost | Function | host | 
 
 ### [storage](./lib/storage.mjs)
 
