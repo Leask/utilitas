@@ -223,6 +223,18 @@ Works in Node.js and modern browsers.
  | stt | AsyncFunction | audio, options | 
  | tts | AsyncFunction | text, options | 
 
+### [ssl](./lib/ssl.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | acme-client | 
+ | default | AsyncFunction | domain, options | 
+ | createCsr | AsyncFunction | commonName, forge | 
+ | ensureCert | AsyncFunction | domain, challengeCreate, challengeRemove, options | 
+ | getCert | AsyncFunction |  | 
+ | init | AsyncFunction | domain, options | 
+ | isLocalhost | Function | host | 
+
 ### [storage](./lib/storage.mjs)
 
  | symbol | type | params / value | 

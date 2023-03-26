@@ -20,6 +20,7 @@ import * as shell from './lib/shell.mjs';
 import * as shot from './lib/shot.mjs';
 import * as sms from './lib/sms.mjs';
 import * as speech from './lib/speech.mjs';
+import * as ssl from './lib/ssl.mjs';
 import * as storage from './lib/storage.mjs';
 import * as tape from './lib/tape.mjs';
 import * as uoid from './lib/uoid.mjs';
@@ -34,7 +35,7 @@ export {
     fileType, math, uuid,
     // features
     bot, boxes, cache, callosum, color, dbio, email, encryption, event, hal,
-    manifest, network, sentinel, shekel, shell, shot, sms, speech, storage,
+    manifest, network, sentinel, shekel, shell, shot, sms, speech, ssl, storage,
     tape, uoid, utilitas,
 };
 
