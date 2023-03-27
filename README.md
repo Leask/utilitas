@@ -126,6 +126,7 @@ Works in Node.js and modern browsers.
  | hash | Function | string, algorithm | 
  | hashFile | Function | filename, algorithm | 
  | hexToBigInt | Function | hex | 
+ | md5 | Function | string | 
  | random | Function | size, callback | 
  | randomString | Function | length, encoding | 
  | sha256 | Function | string, algorithm | 
