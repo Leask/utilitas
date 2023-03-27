@@ -35,7 +35,7 @@
         "@google-cloud/speech": "^5.4.0",
         "@google-cloud/text-to-speech": "^4.2.1",
         "@sentry/node": "^7.45.0",
-        "@waylaidwanderer/chatgpt-api": "^1.32.8",
+        "@waylaidwanderer/chatgpt-api": "^1.32.10",
         "acme-client": "^5.0.0",
         "browserify-fs": "^1.0.0",
         "buffer": "^6.0.3",
