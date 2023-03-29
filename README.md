@@ -15,7 +15,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
- | end | AsyncFunction | options | 
+ | end | AsyncFunction | async, options | 
  | init | AsyncFunction | options | 
  | send | AsyncFunction | chatId, content, options | 
 
