@@ -318,6 +318,7 @@ Works in Node.js and modern browsers.
  | byteToHexString | Function | byteArray | 
  | call | Function | f, ...a | 
  | checkInterval | Function | itv, sed | 
+ | clarify | Function |  | 
  | clone | Function | any | 
  | convertBase | Function | ipt, from, to | 
  | convertFrom16to10 | Function | ipt | 
