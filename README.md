@@ -341,7 +341,7 @@ Works in Node.js and modern browsers.
  | getKeyByValue | Function | object, value | 
  | getRandomIndexInArray | Function | array | 
  | getRandomInt | Function | max | 
- | getRandomItemInArray | Function | array | 
+ | getRandomItemInArray | Function | array, options | 
  | getShortestInArray | Function | arr | 
  | getType | Function | any | 
  | getUnixTimestampByDate | Function | date | 
