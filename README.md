@@ -339,7 +339,7 @@ Works in Node.js and modern browsers.
  | getFuncParams | Function | func | 
  | getItemFromStringOrArray | Function | any | 
  | getKeyByValue | Function | object, value | 
- | getRandomIndexInArray | Function | array | 
+ | getRandomIndexInArray | Function | array, options | 
  | getRandomInt | Function | max | 
  | getRandomItemInArray | Function | array, options | 
  | getShortestInArray | Function | arr | 
@@ -373,6 +373,7 @@ Works in Node.js and modern browsers.
  | parseVersion | Function | verstr | 
  | prettyJson | Function | object, opt | 
  | purgeEmoji | Function | any, replace | 
+ | randomArray | Function | array | 
  | range | Function | from, to, options | 
  | renderBox | Function | content, options | 
  | renderCode | Function | code, options | 
