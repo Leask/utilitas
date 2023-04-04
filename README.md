@@ -39,7 +39,11 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | ioredis | 
  | default | AsyncFunction | options | 
+ | del | AsyncFunction |  | 
+ | get | AsyncFunction |  | 
  | init | AsyncFunction | options | 
+ | set | AsyncFunction | key, value, options | 
+ | setEx | AsyncFunction | key, value, ttl, options | 
 
 ### [callosum](./lib/callosum.mjs)
 
@@ -89,8 +93,11 @@ Works in Node.js and modern browsers.
  | deleteAll | AsyncFunction | table, options | 
  | deleteById | Function | table, id, options | 
  | deleteByKeyValue | AsyncFunction | table, key, value, options | 
+ | desc | AsyncFunction | table, options | 
+ | drop | AsyncFunction | table, options | 
  | end | AsyncFunction | options | 
  | execute | AsyncFunction | ...args | 
+ | indexes | AsyncFunction | table, options | 
  | init | AsyncFunction | options | 
  | insert | AsyncFunction | table, fields, options | 
  | query | AsyncFunction | ...args | 
@@ -101,6 +108,7 @@ Works in Node.js and modern browsers.
  | rawAssembleKeyValue | Function | key, value, options | 
  | rawExecute | AsyncFunction | ...args | 
  | rawQuery | AsyncFunction | ...args | 
+ | tables | AsyncFunction | options | 
  | updateById | AsyncFunction | table, id, fields, options | 
  | updateByKeyValue | AsyncFunction | table, key, value, fields, options | 
  | upsert | Function | table, fields, options | 
@@ -157,6 +165,15 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | Object | {} | 
+
+### [memory](./lib/memory.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | del | AsyncFunction | key, options | 
+ | get | AsyncFunction | key, options | 
+ | init | AsyncFunction |  | 
+ | set | AsyncFunction | key, value, options | 
 
 ### [network](./lib/network.mjs)
 
