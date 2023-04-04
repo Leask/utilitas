@@ -56,6 +56,7 @@ export default {
         { './lib/dbio.mjs': '{}' },
         { './lib/email.mjs': '{}' },
         { './lib/hal.mjs': '{}' },
+        { './lib/memory.mjs': '{}' },
         { './lib/network.mjs': '{}' },
         { './lib/sentinel.mjs': '{}' },
         { './lib/shell.mjs': '{}' },
