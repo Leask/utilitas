@@ -17,7 +17,12 @@ Works in Node.js and modern browsers.
  | default | AsyncFunction | options | 
  | end | AsyncFunction | async, options | 
  | init | AsyncFunction | options | 
+ | lines | Function | arr, sep | 
+ | lines2 | Function | arr | 
+ | map | Function |  | 
+ | oList | Function | arr, k | 
  | send | AsyncFunction | chatId, content, options | 
+ | uList | Function | arr | 
 
 ### [boxes](./lib/boxes.mjs)
 
