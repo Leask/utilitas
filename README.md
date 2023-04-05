@@ -364,7 +364,7 @@ Works in Node.js and modern browsers.
  | getUnixTimestampByDate | Function | date | 
  | hexDecode | Function | string, toBuf | 
  | hexEncode | Function | object, isBuf | 
- | humanReadableBoolean | Function | any | 
+ | humanReadableBoolean | Function | ensureString(any | 
  | ignoreErrFunc | AsyncFunction | func, options | 
  | inBrowser | Function |  | 
  | insensitiveCompare | Function | strA, strB, options | 
