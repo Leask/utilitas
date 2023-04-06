@@ -15,6 +15,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
+ | COMMAND_LENGTH | Number | 32 | 
  | GROUP_LIMIT | Number | 3000 | 
  | MESSAGE_LENGTH_LIMIT | Number | 4096 | 
  | PRIVATE_LIMIT | Number | 1000 | 
