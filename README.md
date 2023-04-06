@@ -15,12 +15,16 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
+ | GROUP_LIMIT | Number | 3000 | 
+ | MESSAGE_LENGTH_LIMIT | Number | 4096 | 
+ | PRIVATE_LIMIT | Number | 1000 | 
  | end | AsyncFunction | async, options | 
  | init | AsyncFunction | options | 
  | lines | Function | arr, sep | 
  | lines2 | Function | arr | 
  | map | Function |  | 
  | oList | Function | arr, k | 
+ | paging | Function |  | 
  | send | AsyncFunction | chatId, content, options | 
  | uList | Function | arr | 
 
