@@ -15,7 +15,9 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
+ | COMMAND_DESCRIPTION_LENGTH | Number | 256 | 
  | COMMAND_LENGTH | Number | 32 | 
+ | COMMAND_LIMIT | Number | 100 | 
  | GROUP_LIMIT | Number | 3000 | 
  | MESSAGE_LENGTH_LIMIT | Number | 4096 | 
  | PRIVATE_LIMIT | Number | 1000 | 
@@ -24,6 +26,7 @@ Works in Node.js and modern browsers.
  | lines | Function | arr, sep | 
  | lines2 | Function | arr | 
  | map | Function |  | 
+ | newCommand | Function | command, description | 
  | oList | Function | arr, k | 
  | paging | Function |  | 
  | send | AsyncFunction | chatId, content, options | 
