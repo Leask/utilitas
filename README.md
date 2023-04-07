@@ -410,6 +410,7 @@ Works in Node.js and modern browsers.
  | rotate | Function | any, step, opts | 
  | shiftTime | Function | dif, base | 
  | split | Function | str, options | 
+ | splitArgs | Function |  | 
  | supportAnsiColor | Function |  | 
  | throwError | Function | msg, status, opt | 
  | timeout | Function |  | 
