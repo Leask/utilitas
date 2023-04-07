@@ -170,8 +170,8 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | _NEED | Array | @waylaidwanderer/chatgpt-api | 
- | default | AsyncFunction | options | 
- | init | AsyncFunction | options | 
+ | default | AsyncFunction |  | 
+ | init | AsyncFunction |  | 
 
 ### [horizon](./lib/horizon.mjs)
 
