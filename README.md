@@ -233,6 +233,8 @@ Works in Node.js and modern browsers.
  | get | AsyncFunction | url, options | 
  | getCurrentIp | AsyncFunction | options | 
  | getCurrentPosition | AsyncFunction |  | 
+ | getJson | AsyncFunction | u, o | 
+ | getParsedHtml | AsyncFunction | u, o | 
  | getVersionOnNpm | AsyncFunction | packName | 
 
 ### [sms](./lib/sms.mjs)
@@ -427,3 +429,17 @@ Works in Node.js and modern browsers.
  | verifyUrl | Function | url | 
  | verifyUuid | Function | uuid | 
  | which | AsyncFunction | any | 
+
+### [web](./lib/web.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | @mozilla/readability,jsdom,youtube-transcript | 
+ | assertYoutubeUrl | Function |  | 
+ | distill | AsyncFunction |  | 
+ | distillHtml | AsyncFunction | html, options | 
+ | distillPage | AsyncFunction | url, op | 
+ | distillYoutube | AsyncFunction | url | 
+ | getYoutubeMetadata | AsyncFunction | url | 
+ | getYoutubeTranscript | AsyncFunction | url | 
+ | isYoutubeUrl | Function |  | 
