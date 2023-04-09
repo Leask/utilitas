@@ -26,6 +26,7 @@ import * as storage from './lib/storage.mjs';
 import * as tape from './lib/tape.mjs';
 import * as uoid from './lib/uoid.mjs';
 import * as utilitas from './lib/utilitas.mjs';
+import * as web from './lib/web.mjs';
 import color from './lib/color.mjs';
 import manifest from './lib/manifest.mjs';
 
@@ -37,7 +38,7 @@ export {
     // features
     bot, boxes, cache, callosum, color, dbio, email, encryption, event, hal,
     manifest, memory, network, sentinel, shekel, shell, shot, sms, speech, ssl,
-    storage, tape, uoid, utilitas,
+    storage, tape, uoid, utilitas, web
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
