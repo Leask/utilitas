@@ -18,6 +18,7 @@ Works in Node.js and modern browsers.
  | COMMAND_DESCRIPTION_LENGTH | Number | 256 | 
  | COMMAND_LENGTH | Number | 32 | 
  | COMMAND_LIMIT | Number | 100 | 
+ | EMOJI_SPEECH | String | 🗣️ | 
  | GROUP_LIMIT | Number | 3000 | 
  | MESSAGE_LENGTH_LIMIT | Number | 4096 | 
  | PRIVATE_LIMIT | Number | 1000 | 
