@@ -438,6 +438,7 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | _NEED | Array | @google-cloud/vision | 
+ | annotateImage | AsyncFunction | image, options | 
  | init | AsyncFunction | options | 
  | ocrImage | AsyncFunction | image, options | 
 
