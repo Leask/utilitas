@@ -64,6 +64,7 @@ export default {
         { './lib/speech.mjs': '{}' },
         { './lib/ssl.mjs': '{}' },
         { './lib/tape.mjs': '{}' },
+        { './lib/vision.mjs': '{}' },
         { './lib/web.mjs': '{}' },
         // { 'node:buffer': '{}' },
         // { 'node:stream': '{}' },

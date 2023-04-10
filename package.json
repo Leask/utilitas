@@ -34,6 +34,7 @@
     "devDependencies": {
         "@google-cloud/speech": "^5.4.0",
         "@google-cloud/text-to-speech": "^4.2.1",
+        "@google-cloud/vision": "^3.1.2",
         "@mozilla/readability": "^0.4.4",
         "@sentry/node": "^7.47.0",
         "@waylaidwanderer/chatgpt-api": "^1.34.0",
