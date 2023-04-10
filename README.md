@@ -145,6 +145,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | defaultAlgorithm | String | sha256 | 
  | digestObject | Function | object, algorithm | 
+ | getApiKeyCredentials | AsyncFunction | options | 
  | getSortedQueryString | Function | obj | 
  | hash | Function | string, algorithm | 
  | hashFile | Function | filename, algorithm | 
@@ -431,6 +432,14 @@ Works in Node.js and modern browsers.
  | verifyUrl | Function | url | 
  | verifyUuid | Function | uuid | 
  | which | AsyncFunction | any | 
+
+### [vision](./lib/vision.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | @google-cloud/vision | 
+ | init | AsyncFunction | options | 
+ | ocrImage | AsyncFunction | image, options | 
 
 ### [web](./lib/web.mjs)
 
