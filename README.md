@@ -441,6 +441,7 @@ Works in Node.js and modern browsers.
  | annotateImage | AsyncFunction | image, options | 
  | init | AsyncFunction | options | 
  | ocrImage | AsyncFunction | image, options | 
+ | see | AsyncFunction | image, options | 
 
 ### [web](./lib/web.mjs)
 
@@ -451,7 +452,7 @@ Works in Node.js and modern browsers.
  | distill | AsyncFunction |  | 
  | distillHtml | AsyncFunction | html, options | 
  | distillPage | AsyncFunction | url, op | 
- | distillYoutube | AsyncFunction | url | 
- | getYoutubeMetadata | AsyncFunction | url | 
- | getYoutubeTranscript | AsyncFunction | url | 
+ | distillYoutube | AsyncFunction |  | 
+ | getYoutubeMetadata | AsyncFunction |  | 
+ | getYoutubeTranscript | AsyncFunction |  | 
  | isYoutubeUrl | Function |  | 
