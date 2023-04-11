@@ -441,6 +441,7 @@ Works in Node.js and modern browsers.
  | annotateImage | AsyncFunction | image, options | 
  | init | AsyncFunction | options | 
  | ocrImage | AsyncFunction | image, options | 
+ | read | AsyncFunction | image, options | 
  | see | AsyncFunction | image, options | 
 
 ### [web](./lib/web.mjs)
