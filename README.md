@@ -30,7 +30,7 @@ Works in Node.js and modern browsers.
  | map | Function |  | 
  | newCommand | Function | command, description | 
  | oList | Function | arr, k | 
- | paging | Function |  | 
+ | paging | Function | message, options | 
  | send | AsyncFunction | chatId, content, options | 
  | uList | Function | arr | 
 
