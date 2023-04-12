@@ -37,7 +37,7 @@
         "@google-cloud/vision": "^3.1.2",
         "@mozilla/readability": "^0.4.4",
         "@sentry/node": "^7.47.0",
-        "@waylaidwanderer/chatgpt-api": "^1.34.0",
+        "@waylaidwanderer/chatgpt-api": "^1.35.0",
         "acme-client": "^5.0.0",
         "browserify-fs": "^1.0.0",
         "buffer": "^6.0.3",
