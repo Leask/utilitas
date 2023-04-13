@@ -15,7 +15,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
- | BINARY_STRINGS | Array | on,off | 
+ | BINARY_STRINGS | Array | off,on | 
  | COMMAND_DESCRIPTION_LENGTH | Number | 256 | 
  | COMMAND_LENGTH | Number | 32 | 
  | COMMAND_LIMIT | Number | 100 | 
