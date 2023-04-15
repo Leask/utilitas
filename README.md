@@ -285,7 +285,7 @@ Works in Node.js and modern browsers.
  | getConfigFilename | AsyncFunction | options | 
  | getTempPath | Function | options | 
  | handleError | Function | err, opts | 
- | isTextFile | AsyncFunction | filename, options | 
+ | isTextFile | AsyncFunction | file, options | 
  | legalFilename | Function | filename | 
  | mapFilename | Function | name | 
  | readFile | AsyncFunction | name, options | 
