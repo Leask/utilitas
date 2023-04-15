@@ -23,6 +23,7 @@ Works in Node.js and modern browsers.
  | EMOJI_SPEECH | String | 🗣️ | 
  | EMOJI_THINKING | String | 💬 | 
  | GROUP_LIMIT | Number | 3000 | 
+ | HELLO | String | Hello! | 
  | MESSAGE_LENGTH_LIMIT | Number | 4096 | 
  | PRIVATE_LIMIT | Number | 1000 | 
  | end | AsyncFunction | async, options | 
