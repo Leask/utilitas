@@ -84,9 +84,9 @@ export default {
             && warning?.loc?.start?.column === 31
             && warning?.loc?.end?.line === 75
             && warning?.loc?.end?.column === 57
-        ) || (warning?.loc?.start?.line === 554 // utilitas
+        ) || (warning?.loc?.start?.line === 685 // utilitas
             && warning?.loc?.start?.column === 44
-            && warning?.loc?.end?.line === 554
+            && warning?.loc?.end?.line === 685
             && warning?.loc?.end?.column === 56
             ));
     }],
