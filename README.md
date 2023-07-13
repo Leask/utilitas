@@ -361,6 +361,7 @@ Works in Node.js and modern browsers.
  | convertBase | Function | ipt, from, to | 
  | convertFrom16to10 | Function | ipt | 
  | countKeys | Function | any | 
+ | deepCleanBigInt | Function | any, func | 
  | distill | Function | any, strict | 
  | ensureArray | Function | any | 
  | ensureDate | Function | dt, options | 
