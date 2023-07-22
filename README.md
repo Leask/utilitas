@@ -260,8 +260,9 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech | 
+ | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,whisper-node | 
  | default | AsyncFunction | options | 
+ | googleStt | AsyncFunction | audio, options | 
  | init | AsyncFunction | options | 
  | stt | AsyncFunction | audio, options | 
  | tts | AsyncFunction | text, options | 
@@ -289,6 +290,7 @@ Works in Node.js and modern browsers.
  | getConfigFilename | AsyncFunction | options | 
  | getTempPath | Function | options | 
  | handleError | Function | err, opts | 
+ | input | AsyncFunction | any, options | 
  | isTextFile | AsyncFunction | file, options | 
  | legalFilename | Function | filename | 
  | mapFilename | Function | name | 
