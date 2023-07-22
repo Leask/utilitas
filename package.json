@@ -57,6 +57,7 @@
         "twilio": "^4.14.0",
         "url": "github:Leask/node-url",
         "webpack-cli": "^5.1.4",
+        "whisper-node": "^0.2.12",
         "youtube-transcript": "^1.0.6"
     }
 }
