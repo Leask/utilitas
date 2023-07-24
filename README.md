@@ -189,6 +189,14 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | default | Object | {} | 
 
+### [media](./lib/media.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | fluent-ffmpeg,@ffmpeg-installer/ffmpeg,@ffprobe-installer/ffprobe | 
+ | convertAudioTo16kNanoWave | AsyncFunction | input, options | 
+ | getFfmpeg | AsyncFunction | options | 
+
 ### [memory](./lib/memory.mjs)
 
  | symbol | type | params / value | 
@@ -285,13 +293,13 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | assertPath | AsyncFunction | path, type, mode, msg, code, options | 
+ | convert | AsyncFunction | any, options | 
  | encodeBase64DataURL | Function | mime, buffer | 
  | exists | AsyncFunction | filename | 
  | getConfig | AsyncFunction | options | 
  | getConfigFilename | AsyncFunction | options | 
  | getTempPath | Function | options | 
  | handleError | Function | err, opts | 
- | input | AsyncFunction | any, options | 
  | isTextFile | AsyncFunction | file, options | 
  | legalFilename | Function | filename | 
  | mapFilename | Function | name | 
