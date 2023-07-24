@@ -55,6 +55,7 @@
         "node-polyfill-webpack-plugin": "^2.0.1",
         "office-text-extractor": "^3.0.1",
         "ping": "^0.4.4",
+        "say": "^0.16.0",
         "telegraf": "^4.12.2",
         "telesignsdk": "^2.2.3",
         "twilio": "^4.14.0",
