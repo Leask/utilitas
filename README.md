@@ -194,7 +194,8 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | _NEED | Array | fluent-ffmpeg,@ffmpeg-installer/ffmpeg,@ffprobe-installer/ffprobe | 
- | convertAudioTo16kNanoWave | AsyncFunction | input, options | 
+ | convertAudioTo16kNanoOpusOgg | Function | input, options | 
+ | convertAudioTo16kNanoPcmWave | Function | input, options | 
  | getFfmpeg | AsyncFunction | options | 
 
 ### [memory](./lib/memory.mjs)
@@ -275,6 +276,8 @@ Works in Node.js and modern browsers.
  | sttGoogle | AsyncFunction | audio, options | 
  | sttWhisper | AsyncFunction | audio, options | 
  | tts | AsyncFunction | text, options | 
+ | ttsGoogle | AsyncFunction | text, options | 
+ | ttsSay | AsyncFunction | text, options | 
 
 ### [ssl](./lib/ssl.mjs)
 
@@ -307,6 +310,7 @@ Works in Node.js and modern browsers.
  | readJson | AsyncFunction | filename, options | 
  | setConfig | AsyncFunction | data, options | 
  | touchPath | AsyncFunction | path, options | 
+ | tryRm | AsyncFunction | path, options | 
  | writeFile | AsyncFunction | filename, data, options | 
  | writeJson | AsyncFunction | filename, data, options | 
  | writeTempFile | AsyncFunction | data, options | 
