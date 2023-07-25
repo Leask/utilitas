@@ -62,6 +62,7 @@ export default {
         { './lib/sentinel.mjs': '{}' },
         { './lib/shell.mjs': '{}' },
         { './lib/sms.mjs': '{}' },
+        { './lib/speech.mjs': '{}' },
         { './lib/ssl.mjs': '{}' },
         { './lib/tape.mjs': '{}' },
         { './lib/vision.mjs': '{}' },
