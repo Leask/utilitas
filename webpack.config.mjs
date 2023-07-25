@@ -79,16 +79,12 @@ export default {
         // { 'node:util': '{}' },
         // { 'node:zlib': '{}' },
     ],
-    ignoreWarnings: [warning => {
-        return ((warning?.loc?.start?.line === 75 // event
-            && warning?.loc?.start?.column === 31
-            && warning?.loc?.end?.line === 75
-            && warning?.loc?.end?.column === 57
-        ) || (warning?.loc?.start?.line === 685 // utilitas
-            && warning?.loc?.start?.column === 44
-            && warning?.loc?.end?.line === 685
-            && warning?.loc?.end?.column === 56
-            ));
-    }],
+    ignoreWarnings: [warning =>
+        (warning?.loc?.start?.line === 75 && warning?.loc?.start?.column === 31 && warning?.loc?.end?.line === 75 && warning?.loc?.end?.column === 57)   // event
+        // ||
+        // (warning?.loc?.start?.line === 685 && warning?.loc?.start?.column === 44 && warning?.loc?.end?.line === 685 && warning?.loc?.end?.column === 56) // utilitas
+        ||
+        (warning?.loc?.start?.line === 685 && warning?.loc?.start?.column === 44 && warning?.loc?.end?.line === 685 && warning?.loc?.end?.column === 56) // utilitas
+    ],
     // stats: 'detailed',
 };
