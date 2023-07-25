@@ -28,7 +28,7 @@
     },
     "dependencies": {
         "file-type": "^18.5.0",
-        "mathjs": "^11.9.0",
+        "mathjs": "^11.9.1",
         "uuid": "^9.0.0"
     },
     "devDependencies": {
@@ -51,7 +51,7 @@
         "lorem-ipsum": "^2.0.8",
         "mailgun.js": "^9.2.0",
         "mysql2": "^3.5.2",
-        "node-mailjet": "^6.0.3",
+        "node-mailjet": "^6.0.4",
         "node-polyfill-webpack-plugin": "^2.0.1",
         "office-text-extractor": "^3.0.1",
         "ping": "^0.4.4",
