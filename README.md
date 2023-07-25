@@ -462,10 +462,12 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/vision | 
+ | _NEED | Array | @google-cloud/vision,tesseract.js | 
  | annotateImage | AsyncFunction | image, options | 
  | init | AsyncFunction | options | 
  | ocrImage | AsyncFunction | image, options | 
+ | ocrImageGoogle | AsyncFunction | image, options | 
+ | ocrImageTesseract | AsyncFunction | image, options | 
  | read | AsyncFunction | image, options | 
  | see | AsyncFunction | image, options | 
 
