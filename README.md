@@ -271,6 +271,8 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,whisper-node | 
  | default | AsyncFunction | options | 
+ | checkSay | AsyncFunction | options | 
+ | checkWhisper | AsyncFunction | options | 
  | init | AsyncFunction | options | 
  | stt | AsyncFunction | audio, options | 
  | sttGoogle | AsyncFunction | audio, options | 
