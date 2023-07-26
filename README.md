@@ -297,6 +297,8 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | _NEED | Array | mime-types | 
+ | analyzeFile | AsyncFunction | any, options | 
  | assertPath | AsyncFunction | path, type, mode, msg, code, options | 
  | convert | AsyncFunction | any, options | 
  | encodeBase64DataURL | Function | mime, buffer | 
@@ -456,6 +458,7 @@ Works in Node.js and modern browsers.
  | verifyPhone | Function | phone | 
  | verifyUrl | Function | url | 
  | verifyUuid | Function | uuid | 
+ | voidFunc | Function |  | 
  | which | AsyncFunction | any | 
 
 ### [vision](./lib/vision.mjs)
