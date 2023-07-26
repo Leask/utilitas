@@ -323,9 +323,11 @@ Works in Node.js and modern browsers.
  | sliceFile | AsyncFunction | any, options | 
  | touchPath | AsyncFunction | path, options | 
  | tryRm | AsyncFunction | path, options | 
+ | unzip | AsyncFunction | any, options | 
  | writeFile | AsyncFunction | filename, data, options | 
  | writeJson | AsyncFunction | filename, data, options | 
  | writeTempFile | AsyncFunction | data, options | 
+ | zip | AsyncFunction | any, options | 
 
 ### [style](./lib/style.cjs)
 
@@ -370,6 +372,7 @@ Works in Node.js and modern browsers.
  | assembleApiUrl | Function | hst, path, args | 
  | assembleUrl | Function | url, componens | 
  | assertArray | Function | arr, message, status, opts | 
+ | assertBuffer | Function | buffer, message, status, options | 
  | assertDate | Function | time, message, status, options | 
  | assertEmail | Function | email, message, status, options | 
  | assertFunction | Function | fn, message, status, opts | 
