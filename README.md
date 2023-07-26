@@ -319,6 +319,7 @@ Works in Node.js and modern browsers.
  | readFile | AsyncFunction | name, options | 
  | readJson | AsyncFunction | filename, options | 
  | setConfig | AsyncFunction | data, options | 
+ | sliceFile | AsyncFunction | any, options | 
  | touchPath | AsyncFunction | path, options | 
  | tryRm | AsyncFunction | path, options | 
  | writeFile | AsyncFunction | filename, data, options | 
