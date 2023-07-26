@@ -50,6 +50,7 @@
         "jsdom": "^22.1.0",
         "lorem-ipsum": "^2.0.8",
         "mailgun.js": "^9.2.0",
+        "mime-types": "^2.1.35",
         "mysql2": "^3.5.2",
         "node-mailjet": "^6.0.4",
         "node-polyfill-webpack-plugin": "^2.0.1",
