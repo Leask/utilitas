@@ -316,6 +316,7 @@ Works in Node.js and modern browsers.
  | isTextFile | AsyncFunction | file, options | 
  | legalFilename | Function | filename | 
  | mapFilename | Function | name | 
+ | mergeFile | AsyncFunction | data, options | 
  | readFile | AsyncFunction | name, options | 
  | readJson | AsyncFunction | filename, options | 
  | setConfig | AsyncFunction | data, options | 
