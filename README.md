@@ -146,7 +146,13 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
+ | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,@google-cloud/vision | 
+ | aesCreateIv | Function | options | 
+ | aesCreateKey | Function | options | 
+ | aesDecrypt | Function | any, options | 
+ | aesEncrypt | Function | any, options | 
  | defaultAlgorithm | String | sha256 | 
+ | defaultEncryption | String | aes-256-gcm | 
  | digestObject | Function | object, algorithm | 
  | getApiKeyCredentials | AsyncFunction | options | 
  | getSortedQueryString | Function | obj | 
