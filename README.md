@@ -195,6 +195,15 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | default | Object | {} | 
 
+### [image](./lib/image.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | OpenAI | 
+ | default | AsyncFunction | options | 
+ | generate | AsyncFunction | prompt, options | 
+ | init | AsyncFunction | options | 
+
 ### [media](./lib/media.mjs)
 
  | symbol | type | params / value | 
@@ -275,16 +284,18 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,whisper-node | 
+ | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,OpenAI,whisper-node | 
  | default | AsyncFunction | options | 
  | checkSay | AsyncFunction | options | 
  | checkWhisper | AsyncFunction | options | 
  | init | AsyncFunction | options | 
  | stt | AsyncFunction | audio, options | 
  | sttGoogle | AsyncFunction | audio, options | 
+ | sttOpenAI | AsyncFunction | audio, options | 
  | sttWhisper | AsyncFunction | audio, options | 
  | tts | AsyncFunction | text, options | 
  | ttsGoogle | AsyncFunction | text, options | 
+ | ttsOpenAI | AsyncFunction | input, options | 
  | ttsSay | AsyncFunction | text, options | 
 
 ### [ssl](./lib/ssl.mjs)
