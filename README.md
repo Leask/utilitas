@@ -183,9 +183,9 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | @waylaidwanderer/chatgpt-api | 
  | default | AsyncFunction |  | 
- | MAX_CONTEXT_TOKENS | Number | 4096 | 
- | MAX_PROMPT_TOKENS | Number | 2457 | 
- | MAX_RESPONSE_TOKENS | Number | 1639 | 
+ | MAX_CONTEXT_TOKENS | Number | 8192 | 
+ | MAX_PROMPT_TOKENS | Number | 4915 | 
+ | MAX_RESPONSE_TOKENS | Number | 3277 | 
  | countTokens | Function | txt | 
  | init | AsyncFunction |  | 
 
