@@ -404,7 +404,7 @@ Works in Node.js and modern browsers.
  | base64Encode | Function | object, isBuf | 
  | base64Pack | Function | object | 
  | base64Unpack | Function | string | 
- | basename | Function | filename | 
+ | basename | Function |  | 
  | byteToHexString | Function | byteArray | 
  | call | Function | f, ...a | 
  | checkInterval | Function | itv, sed | 
@@ -431,7 +431,7 @@ Works in Node.js and modern browsers.
  | getItemFromStringOrArray | Function | any | 
  | getKeyByValue | Function | object, value | 
  | getRandomIndexInArray | Function | array, options | 
- | getRandomInt | Function | max | 
+ | getRandomInt | Function |  | 
  | getRandomItemInArray | Function | array, options | 
  | getShortestInArray | Function | arr | 
  | getType | Function | any | 
@@ -445,10 +445,10 @@ Works in Node.js and modern browsers.
  | insensitiveHas | Function | list, srt, options | 
  | is | Function | type, any | 
  | isAscii | Function | str | 
- | isModule | Function | module | 
- | isNull | Function | object | 
+ | isModule | Function | module, module | 
+ | isNull | Function | object, object | 
  | isSet | Function | o, strict | 
- | isUndefined | Function | any | 
+ | isUndefined | Function | any, any | 
  | lineSplit | Function | string, options | 
  | locate | AsyncFunction | rootPack | 
  | log | Function | content, filename, options | 
@@ -470,7 +470,7 @@ Works in Node.js and modern browsers.
  | renderCode | Function | code, options | 
  | renderObject | Function | obj, options | 
  | renderText | Function | text, options | 
- | resolve | AsyncFunction | resp | 
+ | resolve | AsyncFunction | async, res | 
  | rotate | Function | any, step, opts | 
  | shiftTime | Function | dif, base | 
  | split | Function | str, options | 
