@@ -32,6 +32,7 @@ Works in Node.js and modern browsers.
  | GROUP_LIMIT | Number | 3000 | 
  | HELLO | String | Hello! | 
  | MESSAGE_LENGTH_LIMIT | Number | 4096 | 
+ | MESSAGE_SOFT_LIMIT | Number | 4000 | 
  | PRIVATE_LIMIT | Number | 1000 | 
  | end | AsyncFunction | async, options | 
  | init | AsyncFunction | options | 
@@ -42,6 +43,7 @@ Works in Node.js and modern browsers.
  | oList | Function | arr, k | 
  | paging | Function | message, options | 
  | send | AsyncFunction | chatId, content, options | 
+ | sendMd | Function | cId, cnt, opt | 
  | uList | Function | arr | 
 
 ### [boxes](./lib/boxes.mjs)
