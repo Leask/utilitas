@@ -329,6 +329,7 @@ Works in Node.js and modern browsers.
  | convert | AsyncFunction | any, options | 
  | encodeBase64DataURL | Function | mime, buffer | 
  | exists | AsyncFunction | filename | 
+ | existsOnCloud | AsyncFunction | destination | 
  | getConfig | AsyncFunction | options | 
  | getConfigFilename | AsyncFunction | options | 
  | getGcUrlByBucket | Function | bucke | 
