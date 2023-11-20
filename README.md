@@ -155,7 +155,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,@google-cloud/vision | 
+ | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,@google-cloud/vision,google-gax | 
  | aesCreateIv | Function | options | 
  | aesCreateKey | Function | options | 
  | aesDecrypt | Function | any, options | 
@@ -323,7 +323,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | mime-types | 
+ | _NEED | Array | mime-types,@google-cloud/storage | 
  | analyzeFile | AsyncFunction | any, options | 
  | assertPath | AsyncFunction | path, type, mode, msg, code, options | 
  | convert | AsyncFunction | any, options | 
@@ -331,11 +331,13 @@ Works in Node.js and modern browsers.
  | exists | AsyncFunction | filename | 
  | getConfig | AsyncFunction | options | 
  | getConfigFilename | AsyncFunction | options | 
+ | getGcUrlByBucket | Function | bucke | 
  | getTempPath | Function | options | 
  | handleError | Function | err, opts | 
+ | init | AsyncFunction | options | 
  | isTextFile | AsyncFunction | file, options | 
  | legalFilename | Function | filename | 
- | mapFilename | Function | name | 
+ | mapFilename | Function |  | 
  | mergeFile | AsyncFunction | data, options | 
  | readFile | AsyncFunction | name, options | 
  | readJson | AsyncFunction | filename, options | 
@@ -344,6 +346,7 @@ Works in Node.js and modern browsers.
  | touchPath | AsyncFunction | path, options | 
  | tryRm | AsyncFunction | path, options | 
  | unzip | AsyncFunction | any, options | 
+ | uploadToCloud | AsyncFunction | data, options | 
  | writeFile | AsyncFunction | filename, data, options | 
  | writeJson | AsyncFunction | filename, data, options | 
  | writeTempFile | AsyncFunction | data, options | 
@@ -503,6 +506,7 @@ Works in Node.js and modern browsers.
  | ocrImageGoogle | AsyncFunction | image, options | 
  | ocrImageTesseract | AsyncFunction | image, options | 
  | read | AsyncFunction | image, options | 
+ | read2 | AsyncFunction | image, options | 
  | see | AsyncFunction | image, options | 
 
 ### [web](./lib/web.mjs)
