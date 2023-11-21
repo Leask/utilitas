@@ -327,9 +327,13 @@ Works in Node.js and modern browsers.
  | analyzeFile | AsyncFunction | any, options | 
  | assertPath | AsyncFunction | path, type, mode, msg, code, options | 
  | convert | AsyncFunction | any, options | 
+ | deleteFileOnCloud | AsyncFunction | path, options | 
+ | deleteOnCloud | AsyncFunction | path, options | 
+ | downloadFileFromCloud | AsyncFunction | path, options | 
+ | downloadFromCloud | AsyncFunction | path, options | 
  | encodeBase64DataURL | Function | mime, buffer | 
  | exists | AsyncFunction | filename | 
- | existsOnCloud | AsyncFunction | destination | 
+ | existsOnCloud | AsyncFunction | destination, options | 
  | getConfig | AsyncFunction | options | 
  | getConfigFilename | AsyncFunction | options | 
  | getGcUrlByBucket | Function | bucke | 
@@ -338,6 +342,7 @@ Works in Node.js and modern browsers.
  | init | AsyncFunction | options | 
  | isTextFile | AsyncFunction | file, options | 
  | legalFilename | Function | filename | 
+ | lsOnCloud | AsyncFunction | prefix, options | 
  | mapFilename | Function |  | 
  | mergeFile | AsyncFunction | data, options | 
  | readFile | AsyncFunction | name, options | 
@@ -507,7 +512,7 @@ Works in Node.js and modern browsers.
  | ocrImageGoogle | AsyncFunction | image, options | 
  | ocrImageTesseract | AsyncFunction | image, options | 
  | read | AsyncFunction | image, options | 
- | read2 | AsyncFunction | image, options | 
+ | readAll | AsyncFunction | image, options | 
  | see | AsyncFunction | image, options | 
 
 ### [web](./lib/web.mjs)
