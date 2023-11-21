@@ -337,6 +337,7 @@ Works in Node.js and modern browsers.
  | getConfig | AsyncFunction | options | 
  | getConfigFilename | AsyncFunction | options | 
  | getGcUrlByBucket | Function | bucke | 
+ | getIdByGs | Function | gs | 
  | getTempPath | Function | options | 
  | handleError | Function | err, opts | 
  | init | AsyncFunction | options | 
