@@ -506,8 +506,11 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/vision,tesseract.js | 
+ | _NEED | Array | @google-cloud/vision,pdfjs-dist,tesseract.js | 
  | annotateImage | AsyncFunction | image, options | 
+ | getPdfInfo | AsyncFunction | file, options | 
+ | getPdfPage | AsyncFunction | doc, pageNum | 
+ | getPdfPages | AsyncFunction | doc | 
  | init | AsyncFunction | options | 
  | ocrImage | AsyncFunction | image, options | 
  | ocrImageGoogle | AsyncFunction | image, options | 
