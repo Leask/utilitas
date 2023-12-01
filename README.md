@@ -108,7 +108,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | mysql2 | 
+ | _NEED | Array | mysql2,pg | 
  | default | AsyncFunction | options | 
  | assembleInsert | Function | table, data, options | 
  | assembleQuery | Function | table, options | 
