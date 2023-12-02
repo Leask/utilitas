@@ -110,6 +110,8 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | mysql2,pg | 
  | default | AsyncFunction | options | 
+ | MYSQL | String | MYSQL | 
+ | POSTGRESQL | String | POSTGRESQL | 
  | assembleInsert | Function | table, data, options | 
  | assembleQuery | Function | table, options | 
  | assembleSet | Function | data, options | 
@@ -124,6 +126,7 @@ Works in Node.js and modern browsers.
  | drop | AsyncFunction | table, options | 
  | end | AsyncFunction | options | 
  | execute | AsyncFunction | ...args | 
+ | getProvider | AsyncFunction |  | 
  | indexes | AsyncFunction | table, options | 
  | init | AsyncFunction | options | 
  | insert | AsyncFunction | table, fields, options | 
