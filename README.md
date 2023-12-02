@@ -194,13 +194,15 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @waylaidwanderer/chatgpt-api | 
+ | _NEED | Array | openai,@waylaidwanderer/chatgpt-api | 
  | default | AsyncFunction |  | 
  | MAX_CONTEXT_TOKENS | Number | 4096 | 
  | MAX_PROMPT_TOKENS | Number | 2457 | 
  | MAX_RESPONSE_TOKENS | Number | 1639 | 
  | countTokens | Function | txt | 
+ | createEmbedding | AsyncFunction | input, options | 
  | init | AsyncFunction |  | 
+ | initOpenAI | AsyncFunction | options | 
 
 ### [horizon](./lib/horizon.mjs)
 
