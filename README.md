@@ -118,7 +118,7 @@ Works in Node.js and modern browsers.
  | countAll | AsyncFunction | table | 
  | countByKeyValue | AsyncFunction | table, key, value | 
  | deleteAll | AsyncFunction | table, options | 
- | deleteById | Function | table, id, options | 
+ | deleteById | AsyncFunction | table, id, options | 
  | deleteByKeyValue | AsyncFunction | table, key, value, options | 
  | desc | AsyncFunction | table, options | 
  | drop | AsyncFunction | table, options | 
