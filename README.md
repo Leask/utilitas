@@ -124,6 +124,7 @@ Works in Node.js and modern browsers.
  | deleteByKeyValue | AsyncFunction | table, key, value, options | 
  | desc | AsyncFunction | table, options | 
  | drop | AsyncFunction | table, options | 
+ | enableVector | AsyncFunction | options | 
  | end | AsyncFunction | options | 
  | execute | AsyncFunction | ...args | 
  | getProvider | AsyncFunction |  | 
