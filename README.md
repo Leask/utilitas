@@ -20,7 +20,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | office-text-extractor,telegraf | 
+ | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
  | BINARY_STRINGS | Array | off,on | 
  | COMMAND_DESCRIPTION_LENGTH | Number | 256 | 
@@ -514,7 +514,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/vision,pdfjs-dist,tesseract.js | 
+ | _NEED | Array | @google-cloud/vision,office-text-extractor,pdfjs-dist,tesseract.js | 
  | annotateImage | AsyncFunction | image, options | 
  | getPdfInfo | AsyncFunction | file, options | 
  | getPdfPage | AsyncFunction | doc, pageNum | 
@@ -523,6 +523,7 @@ Works in Node.js and modern browsers.
  | ocrImage | AsyncFunction | image, options | 
  | ocrImageGoogle | AsyncFunction | image, options | 
  | ocrImageTesseract | AsyncFunction | image, options | 
+ | parseOfficeFile | AsyncFunction | input, options | 
  | read | AsyncFunction | image, options | 
  | readAll | AsyncFunction | image, options | 
  | see | AsyncFunction | image, options | 
