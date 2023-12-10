@@ -532,12 +532,13 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @mozilla/readability,jsdom,youtube-transcript | 
+ | _NEED | Array | jsdom,youtube-transcript,@mozilla/readability,@ngrok/ngrok | 
  | assertYoutubeUrl | Function |  | 
  | distill | AsyncFunction |  | 
  | distillHtml | AsyncFunction | html, options | 
  | distillPage | AsyncFunction | url, op | 
  | distillYoutube | AsyncFunction |  | 
+ | forward | AsyncFunction | options | 
  | getYoutubeMetadata | AsyncFunction |  | 
  | getYoutubeTranscript | AsyncFunction |  | 
  | isYoutubeUrl | Function |  | 
