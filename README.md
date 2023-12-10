@@ -523,7 +523,7 @@ Works in Node.js and modern browsers.
  | ocrImage | AsyncFunction | image, options | 
  | ocrImageGoogle | AsyncFunction | image, options | 
  | ocrImageTesseract | AsyncFunction | image, options | 
- | parseOfficeFile | AsyncFunction | input, options | 
+ | parseOfficeFile | AsyncFunction | source, options | 
  | read | AsyncFunction | image, options | 
  | readAll | AsyncFunction | image, options | 
  | see | AsyncFunction | image, options | 
