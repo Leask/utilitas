@@ -150,10 +150,11 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | form-data,mailgun.js,node-mailjet | 
+ | _NEED | Array | form-data,mailgun.js,mailparser,node-mailjet | 
  | default | AsyncFunction | options | 
  | getSenderName | Function |  | 
  | init | AsyncFunction | options | 
+ | parse | AsyncFunction | input, options | 
  | rawSend | AsyncFunction | data | 
  | send | AsyncFunction | email, subject, text, html, args, options | 
 
@@ -535,7 +536,7 @@ Works in Node.js and modern browsers.
  | _NEED | Array | jsdom,youtube-transcript,@mozilla/readability,@ngrok/ngrok | 
  | assertYoutubeUrl | Function |  | 
  | distill | AsyncFunction |  | 
- | distillHtml | AsyncFunction | html, options | 
+ | distillHtml | AsyncFunction | input, options | 
  | distillPage | AsyncFunction | url, op | 
  | distillYoutube | AsyncFunction |  | 
  | forward | AsyncFunction | options | 
