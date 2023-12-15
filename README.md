@@ -16,6 +16,23 @@ Works in Node.js and modern browsers.
 
 ## APIs
 
+### [alan](./lib/alan.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | OpenAI | 
+ | default | AsyncFunction | options | 
+ | createAssistant | AsyncFunction | options | 
+ | createMessage | AsyncFunction | threadId, message, options | 
+ | ensureAssistant | AsyncFunction | options | 
+ | ensureThread | AsyncFunction | options | 
+ | getRun | AsyncFunction | threadId, runId | 
+ | getThread | AsyncFunction | threadId | 
+ | init | AsyncFunction | options | 
+ | listAssistant | AsyncFunction | options | 
+ | listMessages | AsyncFunction | threadId, options | 
+ | run | AsyncFunction | assistantId, threadId, options | 
+
 ### [bot](./lib/bot.mjs)
 
  | symbol | type | params / value | 
