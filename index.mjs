@@ -12,7 +12,7 @@ import * as dbio from './lib/dbio.mjs';
 import * as email from './lib/email.mjs';
 import * as encryption from './lib/encryption.mjs';
 import * as event from './lib/event.mjs';
-import * as hal from './lib/hal.mjs';
+import * as hal from './lib/hal.mjs/index.js';
 import * as image from './lib/image.mjs';
 import * as media from './lib/media.mjs';
 import * as memory from './lib/memory.mjs';
