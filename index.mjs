@@ -4,6 +4,7 @@ import * as math from 'mathjs';
 import * as uuid from 'uuid';
 // features
 import _ from './lib/horizon.mjs'
+import * as alan from './lib/alan.mjs';
 import * as bot from './lib/bot.mjs';
 import * as boxes from './lib/boxes.mjs';
 import * as cache from './lib/cache.mjs';
@@ -12,7 +13,7 @@ import * as dbio from './lib/dbio.mjs';
 import * as email from './lib/email.mjs';
 import * as encryption from './lib/encryption.mjs';
 import * as event from './lib/event.mjs';
-import * as hal from './lib/hal.mjs/index.js';
+import * as hal from './lib/hal.mjs';
 import * as image from './lib/image.mjs';
 import * as media from './lib/media.mjs';
 import * as memory from './lib/memory.mjs';
@@ -39,9 +40,9 @@ export {
     // dependencies
     fileType, math, uuid,
     // features
-    bot, boxes, cache, callosum, color, dbio, email, encryption, event, hal,
-    image, manifest, media, memory, network, sentinel, shekel, shell, shot, sms,
-    speech, ssl, storage, tape, uoid, utilitas, vision, web
+    alan, bot, boxes, cache, callosum, color, dbio, email, encryption, event,
+    hal, image, manifest, media, memory, network, sentinel, shekel, shell, shot,
+    sms, speech, ssl, storage, tape, uoid, utilitas, vision, web
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
