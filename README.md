@@ -24,14 +24,16 @@ Works in Node.js and modern browsers.
  | default | AsyncFunction | options | 
  | complete | AsyncFunction | content, options | 
  | createAssistant | AsyncFunction | options | 
- | createMessage | AsyncFunction | threadId, message, options | 
+ | createMessage | AsyncFunction | threadId, content, options | 
  | ensureAssistant | AsyncFunction | options | 
  | ensureThread | AsyncFunction |  | 
+ | getLatestMessage | AsyncFunction | threadId, options | 
  | getRun | AsyncFunction | threadId, runId, options | 
- | getThread | AsyncFunction | threadId | 
+ | getThread | AsyncFunction | threadId, options | 
  | init | AsyncFunction | options | 
  | listAssistant | AsyncFunction | options | 
  | listMessages | AsyncFunction | threadId, options | 
+ | prompt | AsyncFunction | content, options | 
  | run | AsyncFunction | assistantId, threadId, options | 
 
 ### [bot](./lib/bot.mjs)
