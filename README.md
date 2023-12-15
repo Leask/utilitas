@@ -22,11 +22,12 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | OpenAI | 
  | default | AsyncFunction | options | 
+ | complete | AsyncFunction | content, options | 
  | createAssistant | AsyncFunction | options | 
  | createMessage | AsyncFunction | threadId, message, options | 
  | ensureAssistant | AsyncFunction | options | 
- | ensureThread | AsyncFunction | options | 
- | getRun | AsyncFunction | threadId, runId | 
+ | ensureThread | AsyncFunction |  | 
+ | getRun | AsyncFunction | threadId, runId, options | 
  | getThread | AsyncFunction | threadId | 
  | init | AsyncFunction | options | 
  | listAssistant | AsyncFunction | options | 
