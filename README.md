@@ -22,12 +22,12 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | OpenAI | 
  | default | AsyncFunction | options | 
- | complete | AsyncFunction | content, options | 
  | createAssistant | AsyncFunction | options | 
  | createMessage | AsyncFunction | threadId, content, options | 
  | deleteAllFilesFromAssistant | AsyncFunction | assistantId, options | 
  | deleteFile | AsyncFunction | file_id, options | 
  | deleteFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
+ | deleteThread | AsyncFunction | threadId, options | 
  | detachFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
  | ensureAssistant | AsyncFunction | options | 
  | ensureThread | AsyncFunction |  | 
@@ -39,7 +39,8 @@ Works in Node.js and modern browsers.
  | listAssistantFiles | AsyncFunction | assistant_id, options | 
  | listFiles | AsyncFunction | options | 
  | listMessages | AsyncFunction | threadId, o | 
- | prompt | AsyncFunction | content, options | 
+ | promptAssistant | AsyncFunction | content, options | 
+ | promptChatGPT | AsyncFunction | content, options | 
  | run | AsyncFunction | assistantId, threadId, options | 
  | uploadFile | AsyncFunction | input, options | 
  | uploadFileForAssistants | AsyncFunction | content, options | 
