@@ -25,6 +25,10 @@ Works in Node.js and modern browsers.
  | complete | AsyncFunction | content, options | 
  | createAssistant | AsyncFunction | options | 
  | createMessage | AsyncFunction | threadId, content, options | 
+ | deleteAllFilesFromAssistant | AsyncFunction | assistantId, options | 
+ | deleteFile | AsyncFunction | file_id, options | 
+ | deleteFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
+ | detachFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
  | ensureAssistant | AsyncFunction | options | 
  | ensureThread | AsyncFunction |  | 
  | getLatestMessage | AsyncFunction | threadId, options | 
@@ -32,9 +36,14 @@ Works in Node.js and modern browsers.
  | getThread | AsyncFunction | threadId, options | 
  | init | AsyncFunction | options | 
  | listAssistant | AsyncFunction | options | 
- | listMessages | AsyncFunction | threadId, options | 
+ | listAssistantFiles | AsyncFunction | assistant_id, options | 
+ | listFiles | AsyncFunction | options | 
+ | listMessages | AsyncFunction | threadId, o | 
  | prompt | AsyncFunction | content, options | 
  | run | AsyncFunction | assistantId, threadId, options | 
+ | uploadFile | AsyncFunction | input, options | 
+ | uploadFileForAssistants | AsyncFunction | content, options | 
+ | uploadFileForRetrieval | AsyncFunction | assistantId, content, options | 
 
 ### [bot](./lib/bot.mjs)
 
