@@ -232,7 +232,7 @@ Works in Node.js and modern browsers.
  | MAX_CONTEXT_TOKENS | Number | 4096 | 
  | MAX_PROMPT_TOKENS | Number | 2457 | 
  | MAX_RESPONSE_TOKENS | Number | 1639 | 
- | countTokens | Function | txt | 
+ | countTokens | Function | t | 
  | createEmbedding | AsyncFunction | input, options | 
  | init | AsyncFunction |  | 
  | initOpenAI | AsyncFunction | options | 
