@@ -22,15 +22,22 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | OpenAI | 
  | default | AsyncFunction | options | 
+ | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
+ | FUNCTION | Object | {"type":"function"} | 
+ | GPT4 | String | gpt-4 | 
+ | GPT4_1106 | String | gpt-4-1106-preview | 
+ | RETRIEVAL | Object | {"type":"retrieval"} | 
  | createAssistant | AsyncFunction | options | 
  | createMessage | AsyncFunction | threadId, content, options | 
  | deleteAllFilesFromAssistant | AsyncFunction | assistantId, options | 
+ | deleteAssistant | AsyncFunction | assistantId, options | 
  | deleteFile | AsyncFunction | file_id, options | 
  | deleteFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
  | deleteThread | AsyncFunction | threadId, options | 
  | detachFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
- | ensureAssistant | AsyncFunction | options | 
+ | ensureAssistant | AsyncFunction |  | 
  | ensureThread | AsyncFunction |  | 
+ | getAssistant | AsyncFunction | assistantId, options | 
  | getLatestMessage | AsyncFunction | threadId, options | 
  | getRun | AsyncFunction | threadId, runId, options | 
  | getThread | AsyncFunction | threadId, options | 
@@ -39,6 +46,7 @@ Works in Node.js and modern browsers.
  | listAssistantFiles | AsyncFunction | assistant_id, options | 
  | listFiles | AsyncFunction | options | 
  | listMessages | AsyncFunction | threadId, o | 
+ | modifyAssistant | AsyncFunction | assistantId, assistant, options | 
  | promptAssistant | AsyncFunction | content, options | 
  | promptChatGPT | AsyncFunction | content, options | 
  | run | AsyncFunction | assistantId, threadId, options | 
