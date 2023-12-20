@@ -20,7 +20,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | OpenAI | 
+ | _NEED | Array | OpenAI,@google-cloud/vertexai,@google/generative-ai | 
  | default | AsyncFunction | options | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | FUNCTION | Object | {"type":"function"} | 
@@ -29,6 +29,7 @@ Works in Node.js and modern browsers.
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | createAssistant | AsyncFunction | options | 
  | createMessage | AsyncFunction | threadId, content, options | 
+ | createOpenAIEmbedding | AsyncFunction | input, options | 
  | deleteAllFilesFromAssistant | AsyncFunction | assistantId, options | 
  | deleteAssistant | AsyncFunction | assistantId, options | 
  | deleteFile | AsyncFunction | file_id, options | 
@@ -49,6 +50,8 @@ Works in Node.js and modern browsers.
  | modifyAssistant | AsyncFunction | assistantId, assistant, options | 
  | promptAssistant | AsyncFunction | content, options | 
  | promptChatGPT | AsyncFunction | content, options | 
+ | promptGemini | AsyncFunction | content, options | 
+ | promptVertex | AsyncFunction | content, options | 
  | run | AsyncFunction | assistantId, threadId, options | 
  | uploadFile | AsyncFunction | input, options | 
  | uploadFileForAssistants | AsyncFunction | content, options | 
@@ -235,15 +238,13 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | openai,@waylaidwanderer/chatgpt-api | 
+ | _NEED | Array | @waylaidwanderer/chatgpt-api | 
  | default | AsyncFunction |  | 
  | MAX_CONTEXT_TOKENS | Number | 4096 | 
  | MAX_PROMPT_TOKENS | Number | 2457 | 
  | MAX_RESPONSE_TOKENS | Number | 1639 | 
  | countTokens | Function | t | 
- | createEmbedding | AsyncFunction | input, options | 
  | init | AsyncFunction |  | 
- | initOpenAI | AsyncFunction | options | 
 
 ### [horizon](./lib/horizon.mjs)
 
