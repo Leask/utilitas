@@ -28,6 +28,7 @@ Works in Node.js and modern browsers.
  | GPT4_1106 | String | gpt-4-1106-preview | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | createAssistant | AsyncFunction | options | 
+ | createGeminiEmbedding | AsyncFunction | input, options | 
  | createMessage | AsyncFunction | threadId, content, options | 
  | createOpenAIEmbedding | AsyncFunction | input, options | 
  | deleteAllFilesFromAssistant | AsyncFunction | assistantId, options | 
