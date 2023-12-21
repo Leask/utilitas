@@ -23,12 +23,17 @@ Works in Node.js and modern browsers.
  | _NEED | Array | @google-cloud/aiplatform,@google-cloud/vertexai,@google/generative-ai,OpenAI | 
  | default | AsyncFunction | options | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
+ | DEFAULT_GPT_TRAINING_MODEL | String | gpt-3.5-turbo | 
  | FUNCTION | Object | {"type":"function"} | 
  | GPT4 | String | gpt-4 | 
  | GPT4_1106 | String | gpt-4-1106-preview | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
+ | buildGptTrainingCase | Function | prompt, response, options | 
+ | buildGptTrainingCases | Function | cases, opts | 
+ | cancelGptFineTuningJob | AsyncFunction | job_id, options | 
  | createAssistant | AsyncFunction | options | 
  | createGeminiEmbedding | AsyncFunction | input, options | 
+ | createGptFineTuningJob | AsyncFunction | training_file, options | 
  | createMessage | AsyncFunction | threadId, content, options | 
  | createOpenAIEmbedding | AsyncFunction | input, options | 
  | createVertexEmbedding | AsyncFunction | content, options | 
@@ -41,6 +46,7 @@ Works in Node.js and modern browsers.
  | ensureAssistant | AsyncFunction |  | 
  | ensureThread | AsyncFunction |  | 
  | getAssistant | AsyncFunction | assistantId, options | 
+ | getGptFineTuningJob | AsyncFunction | job_id, options | 
  | getLatestMessage | AsyncFunction | threadId, options | 
  | getRun | AsyncFunction | threadId, runId, options | 
  | getThread | AsyncFunction | threadId, options | 
@@ -48,6 +54,8 @@ Works in Node.js and modern browsers.
  | listAssistant | AsyncFunction | options | 
  | listAssistantFiles | AsyncFunction | assistant_id, options | 
  | listFiles | AsyncFunction | options | 
+ | listGptFineTuningEvents | AsyncFunction | job_id, options | 
+ | listGptFineTuningJobs | AsyncFunction | options | 
  | listMessages | AsyncFunction | threadId, o | 
  | modifyAssistant | AsyncFunction | assistantId, assistant, options | 
  | promptAssistant | AsyncFunction | content, options | 
@@ -55,8 +63,10 @@ Works in Node.js and modern browsers.
  | promptGemini | AsyncFunction | content, options | 
  | promptVertex | AsyncFunction | content, options | 
  | run | AsyncFunction | assistantId, threadId, options | 
+ | tailGptFineTuningEvents | AsyncFunction | job_id, options | 
  | uploadFile | AsyncFunction | input, options | 
  | uploadFileForAssistants | AsyncFunction | content, options | 
+ | uploadFileForFineTuning | AsyncFunction | content, options | 
  | uploadFileForRetrieval | AsyncFunction | assistantId, content, options | 
 
 ### [bot](./lib/bot.mjs)
