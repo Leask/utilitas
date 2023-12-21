@@ -20,7 +20,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | OpenAI,@google-cloud/vertexai,@google/generative-ai | 
+ | _NEED | Array | @google-cloud/aiplatform,@google-cloud/vertexai,@google/generative-ai,OpenAI | 
  | default | AsyncFunction | options | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | FUNCTION | Object | {"type":"function"} | 
@@ -31,6 +31,7 @@ Works in Node.js and modern browsers.
  | createGeminiEmbedding | AsyncFunction | input, options | 
  | createMessage | AsyncFunction | threadId, content, options | 
  | createOpenAIEmbedding | AsyncFunction | input, options | 
+ | createVertexEmbedding | AsyncFunction | content, options | 
  | deleteAllFilesFromAssistant | AsyncFunction | assistantId, options | 
  | deleteAssistant | AsyncFunction | assistantId, options | 
  | deleteFile | AsyncFunction | file_id, options | 
