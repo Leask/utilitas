@@ -25,9 +25,9 @@ Works in Node.js and modern browsers.
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEFAULT_GPT_TRAINING_MODEL | String | gpt-3.5-turbo | 
  | FUNCTION | Object | {"type":"function"} | 
- | GPT35_T | String | gpt-3.5-turbo | 
- | GPT4 | String | gpt-4 | 
- | GPT4_1106 | String | gpt-4-1106-preview | 
+ | GPT_35_TURBO | String | gpt-3.5-turbo | 
+ | GPT_4 | String | gpt-4 | 
+ | GPT_4_VISION | String | gpt-4-1106-preview | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | buildGptTrainingCase | Function | prompt, response, options | 
  | buildGptTrainingCases | Function | cases, opts | 
@@ -58,6 +58,7 @@ Works in Node.js and modern browsers.
  | listGptFineTuningEvents | AsyncFunction | job_id, options | 
  | listGptFineTuningJobs | AsyncFunction | options | 
  | listMessages | AsyncFunction | threadId, o | 
+ | listOpenAIModels | AsyncFunction | options | 
  | modifyAssistant | AsyncFunction | assistantId, assistant, options | 
  | promptAssistant | AsyncFunction | content, options | 
  | promptChatGPT | AsyncFunction | content, options | 
