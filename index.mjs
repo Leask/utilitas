@@ -13,7 +13,6 @@ import * as dbio from './lib/dbio.mjs';
 import * as email from './lib/email.mjs';
 import * as encryption from './lib/encryption.mjs';
 import * as event from './lib/event.mjs';
-import * as hal from './lib/hal.mjs';
 import * as image from './lib/image.mjs';
 import * as media from './lib/media.mjs';
 import * as memory from './lib/memory.mjs';
@@ -41,8 +40,8 @@ export {
     fileType, math, uuid,
     // features
     alan, bot, boxes, cache, callosum, color, dbio, email, encryption, event,
-    hal, image, manifest, media, memory, network, sentinel, shekel, shell, shot,
-    sms, speech, ssl, storage, tape, uoid, utilitas, vision, web
+    image, manifest, media, memory, network, sentinel, shekel, shell, shot, sms,
+    speech, ssl, storage, tape, uoid, utilitas, vision, web
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {

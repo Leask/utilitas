@@ -47,7 +47,6 @@
         "@mozilla/readability": "^0.4.4",
         "@ngrok/ngrok": "^0.9.1",
         "@sentry/node": "^7.88.0",
-        "@waylaidwanderer/chatgpt-api": "^1.37.3",
         "acme-client": "^5.0.0",
         "browserify-fs": "^1.0.0",
         "buffer": "^6.0.3",
