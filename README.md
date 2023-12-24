@@ -20,15 +20,25 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/aiplatform,@google-cloud/vertexai,@google/generative-ai,OpenAI | 
+ | _NEED | Array | @google-cloud/aiplatform,@google-cloud/vertexai,@google/generative-ai,js-tiktoken,OpenAI | 
  | default | AsyncFunction | options | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
- | DEFAULT_GPT_TRAINING_MODEL | String | gpt-3.5-turbo | 
+ | DEFAULT_MODELS | Object | {"CHATGPT":"gpt-3.5-turbo","ASSISTANT":"gpt-3.5-turbo","VERTEX":"gemini-pro-vision","GEMINI":"gemini-pro","OPENAI_EMBEDDING":"text-embedding-ada-002","GEMINI_EMEDDING":"embedding-001","VERTEX_EMEDDING":"textembedding-gecko-multilingual@001","OPENAI_TRAINING":"gpt-3.5-turbo-1106"} | 
+ | EMBEDDING_001 | String | embedding-001 | 
+ | EMBEDDING_GECKO_001 | String | textembedding-gecko@001 | 
+ | EMBEDDING_GECKO_002 | String | textembedding-gecko@002 | 
+ | EMBEDDING_GECKO_ML001 | String | textembedding-gecko-multilingual@001 | 
  | FUNCTION | Object | {"type":"function"} | 
+ | GEMINI_PRO | String | gemini-pro | 
+ | GEMINI_PRO_VISION | String | gemini-pro-vision | 
  | GPT_35_TURBO | String | gpt-3.5-turbo | 
+ | GPT_35_TURBO_1106 | String | gpt-3.5-turbo-1106 | 
  | GPT_4 | String | gpt-4 | 
+ | GPT_4_1106 | String | gpt-4-1106 | 
  | GPT_4_VISION | String | gpt-4-1106-preview | 
+ | MODELS | Object | {"gpt-3.5-turbo":{"contextWindow":4096,"tokenLimitsTPM":160000,"requestLimitsRPM":5000,"trainingData":"Sep 2021","name":"gpt-3.5-turbo","maximumOutputTokens":1639,"maximumInputTokens":2457,"tokenLimitsTPD":230400000,"requestLimitsRPD":7200000,"requestCapacityRPM":66},"gpt-3.5-turbo-1106":{"contextWindow":16385,"maximumOutputTokens":4096,"tokenLimitsTPM":160000,"requestLimitsRPM":5000,"trainingData":"Sep 2021","name":"gpt-3.5-turbo-1106","maximumInputTokens":12289,"tokenLimitsTPD":230400000,"requestLimitsRPD":7200000,"requestCapacityRPM":14},"gpt-4":{"contextWindow":8192,"tokenLimitsTPM":80000,"requestLimitsRPM":5000,"trainingData":"Sep 2021","name":"gpt-4","maximumOutputTokens":3277,"maximumInputTokens":4915,"tokenLimitsTPD":115200000,"requestLimitsRPD":7200000,"requestCapacityRPM":17},"gpt-4-1106":{"contextWindow":128000,"maximumOutputTokens":4096,"tokenLimitsTPM":300000,"tokenLimitsTPD":5000000,"requestLimitsRPM":5000,"trainingData":"Apr 2023","name":"gpt-4-1106","maximumInputTokens":123904,"requestLimitsRPD":7200000,"requestCapacityRPM":3},"gpt-4-1106-preview":{"contextWindow":128000,"maximumOutputTokens":4096,"tokenLimitsTPM":40000,"requestLimitsRPM":120,"requestLimitsRPD":1500,"trainingData":"Apr 2023","name":"gpt-4-1106-preview","maximumInputTokens":123904,"tokenLimitsTPD":57600000,"requestCapacityRPM":1},"text-embedding-ada-002":{"contextWindow":5000000,"requestLimitsRPM":5000,"trainingData":"Oct 2019","name":"text-embedding-ada-002"}} | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
+ | TEXT_EMBEDDING_ADA_002 | String | text-embedding-ada-002 | 
  | buildGptTrainingCase | Function | prompt, response, options | 
  | buildGptTrainingCases | Function | cases, opts | 
  | cancelGptFineTuningJob | AsyncFunction | job_id, options | 
@@ -52,12 +62,13 @@ Works in Node.js and modern browsers.
  | getRun | AsyncFunction | threadId, runId, options | 
  | getThread | AsyncFunction | threadId, options | 
  | init | AsyncFunction | options | 
+ | initChat | AsyncFunction | options | 
  | listAssistant | AsyncFunction | options | 
  | listAssistantFiles | AsyncFunction | assistant_id, options | 
  | listFiles | AsyncFunction | options | 
  | listGptFineTuningEvents | AsyncFunction | job_id, options | 
  | listGptFineTuningJobs | AsyncFunction | options | 
- | listMessages | AsyncFunction | threadId, o | 
+ | listMessages | AsyncFunction | threadId, options | 
  | listOpenAIModels | AsyncFunction | options | 
  | modifyAssistant | AsyncFunction | assistantId, assistant, options | 
  | promptAssistant | AsyncFunction | content, options | 
@@ -66,6 +77,7 @@ Works in Node.js and modern browsers.
  | promptVertex | AsyncFunction | content, options | 
  | run | AsyncFunction | assistantId, threadId, options | 
  | tailGptFineTuningEvents | AsyncFunction | job_id, options | 
+ | talk | AsyncFunction | input, options | 
  | uploadFile | AsyncFunction | input, options | 
  | uploadFileForAssistants | AsyncFunction | content, options | 
  | uploadFileForFineTuning | AsyncFunction | content, options | 
