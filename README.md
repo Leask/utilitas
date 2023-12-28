@@ -42,6 +42,7 @@ Works in Node.js and modern browsers.
  | buildGptTrainingCase | Function | prompt, response, options | 
  | buildGptTrainingCases | Function | cases, opts | 
  | cancelGptFineTuningJob | AsyncFunction | job_id, options | 
+ | countTokens | Function |  | 
  | createAssistant | AsyncFunction | options | 
  | createGeminiEmbedding | AsyncFunction | input, options | 
  | createGptFineTuningJob | AsyncFunction | training_file, options | 
@@ -59,6 +60,7 @@ Works in Node.js and modern browsers.
  | getAssistant | AsyncFunction | assistantId, options | 
  | getGptFineTuningJob | AsyncFunction | job_id, options | 
  | getLatestMessage | AsyncFunction | threadId, options | 
+ | getMaxChatPromptLimit | Function | options | 
  | getRun | AsyncFunction | threadId, runId, options | 
  | getThread | AsyncFunction | threadId, options | 
  | init | AsyncFunction | options | 
@@ -75,6 +77,7 @@ Works in Node.js and modern browsers.
  | promptChatGPT | AsyncFunction | content, options | 
  | promptGemini | AsyncFunction | content, options | 
  | promptVertex | AsyncFunction | content, options | 
+ | resetSession | AsyncFunction | sessionId, options | 
  | run | AsyncFunction | assistantId, threadId, options | 
  | tailGptFineTuningEvents | AsyncFunction | job_id, options | 
  | talk | AsyncFunction | input, options | 
@@ -259,18 +262,6 @@ Works in Node.js and modern browsers.
  | list | Function |  | 
  | load | AsyncFunction | module, options | 
  | loop | AsyncFunction | func, interval, tout, delay, name, options | 
-
-### [hal](./lib/hal.mjs)
-
- | symbol | type | params / value | 
- | :--- | :--- | :--- | 
- | _NEED | Array | @waylaidwanderer/chatgpt-api | 
- | default | AsyncFunction |  | 
- | MAX_CONTEXT_TOKENS | Number | 4096 | 
- | MAX_PROMPT_TOKENS | Number | 2457 | 
- | MAX_RESPONSE_TOKENS | Number | 1639 | 
- | countTokens | Function | t | 
- | init | AsyncFunction |  | 
 
 ### [horizon](./lib/horizon.mjs)
 
