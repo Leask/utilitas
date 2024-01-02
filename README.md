@@ -188,6 +188,7 @@ Works in Node.js and modern browsers.
  | assembleSet | Function | data, options | 
  | assembleTail | Function | options | 
  | assembleUpdate | Function | table, data, options | 
+ | cleanSql | Function | sql | 
  | countAll | AsyncFunction | table | 
  | countByKeyValue | AsyncFunction | table, key, value | 
  | deleteAll | AsyncFunction | table, options | 
@@ -512,6 +513,7 @@ Works in Node.js and modern browsers.
  | getRandomInt | Function |  | 
  | getRandomItemInArray | Function | array, options | 
  | getShortestInArray | Function | arr | 
+ | getTimeIcon | Function | objTime | 
  | getType | Function | any | 
  | getUnixTimestampByDate | Function | date | 
  | hexDecode | Function | string, toBuf | 
@@ -527,6 +529,7 @@ Works in Node.js and modern browsers.
  | isNull | Function | object, object | 
  | isSet | Function | o, strict | 
  | isUndefined | Function | any, any | 
+ | lastItem | Function | array | 
  | lineSplit | Function | string, options | 
  | locate | AsyncFunction | rootPack | 
  | log | Function | content, filename, options | 
