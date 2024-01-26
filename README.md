@@ -20,7 +20,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/aiplatform,@google-cloud/vertexai,@google/generative-ai,js-tiktoken,OpenAI | 
+ | _NEED | Array | @google-cloud/aiplatform,@google-cloud/vertexai,@google/generative-ai,js-tiktoken,ollama,OpenAI | 
  | default | AsyncFunction | options | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEFAULT_MODELS | Object | {"ASSISTANT":"gpt-3.5-turbo","CHATGPT":"gpt-3.5-turbo","GEMINI_EMEDDING":"embedding-001","GEMINI":"gemini-pro","OLLAMA":"mistral","OPENAI_EMBEDDING":"text-embedding-ada-002","OPENAI_TRAINING":"gpt-3.5-turbo-1106","VERTEX_EMEDDING":"textembedding-gecko-multilingual@001","VERTEX":"gemini-pro-vision"} | 
