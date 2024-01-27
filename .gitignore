@@ -110,6 +110,7 @@ dist
 .DS_Store
 
 # Leask
-package-lock.json
+/gears/.wrangler
 debug.mjs
 eng.traineddata
+package-lock.json

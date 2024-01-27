@@ -1,10 +1,11 @@
 .history
-eng.traineddata
 /.github
 /build.mjs
 /debug.mjs
+/gears
 /index.html
 /package-lock.json
 /template.md
 /test.mjs
 /webpack.config.mjs
+eng.traineddata
