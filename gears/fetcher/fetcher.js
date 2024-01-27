@@ -14,6 +14,11 @@ const CORS_HEADERS = {
     'Access-Control-Max-Age': '86400',
 };
 
+const CACHE_HEADERS = [
+    'Cache-Control', 'Content-Length', 'Content-Type',
+    'Date', 'Expires', 'Last-Modified',
+];
+
 const fetchOptions = {
     redirect: 'follow',
     follow: 3,
@@ -38,10 +43,14 @@ const handleFetch = async req => {
     if (!url) { return new Response('Invalid url', { status: 400 }); }
     const objUrl = new URL(url);
     try {
-        const [resp, headers] = [await fetch(objUrl, fetchOptions), {}];
-        for (const [k, v] of resp.headers.entries()) { headers[k] = v; }
+        const [resp, headers]
+            = [await fetch(objUrl, fetchOptions), { ...CORS_HEADERS }];
+        for (const h of CACHE_HEADERS) {
+            const v = resp.headers.get(h);
+            v && (headers[h] = v);
+        }
         const response = new Response(resp.body, {
-            headers: { ...headers, ...CORS_HEADERS },
+            headers, status: resp.status,
         });
         return response;
     } catch (err) {
