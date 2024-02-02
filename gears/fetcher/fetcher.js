@@ -14,9 +14,13 @@ const CORS_HEADERS = {
     'Access-Control-Max-Age': '86400',
 };
 
-const CACHE_HEADERS = [
+const CACHE_HEADERS_CLIENT = [
+    'Cache-Control', 'If-Modified-Since', 'If-None-Match', 'If-Range', 'Range',
+];
+
+const CACHE_HEADERS_SERVER = [
     'Cache-Control', 'Content-Length', 'Content-Type',
-    'Date', 'Expires', 'Last-Modified',
+    'Date', 'ETag', 'Expires', 'Last-Modified',
 ];
 
 const fetchOptions = {
@@ -42,10 +46,15 @@ const handleFetch = async req => {
     const url = searchParams.get('url');
     if (!url) { return new Response('Invalid url', { status: 400 }); }
     const objUrl = new URL(url);
+    const sendHeaders = { ...fetchOptions.headers };
+    CACHE_HEADERS_CLIENT.map(
+        x => sendHeaders[x] = req.headers.get(x) || undefined
+    );
     try {
-        const [resp, headers]
-            = [await fetch(objUrl, fetchOptions), { ...CORS_HEADERS }];
-        for (const h of CACHE_HEADERS) {
+        const [resp, headers] = [await fetch(objUrl, {
+            ...fetchOptions, headers: sendHeaders,
+        }), { ...CORS_HEADERS }];
+        for (const h of CACHE_HEADERS_SERVER) {
             const v = resp.headers.get(h);
             v && (headers[h] = v);
         }
