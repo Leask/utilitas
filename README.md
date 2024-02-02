@@ -416,7 +416,7 @@ Works in Node.js and modern browsers.
  | mergeFile | AsyncFunction | data, options | 
  | readFile | AsyncFunction | name, options | 
  | readJson | AsyncFunction | filename, options | 
- | sanitizeFilename | Function |  | 
+ | sanitizeFilename | Function | s, r | 
  | setConfig | AsyncFunction | data, options | 
  | sliceFile | AsyncFunction | any, options | 
  | touchPath | AsyncFunction | path, options | 
