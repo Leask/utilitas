@@ -381,6 +381,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | acme-client | 
  | default | AsyncFunction | domain, options | 
+ | SSL_RESET | String | SSL_RESET | 
  | createCsr | AsyncFunction | commonName, forge | 
  | ensureCert | AsyncFunction | domain, challengeCreate, challengeRemove, options | 
  | getCert | AsyncFunction |  | 
