@@ -384,7 +384,8 @@ Works in Node.js and modern browsers.
  | SSL_RESET | String | SSL_RESET | 
  | createCsr | AsyncFunction | commonName, forge | 
  | ensureCert | AsyncFunction | domain, challengeCreate, challengeRemove, options | 
- | getCert | AsyncFunction |  | 
+ | getCert | AsyncFunction | name | 
+ | httpsServerOptions | AsyncFunction | options | 
  | init | AsyncFunction | domain, options | 
  | isLocalhost | Function | host | 
 
