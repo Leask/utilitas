@@ -545,7 +545,7 @@ Works in Node.js and modern browsers.
  | need | AsyncFunction | name, options | 
  | newError | Function | msg, status, opt | 
  | once | Function | fn, context | 
- | parseJson | Function | any, fallback | 
+ | parseJson | Function | any, fallback, options | 
  | parseVersion | Function | verstr | 
  | prettyJson | Function | object, opt | 
  | purgeEmoji | Function | any, replace | 
