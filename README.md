@@ -393,10 +393,12 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | mime-types,@google-cloud/storage | 
+ | _NEED | Array | file-type,mime-types,@google-cloud/storage | 
  | analyzeFile | AsyncFunction | any, options | 
  | assertPath | AsyncFunction | path, type, mode, msg, code, options | 
+ | blobToBuffer | AsyncFunction |  | 
  | convert | AsyncFunction | any, options | 
+ | decodeBase64DataURL | Function |  | 
  | deleteFileOnCloud | AsyncFunction | path, options | 
  | deleteOnCloud | AsyncFunction | path, options | 
  | downloadFileFromCloud | AsyncFunction | path, options | 
