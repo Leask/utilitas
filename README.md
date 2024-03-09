@@ -473,6 +473,7 @@ Works in Node.js and modern browsers.
  | analyzeModule | Function | obj | 
  | arrayEqual | Function | arrA, arrB | 
  | assembleApiUrl | Function | hst, path, args | 
+ | assembleBuffer | Function |  | 
  | assembleUrl | Function | url, componens | 
  | assertArray | Function | arr, message, status, opts | 
  | assertBuffer | Function | buffer, message, status, options | 
