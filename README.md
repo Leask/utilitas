@@ -315,7 +315,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @sentry/node | 
+ | _NEED | Array | @sentry/node,@sentry/profiling-node | 
  | default | AsyncFunction | options | 
  | init | AsyncFunction | options | 
 
