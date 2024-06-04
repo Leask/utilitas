@@ -28,10 +28,8 @@ export default {
                 default: throw new Error(`Not found ${mod}`);
             }
         }),
-        new webpack.DefinePlugin({
-            'process.browser': 'true',
-            'process.env.NODE_DEBUG': JSON.stringify(process.env.NODE_DEBUG),
-            'process.env.READABLE_STREAM': JSON.stringify('disable'),
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
         }),
     ],
     target: ['web'],
