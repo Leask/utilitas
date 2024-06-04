@@ -19,7 +19,7 @@ export default {
     plugins: [
         new NodePolyfillPlugin(),
         new webpack.ProvidePlugin({ Buffer: ['buffer', 'Buffer'] }),
-        new webpack.ProvidePlugin({ process: 'process/browser' }),
+        new webpack.ProvidePlugin({ process: 'process/browser.js' }),
         new webpack.NormalModuleReplacementPlugin(/node:/, (resource) => {
             const mod = resource.request.replace(/^node:/, '');
             switch (mod) {
