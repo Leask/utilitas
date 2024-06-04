@@ -28,6 +28,9 @@ export default {
                 default: throw new Error(`Not found ${mod}`);
             }
         }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_DEBUG': JSON.stringify(process.env.NODE_DEBUG),
+        }),
     ],
     target: ['web'],
     output: {
