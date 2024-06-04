@@ -29,8 +29,9 @@ export default {
             }
         }),
         new webpack.DefinePlugin({
+            'process.browser': 'true',
             'process.env.NODE_DEBUG': JSON.stringify(process.env.NODE_DEBUG),
-            
+            'process.env.READABLE_STREAM': JSON.stringify('disable'),
         }),
     ],
     target: ['web'],
