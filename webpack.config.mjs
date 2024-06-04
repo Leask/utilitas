@@ -19,6 +19,7 @@ export default {
     plugins: [
         new NodePolyfillPlugin(),
         new webpack.ProvidePlugin({ Buffer: ['buffer', 'Buffer'] }),
+        new webpack.ProvidePlugin({ process: 'process/browser' }),
         new webpack.NormalModuleReplacementPlugin(/node:/, (resource) => {
             const mod = resource.request.replace(/^node:/, '');
             switch (mod) {
@@ -27,9 +28,6 @@ export default {
                 case 'url': resource.request = 'url'; break;
                 default: throw new Error(`Not found ${mod}`);
             }
-        }),
-        new webpack.ProvidePlugin({
-            process: 'process/browser',
         }),
     ],
     target: ['web'],
