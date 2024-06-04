@@ -509,7 +509,7 @@ Works in Node.js and modern browsers.
  | exclude | Function | obj, keys | 
  | extError | Function | err, status, opt | 
  | extract | Function | ...path | 
- | fileURLToPath | Function | path | 
+ | fileURLToPath | Function | path, options | 
  | fullLengthLog | Function | string, options | 
  | getDateByUnixTimestamp | Function | timestamp | 
  | getFuncParams | Function | func | 
