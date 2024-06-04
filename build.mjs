@@ -2,7 +2,7 @@ import { basename, extname } from 'path';
 import { readdir } from 'fs/promises';
 import { shot, storage, utilitas } from './index.mjs';
 // https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
-import manifest from './package.json' assert { type: 'json' };
+import manifest from './package.json' with { type: 'json' };
 
 // shared const
 const [lib, _manifest, n, nn] = ['./lib', 'manifest.mjs', '\n', '\n\n'];
