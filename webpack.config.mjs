@@ -66,6 +66,8 @@ export default {
         { './lib/tape.mjs': '{}' },
         { './lib/vision.mjs': '{}' },
         { './lib/web.mjs': '{}' },
+        { 'cluster': '{}' },
+        { 'os': '{}' },
         // { 'node:buffer': '{}' },
         // { 'node:stream': '{}' },
         // { 'node:fs': '{}' },
