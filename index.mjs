@@ -46,8 +46,8 @@ export {
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
     globalThis.utilitas = {
-        boxes, callosum, color, encryption, event, manifest, math, shekel, shot,
-        speech, storage, uoid, utilitas, uuid,
+        boxes, color, encryption, event, manifest, math, shekel, shot, speech,
+        storage, uoid, utilitas, uuid,
     };
     // top-level await workaround
     (async () => {

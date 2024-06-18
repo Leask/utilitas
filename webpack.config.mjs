@@ -53,6 +53,7 @@ export default {
     externals: [
         { './lib/bot.mjs': '{}' },
         { './lib/cache.mjs': '{}' },
+        { './lib/callosum.mjs': '{}' },
         { './lib/dbio.mjs': '{}' },
         { './lib/email.mjs': '{}' },
         { './lib/hal.mjs': '{}' },
@@ -66,8 +67,6 @@ export default {
         { './lib/tape.mjs': '{}' },
         { './lib/vision.mjs': '{}' },
         { './lib/web.mjs': '{}' },
-        { 'cluster': '{}' },
-        { 'os': '{}' },
         // { 'node:buffer': '{}' },
         // { 'node:stream': '{}' },
         // { 'node:fs': '{}' },
