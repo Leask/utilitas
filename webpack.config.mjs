@@ -53,7 +53,6 @@ export default {
     externals: [
         { './lib/bot.mjs': '{}' },
         { './lib/cache.mjs': '{}' },
-        { './lib/callosum.mjs': '{}' },
         { './lib/dbio.mjs': '{}' },
         { './lib/email.mjs': '{}' },
         { './lib/hal.mjs': '{}' },
