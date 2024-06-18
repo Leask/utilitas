@@ -148,12 +148,15 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | AsyncFunction | options | 
+ | assertFunc | Function |  | 
  | assign | Function | key, val, o | 
  | boardcast | Function | action, data | 
+ | call | AsyncFunction | func, options | 
  | del | Function | k, s, o | 
  | end | AsyncFunction |  | 
  | engage | Function | worker, action, data | 
  | get | AsyncFunction | ...key | 
+ | getFunc | Function | name, options | 
  | getListeners | Function | i | 
  | ignore | Function | i | 
  | init | AsyncFunction | options | 
@@ -163,8 +166,10 @@ Works in Node.js and modern browsers.
  | once | Function | action, cbf, opts | 
  | push | Function | key, val, o | 
  | queue | Function | key, val, o | 
+ | register | Function | name, func, options | 
  | report | Function | action, data | 
  | set | AsyncFunction | key, value, options | 
+ | unregister | Function | name | 
  | unshift | Function | key, val, o | 
  | worker | Undefined |  | 
  | workers | Object | {} | 
