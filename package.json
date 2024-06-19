@@ -60,7 +60,7 @@
         "lorem-ipsum": "^2.0.8",
         "mailgun.js": "^10.2.1",
         "mailparser": "^3.7.1",
-        "mime-types": "^2.1.35",
+        "mime": "^4.0.3",
         "mysql2": "^3.10.1",
         "node-mailjet": "^6.0.5",
         "node-polyfill-webpack-plugin": "^4.0.0",
