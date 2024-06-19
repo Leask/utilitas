@@ -165,11 +165,13 @@ Works in Node.js and modern browsers.
  | isWorker | Boolean | false | 
  | on | Function | action, callback, options | 
  | once | Function | action, cbf, opts | 
+ | pop | AsyncFunction | k, o | 
  | push | Function | key, val, o | 
  | queue | Function | key, val, o | 
  | register | Function | name, func, options | 
  | report | Function | action, data | 
  | set | AsyncFunction | key, value, options | 
+ | shift | AsyncFunction | k, o | 
  | unregister | Function | name | 
  | unshift | Function | key, val, o | 
  | worker | Undefined |  | 
