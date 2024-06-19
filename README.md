@@ -91,7 +91,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | telegraf | 
+ | _NEED | Array | mime,telegraf | 
  | default | AsyncFunction | options | 
  | BINARY_STRINGS | Array | off,on | 
  | COMMAND_DESCRIPTION_LENGTH | Number | 256 | 
