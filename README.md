@@ -156,6 +156,7 @@ Works in Node.js and modern browsers.
  | delKey | AsyncFunction | k, o | 
  | end | AsyncFunction |  | 
  | engage | Function | worker, action, data | 
+ | flush | AsyncFunction | k, o | 
  | get | AsyncFunction | ...key | 
  | getFunc | Function | name, options | 
  | getListeners | Function | i | 
