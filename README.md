@@ -153,6 +153,7 @@ Works in Node.js and modern browsers.
  | boardcast | Function | action, data | 
  | call | AsyncFunction | func, options | 
  | del | Function | k, s, o | 
+ | delKey | AsyncFunction | k, o | 
  | end | AsyncFunction |  | 
  | engage | Function | worker, action, data | 
  | get | AsyncFunction | ...key | 
