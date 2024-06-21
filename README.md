@@ -149,15 +149,15 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | default | AsyncFunction | options | 
  | assertFunc | Function |  | 
- | assign | Function | key, val, o | 
+ | assign | Function | k, v, o | 
  | boardcast | Function | action, data | 
  | call | AsyncFunction | func, options | 
  | del | Function | k, s, o | 
- | delKey | AsyncFunction | k, o | 
+ | delKey | AsyncFunction | args, options | 
  | end | AsyncFunction |  | 
  | engage | Function | worker, action, data | 
  | flush | AsyncFunction | k, o | 
- | get | AsyncFunction | ...key | 
+ | get | AsyncFunction | ...args | 
  | getFunc | Function | name, options | 
  | getListeners | Function | i | 
  | ignore | Function | i | 
@@ -167,14 +167,14 @@ Works in Node.js and modern browsers.
  | on | Function | action, callback, options | 
  | once | Function | action, cbf, opts | 
  | pop | AsyncFunction | k, o | 
- | push | Function | key, val, o | 
- | queue | Function | key, val, o | 
+ | push | Function | k, v, o | 
+ | queue | Function | k, v, o | 
  | register | Function | name, func, options | 
  | report | Function | action, data | 
  | set | AsyncFunction | key, value, options | 
  | shift | AsyncFunction | k, o | 
  | unregister | Function | name | 
- | unshift | Function | key, val, o | 
+ | unshift | Function | k, v, o | 
  | worker | Undefined |  | 
  | workers | Object | {} | 
 
