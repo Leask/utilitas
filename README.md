@@ -405,6 +405,7 @@ Works in Node.js and modern browsers.
  | _NEED | Array | file-type,mime-types,@google-cloud/storage | 
  | BUFFER | String | BUFFER | 
  | DATAURL | String | DATAURL | 
+ | MIME_BINARY | String | application/octet-stream | 
  | STREAM | String | STREAM | 
  | analyzeFile | AsyncFunction | any, options | 
  | assertPath | AsyncFunction | path, type, mode, msg, code, options | 
