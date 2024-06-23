@@ -415,7 +415,7 @@ Works in Node.js and modern browsers.
  | deleteOnCloud | AsyncFunction | path, options | 
  | downloadFileFromCloud | AsyncFunction | path, options | 
  | downloadFromCloud | AsyncFunction | path, options | 
- | encodeBase64DataURL | Function | mime, buffer | 
+ | encodeBase64DataURL | AsyncFunction | mime, buffer | 
  | exists | AsyncFunction | filename | 
  | existsOnCloud | AsyncFunction | destination, options | 
  | getConfig | AsyncFunction | options | 
