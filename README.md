@@ -55,6 +55,7 @@ Works in Node.js and modern browsers.
  | deleteFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
  | deleteThread | AsyncFunction | threadId, options | 
  | detachFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
+ | distillFile | AsyncFunction | attachments, o | 
  | ensureAssistant | AsyncFunction |  | 
  | ensureThread | AsyncFunction |  | 
  | getAssistant | AsyncFunction | assistantId, options | 
@@ -402,6 +403,9 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | _NEED | Array | file-type,mime-types,@google-cloud/storage | 
+ | BUFFER | String | BUFFER | 
+ | DATAURL | String | DATAURL | 
+ | STREAM | String | STREAM | 
  | analyzeFile | AsyncFunction | any, options | 
  | assertPath | AsyncFunction | path, type, mode, msg, code, options | 
  | blobToBuffer | AsyncFunction |  | 
