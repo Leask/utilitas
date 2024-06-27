@@ -99,7 +99,7 @@ Works in Node.js and modern browsers.
  | COMMAND_LENGTH | Number | 32 | 
  | COMMAND_LIMIT | Number | 100 | 
  | EMOJI_BOT | String | 🤖 | 
- | EMOJI_SPEECH | String | 🗣️ | 
+ | EMOJI_SPEECH | String | 👂 | 
  | EMOJI_THINKING | String | 💬 | 
  | GROUP_LIMIT | Number | 3000 | 
  | HELLO | String | Hello! | 
