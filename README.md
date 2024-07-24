@@ -227,6 +227,7 @@ Works in Node.js and modern browsers.
  | updateById | AsyncFunction | table, id, fields, options | 
  | updateByKeyValue | AsyncFunction | table, key, value, fields, options | 
  | upsert | Function | table, fields, options | 
+ | vacuum | AsyncFunction | table, options | 
 
 ### [email](./lib/email.mjs)
 
@@ -506,6 +507,7 @@ Works in Node.js and modern browsers.
  | basename | Function |  | 
  | byteToHexString | Function | byteArray | 
  | call | Function | f, ...a | 
+ | checkChance | Function |  | 
  | checkInterval | Function | itv, sed | 
  | clarify | Function |  | 
  | clone | Function | any | 
