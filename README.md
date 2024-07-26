@@ -39,6 +39,7 @@ Works in Node.js and modern browsers.
  | MODELS | Object | {"gpt-4o-mini":{"contextWindow":128000,"imageCostTokens":1105,"maxOutputTokens":4096,"requestLimitsRPM":10000,"tokenLimitsTPD":1000000000,"tokenLimitsTPM":10000000,"trainingData":"Oct 2023","vision":true,"supportedMimeTypes":["image/png","image/jpeg","image/gif","image/webp"],"name":"gpt-4o-mini","maxInputTokens":123904,"requestLimitsRPD":14400000,"requestCapacityRPM":81},"gpt-4o":{"contextWindow":128000,"imageCostTokens":1105,"maxOutputTokens":4096,"requestLimitsRPM":10000,"tokenLimitsTPD":200000000,"tokenLimitsTPM":2000000,"trainingData":"Oct 2023","vision":true,"supportedMimeTypes":["image/png","image/jpeg","image/gif","image/webp"],"name":"gpt-4o","maxInputTokens":123904,"requestLimitsRPD":14400000,"requestCapacityRPM":17},"gemini-1.5-flash-latest":{"contextWindow":1048576,"maxOutputTokens":8192,"trainingData":"April 9, 2024","name":"gemini-1.5-flash-latest","supportedMimeTypes":[],"maxInputTokens":1040384,"tokenLimitsTPD":null,"requestLimitsRPD":null,"requestCapacityRPM":null},"gemini-1.5-flash-preview-0514":{"contextWindow":1048576,"imageCostTokens":258,"maxAudioLength":34200,"maxAudioPerPrompt":1,"maxFileSize":20971520,"maxImagePerPrompt":3600,"maxImageSize":null,"maxOutputTokens":8192,"maxUrlSize":2147483648,"maxVideoLength":3000,"maxVideoLengthWithAudio":3000,"maxVideoLengthWithoutAudio":3600,"maxVideoPerPrompt":10,"requestLimitsRPM":1000,"tokenLimitsTPM":2000000,"trainingData":"May, 2024","vision":true,"supportedMimeTypes":["image/png","image/jpeg","video/mov","video/mpeg","video/mp4","video/mpg","video/avi","video/wmv","video/mpegps","video/x-flv","application/pdf","audio/aac","audio/flac","audio/mp3","audio/m4a","audio/mpga","audio/opus","audio/pcm","audio/wav","audio/webm","video/3gpp"],"name":"gemini-1.5-flash-preview-0514","maxInputTokens":1040384,"tokenLimitsTPD":2880000000,"requestLimitsRPD":1440000,"requestCapacityRPM":2},"mistral":{"contextWindow":128000,"requestLimitsRPM":null,"tokenLimitsTPM":null,"name":"mistral","supportedMimeTypes":[],"maxOutputTokens":51200,"maxInputTokens":76800,"tokenLimitsTPD":null,"requestLimitsRPD":null,"requestCapacityRPM":null},"text-embedding-3-small":{"contextWindow":8191,"embedding":true,"outputDimension":1536,"requestLimitsRPM":500,"tokenLimitsTPM":1000000,"trainingData":"Sep 2021","name":"text-embedding-3-small","maxInputTokens":8191},"text-embedding-3-large":{"contextWindow":8191,"embedding":true,"outputDimension":3072,"requestLimitsRPM":500,"tokenLimitsTPM":1000000,"trainingData":"Sep 2021","name":"text-embedding-3-large","maxInputTokens":8191},"GEMINI_EMEDDING":{"contextWindow":3072,"embedding":true,"name":"GEMINI_EMEDDING","maxInputTokens":3072},"VERTEX_EMEDDING":{"contextWindow":3072,"embedding":true,"name":"VERTEX_EMEDDING","maxInputTokens":3072}} | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | TEXT_EMBEDDING_3_SMALL | String | text-embedding-3-small | 
+ | analyzeSessions | AsyncFunction | sessionIds, options | 
  | buildGptTrainingCase | Function | prompt, response, options | 
  | buildGptTrainingCases | Function | cases, opts | 
  | cancelGptFineTuningJob | AsyncFunction | job_id, options | 
@@ -63,6 +64,7 @@ Works in Node.js and modern browsers.
  | getLatestMessage | AsyncFunction | threadId, options | 
  | getMaxChatPromptLimit | Function | options | 
  | getRun | AsyncFunction | threadId, runId, options | 
+ | getSession | AsyncFunction | sessionId, options | 
  | getThread | AsyncFunction | threadId, options | 
  | init | AsyncFunction | options | 
  | initChat | AsyncFunction | options | 
@@ -74,6 +76,7 @@ Works in Node.js and modern browsers.
  | listMessages | AsyncFunction | threadId, options | 
  | listOpenAIModels | AsyncFunction | options | 
  | modifyAssistant | AsyncFunction | assistantId, assistant, options | 
+ | prompt | AsyncFunction | input, options | 
  | promptAssistant | AsyncFunction | content, options | 
  | promptChatGPT | AsyncFunction | content, options | 
  | promptGemini | AsyncFunction | content, options | 
@@ -83,6 +86,7 @@ Works in Node.js and modern browsers.
  | run | AsyncFunction | assistantId, threadId, options | 
  | tailGptFineTuningEvents | AsyncFunction | job_id, options | 
  | talk | AsyncFunction | input, options | 
+ | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
  | uploadFile | AsyncFunction | input, options | 
  | uploadFileForAssistants | AsyncFunction | content, options | 
  | uploadFileForFineTuning | AsyncFunction | content, options | 
