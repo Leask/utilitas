@@ -92,6 +92,16 @@ Works in Node.js and modern browsers.
  | uploadFileForFineTuning | AsyncFunction | content, options | 
  | uploadFileForRetrieval | AsyncFunction | assistantId, content, options | 
 
+### [bee](./lib/bee.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | puppeteer | 
+ | default | AsyncFunction |  | 
+ | browse | AsyncFunction | url, options | 
+ | end | AsyncFunction |  | 
+ | init | AsyncFunction |  | 
+
 ### [bot](./lib/bot.mjs)
 
  | symbol | type | params / value | 
@@ -410,6 +420,7 @@ Works in Node.js and modern browsers.
  | _NEED | Array | file-type,mime-types,@google-cloud/storage | 
  | BUFFER | String | BUFFER | 
  | DATAURL | String | DATAURL | 
+ | FILE | String | FILE | 
  | MIME_BINARY | String | application/octet-stream | 
  | STREAM | String | STREAM | 
  | analyzeFile | AsyncFunction | any, options | 
