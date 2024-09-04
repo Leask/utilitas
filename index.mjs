@@ -5,6 +5,7 @@ import * as uuid from 'uuid';
 // features
 import _ from './lib/horizon.mjs'
 import * as alan from './lib/alan.mjs';
+import * as bee from './lib/bee.mjs';
 import * as bot from './lib/bot.mjs';
 import * as boxes from './lib/boxes.mjs';
 import * as cache from './lib/cache.mjs';
@@ -39,9 +40,9 @@ export {
     // dependencies
     fileType, math, uuid,
     // features
-    alan, bot, boxes, cache, callosum, color, dbio, email, encryption, event,
-    image, manifest, media, memory, network, sentinel, shekel, shell, shot, sms,
-    speech, ssl, storage, tape, uoid, utilitas, vision, web
+    alan, bee, bot, boxes, cache, callosum, color, dbio, email, encryption,
+    event, image, manifest, media, memory, network, sentinel, shekel, shell,
+    shot, sms, speech, ssl, storage, tape, uoid, utilitas, vision, web
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
