@@ -35,6 +35,7 @@
         "uuid": "^11.0.3"
     },
     "devDependencies": {
+        "@anthropic-ai/sdk": "^0.33.1",
         "@ffmpeg-installer/ffmpeg": "^1.1.0",
         "@ffprobe-installer/ffprobe": "^2.1.2",
         "@google-cloud/speech": "^6.7.0",
