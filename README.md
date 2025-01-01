@@ -24,7 +24,7 @@ Works in Node.js and modern browsers.
  | default | AsyncFunction | options | 
  | ATTACHMENT_TOKEN_COST | Number | 1105 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
- | DEFAULT_MODELS | Object | {"ASSISTANT":"gpt-4o","CHATGPT":"gpt-4o","GEMINI_EMEDDING":"embedding-001","GEMINI":"gemini-2.0-flash-exp","OLLAMA":"mistral","OPENAI_EMBEDDING":"text-embedding-3-small","OPENAI_TRAINING":"gpt-4o-mini","CLAUDE":"claude-3-5-sonnet-latest"} | 
+ | DEFAULT_MODELS | Object | {"CHATGPT":"gpt-4o","GEMINI_EMEDDING":"embedding-001","GEMINI":"gemini-2.0-flash-exp","OLLAMA":"mistral","OPENAI_EMBEDDING":"text-embedding-3-small","OPENAI_TRAINING":"gpt-4o-mini","CLAUDE":"claude-3-5-sonnet-latest"} | 
  | EMBEDDING_001 | String | embedding-001 | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_20_FLASH | String | gemini-2.0-flash-exp | 
@@ -43,52 +43,31 @@ Works in Node.js and modern browsers.
  | buildGptTrainingCases | Function | cases, opts | 
  | cancelGptFineTuningJob | AsyncFunction | job_id, options | 
  | countTokens | AsyncFunction | input, options | 
- | createAssistant | AsyncFunction | options | 
  | createGeminiEmbedding | AsyncFunction | input, options | 
  | createGptFineTuningJob | AsyncFunction | training_file, options | 
- | createMessage | AsyncFunction | threadId, content, options | 
  | createOpenAIEmbedding | AsyncFunction | input, options | 
- | deleteAllFilesFromAssistant | AsyncFunction | assistantId, options | 
- | deleteAssistant | AsyncFunction | assistantId, options | 
  | deleteFile | AsyncFunction | file_id, options | 
- | deleteFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
- | deleteThread | AsyncFunction | threadId, options | 
- | detachFileFromAssistant | AsyncFunction | assistantId, file_id, options | 
  | distillFile | AsyncFunction | attachments, o | 
- | ensureAssistant | AsyncFunction |  | 
- | ensureThread | AsyncFunction |  | 
- | getAssistant | AsyncFunction | assistantId, options | 
  | getGptFineTuningJob | AsyncFunction | job_id, options | 
- | getLatestMessage | AsyncFunction | threadId, options | 
  | getMaxChatPromptLimit | Function | options | 
- | getRun | AsyncFunction | threadId, runId, options | 
  | getSession | AsyncFunction | sessionId, options | 
- | getThread | AsyncFunction | threadId, options | 
  | init | AsyncFunction | options | 
  | initChat | AsyncFunction | options | 
- | listAssistant | AsyncFunction | options | 
- | listAssistantFiles | AsyncFunction | assistant_id, options | 
  | listFiles | AsyncFunction | options | 
  | listGptFineTuningEvents | AsyncFunction | job_id, options | 
  | listGptFineTuningJobs | AsyncFunction | options | 
- | listMessages | AsyncFunction | threadId, options | 
  | listOpenAIModels | AsyncFunction | options | 
- | modifyAssistant | AsyncFunction | assistantId, assistant, options | 
  | prompt | AsyncFunction | input, options | 
- | promptAssistant | AsyncFunction | content, options | 
  | promptChatGPT | AsyncFunction | content, options | 
  | promptClaude | AsyncFunction | content, options | 
  | promptGemini | AsyncFunction | content, options | 
  | promptOllama | AsyncFunction | content, options | 
  | resetSession | AsyncFunction | sessionId, options | 
- | run | AsyncFunction | assistantId, threadId, options | 
  | tailGptFineTuningEvents | AsyncFunction | job_id, options | 
  | talk | AsyncFunction | input, options | 
  | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
  | uploadFile | AsyncFunction | input, options | 
- | uploadFileForAssistants | AsyncFunction | content, options | 
  | uploadFileForFineTuning | AsyncFunction | content, options | 
- | uploadFileForRetrieval | AsyncFunction | assistantId, content, options | 
 
 ### [bee](./lib/bee.mjs)
 
