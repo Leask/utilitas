@@ -28,6 +28,7 @@ Works in Node.js and modern browsers.
  | EMBEDDING_001 | String | embedding-001 | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_20_FLASH | String | gemini-2.0-flash-exp | 
+ | GEMINI_20_FLASH_THINKING | String | gemini-2.0-flash-thinking-exp | 
  | GPT_4O | String | gpt-4o | 
  | GPT_4O_MINI | String | gpt-4o-mini | 
  | GPT_O1 | String | o1-preview | 
