@@ -22,7 +22,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | @anthropic-ai/sdk,@google/generative-ai,js-tiktoken,ollama,OpenAI | 
  | default | AsyncFunction | options | 
- | ATTACHMENT_TOKEN_COST | Number | 1105 | 
+ | ATTACHMENT_TOKEN_COST | Number | 5000 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEFAULT_MODELS | Object | {"CHATGPT_MINI":"gpt-4o-mini","CHATGPT":"gpt-4o","CLAUDE":"claude-3-5-sonnet-latest","GEMINI_EMEDDING":"embedding-001","GEMINI":"gemini-2.0-flash-exp","OLLAMA":"mistral","OPENAI_EMBEDDING":"text-embedding-3-small","OPENAI_TRAINING":"gpt-4o-mini"} | 
  | EMBEDDING_001 | String | embedding-001 | 
