@@ -53,10 +53,12 @@ Works in Node.js and modern browsers.
  | getSession | AsyncFunction | sessionId, options | 
  | init | AsyncFunction | options | 
  | initChat | AsyncFunction | options | 
+ | jpeg | String | image/jpeg | 
  | listFiles | AsyncFunction | options | 
  | listGptFineTuningEvents | AsyncFunction | job_id, options | 
  | listGptFineTuningJobs | AsyncFunction | options | 
  | listOpenAIModels | AsyncFunction | options | 
+ | ogg | String | audio/ogg | 
  | prompt | AsyncFunction | input, options | 
  | promptChatGPT | AsyncFunction | content, options | 
  | promptClaude | AsyncFunction | content, options | 
@@ -68,6 +70,7 @@ Works in Node.js and modern browsers.
  | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
  | uploadFile | AsyncFunction | input, options | 
  | uploadFileForFineTuning | AsyncFunction | content, options | 
+ | wav | String | audio/wav | 
 
 ### [bee](./lib/bee.mjs)
 
