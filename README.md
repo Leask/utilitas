@@ -24,7 +24,7 @@ Works in Node.js and modern browsers.
  | default | AsyncFunction | options | 
  | ATTACHMENT_TOKEN_COST | Number | 5000 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
- | DEFAULT_MODELS | Object | {"CHATGPT_MINI":"gpt-4o-mini","CHATGPT":"gpt-4o","CLAUDE":"claude-3-5-sonnet-latest","GEMINI_EMEDDING":"embedding-001","GEMINI":"gemini-2.0-flash-exp","OLLAMA":"mistral","OPENAI_EMBEDDING":"text-embedding-3-small","OPENAI_TRAINING":"gpt-4o-mini","OPENAI_VOICE":"nova","CHAT":"gemini-2.0-flash-exp"} | 
+ | DEFAULT_MODELS | Object | {"CHATGPT_MINI":"o1-mini","CHATGPT":"o1-preview","CLAUDE":"claude-3-5-sonnet-latest","GEMINI_EMEDDING":"embedding-001","GEMINI":"gemini-2.0-flash-exp","OLLAMA":"mistral","OPENAI_EMBEDDING":"text-embedding-3-small","OPENAI_TRAINING":"gpt-4o-mini","OPENAI_VOICE":"nova","CHAT":"gemini-2.0-flash-exp"} | 
  | EMBEDDING_001 | String | embedding-001 | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_20_FLASH | String | gemini-2.0-flash-exp | 
