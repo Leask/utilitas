@@ -571,6 +571,7 @@ Works in Node.js and modern browsers.
  | renderObject | Function | obj, options | 
  | renderText | Function | text, options | 
  | resolve | AsyncFunction | async, res | 
+ | reverseKeyValues | Function |  | 
  | rotate | Function | any, step, opts | 
  | shiftTime | Function | dif, base | 
  | split | Function | str, options | 
