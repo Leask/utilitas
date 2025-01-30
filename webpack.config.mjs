@@ -48,7 +48,7 @@ export default {
             'mathjs': false,
             'os': false,
             'worker_threads': false,
-            'file-type': 'file-type/browser',
+            'file-type': 'file-type/core',
         },
     },
     externals: [
