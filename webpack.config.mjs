@@ -48,6 +48,7 @@ export default {
             'mathjs': false,
             'os': false,
             'worker_threads': false,
+            'stream/web': false,
         },
     },
     externals: [
