@@ -24,8 +24,8 @@ export default {
             const mod = resource.request.replace(/^node:/, '');
             switch (mod) {
                 case 'buffer': resource.request = 'buffer'; break;
-                case 'stream': resource.request = 'readable-stream'; break;
-                case 'stream/web': resource.request = 'stream/web'; break;
+                case 'stream': resource.request = 'stream-browserify'; break;
+                case 'stream/web': resource.request = 'stream-browserify'; break;
                 case 'url': resource.request = 'url'; break;
                 default: throw new Error(`Not found ${mod}`);
             }
@@ -42,8 +42,6 @@ export default {
         fallback: {
             'buffer': require.resolve('buffer/'),
             'fs': require.resolve('browserify-fs'),
-            'stream': require.resolve('stream-browserify'),
-            'stream/web': require.resolve('stream-browserify'),
         },
         alias: {
             'child_process': false,
