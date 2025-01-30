@@ -24,8 +24,8 @@ export default {
             const mod = resource.request.replace(/^node:/, '');
             switch (mod) {
                 case 'buffer': resource.request = 'buffer'; break;
-                case 'stream': resource.request = 'stream-browserify'; break;
-                case 'stream/web': resource.request = 'stream-browserify'; break;
+                case 'stream': resource.request = 'stream-browserify'; break; // readable-stream
+                case 'stream/web': resource.request = 'stream-browserify'; break; // readable-stream
                 case 'url': resource.request = 'url'; break;
                 default: throw new Error(`Not found ${mod}`);
             }
