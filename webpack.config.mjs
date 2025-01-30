@@ -83,7 +83,7 @@ export default {
     ignoreWarnings: [warning =>
         (warning?.loc?.start?.line === 75 && warning?.loc?.start?.column === 31 && warning?.loc?.end?.line === 75 && warning?.loc?.end?.column === 57)   // event
         ||
-        (warning?.loc?.start?.line === 749 && warning?.loc?.start?.column === 44 && warning?.loc?.end?.line === 749 && warning?.loc?.end?.column === 56) // utilitas
+        (warning?.loc?.start?.line === 752 && warning?.loc?.start?.column === 44 && warning?.loc?.end?.line === 752 && warning?.loc?.end?.column === 56) // utilitas
     ],
     // stats: 'detailed',
 };
