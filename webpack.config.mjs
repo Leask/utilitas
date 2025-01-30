@@ -75,7 +75,7 @@ export default {
         // { 'node:net': '{}' },
         // { 'node:path': '{}' },
         // { 'node:process': '{}' },
-        { 'node:stream/web': '{}' },
+        { 'stream/web': '{}' },
         // { 'node:url': '{}' },
         // { 'node:util': '{}' },
         // { 'node:zlib': '{}' },
