@@ -39,8 +39,10 @@ export default {
     resolve: {
         extensions: ['.mjs', '.cjs', '.js', '.json', '.node'],
         fallback: {
-            buffer: require.resolve('buffer/'),
-            fs: require.resolve('browserify-fs'),
+            'buffer': require.resolve('buffer/'),
+            'fs': require.resolve('browserify-fs'),
+            'stream': require.resolve('stream-browserify'),
+            'stream/web': require.resolve('stream-browserify'),
         },
         alias: {
             'child_process': false,
