@@ -48,7 +48,6 @@ export default {
             'mathjs': false,
             'os': false,
             'worker_threads': false,
-            'stream/web': false,
         },
     },
     externals: [
@@ -76,7 +75,7 @@ export default {
         // { 'node:net': '{}' },
         // { 'node:path': '{}' },
         // { 'node:process': '{}' },
-        // { 'node:stream/web': '{}' },
+        { 'node:stream/web': '{}' },
         // { 'node:url': '{}' },
         // { 'node:util': '{}' },
         // { 'node:zlib': '{}' },
