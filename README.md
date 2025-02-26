@@ -356,6 +356,7 @@ Works in Node.js and modern browsers.
  | getJson | AsyncFunction | u, o | 
  | getParsedHtml | AsyncFunction | u, o | 
  | getVersionOnNpm | AsyncFunction | packName | 
+ | search | AsyncFunction | query, options | 
 
 ### [sms](./lib/sms.mjs)
 
