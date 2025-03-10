@@ -372,6 +372,7 @@ You may be provided with some tools(functions) to help you gather information an
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | AsyncFunction | url, options | 
+ | checkSearch | Function |  | 
  | checkVersion | AsyncFunction | pack | 
  | get | AsyncFunction | url, options | 
  | getCurrentIp | AsyncFunction | options | 
