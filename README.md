@@ -125,7 +125,7 @@ You may be provided with some tools(functions) to help you gather information an
  | GROUP_LIMIT | Number | 3000 | 
  | HELLO | String | Hello! | 
  | MESSAGE_LENGTH_LIMIT | Number | 4096 | 
- | MESSAGE_SOFT_LIMIT | Number | 4000 | 
+ | MESSAGE_SOFT_LIMIT | Number | 3891 | 
  | PRIVATE_LIMIT | Number | 1000 | 
  | end | AsyncFunction | async, options | 
  | init | AsyncFunction | options | 
@@ -398,6 +398,7 @@ You may be provided with some tools(functions) to help you gather information an
  | :--- | :--- | :--- | 
  | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,OpenAI,whisper-node | 
  | default | AsyncFunction | options | 
+ | OPENAI_TTS_MAX_LENGTH | Number | 4096 | 
  | checkSay | AsyncFunction | options | 
  | checkWhisper | AsyncFunction | options | 
  | init | AsyncFunction | options | 
