@@ -380,7 +380,7 @@ You may be provided with some tools(functions) to help you gather information an
  | getJson | AsyncFunction | u, o | 
  | getParsedHtml | AsyncFunction | u, o | 
  | getVersionOnNpm | AsyncFunction | packName | 
- | initSearch | Function | options | 
+ | initSearch | AsyncFunction | options | 
  | search | AsyncFunction | query, options | 
 
 ### [sms](./lib/sms.mjs)
