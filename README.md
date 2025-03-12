@@ -644,13 +644,12 @@ You may be provided with some tools(functions) to help you gather information an
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | jsdom,youtube-transcript,@mozilla/readability,@ngrok/ngrok | 
+ | _NEED | Array | jsdom,youtube-transcript,@mozilla/readability | 
  | assertYoutubeUrl | Function |  | 
  | distill | AsyncFunction |  | 
  | distillHtml | AsyncFunction | input, options | 
  | distillPage | AsyncFunction | url, op | 
  | distillYoutube | AsyncFunction |  | 
- | forward | AsyncFunction | options | 
  | getYoutubeMetadata | AsyncFunction |  | 
  | getYoutubeTranscript | AsyncFunction |  | 
  | isYoutubeUrl | Function |  | 
