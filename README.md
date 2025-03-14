@@ -20,7 +20,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @anthropic-ai/sdk,@anthropic-ai/vertex-sdk,@google/generative-ai,js-tiktoken,ollama,OpenAI | 
+ | _NEED | Array | @anthropic-ai/sdk,@anthropic-ai/vertex-sdk,@google/generative-ai,js-tiktoken,OpenAI | 
  | default | AsyncFunction | options | 
  | ATTACHMENT_TOKEN_COST | Number | 5000 | 
  | CLOUD_37_SONNET | String | claude-3-7-sonnet@20250219 | 
@@ -88,7 +88,6 @@ You may be provided with some tools(functions) to help you gather information an
  | prompt | AsyncFunction | input, options | 
  | promptAnthropic | AsyncFunction | aiId, content, options | 
  | promptGemini | AsyncFunction | aiId, content, options | 
- | promptOllama | AsyncFunction | aiId, content, options | 
  | promptOpenAI | AsyncFunction | aiId, content, options | 
  | resetSession | AsyncFunction | sessionId, options | 
  | tailGptFineTuningEvents | AsyncFunction | job_id, options | 
