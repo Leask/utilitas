@@ -64,7 +64,6 @@
         "node-mailjet": "^6.0.8",
         "node-polyfill-webpack-plugin": "^4.1.0",
         "office-text-extractor": "^3.0.3",
-        "ollama": "^0.5.14",
         "openai": "^4.87.3",
         "pdfjs-dist": "^4.10.38",
         "pg": "^8.14.0",
