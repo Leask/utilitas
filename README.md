@@ -69,9 +69,9 @@ You may be provided with some tools(functions) to help you gather information an
  | buildGptTrainingCases | Function | cases, opts | 
  | cancelGptFineTuningJob | AsyncFunction | job_id, options | 
  | countTokens | AsyncFunction | input, options | 
- | createGeminiEmbedding | AsyncFunction | input, options | 
+ | createGeminiEmbedding | AsyncFunction | aiId, input, options | 
  | createGptFineTuningJob | AsyncFunction | training_file, options | 
- | createOpenAIEmbedding | AsyncFunction | input, options | 
+ | createOpenAIEmbedding | AsyncFunction | aiId, input, options | 
  | deleteFile | AsyncFunction | file_id, options | 
  | distillFile | AsyncFunction | attachments, o | 
  | getAi | AsyncFunction | id, options | 
