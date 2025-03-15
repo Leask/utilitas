@@ -67,35 +67,35 @@ You may be provided with some tools(functions) to help you gather information an
  | analyzeSessions | AsyncFunction | sessionIds, options | 
  | buildGptTrainingCase | Function | prompt, response, options | 
  | buildGptTrainingCases | Function | cases, opts | 
- | cancelGptFineTuningJob | AsyncFunction | job_id, options | 
+ | cancelGptFineTuningJob | AsyncFunction | aiId, job_id, options | 
  | countTokens | AsyncFunction | input, options | 
  | createGeminiEmbedding | AsyncFunction | aiId, input, options | 
- | createGptFineTuningJob | AsyncFunction | training_file, options | 
+ | createGptFineTuningJob | AsyncFunction | aiId, training_file, options | 
  | createOpenAIEmbedding | AsyncFunction | aiId, input, options | 
- | deleteFile | AsyncFunction | file_id, options | 
+ | deleteFile | AsyncFunction | aiId, file_id, options | 
  | distillFile | AsyncFunction | attachments, o | 
  | getAi | AsyncFunction | id, options | 
- | getGptFineTuningJob | AsyncFunction | job_id, options | 
+ | getGptFineTuningJob | AsyncFunction | aiId, job_id, options | 
  | getMaxChatPromptLimit | Function | options | 
  | getSession | AsyncFunction | sessionId, options | 
  | init | AsyncFunction | options | 
  | initChat | AsyncFunction | options | 
  | jpeg | String | image/jpeg | 
- | listFiles | AsyncFunction | options | 
- | listGptFineTuningEvents | AsyncFunction | job_id, options | 
- | listGptFineTuningJobs | AsyncFunction | options | 
- | listOpenAIModels | AsyncFunction | options | 
+ | listFiles | AsyncFunction | aiId, options | 
+ | listGptFineTuningEvents | AsyncFunction | aiId, job_id, options | 
+ | listGptFineTuningJobs | AsyncFunction | aiId, options | 
+ | listOpenAIModels | AsyncFunction | aiId, options | 
  | ogg | String | audio/ogg | 
  | prompt | AsyncFunction | input, options | 
  | promptAnthropic | AsyncFunction | aiId, content, options | 
  | promptGemini | AsyncFunction | aiId, content, options | 
  | promptOpenAI | AsyncFunction | aiId, content, options | 
  | resetSession | AsyncFunction | sessionId, options | 
- | tailGptFineTuningEvents | AsyncFunction | job_id, options | 
+ | tailGptFineTuningEvents | AsyncFunction | aiId, job_id, options | 
  | talk | AsyncFunction | input, options | 
  | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
- | uploadFile | AsyncFunction | input, options | 
- | uploadFileForFineTuning | AsyncFunction | content, options | 
+ | uploadFile | AsyncFunction | aiId, input, options | 
+ | uploadFileForFineTuning | AsyncFunction | aiId, content, options | 
  | wav | String | audio/wav | 
 
 ### [bee](./lib/bee.mjs)
