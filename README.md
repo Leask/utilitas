@@ -28,7 +28,7 @@ Works in Node.js and modern browsers.
  | DEEPSEEK_R1 | String | deepseek-r1 | 
  | DEEPSEEK_R1_32B | String | deepseek-r1:32b | 
  | DEEPSEEK_R1_70B | String | deepseek-r1:70b | 
- | DEFAULT_MODELS | Object | {"OpenAI":"gpt-4o","AZURE OPENAI":"gpt-4o","Gemini":"gemini-2.0-flash","ANTHROPIC":"claude-3-7-sonnet@20250219","VERTEX ANTHROPIC":"claude-3-7-sonnet@20250219","Ollama":"gemma3:27b","OPENAI_VOICE":"nova","OPENAI_EMBEDDING":"text-embedding-3-small","GEMINI_EMEDDING":"embedding-001","OPENAI_TRAINING":"gpt-4o-mini","CHAT":"gemini-2.0-flash"} | 
+ | DEFAULT_MODELS | Object | {"OpenAI":"gpt-4o","Azure Openai":"gpt-4o","Gemini":"gemini-2.0-flash","Anthropic":"claude-3-7-sonnet@20250219","Vertex Anthropic":"claude-3-7-sonnet@20250219","Ollama":"gemma3:27b","OPENAI_VOICE":"nova","OPENAI_EMBEDDING":"text-embedding-3-small","GEMINI_EMEDDING":"embedding-001","OPENAI_TRAINING":"gpt-4o-mini","CHAT":"gemini-2.0-flash"} | 
  | EMBEDDING_001 | String | embedding-001 | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_20_FLASH | String | gemini-2.0-flash | 
