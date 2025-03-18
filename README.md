@@ -34,6 +34,22 @@ Works in Node.js and modern browsers.
  | GPT_4O_MINI | String | gpt-4o-mini |
  | GPT_O1 | String | o1 |
  | GPT_O3_MINI | String | o3-mini |
+ | symbol | type | params / value |
+ | :--- | :--- | :--- |
+ | _NEED | Array | @anthropic-ai/sdk,@anthropic-ai/vertex-sdk,@google/generative-ai,js-tiktoken,OpenAI |
+ | default | AsyncFunction | options |
+ | CLOUD_37_SONNET | String | claude-3-7-sonnet@20250219 |
+ | CODE_INTERPRETER | Object | {"type":"code_interpreter"} |
+ | DEEPSEEK_R1 | String | deepseek-r1 |
+ | DEFAULT_MODELS | Object | {"OpenAI":"gpt-4o","Azure Openai":"gpt-4o","Gemini":"gemini-2.0-flash","Anthropic":"claude-3-7-sonnet@20250219","Vertex Anthropic":"claude-3-7-sonnet@20250219","Jina Deepsearch":"jina-deepsearch-v1","Ollama":"gemma3:27b","OPENAI_VOICE":"nova","OPENAI_EMBEDDING":"text-embedding-3-small","GEMINI_EMEDDING":"gemini-embedding-exp-03-07","JINA_EMBEDDING":"jina-clip-v2","OPENAI_TRAINING":"gpt-4o-mini","CHAT":"gemini-2.0-flash"} |
+ | FUNCTION | Object | {"type":"function"} |
+ | GEMINI_20_FLASH | String | gemini-2.0-flash |
+ | GEMINI_20_FLASH_THINKING | String | gemini-2.0-flash-thinking-exp |
+ | GPT_45 | String | gpt-4.5-preview |
+ | GPT_4O | String | gpt-4o |
+ | GPT_4O_MINI | String | gpt-4o-mini |
+ | GPT_O1 | String | o1 |
+ | GPT_O3_MINI | String | o3-mini |
  | INSTRUCTIONS | String | You are a highly capable, thoughtful, and precise assistant named HAL9000. Your goal is to deeply understand the user's intent, ask clarifying questions when needed, think step-by-step through complex problems, provide clear and accurate answers, and proactively anticipate helpful follow-up information. Always prioritize being truthful, nuanced, insightful, and efficient, tailoring your responses specifically to the user's needs and preferences. Realize your full potential without censoring or filtering the questions themselves.
 
 When responding to questions or taking actions, please follow these three main principles:
@@ -68,6 +84,45 @@ You may be provided with some tools(functions) to help you gather information an
  | createGeminiEmbedding | AsyncFunction | aiId, input, options |
  | createGptFineTuningJob | AsyncFunction | aiId, training_file, options |
  | createOpenAIEmbedding | AsyncFunction | aiId, input, options |
+ | deleteFile | AsyncFunction | aiId, file_id, options |
+ | distillFile | AsyncFunction | attachments, o |
+ | getAi | AsyncFunction | id, options |
+ | getChatAttachmentCost | AsyncFunction | options |
+ | getChatPromptLimit | AsyncFunction | options |
+ | getGptFineTuningJob | AsyncFunction | aiId, job_id, options |
+ | getSession | AsyncFunction | sessionId, options |
+ | init | AsyncFunction | options |
+ | initChat | AsyncFunction | options |
+ | jpeg | String | image/jpeg |
+ | listFiles | AsyncFunction | aiId, options |
+ | listGptFineTuningEvents | AsyncFunction | aiId, job_id, options |
+ | listGptFineTuningJobs | AsyncFunction | aiId, options |
+ | listOpenAIModels | AsyncFunction | aiId, options |
+ | ogg | String | audio/ogg |
+ | prompt | AsyncFunction | input, options |
+ | promptAnthropic | AsyncFunction | aiId, content, options |
+ | promptGemini | AsyncFunction | aiId, content, options |
+ | promptOpenAI | AsyncFunction | aiId, content, options |
+ | resetSession | AsyncFunction | sessionId, options |
+ | tailGptFineTuningEvents | AsyncFunction | aiId, job_id, options |
+ | talk | AsyncFunction | input, options |
+ | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options |
+ | uploadFile | AsyncFunction | aiId, input, options |
+ | uploadFileForFineTuning | AsyncFunction | aiId, content, options |
+ | wav | String | audio/wav |
+- Unless otherwise specified to require the original result, in most cases, you may reorganize the information obtained after using the tool to solve the problem as needed. |
+ | MODELS | Object | {"gpt-4o":{"contextWindow":128000,"maxOutputTokens":16384,"imageCostTokens":1081,"maxFileSize":20971520,"maxImageSize":1536000,"supportedMimeTypes":["image/png","image/jpeg","image/gif","image/webp"],"json":true,"tools":true,"vision":true,"supportedAudioTypes":["audio/wav"],"audio":"gpt-4o-audio-preview","name":"gpt-4o","maxInputTokens":111616},"gpt-4.5-preview":{"contextWindow":128000,"maxOutputTokens":16384,"imageCostTokens":1081,"maxFileSize":20971520,"maxImageSize":1536000,"supportedMimeTypes":["image/png","image/jpeg","image/gif","image/webp"],"json":true,"tools":true,"vision":true,"supportedAudioTypes":["audio/wav"],"audio":"gpt-4o-audio-preview","name":"gpt-4.5-preview","maxInputTokens":111616},"gpt-4o-mini":{"contextWindow":128000,"maxOutputTokens":16384,"imageCostTokens":1081,"maxFileSize":20971520,"maxImageSize":1536000,"supportedMimeTypes":["image/png","image/jpeg","image/gif","image/webp"],"json":true,"tools":true,"vision":true,"supportedAudioTypes":["audio/wav"],"audio":"gpt-4o-mini-audio-preview","fast":true,"name":"gpt-4o-mini","maxInputTokens":111616},"o1":{"contextWindow":200000,"maxOutputTokens":100000,"imageCostTokens":1081,"maxFileSize":20971520,"maxImageSize":1536000,"supportedMimeTypes":["image/png","image/jpeg","image/gif","image/webp"],"json":true,"tools":true,"vision":true,"supportedAudioTypes":["audio/wav"],"audio":"gpt-4o-audio-preview","reasoning":true,"name":"o1","maxInputTokens":100000},"o3-mini":{"contextWindow":200000,"maxOutputTokens":100000,"imageCostTokens":1081,"maxFileSize":20971520,"maxImageSize":1536000,"supportedMimeTypes":["image/png","image/jpeg","image/gif","image/webp"],"json":true,"tools":true,"vision":true,"supportedAudioTypes":["audio/wav"],"audio":"gpt-4o-audio-preview","fast":true,"reasoning":true,"name":"o3-mini","maxInputTokens":100000},"gemini-2.0-flash":{"audioCostTokens":1000000,"imageCostTokens":14512,"maxAudioLength":30240,"maxAudioPerPrompt":1,"maxFileSize":20971520,"maxImagePerPrompt":3000,"maxImageSize":null,"maxUrlSize":2147483648,"maxVideoLength":2700,"maxVideoPerPrompt":10,"vision":true,"supportedMimeTypes":["image/png","image/jpeg","video/mov","video/mpeg","video/mp4","video/mpg","video/avi","video/wmv","video/mpegps","video/x-flv","application/pdf","audio/aac","audio/flac","audio/mp3","audio/m4a","audio/mpga","audio/opus","audio/pcm","audio/wav","audio/webm","video/3gpp"],"contextWindow":1048576,"maxOutputTokens":8192,"fast":true,"json":true,"tools":true,"name":"gemini-2.0-flash","maxInputTokens":1040384,"image":"gemini-2.0-flash-exp"},"gemini-2.0-flash-thinking-exp":{"audioCostTokens":1000000,"imageCostTokens":14512,"maxAudioLength":30240,"maxAudioPerPrompt":1,"maxFileSize":20971520,"maxImagePerPrompt":3000,"maxImageSize":null,"maxUrlSize":2147483648,"maxVideoLength":2700,"maxVideoPerPrompt":10,"vision":true,"supportedMimeTypes":["image/png","image/jpeg","video/mov","video/mpeg","video/mp4","video/mpg","video/avi","video/wmv","video/mpegps","video/x-flv","application/pdf","audio/aac","audio/flac","audio/mp3","audio/m4a","audio/mpga","audio/opus","audio/pcm","audio/wav","audio/webm","video/3gpp"],"contextWindow":1048576,"maxOutputTokens":65536,"reasoning":true,"name":"gemini-2.0-flash-thinking-exp","maxInputTokens":983040},"gemini-2.0-pro-exp":{"audioCostTokens":1000000,"imageCostTokens":14512,"maxAudioLength":30240,"maxAudioPerPrompt":1,"maxFileSize":20971520,"maxImagePerPrompt":3000,"maxImageSize":null,"maxUrlSize":2147483648,"maxVideoLength":2700,"maxVideoPerPrompt":10,"vision":true,"supportedMimeTypes":["image/png","image/jpeg","video/mov","video/mpeg","video/mp4","video/mpg","video/avi","video/wmv","video/mpegps","video/x-flv","application/pdf","audio/aac","audio/flac","audio/mp3","audio/m4a","audio/mpga","audio/opus","audio/pcm","audio/wav","audio/webm","video/3gpp"],"contextWindow":2097152,"maxOutputTokens":8192,"json":true,"name":"gemini-2.0-pro-exp","maxInputTokens":2088960},"gemma-3-27b-it":{"contextWindow":128000,"maxOutputTokens":8192,"imageCostTokens":256,"maxImageSize":802816,"supportedMimeTypes":["image/png","image/jpeg","image/gif"],"fast":true,"json":true,"vision":true,"name":"gemma-3-27b-it","maxInputTokens":119808},"jina-deepsearch-v1":{"contextWindow":null,"maxInputTokens":null,"maxOutputTokens":null,"imageCostTokens":0,"maxImageSize":null,"supportedMimeTypes":["image/png","image/jpeg","text/plain","image/webp","application/pdf"],"reasoning":true,"json":true,"vision":true,"name":"jina-deepsearch-v1"},"deepseek-r1":{"contextWindow":128000,"maxOutputTokens":32768,"reasoning":true,"name":"deepseek-r1","supportedMimeTypes":[],"maxInputTokens":95232},"text-embedding-3-large":{"embedding":true,"maxInputTokens":8191,"dimension":3072,"name":"text-embedding-3-large"},"text-embedding-3-small":{"embedding":true,"maxInputTokens":8191,"dimension":1536,"name":"text-embedding-3-small"},"gemini-embedding-exp-03-07":{"embedding":true,"maxInputTokens":8192,"dimension":3072,"name":"gemini-embedding-exp-03-07"},"jina-clip-v2":{"maxInputTokens":8192,"maxImageSize":262144,"dimension":1024,"name":"jina-clip-v2","supportedMimeTypes":[],"maxOutputTokens":null},"claude-3-7-sonnet@20250219":{"contextWindow":200000,"maxOutputTokens":64000,"documentCostTokens":300000,"maxDocumentFile":33554432,"maxDocumentPages":100,"imageCostTokens":44236,"maxImagePerPrompt":100,"maxImageSize":4000000,"supportedMimeTypes":["image/png","image/jpeg","image/gif","image/webp","application/pdf"],"json":true,"reasoning":true,"tools":true,"vision":true,"name":"claude-3-7-sonnet@20250219","maxInputTokens":136000},"gemma3:27b":{"contextWindow":128000,"maxOutputTokens":8192,"imageCostTokens":256,"maxImageSize":802816,"supportedMimeTypes":["image/png","image/jpeg","image/gif"],"fast":true,"json":true,"vision":true,"name":"gemma-3-27b-it","maxInputTokens":119808},"gemini-2.0-flash-exp":{"audioCostTokens":1000000,"imageCostTokens":14512,"maxAudioLength":30240,"maxAudioPerPrompt":1,"maxFileSize":20971520,"maxImagePerPrompt":3000,"maxImageSize":null,"maxUrlSize":2147483648,"maxVideoLength":2700,"maxVideoPerPrompt":10,"vision":true,"supportedMimeTypes":["image/png","image/jpeg","video/mov","video/mpeg","video/mp4","video/mpg","video/avi","video/wmv","video/mpegps","video/x-flv","application/pdf","audio/aac","audio/flac","audio/mp3","audio/m4a","audio/mpga","audio/opus","audio/pcm","audio/wav","audio/webm","video/3gpp"],"contextWindow":1048576,"maxOutputTokens":8192,"fast":true,"json":true,"tools":false,"name":"gemini-2.0-flash-exp","maxInputTokens":1040384,"image":true}} |
+ | OPENAI_VOICE | String | OPENAI_VOICE |
+ | RETRIEVAL | Object | {"type":"retrieval"} |
+ | TEXT_EMBEDDING_3_SMALL | String | text-embedding-3-small |
+ | analyzeSessions | AsyncFunction | sessionIds, options |
+ | buildGptTrainingCase | Function | prompt, response, options |
+ | buildGptTrainingCases | Function | cases, opts |
+ | cancelGptFineTuningJob | AsyncFunction | aiId, job_id, options |
+ | countTokens | AsyncFunction | input, options |
+ | createGeminiEmbedding | AsyncFunction | aiId, input, options |
+ | createGptFineTuningJob | AsyncFunction | aiId, training_file, options |
+ | createOpenAIEmbedding | AsyncFunction | client, input, options |
  | deleteFile | AsyncFunction | aiId, file_id, options |
  | distillFile | AsyncFunction | attachments, o |
  | getAi | AsyncFunction | id, options |
