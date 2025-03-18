@@ -25,7 +25,6 @@ Works in Node.js and modern browsers.
  | CLOUD_37_SONNET | String | claude-3-7-sonnet@20250219 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_R1 | String | deepseek-r1 | 
- | DEFAULT_MODELS | Object | {"OpenAI":"gpt-4o","Azure Openai":"gpt-4o","Gemini":"gemini-2.0-flash","Anthropic":"claude-3-7-sonnet@20250219","Vertex Anthropic":"claude-3-7-sonnet@20250219","Jina Deepsearch":"jina-deepsearch-v1","Ollama":"gemma3:27b","OPENAI_VOICE":"nova","OPENAI_EMBEDDING":"text-embedding-3-small","GEMINI_EMEDDING":"gemini-embedding-exp-03-07","JINA_EMBEDDING":"jina-clip-v2","OPENAI_TRAINING":"gpt-4o-mini","CHAT":"gemini-2.0-flash"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_20_FLASH | String | gemini-2.0-flash | 
  | GEMINI_20_FLASH_THINKING | String | gemini-2.0-flash-thinking-exp | 
@@ -37,6 +36,7 @@ Works in Node.js and modern browsers.
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | TEXT_EMBEDDING_3_SMALL | String | text-embedding-3-small | 
+ | _NO_RENDER | Array | INSTRUCTIONS,MODELS,DEFAULT_MODELS | 
  | analyzeSessions | AsyncFunction | sessionIds, options | 
  | buildGptTrainingCase | Function | prompt, response, options | 
  | buildGptTrainingCases | Function | cases, opts | 
