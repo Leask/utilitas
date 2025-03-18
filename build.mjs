@@ -1,6 +1,6 @@
 import { basename, extname } from 'path';
 import { readdir } from 'fs/promises';
-import { shot, storage, utilitas } from './index.mjs';
+import { web, storage, utilitas } from './index.mjs';
 // https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
 import manifest from './package.json' with { type: 'json' };
 
@@ -8,7 +8,7 @@ import manifest from './package.json' with { type: 'json' };
 const [lib, _manifest, n, nn] = ['./lib', 'manifest.mjs', '\n', '\n\n'];
 
 // Update boxes.json
-let style = (await shot.get(
+let style = (await web.get(
     'https://raw.githubusercontent.com/sindresorhus/cli-boxes/main/boxes.json'
 )).content;
 assert(style, 'Failed to fetch `boxes`.');

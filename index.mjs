@@ -19,9 +19,7 @@ import * as media from './lib/media.mjs';
 import * as memory from './lib/memory.mjs';
 import * as network from './lib/network.mjs';
 import * as sentinel from './lib/sentinel.mjs';
-import * as shekel from './lib/shekel.mjs';
 import * as shell from './lib/shell.mjs';
-import * as shot from './lib/shot.mjs';
 import * as sms from './lib/sms.mjs';
 import * as speech from './lib/speech.mjs';
 import * as ssl from './lib/ssl.mjs';
@@ -41,14 +39,14 @@ export {
     fileType, math, uuid,
     // features
     alan, bee, bot, boxes, cache, callosum, color, dbio, email, encryption,
-    event, image, manifest, media, memory, network, sentinel, shekel, shell,
-    shot, sms, speech, ssl, storage, tape, uoid, utilitas, vision, web
+    event, image, manifest, media, memory, network, sentinel, shell, sms,
+    speech, ssl, storage, tape, uoid, utilitas, vision, web
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
     globalThis.utilitas = {
-        boxes, color, encryption, event, manifest, math, shekel, shot, speech,
-        storage, uoid, utilitas, uuid,
+        boxes, color, encryption, event, manifest, math, speech, storage, uoid,
+        utilitas, uuid,
     };
     // top-level await workaround
     (async () => {
