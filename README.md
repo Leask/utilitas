@@ -602,7 +602,7 @@ Works in Node.js and modern browsers.
  | assertYoutubeUrl | Function |  | 
  | checkSearch | Function |  | 
  | checkVersion | AsyncFunction | pack | 
- | distill | AsyncFunction |  | 
+ | distill | AsyncFunction | url, options | 
  | distillHtml | AsyncFunction | input, options | 
  | distillPage | AsyncFunction | url, op | 
  | distillYoutube | AsyncFunction |  | 
@@ -615,6 +615,7 @@ Works in Node.js and modern browsers.
  | getVersionOnNpm | AsyncFunction | packName | 
  | getYoutubeMetadata | AsyncFunction |  | 
  | getYoutubeTranscript | AsyncFunction |  | 
+ | initDistill | AsyncFunction | options | 
  | initSearch | AsyncFunction | options | 
  | isYoutubeUrl | Function |  | 
  | search | AsyncFunction | query, options | 
