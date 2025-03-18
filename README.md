@@ -44,7 +44,7 @@ Works in Node.js and modern browsers.
  | countTokens | AsyncFunction | input, options | 
  | createGeminiEmbedding | AsyncFunction | aiId, input, options | 
  | createGptFineTuningJob | AsyncFunction | aiId, training_file, options | 
- | createOpenAIEmbedding | AsyncFunction | client, input, options | 
+ | createOpenAIEmbedding | AsyncFunction | aiId, input, options | 
  | deleteFile | AsyncFunction | aiId, file_id, options | 
  | distillFile | AsyncFunction | attachments, o | 
  | getAi | AsyncFunction | id, options | 
