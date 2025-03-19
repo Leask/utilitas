@@ -44,7 +44,6 @@
         "@google-cloud/text-to-speech": "^6.0.0",
         "@google-cloud/vision": "^5.0.0",
         "@google/genai": "^0.4.0",
-        "@google/generative-ai": "^0.24.0",
         "@mozilla/readability": "github:mozilla/readability",
         "@sentry/node": "^9.6.0",
         "@sentry/profiling-node": "^9.6.0",
