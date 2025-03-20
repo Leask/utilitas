@@ -104,7 +104,6 @@ Works in Node.js and modern browsers.
  | init | AsyncFunction | options | 
  | lines | Function | arr, sep | 
  | lines2 | Function | arr | 
- | map | Function |  | 
  | newCommand | Function | command, description | 
  | oList | Function | arr, k | 
  | paging | Function | message, options | 
