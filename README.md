@@ -25,6 +25,7 @@ Works in Node.js and modern browsers.
  | CLOUD_37_SONNET | String | claude-3-7-sonnet@20250219 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_R1 | String | deepseek-r1 | 
+ | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_20_FLASH | String | gemini-2.0-flash | 
  | GEMINI_20_FLASH_THINKING | String | gemini-2.0-flash-thinking-exp | 
