@@ -387,6 +387,7 @@ Works in Node.js and modern browsers.
  | FILE | String | FILE | 
  | MIME_BINARY | String | application/octet-stream | 
  | MIME_JSON | String | application/json | 
+ | MIME_PNG | String | image/png | 
  | MIME_TEXT | String | text/plain | 
  | STREAM | String | STREAM | 
  | analyzeFile | AsyncFunction | any, options | 
