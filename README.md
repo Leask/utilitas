@@ -30,7 +30,6 @@ Works in Node.js and modern browsers.
  | GEMINI_20_FLASH | String | gemini-2.0-flash | 
  | GPT_45 | String | gpt-4.5-preview | 
  | GPT_4O | String | gpt-4o | 
- | GPT_4O_MINI | String | gpt-4o-mini | 
  | GPT_O1 | String | o1 | 
  | GPT_O3_MINI | String | o3-mini | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
