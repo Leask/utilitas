@@ -28,7 +28,6 @@ Works in Node.js and modern browsers.
  | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_20_FLASH | String | gemini-2.0-flash | 
- | GEMINI_20_FLASH_THINKING | String | gemini-2.0-flash-thinking-exp | 
  | GPT_45 | String | gpt-4.5-preview | 
  | GPT_4O | String | gpt-4o | 
  | GPT_4O_MINI | String | gpt-4o-mini | 
