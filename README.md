@@ -58,6 +58,12 @@ Works in Node.js and modern browsers.
  | listGptFineTuningEvents | AsyncFunction | aiId, job_id, options | 
  | listGptFineTuningJobs | AsyncFunction | aiId, options | 
  | listOpenAIModels | AsyncFunction | aiId, options | 
+ | m4a | String | audio/m4a | 
+ | mp3 | String | audio/mp3 | 
+ | mp4 | String | video/mp4 | 
+ | mpeg | String | video/mpeg | 
+ | mpega | String | audio/mpeg | 
+ | mpga | String | audio/mpga | 
  | ogg | String | audio/ogg | 
  | prompt | AsyncFunction | input, options | 
  | promptAnthropic | AsyncFunction | aiId, content, options | 
@@ -70,6 +76,7 @@ Works in Node.js and modern browsers.
  | uploadFile | AsyncFunction | aiId, input, options | 
  | uploadFileForFineTuning | AsyncFunction | aiId, content, options | 
  | wav | String | audio/wav | 
+ | webm | String | audio/webm | 
 
 ### [bee](./lib/bee.mjs)
 
