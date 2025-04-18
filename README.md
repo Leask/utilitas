@@ -26,13 +26,13 @@ Works in Node.js and modern browsers.
  | CLOUD_37_SONNET | String | claude-3-7-sonnet@20250219 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_R1 | String | deepseek-r1 | 
- | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
+ | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
- | GEMINI_20_FLASH | String | gemini-2.0-flash | 
- | GPT_45 | String | gpt-4.5-preview | 
+ | GEMINI_20_FLASH | String | gemini-2.0-flash-exp | 
+ | GEMINI_25_FLASH | String | gemini-2.5-flash-preview-04-17 | 
+ | GPT_41 | String | gpt-4.1 | 
  | GPT_4O | String | gpt-4o | 
- | GPT_O1 | String | o1 | 
- | GPT_O3_MINI | String | o3-mini | 
+ | GPT_O3 | String | o3 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | TEXT_EMBEDDING_3_SMALL | String | text-embedding-3-small | 
