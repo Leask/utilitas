@@ -93,30 +93,17 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | mime,telegraf | 
+ | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
- | BINARY_STRINGS | Array | off,on | 
- | COMMAND_DESCRIPTION_LENGTH | Number | 256 | 
- | COMMAND_LENGTH | Number | 32 | 
- | COMMAND_LIMIT | Number | 100 | 
- | EMOJI_BOT | String | 🤖 | 
- | EMOJI_SPEECH | String | 👂 | 
  | EMOJI_THINKING | String | 💬 | 
- | GROUP_LIMIT | Number | 3000 | 
- | HELLO | String | Hello! | 
- | MESSAGE_LENGTH_LIMIT | Number | 4096 | 
- | MESSAGE_SOFT_LIMIT | Number | 3891 | 
- | PRIVATE_LIMIT | Number | 1000 | 
+ | MESSAGE_LENGTH_LIMIT | Number | 3891 | 
  | end | AsyncFunction | async, options | 
  | init | AsyncFunction | options | 
  | lines | Function | arr, sep | 
- | lines2 | Function | arr | 
- | newCommand | Function | command, description | 
- | oList | Function | arr, k | 
  | paging | Function | message, options | 
+ | parse_mode | String | Markdown | 
  | send | AsyncFunction | chatId, content, options | 
  | sendMd | Function | cId, cnt, opt | 
- | uList | Function | arr | 
 
 ### [boxes](./lib/boxes.mjs)
 
