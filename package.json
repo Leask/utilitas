@@ -1,7 +1,7 @@
 {
     "name": "utilitas",
     "description": "Just another common utility for JavaScript.",
-    "version": "1999.1.51",
+    "version": "1999.1.52",
     "private": false,
     "homepage": "https://github.com/Leask/utilitas",
     "main": "index.mjs",
