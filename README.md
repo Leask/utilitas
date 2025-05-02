@@ -263,20 +263,22 @@ Works in Node.js and modern browsers.
  | load | AsyncFunction | module, options | 
  | loop | AsyncFunction | func, interval, tout, delay, name, options | 
 
-### [horizon](./lib/horizon.mjs)
-
- | symbol | type | params / value | 
- | :--- | :--- | :--- | 
- | default | Object | {} | 
-
-### [image](./lib/image.mjs)
+### [gen](./lib/gen.mjs)
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | _NEED | Array | OpenAI | 
  | default | AsyncFunction | options | 
- | generate | AsyncFunction | prompt, options | 
+ | generateImage | AsyncFunction | prompt, options | 
+ | generateVideo | AsyncFunction | prompt, options | 
+ | getGeminiVideo | AsyncFunction | jobId | 
  | init | AsyncFunction | options | 
+
+### [horizon](./lib/horizon.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | default | Object | {} | 
 
 ### [media](./lib/media.mjs)
 
