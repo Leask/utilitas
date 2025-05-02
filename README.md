@@ -324,6 +324,7 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | default | AsyncFunction | command, options | 
+ | assertCommand | Function | command | 
  | assertExist | AsyncFunction | bin, er, code | 
  | exec | AsyncFunction | command, options | 
  | exist | Function | bin | 
