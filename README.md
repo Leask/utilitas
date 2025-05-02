@@ -269,10 +269,9 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | OpenAI | 
  | default | AsyncFunction | options | 
- | generateImage | AsyncFunction | prompt, options | 
- | generateVideo | AsyncFunction | prompt, options | 
- | getGeminiVideo | AsyncFunction | jobId, accessToken | 
+ | image | AsyncFunction | prompt, options | 
  | init | AsyncFunction | options | 
+ | video | AsyncFunction | prompt, options | 
 
 ### [horizon](./lib/horizon.mjs)
 
