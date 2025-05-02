@@ -271,7 +271,7 @@ Works in Node.js and modern browsers.
  | default | AsyncFunction | options | 
  | generateImage | AsyncFunction | prompt, options | 
  | generateVideo | AsyncFunction | prompt, options | 
- | getGeminiVideo | AsyncFunction | jobId | 
+ | getGeminiVideo | AsyncFunction | jobId, accessToken | 
  | init | AsyncFunction | options | 
 
 ### [horizon](./lib/horizon.mjs)
