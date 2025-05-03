@@ -54,18 +54,10 @@ Works in Node.js and modern browsers.
  | getSession | AsyncFunction | sessionId, options | 
  | init | AsyncFunction | options | 
  | initChat | AsyncFunction | options | 
- | jpeg | String | image/jpeg | 
  | listFiles | AsyncFunction | aiId, options | 
  | listGptFineTuningEvents | AsyncFunction | aiId, job_id, options | 
  | listGptFineTuningJobs | AsyncFunction | aiId, options | 
  | listOpenAIModels | AsyncFunction | aiId, options | 
- | m4a | String | audio/m4a | 
- | mp3 | String | audio/mp3 | 
- | mp4 | String | video/mp4 | 
- | mpeg | String | video/mpeg | 
- | mpega | String | audio/mpeg | 
- | mpga | String | audio/mpga | 
- | ogg | String | audio/ogg | 
  | prompt | AsyncFunction | input, options | 
  | promptAnthropic | AsyncFunction | aiId, content, options | 
  | promptGemini | AsyncFunction | aiId, content, options | 
@@ -76,8 +68,6 @@ Works in Node.js and modern browsers.
  | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
  | uploadFile | AsyncFunction | aiId, input, options | 
  | uploadFileForFineTuning | AsyncFunction | aiId, content, options | 
- | wav | String | audio/wav | 
- | webm | String | audio/webm | 
 
 ### [bee](./lib/bee.mjs)
 
@@ -380,10 +370,35 @@ Works in Node.js and modern browsers.
  | BUFFER | String | BUFFER | 
  | DATAURL | String | DATAURL | 
  | FILE | String | FILE | 
+ | MIME_AAC | String | audio/aac | 
+ | MIME_AVI | String | video/avi | 
  | MIME_BINARY | String | application/octet-stream | 
+ | MIME_FLAC | String | audio/flac | 
+ | MIME_FLV | String | video/x-flv | 
+ | MIME_GIF | String | image/gif | 
+ | MIME_JPEG | String | image/jpeg | 
  | MIME_JSON | String | application/json | 
+ | MIME_M4A | String | audio/m4a | 
+ | MIME_MOV | String | video/mov | 
+ | MIME_MP3 | String | audio/mp3 | 
+ | MIME_MP4 | String | video/mp4 | 
+ | MIME_MPEG | String | video/mpeg | 
+ | MIME_MPEGA | String | audio/mpeg | 
+ | MIME_MPEGPS | String | video/mpegps | 
+ | MIME_MPG | String | video/mpg | 
+ | MIME_MPGA | String | audio/mpga | 
+ | MIME_OGG | String | audio/ogg | 
+ | MIME_OPUS | String | audio/opus | 
+ | MIME_PCM | String | audio/pcm | 
+ | MIME_PCM16 | String | audio/x-wav | 
+ | MIME_PDF | String | application/pdf | 
  | MIME_PNG | String | image/png | 
  | MIME_TEXT | String | text/plain | 
+ | MIME_TGPP | String | video/3gpp | 
+ | MIME_WAV | String | audio/wav | 
+ | MIME_WEBM | String | audio/webm | 
+ | MIME_WEBP | String | image/webp | 
+ | MIME_WMV | String | video/wmv | 
  | STREAM | String | STREAM | 
  | analyzeFile | AsyncFunction | any, options | 
  | assertPath | AsyncFunction | path, type, mode, msg, code, options | 
