@@ -411,6 +411,7 @@ Works in Node.js and modern browsers.
  | encodeBase64DataURL | AsyncFunction | mime, buffer | 
  | exists | AsyncFunction | filename | 
  | existsOnCloud | AsyncFunction | destination, options | 
+ | formatDataURL | Function | mt, b64 | 
  | getConfig | AsyncFunction | options | 
  | getConfigFilename | AsyncFunction | options | 
  | getGcUrlByBucket | Function | bucke | 
