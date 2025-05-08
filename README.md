@@ -28,7 +28,7 @@ Works in Node.js and modern browsers.
  | DEEPSEEK_R1 | String | deepseek-r1 | 
  | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
- | GEMINI_20_FLASH | String | gemini-2.0-flash-exp | 
+ | GEMINI_20_FLASH | String | gemini-2.0-flash-preview-image-generation | 
  | GEMINI_25_FLASH | String | gemini-2.5-flash-preview-04-17 | 
  | GPT_41 | String | gpt-4.1 | 
  | GPT_4O | String | gpt-4o | 
