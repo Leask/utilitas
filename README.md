@@ -54,6 +54,7 @@ Works in Node.js and modern browsers.
  | getSession | AsyncFunction | sessionId, options | 
  | init | AsyncFunction | options | 
  | initChat | AsyncFunction | options | 
+ | k | Function |  | 
  | listFiles | AsyncFunction | aiId, options | 
  | listGptFineTuningEvents | AsyncFunction | aiId, job_id, options | 
  | listGptFineTuningJobs | AsyncFunction | aiId, options | 
@@ -278,6 +279,7 @@ Works in Node.js and modern browsers.
  | convertAudioTo16kNanoPcmWave | Function | input, options | 
  | createWavHeader | Function | dataSize, sampleRate, numChannels, bitsPerSample | 
  | getFfmpeg | AsyncFunction | options | 
+ | packPcmToWav | AsyncFunction | audio, options | 
 
 ### [memory](./lib/memory.mjs)
 
@@ -331,7 +333,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,OpenAI,whisper-node | 
+ | _NEED | Array | @google-cloud/speech,@google/genai,OpenAI,whisper-node | 
  | default | AsyncFunction | options | 
  | OPENAI_TTS_MAX_LENGTH | Number | 4096 | 
  | checkSay | AsyncFunction | options | 
@@ -342,7 +344,7 @@ Works in Node.js and modern browsers.
  | sttOpenAI | AsyncFunction | audio, options | 
  | sttWhisper | AsyncFunction | audio, options | 
  | tts | AsyncFunction | text, options | 
- | ttsGoogle | AsyncFunction | text, options | 
+ | ttsGoogle | AsyncFunction | contents, options | 
  | ttsOpenAI | AsyncFunction | input, options | 
  | ttsSay | AsyncFunction | text, options | 
 
