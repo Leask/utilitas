@@ -23,7 +23,7 @@ Works in Node.js and modern browsers.
  | _NEED | Array | @anthropic-ai/sdk,@anthropic-ai/vertex-sdk,@google/genai,js-tiktoken,OpenAI | 
  | default | AsyncFunction | options | 
  | ATTACHMENTS | String | [ATTACHMENTS] | 
- | CLOUD_37_SONNET | String | claude-3-7-sonnet@20250219 | 
+ | CLOUD_40_OPUS | String | claude-opus-4@20250514 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_R1 | String | deepseek-r1 | 
  | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
