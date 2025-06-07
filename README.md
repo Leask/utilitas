@@ -258,7 +258,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | OpenAI | 
+ | _NEED | Array | OpenAI,@google/genai | 
  | default | AsyncFunction | options | 
  | image | AsyncFunction | prompt, options | 
  | init | AsyncFunction | options | 
