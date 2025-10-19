@@ -23,16 +23,14 @@ Works in Node.js and modern browsers.
  | _NEED | Array | @anthropic-ai/sdk,@anthropic-ai/vertex-sdk,@google/genai,js-tiktoken,OpenAI | 
  | default | AsyncFunction | options | 
  | ATTACHMENTS | String | [ATTACHMENTS] | 
- | CLOUD_40_OPUS | String | claude-opus-4@20250514 | 
+ | CLOUD_SONNET_45 | String | claude-sonnet-4-5@20250929 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_R1 | String | deepseek-r1 | 
  | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
- | GEMINI_20_FLASH | String | gemini-2.0-flash-preview-image-generation | 
- | GEMINI_25_FLASH | String | gemini-2.5-flash | 
- | GPT_41 | String | gpt-4.1 | 
- | GPT_4O | String | gpt-4o | 
- | GPT_O3 | String | o3 | 
+ | GEMINI_25_FLASH | String | gemini-2.5-flash-preview-09-2025 | 
+ | GEMINI_25_FLASH_IMAGE | String | gemini-2.5-flash-image | 
+ | GPT_5 | String | gpt-5 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | TEXT_EMBEDDING_3_SMALL | String | text-embedding-3-small | 
