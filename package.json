@@ -12,7 +12,7 @@
     "scripts": {
         "start": "node index.mjs",
         "debug": "node --inspect --trace-warnings debug.mjs",
-        "test": "node --inspect --trace-warnings test.mjs",
+        "test": "node test.mjs",
         "updep": "npx npm-check-updates -u && npm install && wget https://raw.githubusercontent.com/Marak/colors.js/master/lib/styles.js -O ./lib/style.cjs && wget https://raw.githubusercontent.com/sindresorhus/cli-boxes/refs/heads/main/boxes.json -O ./lib/boxes.json",
         "gitsync": "( git commit -am \"Released @ `date`\" || true ) && git pull && git push",
         "pack": "./node_modules/.bin/webpack-cli --config webpack.config.mjs",
