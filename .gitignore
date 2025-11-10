@@ -114,3 +114,4 @@ dist
 debug.mjs
 eng.traineddata
 package-lock.json
+/config.json
