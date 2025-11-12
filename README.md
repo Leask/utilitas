@@ -217,6 +217,18 @@ Works in Node.js and modern browsers.
  | rawSend | AsyncFunction | data | 
  | send | AsyncFunction | email, subject, text, html, args, options | 
 
+### [embedding](./lib/embedding.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | openai | 
+ | default | AsyncFunction | options | 
+ | embedding | AsyncFunction | input, options | 
+ | init | AsyncFunction | options | 
+
+Supports OPENAI, OPENROUTER, and JINA providers. JINA uses the `jina-clip-v2`
+model (1024 dims, 8k token input) served from `https://api.jina.ai/v1/`.
+
 ### [encryption](./lib/encryption.mjs)
 
  | symbol | type | params / value | 
