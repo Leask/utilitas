@@ -227,7 +227,10 @@ Works in Node.js and modern browsers.
  | init | AsyncFunction | options | 
 
 Supports OPENAI, OPENROUTER, and JINA providers. JINA uses the `jina-clip-v2`
-model (1024 dims, 8k token input) served from `https://api.jina.ai/v1/`.
+model (1024 dims, 8k token input) served from `https://api.jina.ai/v1/`. Its API expects
+`{ text: '...' }`/`{ image: '...' }` inputs, so utilitas wraps strings, enforces the default
+1024-dimension requirement, and fills in `task` (`retrieval.query`), `normalized`, and
+`embedding_type` fields automatically to keep usage identical to the OpenAI-style interface.
 
 ### [encryption](./lib/encryption.mjs)
 
