@@ -2,10 +2,12 @@
 /.github
 /build.mjs
 /debug.mjs
+/config.json
 /gears
 /index.html
 /package-lock.json
 /template.md
 /test.mjs
+/tests
 /webpack.config.mjs
 eng.traineddata
