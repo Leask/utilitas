@@ -20,53 +20,36 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @anthropic-ai/sdk,@anthropic-ai/vertex-sdk,@google/genai,js-tiktoken,OpenAI | 
+ | _NEED | Array | js-tiktoken,OpenAI | 
  | default | AsyncFunction | options | 
  | ATTACHMENTS | String | [ATTACHMENTS] | 
- | CLOUD_SONNET_45 | String | claude-sonnet-4-5@20250929 | 
+ | CLOUD_SONNET_45 | String | anthropic/claude-sonnet-4.5 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_R1 | String | deepseek-r1 | 
  | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_25_FLASH | String | gemini-2.5-flash-preview-09-2025 | 
  | GEMINI_25_FLASH_IMAGE | String | gemini-2.5-flash-image | 
- | GPT_5 | String | gpt-5 | 
+ | GPT_51 | String | gpt-5.1 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
- | TEXT_EMBEDDING_3_SMALL | String | text-embedding-3-small | 
  | _NO_RENDER | Array | INSTRUCTIONS,MODELS,DEFAULT_MODELS | 
  | analyzeSessions | AsyncFunction | sessionIds, options | 
- | buildGptTrainingCase | Function | prompt, response, options | 
- | buildGptTrainingCases | Function | cases, opts | 
- | cancelGptFineTuningJob | AsyncFunction | aiId, job_id, options | 
  | countTokens | AsyncFunction | input, options | 
- | createGeminiEmbedding | AsyncFunction | aiId, input, options | 
- | createGptFineTuningJob | AsyncFunction | aiId, training_file, options | 
- | createOpenAIEmbedding | AsyncFunction | aiId, input, options | 
- | deleteFile | AsyncFunction | aiId, file_id, options | 
  | distillFile | AsyncFunction | attachments, o | 
  | getAi | AsyncFunction | id, options | 
  | getChatAttachmentCost | AsyncFunction | options | 
  | getChatPromptLimit | AsyncFunction | options | 
- | getGptFineTuningJob | AsyncFunction | aiId, job_id, options | 
  | getSession | AsyncFunction | sessionId, options | 
  | init | AsyncFunction | options | 
  | initChat | AsyncFunction | options | 
  | k | Function |  | 
- | listFiles | AsyncFunction | aiId, options | 
- | listGptFineTuningEvents | AsyncFunction | aiId, job_id, options | 
- | listGptFineTuningJobs | AsyncFunction | aiId, options | 
  | listOpenAIModels | AsyncFunction | aiId, options | 
  | prompt | AsyncFunction | input, options | 
- | promptAnthropic | AsyncFunction | aiId, content, options | 
- | promptGemini | AsyncFunction | aiId, content, options | 
  | promptOpenAI | AsyncFunction | aiId, content, options | 
  | resetSession | AsyncFunction | sessionId, options | 
- | tailGptFineTuningEvents | AsyncFunction | aiId, job_id, options | 
  | talk | AsyncFunction | input, options | 
  | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
- | uploadFile | AsyncFunction | aiId, input, options | 
- | uploadFileForFineTuning | AsyncFunction | aiId, content, options | 
 
 ### [bee](./lib/bee.mjs)
 
@@ -225,12 +208,6 @@ Works in Node.js and modern browsers.
  | default | AsyncFunction | options | 
  | embedding | AsyncFunction | input, options | 
  | init | AsyncFunction | options | 
-
-Supports OPENAI, OPENROUTER, and JINA providers. JINA uses the `jina-clip-v2`
-model (1024 dims, 8k token input) served from `https://api.jina.ai/v1/`. Its API expects
-`{ text: '...' }`/`{ image: '...' }` inputs, so utilitas wraps strings, enforces the default
-1024-dimension requirement, and fills in `task` (`retrieval.query`), `normalized`, and
-`embedding_type` fields automatically to keep usage identical to the OpenAI-style interface.
 
 ### [encryption](./lib/encryption.mjs)
 
