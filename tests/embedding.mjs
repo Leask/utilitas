@@ -3,7 +3,12 @@ import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-import config from '../config.json' with { type: 'json' };
+let config = {};
+try {
+    config = (await import('../config.json', { with: { type: 'json' } })).default;
+} catch (error) {
+    config = {};
+}
 import init, { embedding } from '../lib/embedding.mjs';
 
 const sampleImage = path.join(

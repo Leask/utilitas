@@ -1,7 +1,12 @@
 import { before, test } from 'node:test';
 import assert from 'node:assert/strict';
 import * as utilitas from '../index.mjs';
-import config from '../config.json' with { type: 'json' };
+let config = {};
+try {
+    config = (await import('../config.json', { with: { type: 'json' } })).default;
+} catch (error) {
+    config = {};
+}
 
 const { openrouter_key: OPENROUTER_KEY } = config ?? {};
 const skipReason = !OPENROUTER_KEY
