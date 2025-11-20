@@ -17,6 +17,10 @@ test('callosum cluster integration', { timeout: 15000 }, async () => {
                 callosum.on('BROADCAST_RECEIVED', (msg) => {
                     data.broadcastReceived = true;
                 });
+                callosum.on('TEST_REPORT', (msg) => {
+                    data.reportReceived = true;
+                    data.reportMsg = msg.text;
+                });
                 // Wait a bit for workers to be ready before broadcasting
                 setTimeout(() => {
                     callosum.boardcast('TEST_BROADCAST', { msg: 'hello' });
@@ -36,6 +40,7 @@ test('callosum cluster integration', { timeout: 15000 }, async () => {
                         await callosum.set('test_key', 123);
                         const val = await callosum.get('test_key');
                         callosum.report('TEST_DONE', { result: val });
+                        callosum.report('TEST_REPORT', { text: 'reporting for duty' });
                     }, 1000);
                 }
             }
@@ -49,6 +54,8 @@ test('callosum cluster integration', { timeout: 15000 }, async () => {
         
         assert.equal(data.val, 123);
         assert.equal(data.broadcastReceived, true, 'Worker should receive broadcast');
+        assert.equal(data.reportReceived, true, 'Primary should receive report');
+        assert.equal(data.reportMsg, 'reporting for duty');
         await callosum.end();
     } else {
         // This part will be executed by the worker process
@@ -71,6 +78,7 @@ test('callosum cluster integration', { timeout: 15000 }, async () => {
                         await callosum.set('test_key', 123);
                         const val = await callosum.get('test_key');
                         callosum.report('TEST_DONE', { result: val });
+                        callosum.report('TEST_REPORT', { text: 'reporting for duty' });
                     }, 500);
                 }
             }
