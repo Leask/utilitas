@@ -27,9 +27,9 @@ test('utilitas ensureString', () => {
 });
 
 test('utilitas hexEncode/Decode', () => {
-    const str = 'asdfasdf11111';
+    const str = 'Hello World! 🌍';
     const hex = utilitas.hexEncode(str);
-    assert.equal(hex, '61736466617364663131313131');
+    assert.equal(hex, '48656c6c6f20576f726c642120f09f8c8d');
     const decoded = utilitas.hexDecode(hex);
     assert.equal(decoded, str);
 });
