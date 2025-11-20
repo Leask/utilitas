@@ -10,3 +10,14 @@ test('uoid getTimestampFromUuid', () => {
     const ts = utilitas.uoid.getTimestampFromUuid(uuid);
     assert.equal(ts, 1604644227693);
 });
+
+test('uoid getRfcUrlNamespaceUuid', () => {
+    const uuid = utilitas.uoid.getRfcUrlNamespaceUuid('http://x.com');
+    assert.ok(uuid);
+    assert.match(uuid, /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i);
+});
+
+test('uoid create', async () => {
+    const id = await utilitas.uoid.create({ file: import.meta.filename, security: true });
+    assert.ok(id.includes('|'));
+});

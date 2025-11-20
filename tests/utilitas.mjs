@@ -42,17 +42,12 @@ test('utilitas distill', () => {
         r: null,
         c: { x: 1, y: [{ a: 1, b: '1111' }] }
     };
-    // distill(obj, true) should remove undefined and null (strict mode)
-    // It also recursively cleans arrays and objects.
-    // x[0].a[0].x[0] is {}, which might be kept or removed depending on exact logic of distill for empty objects?
-    // Let's check the behavior. Based on typical distill:
     const distilled = utilitas.distill(obj, true);
     
     assert.equal(distilled.a, 123);
     assert.equal(distilled.b, undefined);
-    assert.equal(distilled.r, undefined); // null is removed in strict mode if isSet checks for null
+    assert.equal(distilled.r, undefined);
     assert.deepEqual(distilled.c, { x: 1, y: [{ a: 1, b: '1111' }] });
-    // Verify x is undefined because it recursively became empty
     assert.equal(distilled.x, undefined);
 });
 
@@ -62,7 +57,6 @@ test('utilitas ensureString case', () => {
 });
 
 test('utilitas ensureDate', () => {
-    // "2020-09-26T15:31:53.500Z" -> 1601134313500 ms -> 1601134313.5 s -> round -> 1601134314
     const validDateStr = "2020-09-26T15:31:53.500Z";
     const x = utilitas.ensureDate(validDateStr, { asUnixtime: true });
     assert.equal(x, 1601134314);
@@ -70,19 +64,12 @@ test('utilitas ensureDate', () => {
 
 test('utilitas mapKeys', () => {
     const obj = { a: 1, b: 2, c: { a: { asdfasdf: '1' } } };
-    
-    // Map with object
     const mapped1 = utilitas.mapKeys(obj, { a: 'z', b: 'x', c: 'c_mapped' });
     assert.equal(mapped1.z, 1);
     assert.equal(mapped1.x, 2);
-    // Nested keys are NOT automatically remapped by top-level map unless recursion handles it?
-    // The mapKeys function recursively calls itself.
-    // But the map object provided is { a: 'z', ... }.
-    // When mapping c.a, it looks up 'a' in the map -> 'z'.
     assert.ok(mapped1.c_mapped);
     assert.equal(mapped1.c_mapped.z.asdfasdf, '1');
 
-    // Map with function
     const obj2 = { a: 1, b: 2, c: { a: { a: '1' } } };
     const mapped2 = utilitas.mapKeys(obj2, (key, val, path) => {
         return key + '___';
@@ -93,11 +80,40 @@ test('utilitas mapKeys', () => {
 });
 
 test('utilitas purgeEmoji', () => {
-    // The example '***?!*...***' has no emojis.
     const noEmoji = utilitas.purgeEmoji('***?!*...***', 'asdfasdf');
     assert.equal(noEmoji, '***?!*...***');
     
     const withEmoji = 'Hello 🌍';
     const purged = utilitas.purgeEmoji(withEmoji, '');
     assert.equal(purged.trim(), 'Hello');
+});
+
+test('utilitas ignoreErrFunc', async () => {
+    const res = await utilitas.ignoreErrFunc(() => { throw new Error('fail'); });
+    assert.equal(res, undefined);
+
+    const res2 = await utilitas.ignoreErrFunc(() => 42);
+    assert.equal(res2, 42);
+});
+
+test('utilitas log', () => {
+    utilitas.log([1, 2, 3], 'F');
+});
+
+test('utilitas tryUntil', async () => {
+    let count = 0;
+    const result = await utilitas.tryUntil(async () => {
+        count++;
+        return count;
+    }, {
+        verify: async (_, r) => r === 2,
+        interval: 10
+    });
+    assert.equal(result, 2);
+    assert.equal(count, 2);
+});
+
+test('utilitas rotate', () => {
+    const rotated = utilitas.rotate('1234567aaa', 2, { case: 'UP' });
+    assert.equal(rotated, '34567AAA12');
 });
