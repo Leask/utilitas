@@ -23,12 +23,12 @@ Works in Node.js and modern browsers.
  | _NEED | Array | js-tiktoken,OpenAI | 
  | default | AsyncFunction | options | 
  | ATTACHMENTS | String | [ATTACHMENTS] | 
- | CLOUD_SONNET_45 | String | anthropic/claude-sonnet-4.5 | 
+ | CLOUD_SONNET_45 | String | claude-sonnet-4.5 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_R1 | String | deepseek-r1 | 
  | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
- | GEMINI_25_FLASH | String | gemini-2.5-flash-preview-09-2025 | 
+ | GEMINI_25_FLASH | String | gemini-2.5-flash:online | 
  | GEMINI_25_FLASH_IMAGE | String | gemini-2.5-flash-image | 
  | GPT_51 | String | gpt-5.1 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
