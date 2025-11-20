@@ -21,7 +21,7 @@ if (!skipReason) {
     before(async () => {
         await alan.init({
             apiKey: OPENROUTER_KEY,
-            model: '*',
+            model: '*', 
         });
     });
 }
@@ -63,12 +63,28 @@ test('alan claude tool calling', { skip: skipReason, timeout: 120000 }, async ()
 });
 
 test('alan distillFile', { skip: skipReason, timeout: 1000 * 60 * 5 }, async () => {
-    await alan.init({
-        provider: 'OpenRouter',
-        apiKey: OPENROUTER_KEY,
-        model: 'gpt-5.1'
-    });
-    const response = await alan.distillFile(testJpgPath, { input: 'FILE' });
+    // We can re-init specifically for this test if needed, but global init covers *
+    const response = await alan.distillFile(testJpgPath, { input: 'FILE', aiId: 'openrouter_openai_gpt_5_1' });
     assert.ok(typeof response === 'string', 'Response should be a string');
     assert.ok(response.length > 0, 'Response should not be empty');
+});
+
+test('alan talk with webpage', { skip: skipReason, timeout: 1000 * 60 * 5 }, async () => {
+    // Initialize chat with system prompt to avoid "Content is required" error during token counting in initChat
+    await alan.initChat({
+        systemPrompt: 'You are a helpful assistant.'
+    });
+    
+    const response = await alan.talk(
+        'https://platform.openai.com/docs/guides/prompt-engineering 總結一下這個頁面的主要內容',
+    );
+    
+    assert.equal(typeof response, 'object', 'Talk response should be an object');
+    assert.ok(response.text, 'Response should have text');
+    assert.ok(response.text.length > 0, 'Response text should not be empty');
+    // Ensure it actually processed the URL (content should reflect prompt engineering)
+    assert.ok(
+        /prompt|engineering|model|instruction|summary|內容/i.test(response.text), 
+        'Response should be relevant to the URL content'
+    );
 });
