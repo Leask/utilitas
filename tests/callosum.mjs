@@ -14,9 +14,22 @@ test('callosum cluster integration', { timeout: 15000 }, async () => {
                     data.val = msg.result;
                     resolveWorkerReady();
                 });
+                callosum.on('BROADCAST_RECEIVED', (msg) => {
+                    data.broadcastReceived = true;
+                });
+                // Wait a bit for workers to be ready before broadcasting
+                setTimeout(() => {
+                    callosum.boardcast('TEST_BROADCAST', { msg: 'hello' });
+                }, 2000);
             },
             initWorker: async () => {
                 // Worker logic
+                callosum.on('TEST_BROADCAST', (msg) => {
+                    if (msg.msg === 'hello') {
+                        callosum.report('BROADCAST_RECEIVED', { success: true });
+                    }
+                });
+
                 if (callosum.worker.id === 1) {
                     // Simulate some work
                     setTimeout(async () => {
@@ -29,27 +42,16 @@ test('callosum cluster integration', { timeout: 15000 }, async () => {
         });
 
         await workerReadyPromise;
+        // Wait a bit more for broadcast cycle to complete if needed, or rely on workerReadyPromise if it covers enough time.
+        // Since broadcast is triggered after 2000ms, and workerReadyPromise might resolve earlier (after 1000ms).
+        // We need to wait for broadcast verification.
+        await new Promise(r => setTimeout(r, 3000));
+        
         assert.equal(data.val, 123);
+        assert.equal(data.broadcastReceived, true, 'Worker should receive broadcast');
         await callosum.end();
     } else {
-        // This part will be executed by the worker process, but the test runner 
-        // typically runs the test file in the primary process. 
-        // `callosum.init` handles the fork logic.
-        // However, node:test might not play well with direct cluster forking within a single test file 
-        // if re-executed in workers without care.
-        // But `callosum` seems designed to handle `isPrimary` / `isWorker`.
-        // The `init` call in the primary block handles forking.
-        
-        // Wait, if `callosum.init` forks, the workers will re-run this file?
-        // If `node test.mjs` runs this file, the workers are forked with `node test.mjs`?
-        // Usually `cluster.fork()` executes the same entry point.
-        // If so, we need to ensure `init` is called in workers too.
-        
-        // The `init` function checks `isPrimary`. 
-        // If `isWorker`, it runs `initWorker`.
-        // So we need to call `init` in both primary and worker branches logic or just once globally.
-        
-        // Let's structure it to be safe.
+        // This part will be executed by the worker process
         await callosum.init({
              initPrimary: async () => {
                 callosum.on('TEST_DONE', (msg) => {
@@ -58,6 +60,12 @@ test('callosum cluster integration', { timeout: 15000 }, async () => {
                 });
             },
             initWorker: async () => {
+                callosum.on('TEST_BROADCAST', (msg) => {
+                    if (msg.msg === 'hello') {
+                        callosum.report('BROADCAST_RECEIVED', { success: true });
+                    }
+                });
+
                 if (callosum.worker.id === 1) {
                     setTimeout(async () => {
                         await callosum.set('test_key', 123);
@@ -69,9 +77,17 @@ test('callosum cluster integration', { timeout: 15000 }, async () => {
         });
         
         if (callosum.isPrimary) {
-            await workerReadyPromise;
-            assert.equal(data.val, 123);
-            await callosum.end();
+            // Should not be reached here if logic is correct as isPrimary block above handles it?
+            // Actually, in the worker process, `callosum.isPrimary` is false.
+            // But we are in the `else` block of the top-level `if (callosum.isPrimary)`.
+            // Wait, `node test.mjs` runs the file.
+            // Primary runs `if (callosum.isPrimary) { ... }`
+            // Worker runs `else { ... }`?
+            // Yes, `callosum.isPrimary` is checked at top level.
+            
+            // But wait, if I use `await callosum.init` inside the `if/else`, 
+            // `callosum.isPrimary` is static based on cluster.
+            // So the logic is fine.
         }
     }
 });
