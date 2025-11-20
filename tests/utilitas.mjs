@@ -117,3 +117,20 @@ test('utilitas rotate', () => {
     const rotated = utilitas.rotate('1234567aaa', 2, { case: 'UP' });
     assert.equal(rotated, '34567AAA12');
 });
+
+test('utilitas renderBox', () => {
+    const content = [
+        'Mission: Explore the galaxy 🚀',
+        'Status: All systems functional ✅',
+        'Crew: 42 brave souls 👩‍🚀',
+        'Next Stop: Mars Colony Alpha 🔴',
+        'Quote: "To infinity and beyond!" ✨'
+    ];
+    const box = utilitas.renderBox(content, { title: 'Starship Log', noWrap: false });
+    
+    assert.ok(typeof box === 'string');
+    assert.ok(box.includes('Starship Log'));
+    assert.ok(box.includes('Mission: Explore the galaxy 🚀'));
+    assert.ok(box.includes('╭')); // default style 'round' uses this corner
+    assert.ok(box.includes('╯'));
+});
