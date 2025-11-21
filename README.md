@@ -10,8 +10,8 @@ Works in Node.js and modern browsers.
 ## Projects developed using `utilitas`
 
 - [🤖️ halbot](https://github.com/Leask/halbot)
-- [Socratex](https://github.com/Leask/socratex)
-- [`S`tar`L`ink `S`ignal `S`tatus 🛰️](https://github.com/Leask/Starlink-Signal-Status)
+- [🧱 Socratex](https://github.com/Leask/socratex)
+- [🛰️ `S`tar`L`ink `S`ignal `S`tatus](https://github.com/Leask/Starlink-Signal-Status)
 - [🎸 webjam](https://github.com/Leask/webjam)
 
 ## APIs
@@ -29,7 +29,7 @@ Works in Node.js and modern browsers.
  | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_25_FLASH | String | gemini-2.5-flash-preview-09-2025 | 
- | GEMINI_25_FLASH_IMAGE | String | gemini-2.5-flash-image | 
+ | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GPT_51 | String | gpt-5.1 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
