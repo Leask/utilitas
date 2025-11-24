@@ -12,6 +12,7 @@ import * as cache from './lib/cache.mjs';
 import * as callosum from './lib/callosum.mjs';
 import * as dbio from './lib/dbio.mjs';
 import * as email from './lib/email.mjs';
+import * as embedding from './lib/embedding.mjs';
 import * as encryption from './lib/encryption.mjs';
 import * as event from './lib/event.mjs';
 import * as gen from './lib/gen.mjs';
@@ -38,9 +39,9 @@ export {
     // dependencies
     fileType, math, uuid,
     // features
-    alan, bee, bot, boxes, cache, callosum, color, dbio, email, encryption,
-    event, gen, manifest, media, memory, network, sentinel, shell, sms, speech,
-    ssl, storage, tape, uoid, utilitas, vision, web
+    alan, bee, bot, boxes, cache, callosum, color, dbio, email, embedding,
+    encryption, event, gen, manifest, media, memory, network, sentinel, shell,
+    sms, speech, ssl, storage, tape, uoid, utilitas, vision, web
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
