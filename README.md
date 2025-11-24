@@ -206,7 +206,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | openai | 
  | default | AsyncFunction | options | 
- | embedding | AsyncFunction | input, options | 
+ | embed | AsyncFunction | input, options | 
  | init | AsyncFunction | options | 
 
 ### [encryption](./lib/encryption.mjs)
