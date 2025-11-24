@@ -16,7 +16,7 @@ if (!skipReason) {
     before(async () => {
         await utilitas.gen.init({
             apiKey: GOOGLE_KEY,
-            provider: 'Gemini',
+            provider: 'GOOGLE',
         });
     });
 }
