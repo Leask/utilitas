@@ -18,10 +18,10 @@ const skipReasonOpenAI = !OPENAI_KEY && 'openai_key is missing from config.json'
 test('gen image gemini', { skip: skipReasonGoogle, timeout: 1000 * 60 * 5 }, async () => {
     await utilitas.gen.init({
         apiKey: GOOGLE_KEY,
-        provider: 'Gemini',
+        provider: 'GOOGLE',
     });
     const response = await utilitas.gen.image('a beautiful cat riding a rocket', {
-        provider: 'Gemini',
+        provider: 'GOOGLE',
         expected: 'BUFFER',
     });
     assert.ok(Array.isArray(response), 'Response should be an array');
