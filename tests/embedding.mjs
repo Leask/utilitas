@@ -9,7 +9,7 @@ try {
 } catch (error) {
     config = {};
 }
-import init, { embedding } from '../lib/embedding.mjs';
+import init, { embed } from '../lib/embedding.mjs';
 
 const sampleImage = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
@@ -68,7 +68,7 @@ for (const providerConfig of providers) {
 
     test(`embedding string or images with ${label}`, { skip: skipReason }, async () => {
         const { input, options, isBatch } = buildPayload(label);
-        const vector = await embedding(input, { provider, ...options });
+        const vector = await embed(input, { provider, ...options });
         if (isBatch) {
             assert(Array.isArray(vector), `${label} embedding should return an array`);
             assert(vector.length === input.length,
