@@ -80,9 +80,7 @@ test('alan distillFile', { skip: skipReason, timeout: 1000 * 60 * 5 }, async () 
 
 test('alan talk with webpage', { skip: skipReason, timeout: 1000 * 60 * 5 }, async () => {
     // Initialize chat with system prompt to avoid "Content is required" error during token counting in initChat
-    await alan.initChat({
-        systemPrompt: 'You are a helpful assistant.'
-    });
+    await alan.initChat();
     const response = await alan.talk(
         'https://platform.openai.com/docs/guides/prompt-engineering 總結一下這個頁面的主要內容',
     );
