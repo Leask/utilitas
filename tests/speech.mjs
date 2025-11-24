@@ -10,10 +10,10 @@ try {
 }
 
 const OPENAI_KEY = config?.openai_key;
-const GOOGLE_KEY = config?.google_genai_key;
+const GOOGLE_KEY = config?.google_key;
 
 const skipReasonOpenAI = !OPENAI_KEY && 'openai_key is missing from config.json';
-const skipReasonGoogle = !GOOGLE_KEY && 'google_genai_key is missing from config.json';
+const skipReasonGoogle = !GOOGLE_KEY && 'google_key is missing from config.json';
 
 test('speech tts openai', { skip: skipReasonOpenAI, timeout: 1000 * 60 }, async () => {
     await speech.init({ provider: 'OpenAI', tts: true, stt: true, apiKey: OPENAI_KEY });

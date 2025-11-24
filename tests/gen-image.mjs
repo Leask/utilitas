@@ -9,10 +9,10 @@ try {
     config = {};
 }
 
-const GOOGLE_KEY = config?.google_genai_key;
+const GOOGLE_KEY = config?.google_key;
 const OPENAI_KEY = config?.openai_key;
 
-const skipReasonGoogle = !GOOGLE_KEY && 'google_genai_key is missing from config.json';
+const skipReasonGoogle = !GOOGLE_KEY && 'google_key is missing from config.json';
 const skipReasonOpenAI = !OPENAI_KEY && 'openai_key is missing from config.json';
 
 test('gen image gemini', { skip: skipReasonGoogle, timeout: 1000 * 60 * 5 }, async () => {

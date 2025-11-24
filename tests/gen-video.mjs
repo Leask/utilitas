@@ -9,8 +9,8 @@ try {
     config = {};
 }
 
-const GOOGLE_KEY = config?.google_genai_key;
-const skipReason = !GOOGLE_KEY && 'google_genai_key is missing from config.json';
+const GOOGLE_KEY = config?.google_key;
+const skipReason = !GOOGLE_KEY && 'google_key is missing from config.json';
 
 if (!skipReason) {
     before(async () => {
