@@ -13,6 +13,7 @@ Works in Node.js and modern browsers.
 - [🧱 Socratex](https://github.com/Leask/socratex)
 - [🛰️ `S`tar`L`ink `S`ignal `S`tatus](https://github.com/Leask/Starlink-Signal-Status)
 - [🎸 webjam](https://github.com/Leask/webjam)
+- [`t>` Tabminal](https://github.com/Leask/tabminal)
 
 ## APIs
 
