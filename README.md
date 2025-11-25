@@ -24,7 +24,7 @@ Works in Node.js and modern browsers.
  | _NEED | Array | js-tiktoken,OpenAI | 
  | default | AsyncFunction | options | 
  | ATTACHMENTS | String | [ATTACHMENTS] | 
- | CLOUD_SONNET_45 | String | claude-sonnet-4.5 | 
+ | CLOUD_OPUS_45 | String | claude-opus-4.5 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_R1 | String | deepseek-r1 | 
  | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
