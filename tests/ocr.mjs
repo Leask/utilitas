@@ -12,6 +12,7 @@ try {
 
 const GOOGLE_CREDENTIALS = config?.google_credentials;
 const GOOGLE_PROJECT = config?.google_project;
+const GOOGLE_KEY = config?.google_key;
 const skipReasonGoogle = (!GOOGLE_CREDENTIALS && !GOOGLE_PROJECT) && 'google_credentials or google_project is missing from config.json';
 
 // Minimal PDF "Hello, world!"
@@ -24,7 +25,7 @@ test('ocr mistral', { skip: skipReasonGoogle, timeout: 1000 * 60 * 5 }, async ()
         project: GOOGLE_PROJECT,
     });
     try {
-        const response = await ocr.recognize(MINIMAL_PDF, { input: 'BASE64' });
+        const response = await ocr.recognize(MINIMAL_PDF, { apiKey: GOOGLE_KEY, input: 'BASE64' });
         assert.ok(response, 'Response should be present');
         assert.ok(typeof response.text === 'string', 'Response should have text property');
         // We log the text to see what happened (useful for debugging)
