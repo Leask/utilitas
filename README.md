@@ -214,7 +214,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,@google-cloud/vision,google-gax | 
+ | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,google-gax | 
  | aesCreateIv | Function | options | 
  | aesCreateKey | Function | options | 
  | aesDecrypt | Function | any, options | 
@@ -222,7 +222,9 @@ Works in Node.js and modern browsers.
  | defaultAlgorithm | String | sha256 | 
  | defaultEncryption | String | aes-256-gcm | 
  | digestObject | Function | object, algorithm | 
- | getApiKeyCredentials | AsyncFunction | options | 
+ | getGoogleApiKeyCredentials | AsyncFunction | options | 
+ | getGoogleAuthByCredentials | AsyncFunction | keyFilename | 
+ | getGoogleAuthTokenByAuth | AsyncFunction | auth | 
  | getSortedQueryString | Function | obj | 
  | hash | Function | string, algorithm | 
  | hashFile | Function | filename, algorithm | 
@@ -584,19 +586,14 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/vision,office-text-extractor,pdfjs-dist,tesseract.js | 
- | annotateImage | AsyncFunction | image, options | 
+ | _NEED | Array | office-text-extractor,pdfjs-dist,tesseract.js | 
+ | default | AsyncFunction | options | 
  | getPdfInfo | AsyncFunction | file, options | 
- | getPdfPage | AsyncFunction | doc, pageNum | 
- | getPdfPages | AsyncFunction | doc | 
+ | getPdfPage | AsyncFunction | doc, pages | 
  | init | AsyncFunction | options | 
+ | ocr | AsyncFunction | file, options | 
  | ocrImage | AsyncFunction | image, options | 
- | ocrImageGoogle | AsyncFunction | image, options | 
- | ocrImageTesseract | AsyncFunction | image, options | 
  | parseOfficeFile | AsyncFunction | source, options | 
- | read | AsyncFunction | image, options | 
- | readAll | AsyncFunction | image, options | 
- | see | AsyncFunction | image, options | 
 
 ### [web](./lib/web.mjs)
 
