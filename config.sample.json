@@ -1,7 +1,57 @@
 {
+    "google_credentials": "",
     "google_cx": "",
     "google_key": "",
+    "google_project": "",
     "jina_key": "",
     "openai_key": "",
-    "openrouter_key": ""
+    "openrouter_key": "",
+    "siliconflow_key": "",
+    "telegram": {
+        "botToken": "",
+        "chatId": ""
+    },
+    "mailgun": {
+        "recipient": "",
+        "domain": "",
+        "senderName": "",
+        "senderEmail": "",
+        "provider": "mailgun",
+        "username": "",
+        "key": ""
+    },
+    "mailjet": {
+        "recipient": "",
+        "provider": "MAILJET",
+        "apiKey": "",
+        "apiSecret": "",
+        "senderEmail": ""
+    },
+    "twilio": {
+        "recipient": "",
+        "provider": "TWILIO",
+        "phoneNumber": "",
+        "accountSid": "",
+        "authToken": ""
+    },
+    "telesign": {
+        "recipient": "",
+        "provider": "TELESIGN",
+        "customerId": "",
+        "apiKey": ""
+    },
+    "cache": {
+        "port": 6379,
+        "host": "127.0.0.1",
+        "db": 0,
+        "password": ""
+    },
+    "dbio": {
+        "provider": "PostgreSQL",
+        "host": "127.0.0.1",
+        "database": "postgres",
+        "user": "postgres",
+        "password": "",
+        "vector": true
+    }
 }
