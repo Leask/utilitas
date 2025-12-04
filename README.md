@@ -99,6 +99,7 @@ Works in Node.js and modern browsers.
  | _NEED | Array | ioredis | 
  | default | AsyncFunction | options | 
  | del | AsyncFunction |  | 
+ | end | AsyncFunction |  | 
  | get | AsyncFunction |  | 
  | init | AsyncFunction | options | 
  | set | AsyncFunction | key, value, options | 
