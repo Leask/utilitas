@@ -14,7 +14,7 @@ try {
 const TELEGRAM_CONFIG = config?.telegram;
 const skipReason = !TELEGRAM_CONFIG && 'telegram config is missing from config.json';
 
-test('send telegram message', { skip: skipReason, timeout: 1000 * 60 }, async () => {
+test('redirect logs to a telegram chat', { skip: skipReason, timeout: 1000 * 60 }, async () => {
     await initBot({ ...TELEGRAM_CONFIG, provider: 'TELEGRAM' });
     await initTape({ provider: 'bot', chatId: TELEGRAM_CONFIG.chatId, level: 'verbose', redirect: true });
     console.log('A brown fox jumps over the lazy dog.');
