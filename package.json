@@ -62,6 +62,7 @@
         "office-text-extractor": "^3.0.3",
         "openai": "^6.9.1",
         "pdfjs-dist": "^5.4.394",
+        "pdf-lib": "^1.17.1",
         "pg": "^8.16.3",
         "pgvector": "^0.2.1",
         "ping": "^1.0.0",
