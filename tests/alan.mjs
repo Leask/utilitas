@@ -62,7 +62,7 @@ test('alan gpt tool calling', { skip: skipReason, timeout: 120000 }, async () =>
 test('alan claude tool calling', { skip: skipReason, timeout: 120000 }, async () => {
     const response = await alan.prompt(
         'What\'s the time?',
-        { aiId: 'openrouter_anthropic_claude_sonnet_4_5' },
+        { aiId: 'openrouter_anthropic_claude_opus_4_5' },
     );
     assert.equal(typeof response, 'object', 'Prompt should return an object');
     assert.equal(typeof response.text, 'string',
@@ -72,7 +72,6 @@ test('alan claude tool calling', { skip: skipReason, timeout: 120000 }, async ()
 });
 
 test('alan distillFile', { skip: skipReason, timeout: 1000 * 60 * 5 }, async () => {
-    // We can re-init specifically for this test if needed, but global init covers *
     const response = await alan.distillFile(testJpgPath, { input: 'FILE', aiId: 'openrouter_openai_gpt_5_1' });
     assert.ok(typeof response === 'string', 'Response should be a string');
     assert.ok(response.length > 0, 'Response should not be empty');
@@ -81,15 +80,20 @@ test('alan distillFile', { skip: skipReason, timeout: 1000 * 60 * 5 }, async () 
 test('alan talk with webpage', { skip: skipReason, timeout: 1000 * 60 * 5 }, async () => {
     // Initialize chat with system prompt to avoid "Content is required" error during token counting in initChat
     await alan.initChat();
-    const response = await alan.talk(
-        'https://platform.openai.com/docs/guides/prompt-engineering 總結一下這個頁面的主要內容',
-    );
+    const response = await alan.talk('https://leaskh.com what is this page about?');
     assert.equal(typeof response, 'object', 'Talk response should be an object');
     assert.ok(response.text, 'Response should have text');
     assert.ok(response.text.length > 0, 'Response text should not be empty');
     // Ensure it actually processed the URL (content should reflect prompt engineering)
     assert.ok(
-        /prompt|engineering|model|instruction|summary|內容/i.test(response.text),
+        /blog|leask/i.test(response.text),
         'Response should be relevant to the URL content'
     );
+});
+
+test('alan initChat', { skip: skipReason, timeout: 120000 }, async () => {
+    const response = await alan.initChat();
+    assert.equal(typeof response, 'object', 'initChat should return an object');
+    assert.ok(response.chatConfig, 'response should have chatConfig');
+    assert.ok(response.ais, 'response should have ais');
 });
