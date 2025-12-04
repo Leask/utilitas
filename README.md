@@ -586,7 +586,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | office-text-extractor,pdfjs-dist,tesseract.js | 
+ | _NEED | Array | office-text-extractor,pdfjs-dist,pdf-lib,tesseract.js | 
  | default | AsyncFunction | options | 
  | getPdfInfo | AsyncFunction | file, options | 
  | getPdfPage | AsyncFunction | doc, pages | 
@@ -594,6 +594,7 @@ Works in Node.js and modern browsers.
  | ocr | AsyncFunction | file, options | 
  | ocrImage | AsyncFunction | image, options | 
  | parseOfficeFile | AsyncFunction | source, options | 
+ | splitPdf | AsyncFunction | file, options | 
 
 ### [web](./lib/web.mjs)
 
