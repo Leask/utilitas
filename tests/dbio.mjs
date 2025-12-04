@@ -1,6 +1,6 @@
 import '../lib/horizon.mjs';
 import assert from 'node:assert/strict';
-import { init, execute, insert, upsert, query, drop, end } from '../lib/dbio.mjs';
+import { init, execute, insert, upsert, query, queryOne, queryByKeyValue, queryAll, drop, end } from '../lib/dbio.mjs';
 import { test } from 'node:test';
 
 let config = {};
@@ -39,6 +39,18 @@ test('dbio operations', { skip: skipReason, timeout: 1000 * 60 }, async () => {
     // Query
     const queryResult = await query(`SELECT * FROM ${table} WHERE key = $1`, [key]);
     assert.equal(queryResult[0].value, newValue, 'Value should be updated');
+
+    // Query One
+    const queryOneResult = await queryOne(`SELECT * FROM ${table} WHERE key = $1`, [key]);
+    assert.equal(queryOneResult.value, newValue, 'Value should be updated (queryOne)');
+
+    // Query By Key Value
+    const queryByKeyValueResult = await queryByKeyValue(table, 'key', key, { unique: true });
+    assert.equal(queryByKeyValueResult.value, newValue, 'Value should be updated (queryByKeyValue)');
+
+    // Query All
+    const queryAllResult = await queryAll(table);
+    assert.ok(queryAllResult.length > 0, 'Should return records (queryAll)');
 
     // Drop table
     await drop(table, { force: true });
