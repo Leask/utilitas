@@ -1,8 +1,8 @@
-import { before, test } from 'node:test';
-import assert from 'node:assert/strict';
-import { alan } from '../index.mjs';
-import path from 'path';
+import { alan, web } from '../index.mjs';
 import { fileURLToPath } from 'url';
+import { test, describe } from 'node:test';
+import assert from 'node:assert/strict';
+import path from 'path';
 
 let config = {};
 try {
@@ -18,57 +18,35 @@ const __dirname = path.dirname(__filename);
 const testJpgPath = path.join(__dirname, 'test.jpg');
 
 if (!skipReason) {
-    before(async () => {
-        await alan.init({
-            apiKey: OPENROUTER_KEY,
-            model: '*',
+    if (config.google_key && config.google_cx) {
+        await web.initSearch({
+            provider: 'Google',
+            apiKey: config.google_key,
+            cx: config.google_cx
         });
+    }
+    await alan.init({
+        apiKey: OPENROUTER_KEY,
+        model: '*',
     });
 }
 
-test('alan prompt auto model', { skip: skipReason, timeout: 120000 }, async () => {
-    const response = await alan.prompt('Do you like me?');
-    assert.equal(typeof response, 'object', 'Prompt should return an object');
-    assert.equal(typeof response.text, 'string',
-        'Prompt response should contain text');
-    assert(response.text.length > 0,
-        'Prompt response text should not be empty');
-});
+const ais = !skipReason ? await alan.getAi(null, { all: true, basic: true }) : [];
 
-test('alan gemini tool calling', { skip: skipReason, timeout: 120000 }, async () => {
-    const response = await alan.prompt(
-        'What\'s the time?',
-        { aiId: 'openrouter_google_gemini_2_5_flash_preview_09_2025' },
-    );
-    assert.equal(typeof response, 'object', 'Prompt should return an object');
-    assert.equal(typeof response.text, 'string',
-        'Prompt response should contain text');
-    assert(response.text.length > 0,
-        'Prompt response text should not be empty');
-});
-
-test('alan gpt tool calling', { skip: skipReason, timeout: 120000 }, async () => {
-    const response = await alan.prompt(
-        'What\'s the time?',
-        { aiId: 'openrouter_openai_gpt_5_1' },
-    );
-    assert.equal(typeof response, 'object', 'Prompt should return an object');
-    assert.equal(typeof response.text, 'string',
-        'Prompt response should contain text');
-    assert(response.text.length > 0,
-        'Prompt response text should not be empty');
-});
-
-test('alan claude tool calling', { skip: skipReason, timeout: 120000 }, async () => {
-    const response = await alan.prompt(
-        'What\'s the time?',
-        { aiId: 'openrouter_anthropic_claude_opus_4_5' },
-    );
-    assert.equal(typeof response, 'object', 'Prompt should return an object');
-    assert.equal(typeof response.text, 'string',
-        'Prompt response should contain text');
-    assert(response.text.length > 0,
-        'Prompt response text should not be empty');
+describe('prompt with tool calling', { concurrency: true, skip: skipReason, timeout: 120000 }, () => {
+    for (const ai of [{ id: null }, ...ais]) {
+        test(`prompt - ${ai.id || 'auto'}`, async () => {
+            const response = await alan.prompt(
+                'What\'s the time?',
+                { aiId: ai.id },
+            );
+            assert.equal(typeof response, 'object', 'Prompt should return an object');
+            assert.equal(typeof response.text, 'string',
+                'Prompt response should contain text');
+            assert(response.text.length > 0,
+                'Prompt response text should not be empty');
+        });
+    }
 });
 
 test('alan distillFile', { skip: skipReason, timeout: 1000 * 60 * 5 }, async () => {
