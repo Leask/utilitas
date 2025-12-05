@@ -215,7 +215,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/speech,@google-cloud/text-to-speech,google-gax | 
+ | _NEED | Array | google-gax | 
  | aesCreateIv | Function | options | 
  | aesCreateKey | Function | options | 
  | aesDecrypt | Function | any, options | 
@@ -223,7 +223,6 @@ Works in Node.js and modern browsers.
  | defaultAlgorithm | String | sha256 | 
  | defaultEncryption | String | aes-256-gcm | 
  | digestObject | Function | object, algorithm | 
- | getGoogleApiKeyCredentials | AsyncFunction | options | 
  | getGoogleAuthByCredentials | AsyncFunction | keyFilename | 
  | getGoogleAuthTokenByAuth | AsyncFunction | auth | 
  | getSortedQueryString | Function | obj | 
@@ -327,7 +326,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google-cloud/speech,@google/genai,OpenAI,whisper-node | 
+ | _NEED | Array | @google/genai,OpenAI,whisper-node | 
  | default | AsyncFunction | options | 
  | OPENAI_TTS_MAX_LENGTH | Number | 4096 | 
  | checkSay | AsyncFunction | options | 
