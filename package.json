@@ -37,7 +37,6 @@
     "devDependencies": {
         "@ffmpeg-installer/ffmpeg": "^1.1.0",
         "@ffprobe-installer/ffprobe": "^2.1.2",
-        "@google-cloud/speech": "^7.2.1",
         "@google-cloud/storage": "^7.18.0",
         "@google/genai": "^1.31.0",
         "@mozilla/readability": "github:mozilla/readability",
@@ -61,8 +60,8 @@
         "node-polyfill-webpack-plugin": "^4.1.0",
         "office-text-extractor": "^3.0.3",
         "openai": "^6.10.0",
-        "pdfjs-dist": "^5.4.449",
         "pdf-lib": "^1.17.1",
+        "pdfjs-dist": "^5.4.449",
         "pg": "^8.16.3",
         "pgvector": "^0.2.1",
         "ping": "^1.0.0",
