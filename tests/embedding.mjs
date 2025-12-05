@@ -1,5 +1,5 @@
+import * as horizon from '../lib/horizon.mjs';
 import { before, test } from 'node:test';
-import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
