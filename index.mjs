@@ -15,7 +15,6 @@ import * as email from './lib/email.mjs';
 import * as embedding from './lib/embedding.mjs';
 import * as encryption from './lib/encryption.mjs';
 import * as event from './lib/event.mjs';
-import * as gen from './lib/gen.mjs';
 import * as media from './lib/media.mjs';
 import * as memory from './lib/memory.mjs';
 import * as network from './lib/network.mjs';
@@ -40,8 +39,8 @@ export {
     fileType, math, uuid,
     // features
     alan, bee, bot, boxes, cache, callosum, color, dbio, email, embedding,
-    encryption, event, gen, manifest, media, memory, network, sentinel, shell,
-    sms, speech, ssl, storage, tape, uoid, utilitas, vision, web
+    encryption, event, manifest, media, memory, network, sentinel, shell, sms,
+    speech, ssl, storage, tape, uoid, utilitas, vision, web
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
