@@ -21,7 +21,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | js-tiktoken,OpenAI | 
+ | _NEED | Array | js-tiktoken,OpenAI,@google/genai | 
  | default | AsyncFunction | options | 
  | ATTACHMENTS | String | [ATTACHMENTS] | 
  | CLOUD_OPUS_45 | String | claude-opus-4.5 | 
@@ -32,8 +32,11 @@ Works in Node.js and modern browsers.
  | GEMINI_25_FLASH | String | gemini-2.5-flash-preview-09-2025 | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GPT_51 | String | gpt-5.1 | 
+ | GPT_5_IMAGE | String | gpt-5-image | 
+ | IMAGEN_4_ULTRA | String | imagen-4.0-ultra-generate-001 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
+ | VEO_31 | String | veo-3.1-generate-preview | 
  | _NO_RENDER | Array | INSTRUCTIONS,MODELS,DEFAULT_MODELS | 
  | analyzeSessions | AsyncFunction | sessionIds, options | 
  | countTokens | AsyncFunction | input, options | 
@@ -247,16 +250,6 @@ Works in Node.js and modern browsers.
  | load | AsyncFunction | module, options | 
  | loop | AsyncFunction | func, interval, tout, delay, name, options | 
 
-### [gen](./lib/gen.mjs)
-
- | symbol | type | params / value | 
- | :--- | :--- | :--- | 
- | _NEED | Array | OpenAI,@google/genai | 
- | default | AsyncFunction | options | 
- | image | AsyncFunction | prompt, options | 
- | init | AsyncFunction | options | 
- | video | AsyncFunction | prompt, options | 
-
 ### [horizon](./lib/horizon.mjs)
 
  | symbol | type | params / value | 
@@ -333,7 +326,6 @@ Works in Node.js and modern browsers.
  | checkWhisper | AsyncFunction | options | 
  | init | AsyncFunction | options | 
  | stt | AsyncFunction | audio, options | 
- | sttGoogle | AsyncFunction | audio, options | 
  | sttOpenAI | AsyncFunction | audio, options | 
  | sttWhisper | AsyncFunction | audio, options | 
  | tts | AsyncFunction | text, options | 
