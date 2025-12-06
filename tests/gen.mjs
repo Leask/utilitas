@@ -10,6 +10,7 @@ try {
 }
 
 const GOOGLE_KEY = config?.google_key;
+
 const skipReason = !GOOGLE_KEY && 'google_key is missing from config.json';
 
 if (!skipReason) {
@@ -21,8 +22,20 @@ if (!skipReason) {
     });
 }
 
+test('gen image gemini', { skip: skipReason, timeout: 1000 * 60 * 5 }, async () => {
+    const response = await utilitas.gen.image('a beautiful cat riding a rocket', {
+        provider: 'GOOGLE',
+        expected: 'BUFFER',
+    });
+    assert.ok(Array.isArray(response), 'Response should be an array');
+    assert.ok(response.length > 0, 'Should return at least one image');
+    assert.ok(response[0].data, 'Image data should be present');
+    assert.ok(Buffer.isBuffer(response[0].data), 'Image data should be a Buffer');
+});
+
 test('gen video', { skip: skipReason, timeout: 1000 * 60 * 10 }, async () => {
     const response = await utilitas.gen.video('a cat eating', {
+        provider: 'GOOGLE',
         expected: 'BUFFER',
     });
     assert.ok(Array.isArray(response), 'Response should be an array');
