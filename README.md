@@ -27,9 +27,11 @@ Works in Node.js and modern browsers.
  | CLOUD_OPUS_45 | String | claude-opus-4.5 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_32 | String | deepseek-3.2-speciale | 
- | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","vision":"👁️"} | 
+ | FEATURE_ICONS | Object | {"audio":"📣","deepsearch":"🔍","fast":"⚡️","finetune":"🔧","hearing":"👂","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","video":"🎬","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_25_FLASH | String | gemini-2.5-flash-preview-09-2025 | 
+ | GEMINI_25_FLASH_TTS | String | gemini-2.5-flash-preview-tts | 
+ | GEMINI_25_PRO_TTS | String | gemini-2.5-pro-tts | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GPT_51 | String | gpt-5.1 | 
  | GPT_5_IMAGE | String | gpt-5-image | 
@@ -50,7 +52,7 @@ Works in Node.js and modern browsers.
  | k | Function |  | 
  | listOpenAIModels | AsyncFunction | aiId, options | 
  | prompt | AsyncFunction | input, options | 
- | promptOpenAI | AsyncFunction | aiId, content, options | 
+ | promptOpenRouter | AsyncFunction | aiId, content, options | 
  | resetSession | AsyncFunction | sessionId, options | 
  | talk | AsyncFunction | input, options | 
  | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
@@ -319,18 +321,12 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | @google/genai,OpenAI,whisper-node | 
- | default | AsyncFunction | options | 
- | OPENAI_TTS_MAX_LENGTH | Number | 4096 | 
- | checkSay | AsyncFunction | options | 
- | checkWhisper | AsyncFunction | options | 
- | init | AsyncFunction | options | 
+ | _NEED | Array | whisper-node | 
+ | checkSay | AsyncFunction |  | 
+ | checkWhisper | AsyncFunction |  | 
  | stt | AsyncFunction | audio, options | 
- | sttOpenAI | AsyncFunction | audio, options | 
  | sttWhisper | AsyncFunction | audio, options | 
  | tts | AsyncFunction | text, options | 
- | ttsGoogle | AsyncFunction | contents, options | 
- | ttsOpenAI | AsyncFunction | input, options | 
  | ttsSay | AsyncFunction | text, options | 
 
 ### [ssl](./lib/ssl.mjs)
