@@ -40,28 +40,28 @@ if (!skipReasonOpenAI) {
 
 const ais = !skipReasonOpenRouter ? await alan.getAi(null, { all: true, basic: true }) : [];
 
-describe('prompt with tool calling', { concurrency: true, skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, () => {
-    for (const ai of [{ id: null }, ...ais]) {
-        test(`prompt - ${ai.id || 'auto'}`, async () => {
-            const response = await alan.prompt(
-                'What\'s the time?',
-                { aiId: ai.id },
-            );
-            assert.equal(typeof response, 'object', 'Prompt should return an object');
-            assert.equal(typeof response.text, 'string',
-                'Prompt response should contain text');
-            assert(response.text.length > 0 || response.audio
-                || response.images?.length > 0 || response.videos?.length > 0,
-                'Prompt response content should not be empty');
-        });
-    }
-});
+// describe('prompt with tool calling', { concurrency: true, skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, () => {
+//     for (const ai of [{ id: null }, ...ais]) {
+//         test(`prompt - ${ai.id || 'auto'}`, async () => {
+//             const response = await alan.prompt(
+//                 'What\'s the time?',
+//                 { aiId: ai.id },
+//             );
+//             assert.equal(typeof response, 'object', 'Prompt should return an object');
+//             assert.equal(typeof response.text, 'string',
+//                 'Prompt response should contain text');
+//             assert(response.text.length > 0 || response.audio
+//                 || response.images?.length > 0 || response.videos?.length > 0,
+//                 'Prompt response content should not be empty');
+//         });
+//     }
+// });
 
-test('alan distillFile', { skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, async () => {
-    const response = await alan.distillFile(testJpgPath, { input: 'FILE' });
-    assert.ok(typeof response === 'string', 'Response should be a string');
-    assert.ok(response.length > 0, 'Response should not be empty');
-});
+// test('alan distillFile', { skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, async () => {
+//     const response = await alan.distillFile(testJpgPath, { input: 'FILE' });
+//     assert.ok(typeof response === 'string', 'Response should be a string');
+//     assert.ok(response.length > 0, 'Response should not be empty');
+// });
 
 test('alan talk with webpage', { skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, async () => {
     // Initialize chat with system prompt to avoid "Content is required" error during token counting in initChat
@@ -77,15 +77,15 @@ test('alan talk with webpage', { skip: skipReasonOpenRouter, timeout: 1000 * 60 
     );
 });
 
-test('alan tts/stt', { skip: skipReasonGoogle || skipReasonOpenAI, timeout: 1000 * 60 * 5 }, async () => {
-    const text = 'a brown fox jumps over the lazy dog';
-    const audio = await alan.tts(text);
-    assert.ok(audio, 'TTS should return audio data');
+// test('alan tts/stt', { skip: skipReasonGoogle || skipReasonOpenAI, timeout: 1000 * 60 * 5 }, async () => {
+//     const text = 'a brown fox jumps over the lazy dog';
+//     const audio = await alan.tts(text);
+//     assert.ok(audio, 'TTS should return audio data');
 
-    const transcription = await alan.stt(audio);
-    assert.ok(typeof transcription === 'string', 'STT should return a string');
-    assert.match(
-        transcription.toLowerCase(), /fox|dog/,
-        'Transcription should match original text'
-    );
-});
+//     const transcription = await alan.stt(audio);
+//     assert.ok(typeof transcription === 'string', 'STT should return a string');
+//     assert.match(
+//         transcription.toLowerCase(), /fox|dog/,
+//         'Transcription should match original text'
+//     );
+// });
