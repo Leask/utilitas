@@ -23,7 +23,6 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | js-tiktoken,OpenAI,@google/genai | 
  | default | AsyncFunction | options | 
- | ATTACHMENTS | String | [ATTACHMENTS] | 
  | CLOUD_OPUS_45 | String | claude-opus-4.5 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_32 | String | deepseek-3.2-speciale | 
