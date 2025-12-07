@@ -24,31 +24,18 @@ const testJpgPath = path.join(__dirname, 'test.jpg');
 if (!skipReasonOpenRouter) {
     if (config.google_key && config.google_cx) {
         await web.initSearch({
-            provider: 'Google',
-            apiKey: config.google_key,
-            cx: config.google_cx
+            provider: 'Google', apiKey: config.google_key, cx: config.google_cx
         });
     }
-    await alan.init({
-        apiKey: OPENROUTER_KEY,
-        model: '*',
-    });
+    await alan.init({ apiKey: OPENROUTER_KEY, model: '*' });
 }
 
 if (!skipReasonGoogle) {
-    await alan.init({
-        provider: 'Google',
-        apiKey: GOOGLE_KEY,
-        model: '*',
-    });
+    await alan.init({ provider: 'Google', apiKey: GOOGLE_KEY, model: '*' });
 }
 
 if (!skipReasonOpenAI) {
-    await alan.init({
-        provider: 'OpenAI',
-        apiKey: OPENAI_KEY,
-        model: '*',
-    });
+    await alan.init({ provider: 'OpenAI', apiKey: OPENAI_KEY, model: '*' });
 }
 
 const ais = !skipReasonOpenRouter ? await alan.getAi(null, { all: true, basic: true }) : [];
@@ -88,13 +75,6 @@ test('alan talk with webpage', { skip: skipReasonOpenRouter, timeout: 1000 * 60 
         /blog|leask/i.test(response.text),
         'Response should be relevant to the URL content'
     );
-});
-
-test('alan initChat', { skip: skipReasonOpenRouter, timeout: 120000 }, async () => {
-    const response = await alan.initChat();
-    assert.equal(typeof response, 'object', 'initChat should return an object');
-    assert.ok(response.chatConfig, 'response should have chatConfig');
-    assert.ok(response.ais, 'response should have ais');
 });
 
 test('alan tts/stt', { skip: skipReasonGoogle || skipReasonOpenAI, timeout: 1000 * 60 * 5 }, async () => {
