@@ -54,8 +54,10 @@ Works in Node.js and modern browsers.
  | prompt | AsyncFunction | input, options | 
  | promptOpenRouter | AsyncFunction | aiId, content, options | 
  | resetSession | AsyncFunction | sessionId, options | 
+ | stt | AsyncFunction | audio, options | 
  | talk | AsyncFunction | input, options | 
  | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
+ | tts | AsyncFunction | content, options | 
 
 ### [bee](./lib/bee.mjs)
 
