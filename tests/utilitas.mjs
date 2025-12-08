@@ -16,7 +16,7 @@ test('utilitas extract', () => {
     const obj = { a: { b: { x: 111 } } };
     const val = utilitas.extract(obj, 'a', 'b', 'x');
     assert.equal(val, 111);
-    
+
     const valNull = utilitas.extract(null, 'a', 'b', 'x');
     assert.equal(valNull, null);
 });
@@ -43,7 +43,7 @@ test('utilitas distill', () => {
         c: { x: 1, y: [{ a: 1, b: '1111' }] }
     };
     const distilled = utilitas.distill(obj, true);
-    
+
     assert.equal(distilled.a, 123);
     assert.equal(distilled.b, undefined);
     assert.equal(distilled.r, undefined);
@@ -82,7 +82,7 @@ test('utilitas mapKeys', () => {
 test('utilitas purgeEmoji', () => {
     const noEmoji = utilitas.purgeEmoji('***?!*...***', 'asdfasdf');
     assert.equal(noEmoji, '***?!*...***');
-    
+
     const withEmoji = 'Hello 🌍';
     const purged = utilitas.purgeEmoji(withEmoji, '');
     assert.equal(purged.trim(), 'Hello');
@@ -127,10 +127,15 @@ test('utilitas renderBox', () => {
         'Quote: "To infinity and beyond!" ✨'
     ];
     const box = utilitas.renderBox(content, { title: 'Starship Log', noWrap: false });
-    
+
     assert.ok(typeof box === 'string');
     assert.ok(box.includes('Starship Log'));
     assert.ok(box.includes('Mission: Explore the galaxy 🚀'));
     assert.ok(box.includes('╭')); // default style 'round' uses this corner
     assert.ok(box.includes('╯'));
+});
+
+test('utilitas uptime', () => {
+    const uptime = utilitas.uptime();
+    assert.match(uptime, /^(🕛|🕧|🕐|🕜|🕑|🕝|🕒|🕞|🕓|🕟|🕔|🕠|🕕|🕡|🕖|🕢|🕗|🕣|🕘|🕤|🕙|🕥|🕚|🕦)+ [\d]{2}:[\d]{2} up ([\d]+ days?, )?[\d]{2}:[\d]{2}:[\d]{2}$/u);
 });
