@@ -565,6 +565,7 @@ Works in Node.js and modern browsers.
  | trim | Function | str, opts | 
  | tryUntil | AsyncFunction | fnTry, options | 
  | uniqueArray | Function | array | 
+ | uptime | Function |  | 
  | verifyEmail | Function | any | 
  | verifyPhone | Function | phone | 
  | verifyUrl | Function | url | 
