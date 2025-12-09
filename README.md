@@ -209,15 +209,6 @@ Works in Node.js and modern browsers.
  | rawSend | AsyncFunction | data | 
  | send | AsyncFunction | email, subject, text, html, args, options | 
 
-### [embedding](./lib/embedding.mjs)
-
- | symbol | type | params / value | 
- | :--- | :--- | :--- | 
- | _NEED | Array | openai | 
- | default | AsyncFunction | options | 
- | embed | AsyncFunction | input, options | 
- | init | AsyncFunction | options | 
-
 ### [encryption](./lib/encryption.mjs)
 
  | symbol | type | params / value | 
@@ -291,6 +282,16 @@ Works in Node.js and modern browsers.
  | pickFastestHost | AsyncFunction | hosts, options | 
  | pickFastestHttpServer | AsyncFunction | urls, options | 
  | ping | AsyncFunction | host, options | 
+
+### [rag](./lib/rag.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | _NEED | Array | openai,@google-cloud/discoveryengine | 
+ | embed | AsyncFunction | input, options | 
+ | initEmbedding | AsyncFunction | options | 
+ | initReranker | AsyncFunction | options | 
+ | rerank | AsyncFunction | query, documents, options | 
 
 ### [sentinel](./lib/sentinel.mjs)
 
