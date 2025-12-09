@@ -56,6 +56,7 @@ Works in Node.js and modern browsers.
  | stt | AsyncFunction | audio, options | 
  | talk | AsyncFunction | input, options | 
  | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
+ | trimText | AsyncFunction | text, limit | 
  | tts | AsyncFunction | content, options | 
 
 ### [bee](./lib/bee.mjs)
