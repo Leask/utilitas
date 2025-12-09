@@ -291,7 +291,7 @@ Works in Node.js and modern browsers.
  | embed | AsyncFunction | input, options | 
  | initEmbedding | AsyncFunction | options | 
  | initReranker | AsyncFunction | options | 
- | rerank | AsyncFunction | query, documents, options | 
+ | rerank | AsyncFunction | query, records, options | 
 
 ### [sentinel](./lib/sentinel.mjs)
 
