@@ -11,14 +11,13 @@ try {
     config = {};
 }
 import { embed, initEmbedding, initReranker, rerank } from '../lib/rag.mjs';
-const init = initEmbedding;
 
 const sampleImage = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
     'test.jpg',
 );
 
-const providers = [
+const embeddingProviders = [
     {
         provider: 'OPENAI',
         label: 'openai',
@@ -39,7 +38,7 @@ const providers = [
     },
 ];
 
-const buildPayload = (label) => {
+const buildEmbedPayload = (label) => {
     if (label === 'jina') {
         return {
             input: [
@@ -57,19 +56,17 @@ const buildPayload = (label) => {
     };
 };
 
-for (const providerConfig of providers) {
+for (const providerConfig of embeddingProviders) {
     const {
         provider, label, apiKey, keyName,
     } = providerConfig;
     const skipReason = !apiKey && `${keyName} is missing in config.json`;
     if (!skipReason) {
-        before(async () => {
-            await init({ provider, apiKey });
-        });
+        before(async () => { await initEmbedding({ provider, apiKey }) });
     }
 
     test(`embedding string or images with ${label}`, { skip: skipReason }, async () => {
-        const { input, options, isBatch } = buildPayload(label);
+        const { input, options, isBatch } = buildEmbedPayload(label);
         const vector = await embed(input, { provider, ...options });
         if (isBatch) {
             assert(Array.isArray(vector), `${label} embedding should return an array`);
@@ -99,42 +96,77 @@ const rerankProviders = [
         proj: config?.google_project,
         keyName: 'google_credentials & google_project',
     },
+    {
+        provider: 'JINA',
+        label: 'jina',
+        apiKey: config?.jina_key,
+        keyName: 'jina_key',
+    },
 ];
 
-for (const providerConfig of rerankProviders) {
-    const {
-        provider, label, creds, proj, keyName,
-    } = providerConfig;
-    const skipReason = (!creds || !proj) && `${keyName} is missing in config.json`;
-
-    if (!skipReason) {
-        before(async () => {
-            await initReranker({
-                provider, googleCredentials: creds, projectId: proj
-            });
-        });
+const buildRerankPayload = (label) => {
+    if (label === 'jina') {
+        return {
+            provider: 'JINA',
+            query: "What is the capital of France?",
+            documents: [
+                "The capital of Germany is Berlin.",
+                "Paris is the capital of France.",
+                "The capital of Italy is Rome.",
+                "France is a country in Europe.",
+                // { image: sampleImage },
+            ],
+            options: { input: 'FILE' },
+        };
     }
-
-    test(`reranking with ${label}`, { skip: skipReason }, async () => {
-        const query = "What is the capital of France?";
-        const documents = [
+    return {
+        provider: 'GOOGLE',
+        query: "What is the capital of France?",
+        documents: [
             "The capital of Germany is Berlin.",
             "Paris is the capital of France.",
             "The capital of Italy is Rome.",
-            "France is a country in Europe."
-        ];
-        const results = await rerank(query, documents);
+            "France is a country in Europe.",
+        ],
+        options: {},
+    };
+};
+
+for (const providerConfig of rerankProviders) {
+    const {
+        provider, label, creds, proj, apiKey, keyName,
+    } = providerConfig;
+    let skipReason;
+    if (provider === 'GOOGLE') {
+        skipReason = (!creds || !proj) && `${keyName} is missing in config.json`;
+        if (!skipReason) {
+            before(async () => {
+                await initReranker({
+                    provider, googleCredentials: creds, projectId: proj
+                });
+            });
+        }
+    } else if (provider === 'JINA') {
+        skipReason = !apiKey && `${keyName} is missing in config.json`;
+        if (!skipReason) {
+            before(async () => {
+                await initReranker({ provider, apiKey });
+            });
+        }
+    }
+
+    test(`reranking with ${label}`, { skip: skipReason }, async () => {
+        const { provider, query, documents, options } = buildRerankPayload(label);
+        const results = await rerank(query, documents, { provider, ...options });
         assert(Array.isArray(results), `${label} reranking should return an array`);
         assert(results.length > 0, `${label} reranking results should not be empty`);
-        if (results.length > 0) {
-            // Check structure
-            const first = results[0];
-            assert(first.hasOwnProperty('score'), 'result should have score');
-            assert(first.hasOwnProperty('content'), 'result should have content');
-            // Verify sorting (descending score)
-            for (let i = 0; i < results.length - 1; i++) {
-                assert(results[i].score >= results[i + 1].score, 'results should be sorted by score descending');
-            }
+        // Check structure
+        const first = results[0];
+        assert(first.hasOwnProperty('index'), 'result should have index');
+        assert(first.hasOwnProperty('score'), 'result should have score');
+        // Verify sorting (descending score)
+        for (let i = 0; i < results.length - 1; i++) {
+            assert(results[i].score >= results[i + 1].score, 'results should be sorted by score descending');
         }
     });
 }
