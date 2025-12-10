@@ -53,6 +53,7 @@ Works in Node.js and modern browsers.
  | prompt | AsyncFunction | input, options | 
  | promptOpenRouter | AsyncFunction | aiId, content, options | 
  | resetSession | AsyncFunction | sessionId, options | 
+ | setSession | AsyncFunction | sessionId, session, options | 
  | stt | AsyncFunction | audio, options | 
  | talk | AsyncFunction | input, options | 
  | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
