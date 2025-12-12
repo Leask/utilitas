@@ -142,7 +142,7 @@ for (const providerConfig of rerankProviders) {
         if (!skipReason) {
             before(async () => {
                 await initReranker({
-                    provider, googleCredentials: creds, projectId: proj
+                    provider, credentials: creds, projectId: proj
                 });
             });
         }
