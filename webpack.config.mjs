@@ -10,7 +10,7 @@ const { __dirname } = utilitas.__(import.meta.url);
 const require = createRequire(import.meta.url);
 
 export default {
-    entry: './index.mjs',
+    entry: ['./gears/polyfill-node.mjs', './index.mjs'],
     experiments: { topLevelAwait: true },
     mode: 'production',
     devtool: 'source-map',
