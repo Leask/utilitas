@@ -21,7 +21,7 @@ Works in Node.js and modern browsers.
 
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
- | _NEED | Array | js-tiktoken,OpenAI,@google/genai | 
+ | _NEED | Array | OpenAI,@google/genai | 
  | default | AsyncFunction | options | 
  | CLOUD_OPUS_45 | String | claude-opus-4.5 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
@@ -40,7 +40,7 @@ Works in Node.js and modern browsers.
  | VEO_31 | String | veo-3.1-generate-preview | 
  | _NO_RENDER | Array | INSTRUCTIONS,MODELS,DEFAULT_MODELS | 
  | analyzeSessions | AsyncFunction | sessionIds, options | 
- | countTokens | AsyncFunction | input, options | 
+ | countTokens | Function | input | 
  | distillFile | AsyncFunction | attachments, o | 
  | getAi | AsyncFunction | id, options | 
  | getChatAttachmentCost | AsyncFunction | options | 
@@ -55,9 +55,9 @@ Works in Node.js and modern browsers.
  | resetSession | AsyncFunction | sessionId, options | 
  | setSession | AsyncFunction | sessionId, session, options | 
  | stt | AsyncFunction | audio, options | 
- | talk | AsyncFunction | input, options | 
- | trimPrompt | AsyncFunction | getPrompt, trimFunc, contextWindow, options | 
- | trimText | AsyncFunction | text, limit | 
+ | talk | AsyncFunction | request, options | 
+ | trimPrompt | Function | prompt, maxInputTokens, options | 
+ | trimText | Function | text, options | 
  | tts | AsyncFunction | content, options | 
 
 ### [bee](./lib/bee.mjs)
