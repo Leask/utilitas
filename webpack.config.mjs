@@ -30,11 +30,17 @@ export default {
                 default: throw new Error(`Not found ${mod}`);
             }
         }),
+        new webpack.BannerPlugin({
+            banner: 'if (typeof self === "undefined") { var self = globalThis; }',
+            raw: true,
+            entryOnly: true,
+        }),
     ],
     target: ['web'],
     output: {
         asyncChunks: false,
         filename: 'utilitas.lite.mjs',
+        globalObject: 'globalThis',
         path: resolve(__dirname, 'dist'),
     },
     resolve: {
