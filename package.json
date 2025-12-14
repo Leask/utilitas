@@ -51,7 +51,6 @@
         "form-data": "^4.0.5",
         "google-gax": "^5.0.6",
         "ioredis": "^5.8.2",
-        "js-tiktoken": "^1.0.21",
         "jsdom": "^27.2.0",
         "lorem-ipsum": "^2.0.8",
         "mailgun.js": "^12.4.0",
