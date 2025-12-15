@@ -49,6 +49,8 @@ Works in Node.js and modern browsers.
  | getSession | AsyncFunction | sessionId, options | 
  | init | AsyncFunction | options | 
  | initChat | AsyncFunction | options | 
+ | joinL1 | Function |  | 
+ | joinL2 | Function |  | 
  | k | Function |  | 
  | listOpenAIModels | AsyncFunction | aiId, options | 
  | prompt | AsyncFunction | input, options | 
