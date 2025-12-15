@@ -80,7 +80,7 @@ Works in Node.js and modern browsers.
  | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
  | EMOJI_THINKING | String | 💬 | 
- | MESSAGE_LENGTH_LIMIT | Number | 3891 | 
+ | MESSAGE_LENGTH_LIMIT | Number | 3809 | 
  | end | AsyncFunction | async, options | 
  | init | AsyncFunction | options | 
  | lines | Function | arr, sep | 
