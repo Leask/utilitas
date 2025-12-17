@@ -79,6 +79,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | telegraf | 
  | default | AsyncFunction | options | 
+ | BOT | String | 🤖 | 
  | EMOJI_THINKING | String | 💬 | 
  | MESSAGE_LENGTH_LIMIT | Number | 3809 | 
  | end | AsyncFunction | async, options | 
