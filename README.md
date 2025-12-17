@@ -82,6 +82,8 @@ Works in Node.js and modern browsers.
  | BOT | String | 🤖 | 
  | EMOJI_THINKING | String | 💬 | 
  | MESSAGE_LENGTH_LIMIT | Number | 3809 | 
+ | PARSE_MODE_MD | String | Markdown | 
+ | PARSE_MODE_MD_V2 | String | MarkdownV2 | 
  | end | AsyncFunction | async, options | 
  | init | AsyncFunction | options | 
  | lines | Function | arr, sep | 
