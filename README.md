@@ -28,9 +28,9 @@ Works in Node.js and modern browsers.
  | DEEPSEEK_32 | String | deepseek-3.2-speciale | 
  | FEATURE_ICONS | Object | {"audio":"🔊","deepsearch":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","video":"🎬","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
- | GEMINI_25_FLASH | String | gemini-2.5-flash-preview-09-2025 | 
  | GEMINI_25_FLASH_TTS | String | gemini-2.5-flash-preview-tts | 
  | GEMINI_25_PRO_TTS | String | gemini-2.5-pro-tts | 
+ | GEMINI_30_FLASH | String | gemini-3-flash-preview | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GPT_52 | String | gpt-5.2 | 
  | GPT_5_IMAGE | String | gpt-5-image | 
