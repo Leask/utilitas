@@ -87,7 +87,6 @@ Works in Node.js and modern browsers.
  | end | AsyncFunction | async, options | 
  | init | AsyncFunction | options | 
  | lines | Function | arr, sep | 
- | paging | Function | message, options | 
  | parse_mode | String | Markdown | 
  | send | AsyncFunction | chatId, content, options | 
  | sendMd | Function | cId, cnt, opt | 
