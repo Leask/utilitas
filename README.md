@@ -29,11 +29,11 @@ Works in Node.js and modern browsers.
  | FEATURE_ICONS | Object | {"audio":"🔊","deepsearch":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","video":"🎬","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_25_FLASH_TTS | String | gemini-2.5-flash-preview-tts | 
- | GEMINI_25_PRO_TTS | String | gemini-2.5-pro-tts | 
+ | GEMINI_25_PRO_TTS | String | gemini-2.5-pro-preview-tts | 
  | GEMINI_30_FLASH | String | gemini-3-flash-preview | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GPT_52 | String | gpt-5.2 | 
- | GPT_5_IMAGE | String | gpt-5-image | 
+ | GPT_IMAGE_15 | String | gpt-image-1.5 | 
  | IMAGEN_4_ULTRA | String | imagen-4.0-ultra-generate-001 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
