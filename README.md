@@ -26,7 +26,7 @@ Works in Node.js and modern browsers.
  | CLOUD_OPUS_45 | String | claude-opus-4.5 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_32 | String | deepseek-3.2-speciale | 
- | FEATURE_ICONS | Object | {"audio":"🔊","deepsearch":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","json":"📊","reasoning":"🧠","tools":"🧰","video":"🎬","vision":"👁️"} | 
+ | FEATURE_ICONS | Object | {"audio":"🔊","deepsearch":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","reasoning":"🧠","structured":"📊","tools":"🧰","video":"🎬","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_25_FLASH_TTS | String | gemini-2.5-flash-preview-tts | 
  | GEMINI_25_PRO_TTS | String | gemini-2.5-pro-preview-tts | 
