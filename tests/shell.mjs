@@ -9,8 +9,8 @@ test('shell exec standard', async () => {
 
 test('shell exec streaming', async () => {
     let output = '';
-    const log = (data) => { output += data.toString(); };
-    await shell.exec('echo "stream"; sleep 0.1', { log });
+    const stream = (data) => { output += data.toString(); };
+    await shell.exec('echo "stream"; sleep 0.1', { stream });
     assert.match(output, /stream/);
 });
 
