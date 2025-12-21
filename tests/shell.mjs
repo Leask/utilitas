@@ -29,7 +29,7 @@ test('shell exec acceptError', async () => {
 
 test('shell exec 3000 lines limit', async () => {
     // Generate 3005 lines
-    const result = await shell.exec('for i in {1..3005}; do echo "line $i"; done');
+    const result = await shell.exec('i=1; while [ $i -le 3005 ]; do echo "line $i"; i=$(($i + 1)); done');
     const lines = result.split('\n');
     console.log(lines);
     assert.equal(lines.length, 3000);
