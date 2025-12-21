@@ -9,8 +9,8 @@ test('shell exec standard', async () => {
 
 test('shell exec streaming', async () => {
     let output = '';
-    const stream = (data) => { output += data; };
-    await shell.exec('echo "stream"; sleep 0.1', { stream });
+    const log = (data) => { output += data.toString(); };
+    await shell.exec('echo "stream"; sleep 0.1', { log });
     assert.match(output, /stream/);
 });
 
@@ -25,4 +25,13 @@ test('shell exec acceptError', async () => {
     // result should contain both stdout and stderr content joined by newline
     assert.ok(result.includes('out'));
     assert.ok(result.includes('err'));
+});
+
+test('shell exec 3000 lines limit', async () => {
+    // Generate 3005 lines
+    const result = await shell.exec('for i in {1..3005}; do echo "line $i"; done');
+    const lines = result.split('\n');
+    assert.equal(lines.length, 3000);
+    assert.equal(lines[0], 'line 6');
+    assert.equal(lines[2999], 'line 3005');
 });
