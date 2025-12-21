@@ -31,6 +31,7 @@ test('shell exec 3000 lines limit', async () => {
     // Generate 3005 lines
     const result = await shell.exec('for i in {1..3005}; do echo "line $i"; done');
     const lines = result.split('\n');
+    console.log(lines);
     assert.equal(lines.length, 3000);
     assert.equal(lines[0], 'line 6');
     assert.equal(lines[2999], 'line 3005');
