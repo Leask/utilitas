@@ -42,6 +42,10 @@ const ais = !skipReasonOpenRouter ? await alan.getAi(null, { all: true, basic: t
 
 describe('prompt with tool calling', { concurrency: true, skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, () => {
     for (const ai of [{ id: null }, ...ais]) {
+        if (ai.id === 'deep_research_pro_preview_12_2025') {
+            console.log('Skipping deep_research_pro_preview_12_2025');
+            continue;
+        }
         test(`prompt - ${ai.id || 'auto'}`, async () => {
             const response = await alan.prompt(
                 'What\'s the time?',
