@@ -541,6 +541,7 @@ Works in Node.js and modern browsers.
  | lastItem | Function | array | 
  | lineSplit | Function | string, options | 
  | locate | AsyncFunction | rootPack | 
+ | lock | AsyncFunction | key, options | 
  | log | Function | content, filename, options | 
  | makeStringByLength | Function | string, length | 
  | mapKeys | Function | any, map, strict, path | 
@@ -574,6 +575,7 @@ Works in Node.js and modern browsers.
  | trim | Function | str, opts | 
  | tryUntil | AsyncFunction | fnTry, options | 
  | uniqueArray | Function | array | 
+ | unlock | Function | key | 
  | uptime | Function |  | 
  | verifyEmail | Function | any | 
  | verifyPhone | Function | phone | 
