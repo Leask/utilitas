@@ -269,6 +269,7 @@ Works in Node.js and modern browsers.
  | symbol | type | params / value | 
  | :--- | :--- | :--- | 
  | _NEED | Array | fast-geoip,ping | 
+ | cfTunnel | AsyncFunction | token, options | 
  | getCurrentPosition | AsyncFunction |  | 
  | httping | AsyncFunction | url, options | 
  | isLocalhost | Function | host | 
