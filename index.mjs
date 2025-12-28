@@ -7,7 +7,6 @@ import _ from './lib/horizon.mjs'
 import * as alan from './lib/alan.mjs';
 import * as bee from './lib/bee.mjs';
 import * as bot from './lib/bot.mjs';
-import * as boxes from './lib/boxes.json' with { type: 'json' };
 import * as cache from './lib/cache.mjs';
 import * as callosum from './lib/callosum.mjs';
 import * as dbio from './lib/dbio.mjs';
@@ -38,14 +37,14 @@ export {
     // dependencies
     fileType, math, uuid,
     // features
-    alan, bee, bot, boxes, cache, callosum, color, dbio, email, rag, encryption,
-    event, manifest, media, memory, network, sentinel, shell, sms, speech, ssl,
+    alan, bee, bot, cache, callosum, color, dbio, email, rag, encryption, event,
+    manifest, media, memory, network, sentinel, shell, sms, speech, ssl,
     storage, tape, uoid, utilitas, vision, web
 };
 
 if (utilitas.inBrowser() && !globalThis.utilitas) {
     globalThis.utilitas = {
-        boxes, color, encryption, event, manifest, math, speech, storage, uoid,
+        color, encryption, event, manifest, math, speech, storage, uoid,
         utilitas, uuid,
     };
     // top-level await workaround
