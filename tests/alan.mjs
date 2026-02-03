@@ -27,7 +27,7 @@ if (!skipReasonOpenRouter) {
             provider: 'Google', apiKey: config.google_key, cx: config.google_cx
         });
     }
-    await alan.init({ apiKey: OPENROUTER_KEY, model: '*' });
+    await alan.init({ apiKey: OPENROUTER_KEY });
 }
 
 if (!skipReasonGoogle) {
