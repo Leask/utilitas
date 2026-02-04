@@ -57,7 +57,7 @@
         "mailgun.js": "^12.7.0",
         "mailparser": "^3.9.3",
         "mime": "^4.1.0",
-        "mysql2": "^3.16.2",
+        "mysql2": "^3.16.3",
         "node-mailjet": "^6.0.11",
         "node-polyfill-webpack-plugin": "^4.1.0",
         "office-text-extractor": "^4.0.0",
@@ -77,7 +77,7 @@
         "url": "github:Leask/node-url",
         "webpack-cli": "^6.0.1",
         "whisper-node": "^1.1.1",
-        "wrangler": "^4.61.1",
+        "wrangler": "^4.62.0",
         "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.1/xlsx-0.20.1.tgz",
         "youtube-transcript": "^1.2.1"
     }
