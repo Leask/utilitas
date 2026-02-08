@@ -23,7 +23,7 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | OpenAI,@google/genai | 
  | default | AsyncFunction | options | 
- | CLOUD_OPUS_45 | String | claude-opus-4.5 | 
+ | CLOUD_OPUS_46 | String | claude-opus-4.6 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | DEEPSEEK_32 | String | deepseek-3.2-speciale | 
  | FEATURE_ICONS | Object | {"audio":"🔊","deep-research":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","reasoning":"🧠","structured":"📊","tools":"🧰","video":"🎬","vision":"👁️"} | 
