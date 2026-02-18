@@ -48,7 +48,9 @@ describe('prompt with tool calling', { concurrency: true, skip: skipReasonOpenRo
         }
         test(`prompt - ${ai.id || 'auto'}`, async () => {
             const response = await alan.prompt(
-                'What\'s the time?',
+                config.google_key && config.google_cx
+                    ? 'Help me search the latest news about AI.'
+                    : "What's the time?",
                 { aiId: ai.id },
             );
             assert.equal(typeof response, 'object', 'Prompt should return an object');
