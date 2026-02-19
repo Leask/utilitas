@@ -32,6 +32,7 @@ Works in Node.js and modern browsers.
  | GEMINI_25_PRO_TTS | String | gemini-2.5-pro-preview-tts | 
  | GEMINI_30_FLASH | String | gemini-3-flash-preview | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
+ | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
  | GPT_52 | String | gpt-5.2 | 
  | GPT_52_CODEX | String | gpt-5.2-codex | 
  | GPT_IMAGE_15 | String | gpt-image-1.5 | 
