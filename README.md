@@ -33,8 +33,7 @@ Works in Node.js and modern browsers.
  | GEMINI_30_FLASH | String | gemini-3-flash-preview | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
- | GPT_52 | String | gpt-5.2 | 
- | GPT_52_CODEX | String | gpt-5.2-codex | 
+ | GPT_54 | String | gpt-5.4 | 
  | GPT_IMAGE_15 | String | gpt-image-1.5 | 
  | IMAGEN_4_ULTRA | String | imagen-4.0-ultra-generate-001 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
