@@ -397,6 +397,7 @@ Works in Node.js and modern browsers.
  | getConfigFilename | AsyncFunction | options | 
  | getGcUrlByBucket | Function | bucke | 
  | getIdByGs | Function | gs | 
+ | getImageSize | Function | buf | 
  | getMime | AsyncFunction | buf, filename | 
  | getTempPath | Function | options | 
  | handleError | Function | err, opts | 
