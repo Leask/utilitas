@@ -35,7 +35,6 @@ Works in Node.js and modern browsers.
  | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
  | GPT_54 | String | gpt-5.4 | 
  | GPT_IMAGE_15 | String | gpt-image-1.5 | 
- | IMAGEN_4_ULTRA | String | imagen-4.0-ultra-generate-001 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | TOP | String | top | 
