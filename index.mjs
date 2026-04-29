@@ -19,6 +19,7 @@ import * as memory from './lib/memory.mjs';
 import * as network from './lib/network.mjs';
 import * as sentinel from './lib/sentinel.mjs';
 import * as shell from './lib/shell.mjs';
+import * as sqlite from './lib/sqlite.mjs';
 import * as sms from './lib/sms.mjs';
 import * as speech from './lib/speech.mjs';
 import * as ssl from './lib/ssl.mjs';
@@ -38,7 +39,7 @@ export {
     fileType, math, uuid,
     // features
     alan, bee, bot, cache, callosum, color, dbio, email, rag, encryption, event,
-    manifest, media, memory, network, sentinel, shell, sms, speech, ssl,
+    manifest, media, memory, network, sentinel, shell, sqlite, sms, speech, ssl,
     storage, tape, uoid, utilitas, vision, web
 };
 
