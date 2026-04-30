@@ -39,7 +39,7 @@
         "@ffprobe-installer/ffprobe": "^2.1.2",
         "@google-cloud/discoveryengine": "^2.6.0",
         "@google-cloud/storage": "^7.19.0",
-        "@google/genai": "^1.50.1",
+        "@google/genai": "^1.51.0",
         "@mozilla/readability": "github:mozilla/readability",
         "@sentry/node": "^10.51.0",
         "@sentry/profiling-node": "^10.51.0",
