@@ -327,19 +327,6 @@ Works in Node.js and modern browsers.
  | tts | AsyncFunction | text, options | 
  | ttsSay | AsyncFunction | text, options | 
 
-### [sqlite](./lib/sqlite.mjs)
-
- | symbol | type | params / value | 
- | :--- | :--- | :--- | 
- | default | AsyncFunction | options | 
- | all | AsyncFunction | sql, params | 
- | end | AsyncFunction |  | 
- | exec | AsyncFunction | sql | 
- | get | AsyncFunction | sql, params | 
- | init | AsyncFunction | options | 
- | run | AsyncFunction | sql, params | 
- | transaction | AsyncFunction | operations | 
-
 ### [ssl](./lib/ssl.mjs)
 
  | symbol | type | params / value | 

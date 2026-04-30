@@ -20,6 +20,19 @@ test('storage writeTempFile', async () => {
     assert.deepEqual(readBack, data);
 });
 
+test('storage detects file type from buffer', async () => {
+    const png = Buffer.from(
+        'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAFgwJ/lY0uLgAAAABJRU5ErkJggg==',
+        'base64',
+    );
+    assert.deepEqual(await storage.getMime(png), {
+        mime: storage.MIME_PNG,
+        extension: 'png',
+    });
+    const dataUrl = await storage.encodeBase64DataURL(null, png);
+    assert.ok(dataUrl.startsWith(`data:${storage.MIME_PNG};base64,`));
+});
+
 test('storage config', async () => {
     const filename = await storage.getConfigFilename();
     assert.ok(filename, 'Config filename should be present');

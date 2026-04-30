@@ -55,7 +55,6 @@ export default {
             'mathjs': false,
             'os': false,
             'worker_threads': false,
-            'file-type': 'file-type/core',
             [utilitas.__(import.meta.url, 'lib/alan.mjs')]: false,
             [utilitas.__(import.meta.url, 'lib/bot.mjs')]: false,
             [utilitas.__(import.meta.url, 'lib/cache.mjs')]: false,
