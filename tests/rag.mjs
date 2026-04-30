@@ -1,5 +1,6 @@
 import * as horizon from '../lib/horizon.mjs';
 import { before, test } from 'node:test';
+import { fileURLToPath } from 'node:url';
 import assert from 'node:assert';
 
 let config = {};
@@ -9,6 +10,8 @@ try {
     config = {};
 }
 import { embed, initEmbedding, initReranker, rerank } from '../lib/rag.mjs';
+
+const sampleImage = fileURLToPath(new URL('test.jpg', import.meta.url));
 
 const embeddingProviders = [
     {
@@ -49,6 +52,23 @@ for (const providerConfig of embeddingProviders) {
         assert(typeof vector[0] === 'number', 'embedding values should be numbers');
     });
 }
+
+const openrouterSkipReason = !config?.openrouter_key
+    && 'openrouter_key is missing in config.json';
+
+test('embedding image with openrouter', { skip: openrouterSkipReason }, async () => {
+    await initEmbedding({
+        provider: 'OPENROUTER',
+        apiKey: config.openrouter_key,
+    });
+    const vector = await embed(
+        { image: sampleImage },
+        { provider: 'OPENROUTER', input: 'FILE' },
+    );
+    assert(Array.isArray(vector), 'openrouter image embedding should be an array');
+    assert(vector.length > 0, 'image embedding vector should not be empty');
+    assert(typeof vector[0] === 'number', 'image embedding values should be numbers');
+});
 
 const rerankProviders = [
     {
