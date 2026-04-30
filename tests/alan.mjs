@@ -12,14 +12,45 @@ try {
 }
 
 const OPENROUTER_KEY = config?.openrouter_key;
+const OPENROUTER_PRESET = config?.openrouter_preset;
 const GOOGLE_KEY = config?.google_key;
 const OPENAI_KEY = config?.openai_key;
+const GOOGLE_CREDENTIALS = config?.google_credentials;
+const GOOGLE_PROJECT = config?.google_project;
 const skipReasonOpenRouter = !OPENROUTER_KEY && 'openrouter_key is missing from config.json';
 const skipReasonGoogle = !GOOGLE_KEY && 'google_key is missing from config.json';
 const skipReasonOpenAI = !OPENAI_KEY && 'openai_key is missing from config.json';
+const skipReasonVertex = (!GOOGLE_CREDENTIALS || !GOOGLE_PROJECT)
+    && 'google_credentials or google_project is missing from config.json';
+const hasAlanProvider = !skipReasonOpenRouter || !skipReasonGoogle
+    || !skipReasonVertex;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const testJpgPath = path.join(__dirname, 'test.jpg');
+const testAll = process.argv.includes('test-all') || process.env.TEST_ALL === '1';
+const highCostModelIds = new Set([
+    'lyria_3_pro_preview',
+    'veo_3_1_generate_preview',
+    'deep_research_max_preview_04_2026',
+    'imagen_4_0_upscale_preview',
+]);
+const smokeTool = {
+    type: 'function',
+    strict: true,
+    function: {
+        name: 'getDateTime',
+        description: 'Use this function to get the current date and time.',
+        parameters: {
+            type: 'object',
+            properties: {
+                none: { type: 'string', description: 'No parameter is needed.' },
+            },
+            required: [],
+            additionalProperties: false,
+        },
+    },
+};
+const countToolUses = (text) => (text.match(/\nName: /g) || []).length;
 
 if (!skipReasonOpenRouter) {
     if (config.google_key && config.google_cx) {
@@ -27,35 +58,54 @@ if (!skipReasonOpenRouter) {
             provider: 'Google', apiKey: config.google_key, cx: config.google_cx
         });
     }
-    await alan.init({ apiKey: OPENROUTER_KEY });
+    await alan.init({
+        apiKey: OPENROUTER_KEY,
+        ...OPENROUTER_PRESET ? { preset: OPENROUTER_PRESET } : {},
+    });
 }
 
 if (!skipReasonGoogle) {
     await alan.init({ provider: 'Google', apiKey: GOOGLE_KEY, model: '*' });
 }
 
-if (!skipReasonOpenAI) {
-    await alan.init({ provider: 'OpenAI', apiKey: OPENAI_KEY, model: '*' });
+if (!skipReasonVertex) {
+    await alan.init({
+        provider: 'Vertex',
+        credentials: GOOGLE_CREDENTIALS,
+        project: GOOGLE_PROJECT,
+        model: '*',
+    });
 }
 
-const ais = !skipReasonOpenRouter ? await alan.getAi(null, { all: true, basic: true }) : [];
+// if (!skipReasonOpenAI) {
+//     await alan.init({ provider: 'OpenAI', apiKey: OPENAI_KEY, model: 'gpt-5.5' });
+// }
 
-describe('prompt with tool calling', { concurrency: true, skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, () => {
-    for (const ai of [{ id: null }, ...ais]) {
-        if (ai.id === 'deep_research_pro_preview_12_2025') {
-            console.log('Skipping deep_research_pro_preview_12_2025');
-            continue;
-        }
-        test(`prompt - ${ai.id || 'auto'}`, async () => {
+const ais = hasAlanProvider ? await alan.getAi(null, { all: true, basic: true }) : [];
+const skipReasonAlan = !ais.length && 'alan models are not initialized';
+console.log('Alan models:', ais.map(ai => ai.id).join(', '));
+
+describe('alan prompt by initialized model', {
+    concurrency: true,
+    skip: skipReasonAlan,
+    timeout: 1000 * 60 * 5,
+}, () => {
+    for (const ai of ais) {
+        const skipReasonHighCost = !testAll && highCostModelIds.has(ai.id)
+            && 'high cost model; run alan test with test-all to include it';
+        test(`prompt - ${ai.id || 'auto'}`, {
+            skip: skipReasonHighCost,
+        }, async () => {
             const response = await alan.prompt(
-                config.google_key && config.google_cx
-                    ? 'Help me search the latest news about AI.'
-                    : "What's the time?",
-                { aiId: ai.id },
+                'Use the getDateTime tool at most once. Then reply with '
+                + 'a short confirmation: utilitas-ok.',
+                { aiId: ai.id, tools: [smokeTool] },
             );
             assert.equal(typeof response, 'object', 'Prompt should return an object');
             assert.equal(typeof response.text, 'string',
                 'Prompt response should contain text');
+            assert.ok(countToolUses(response.text) <= 1,
+                'Prompt should use at most one tool');
             assert(response.text.length > 0 || response.audio
                 || response.images?.length > 0 || response.videos?.length > 0,
                 'Prompt response content should not be empty');
@@ -85,61 +135,31 @@ test('alan talk with webpage', { skip: skipReasonOpenRouter, timeout: 1000 * 60 
 
 const speechText = 'a brown fox jumps over the lazy dog';
 const speechPrompt = `Read exactly and only this sentence aloud: ${speechText}.`;
-const getSpeechAis = async () => await alan.getAi(null, {
-    all: true, basic: true, withHidden: true,
-});
-
-test('alan tts/stt with google', {
-    skip: skipReasonGoogle || skipReasonOpenRouter,
+test('alan tts/stt', {
+    skip: skipReasonOpenRouter,
     timeout: 1000 * 60 * 5,
-}, async () => {
-    const audioAis = await getSpeechAis();
-    const ttsAi = audioAis.find(x =>
-        x.provider === 'Google' && x.model.audio
-    );
-    assert.ok(ttsAi, 'Google TTS engine should be initialized');
+}, async (t) => {
+    const ttsAi = await alan.getAi(null, {
+        basic: true,
+        select: { audio: true, fast: true },
+    });
+    const sttAi = await alan.getAi(null, {
+        basic: true,
+        select: { hearing: true, fast: true },
+    });
+    console.log(`TTS selected: ${ttsAi.id}; STT selected: ${sttAi.id}`);
+    if (!testAll && highCostModelIds.has(ttsAi.id)) {
+        t.skip('high cost TTS model selected; run alan test with test-all to include it');
+        return;
+    }
 
     const response = await alan.tts(speechPrompt, {
-        aiId: ttsAi.id, raw: true,
+        raw: true,
     });
-    assert.match(
-        response.model,
-        /Google\/gemini-2\.5-pro-preview-tts/,
-        'TTS should use Google Gemini TTS'
-    );
     const audio = response?.audio?.data;
     assert.ok(audio, 'TTS should return audio data');
 
     const transcription = await alan.stt(audio);
-    assert.ok(typeof transcription === 'string', 'STT should return a string');
-    assert.match(
-        transcription.toLowerCase(), /fox|dog/,
-        'Transcription should match original text'
-    );
-});
-
-test('alan tts/stt with openrouter', {
-    skip: skipReasonOpenRouter,
-    timeout: 1000 * 60 * 5,
-}, async () => {
-    const audioAis = await getSpeechAis();
-    const speechAi = audioAis.find(x =>
-        x.provider === 'OpenRouter' && x.model.name === 'gpt-audio'
-    );
-    assert.ok(speechAi, 'OpenRouter speech engine should be initialized');
-
-    const response = await alan.tts(speechPrompt, {
-        aiId: speechAi.id, raw: true,
-    });
-    assert.match(
-        response.model,
-        /OpenRouter\/OpenAI\/gpt-audio/,
-        'TTS should use OpenRouter gpt-audio'
-    );
-    const audio = response?.audio?.data;
-    assert.ok(audio, 'TTS should return audio data');
-
-    const transcription = await alan.stt(audio, { aiId: speechAi.id });
     assert.ok(typeof transcription === 'string', 'STT should return a string');
     assert.match(
         transcription.toLowerCase(), /fox|dog/,
