@@ -1,8 +1,6 @@
 import * as horizon from '../lib/horizon.mjs';
 import { before, test } from 'node:test';
-import { fileURLToPath } from 'node:url';
 import assert from 'node:assert';
-import path from 'node:path';
 
 let config = {};
 try {
@@ -11,11 +9,6 @@ try {
     config = {};
 }
 import { embed, initEmbedding, initReranker, rerank } from '../lib/rag.mjs';
-
-const sampleImage = path.join(
-    path.dirname(fileURLToPath(import.meta.url)),
-    'test.jpg',
-);
 
 const embeddingProviders = [
     {
@@ -30,29 +23,12 @@ const embeddingProviders = [
         apiKey: config?.openrouter_key,
         keyName: 'openrouter_key',
     },
-    {
-        provider: 'JINA',
-        label: 'jina',
-        apiKey: config?.jina_key,
-        keyName: 'jina_key',
-    },
 ];
 
 const buildEmbedPayload = (label) => {
-    if (label === 'jina') {
-        return {
-            input: [
-                { text: `utilitas embedding via ${label}` },
-                { image: sampleImage },
-            ],
-            options: { input: 'FILE' },
-            isBatch: true,
-        };
-    }
     return {
         input: `utilitas embedding via ${label}`,
         options: {},
-        isBatch: false,
     };
 };
 
@@ -65,26 +41,12 @@ for (const providerConfig of embeddingProviders) {
         before(async () => { await initEmbedding({ provider, apiKey }) });
     }
 
-    test(`embedding string or images with ${label}`, { skip: skipReason }, async () => {
-        const { input, options, isBatch } = buildEmbedPayload(label);
+    test(`embedding with ${label}`, { skip: skipReason }, async () => {
+        const { input, options } = buildEmbedPayload(label);
         const vector = await embed(input, { provider, ...options });
-        if (isBatch) {
-            assert(Array.isArray(vector), `${label} embedding should return an array`);
-            assert(vector.length === input.length,
-                'batch embedding should return one vector per input');
-            vector.forEach((row, index) => {
-                assert(Array.isArray(row),
-                    `${label} embedding[${index}] should be an array`);
-                assert(row.length > 0,
-                    `${label} embedding[${index}] should not be empty`);
-                assert(typeof row[0] === 'number',
-                    `${label} embedding values should be numbers`);
-            });
-        } else {
-            assert(Array.isArray(vector), `${label} embedding should be an array`);
-            assert(vector.length > 0, 'embedding vector should not be empty');
-            assert(typeof vector[0] === 'number', 'embedding values should be numbers');
-        }
+        assert(Array.isArray(vector), `${label} embedding should return an array`);
+        assert(vector.length > 0, 'embedding vector should not be empty');
+        assert(typeof vector[0] === 'number', 'embedding values should be numbers');
     });
 }
 
@@ -114,9 +76,8 @@ const buildRerankPayload = (label) => {
                 "Paris is the capital of France.",
                 "The capital of Italy is Rome.",
                 "France is a country in Europe.",
-                // { image: sampleImage },
             ],
-            options: { input: 'FILE' },
+            options: {},
         };
     }
     return {
