@@ -83,12 +83,63 @@ test('alan talk with webpage', { skip: skipReasonOpenRouter, timeout: 1000 * 60 
     );
 });
 
-test('alan tts/stt', { skip: skipReasonGoogle || skipReasonOpenAI, timeout: 1000 * 60 * 5 }, async () => {
-    const text = 'a brown fox jumps over the lazy dog';
-    const audio = await alan.tts(text);
+const speechText = 'a brown fox jumps over the lazy dog';
+const speechPrompt = `Read exactly and only this sentence aloud: ${speechText}.`;
+const getSpeechAis = async () => await alan.getAi(null, {
+    all: true, basic: true, withHidden: true,
+});
+
+test('alan tts/stt with google', {
+    skip: skipReasonGoogle || skipReasonOpenRouter,
+    timeout: 1000 * 60 * 5,
+}, async () => {
+    const audioAis = await getSpeechAis();
+    const ttsAi = audioAis.find(x =>
+        x.provider === 'Google' && x.model.audio
+    );
+    assert.ok(ttsAi, 'Google TTS engine should be initialized');
+
+    const response = await alan.tts(speechPrompt, {
+        aiId: ttsAi.id, raw: true,
+    });
+    assert.match(
+        response.model,
+        /Google\/gemini-2\.5-pro-preview-tts/,
+        'TTS should use Google Gemini TTS'
+    );
+    const audio = response?.audio?.data;
     assert.ok(audio, 'TTS should return audio data');
 
     const transcription = await alan.stt(audio);
+    assert.ok(typeof transcription === 'string', 'STT should return a string');
+    assert.match(
+        transcription.toLowerCase(), /fox|dog/,
+        'Transcription should match original text'
+    );
+});
+
+test('alan tts/stt with openrouter', {
+    skip: skipReasonOpenRouter,
+    timeout: 1000 * 60 * 5,
+}, async () => {
+    const audioAis = await getSpeechAis();
+    const speechAi = audioAis.find(x =>
+        x.provider === 'OpenRouter' && x.model.name === 'gpt-audio'
+    );
+    assert.ok(speechAi, 'OpenRouter speech engine should be initialized');
+
+    const response = await alan.tts(speechPrompt, {
+        aiId: speechAi.id, raw: true,
+    });
+    assert.match(
+        response.model,
+        /OpenRouter\/OpenAI\/gpt-audio/,
+        'TTS should use OpenRouter gpt-audio'
+    );
+    const audio = response?.audio?.data;
+    assert.ok(audio, 'TTS should return audio data');
+
+    const transcription = await alan.stt(audio, { aiId: speechAi.id });
     assert.ok(typeof transcription === 'string', 'STT should return a string');
     assert.match(
         transcription.toLowerCase(), /fox|dog/,
