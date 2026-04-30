@@ -23,18 +23,17 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | OpenAI,@google/genai | 
  | default | AsyncFunction | options | 
- | CLOUD_OPUS_46 | String | claude-opus-4.6 | 
+ | CLOUD_OPUS_47 | String | claude-opus-4.7 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
- | DEEPSEEK_32 | String | deepseek-3.2-speciale | 
- | FEATURE_ICONS | Object | {"audio":"🔊","deep-research":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","reasoning":"🧠","structured":"📊","tools":"🧰","video":"🎬","vision":"👁️"} | 
+ | FEATURE_ICONS | Object | {"audio":"🔊","deep-research":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","music":"🎵","reasoning":"🧠","structured":"📊","tools":"🧰","video":"🎬","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
- | GEMINI_25_FLASH_TTS | String | gemini-2.5-flash-preview-tts | 
  | GEMINI_25_PRO_TTS | String | gemini-2.5-pro-preview-tts | 
  | GEMINI_30_FLASH | String | gemini-3-flash-preview | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
- | GPT_54 | String | gpt-5.4 | 
- | GPT_IMAGE_15 | String | gpt-image-1.5 | 
+ | GPT_55 | String | gpt-5.5 | 
+ | GPT_55_MINI | String | gpt-5-mini | 
+ | GPT_IMAGE_2 | String | gpt-5.4-image-2 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | TOP | String | top | 
@@ -54,7 +53,7 @@ Works in Node.js and modern browsers.
  | k | Function |  | 
  | listOpenAIModels | AsyncFunction | aiId, options | 
  | prompt | AsyncFunction | input, options | 
- | promptOpenRouter | AsyncFunction | aiId, content, options | 
+ | promptOpenAI | AsyncFunction | aiId, content, options | 
  | resetSession | AsyncFunction | sessionId, options | 
  | setSession | AsyncFunction | sessionId, session, options | 
  | stt | AsyncFunction | audio, options | 
@@ -154,6 +153,7 @@ Works in Node.js and modern browsers.
  | default | AsyncFunction | options | 
  | MYSQL | String | MYSQL | 
  | POSTGRESQL | String | POSTGRESQL | 
+ | SQLITE | String | SQLITE | 
  | assembleInsert | Function | table, data, options | 
  | assembleQuery | Function | table, options | 
  | assembleSet | Function | data, options | 
@@ -169,7 +169,7 @@ Works in Node.js and modern browsers.
  | drop | AsyncFunction | table, options | 
  | enableVector | AsyncFunction |  | 
  | encodeVector | AsyncFunction |  | 
- | end | AsyncFunction | options | 
+ | end | AsyncFunction |  | 
  | execute | AsyncFunction | ...args | 
  | getPgvector | AsyncFunction |  | 
  | getProvider | AsyncFunction |  | 
@@ -184,6 +184,7 @@ Works in Node.js and modern browsers.
  | rawAssembleKeyValue | Function | key, value, options | 
  | rawExecute | AsyncFunction | ...args | 
  | rawQuery | AsyncFunction | ...args | 
+ | startSqliteWorker | AsyncFunction | path | 
  | tables | AsyncFunction | options | 
  | updateById | AsyncFunction | table, id, fields, options | 
  | updateByKeyValue | AsyncFunction | table, key, value, fields, options | 
@@ -326,6 +327,19 @@ Works in Node.js and modern browsers.
  | tts | AsyncFunction | text, options | 
  | ttsSay | AsyncFunction | text, options | 
 
+### [sqlite](./lib/sqlite.mjs)
+
+ | symbol | type | params / value | 
+ | :--- | :--- | :--- | 
+ | default | AsyncFunction | options | 
+ | all | AsyncFunction | sql, params | 
+ | end | AsyncFunction |  | 
+ | exec | AsyncFunction | sql | 
+ | get | AsyncFunction | sql, params | 
+ | init | AsyncFunction | options | 
+ | run | AsyncFunction | sql, params | 
+ | transaction | AsyncFunction | operations | 
+
 ### [ssl](./lib/ssl.mjs)
 
  | symbol | type | params / value | 
@@ -375,6 +389,7 @@ Works in Node.js and modern browsers.
  | MIME_TEXT | String | text/plain | 
  | MIME_TGPP | String | video/3gpp | 
  | MIME_WAV | String | audio/wav | 
+ | MIME_WAVE | String | audio/wave | 
  | MIME_WEBM | String | audio/webm | 
  | MIME_WEBP | String | image/webp | 
  | MIME_WMV | String | video/wmv | 
