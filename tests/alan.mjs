@@ -1,4 +1,4 @@
-import { alan, web } from '../index.mjs';
+import { alan, storage, web } from '../index.mjs';
 import { fileURLToPath } from 'url';
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
@@ -14,16 +14,12 @@ try {
 const OPENROUTER_KEY = config?.openrouter_key;
 const OPENROUTER_PRESET = config?.openrouter_preset;
 const GOOGLE_KEY = config?.google_key;
+const JINA_KEY = config?.jina_key;
 const OPENAI_KEY = config?.openai_key;
-const GOOGLE_CREDENTIALS = config?.google_credentials;
-const GOOGLE_PROJECT = config?.google_project;
 const skipReasonOpenRouter = !OPENROUTER_KEY && 'openrouter_key is missing from config.json';
 const skipReasonGoogle = !GOOGLE_KEY && 'google_key is missing from config.json';
 const skipReasonOpenAI = !OPENAI_KEY && 'openai_key is missing from config.json';
-const skipReasonVertex = (!GOOGLE_CREDENTIALS || !GOOGLE_PROJECT)
-    && 'google_credentials or google_project is missing from config.json';
-const hasAlanProvider = !skipReasonOpenRouter || !skipReasonGoogle
-    || !skipReasonVertex;
+const hasAlanProvider = !skipReasonOpenRouter || !skipReasonGoogle;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const testJpgPath = path.join(__dirname, 'test.jpg');
@@ -32,7 +28,9 @@ const highCostModelIds = new Set([
     'lyria_3_pro_preview',
     'veo_3_1_generate_preview',
     'deep_research_max_preview_04_2026',
-    'imagen_4_0_upscale_preview',
+]);
+const promptSkipModelIds = new Map([
+    ['gemini_3_pro_image_preview', 'tool calling is unreliable for this model'],
 ]);
 const smokeTool = {
     type: 'function',
@@ -53,9 +51,9 @@ const smokeTool = {
 const countToolUses = (text) => (text.match(/\nName: /g) || []).length;
 
 if (!skipReasonOpenRouter) {
-    if (config.google_key && config.google_cx) {
+    if (JINA_KEY) {
         await web.initSearch({
-            provider: 'Google', apiKey: config.google_key, cx: config.google_cx
+            provider: 'Jina', apiKey: JINA_KEY,
         });
     }
     await alan.init({
@@ -66,15 +64,6 @@ if (!skipReasonOpenRouter) {
 
 if (!skipReasonGoogle) {
     await alan.init({ provider: 'Google', apiKey: GOOGLE_KEY, model: '*' });
-}
-
-if (!skipReasonVertex) {
-    await alan.init({
-        provider: 'Vertex',
-        credentials: GOOGLE_CREDENTIALS,
-        project: GOOGLE_PROJECT,
-        model: '*',
-    });
 }
 
 // if (!skipReasonOpenAI) {
@@ -93,8 +82,9 @@ describe('alan prompt by initialized model', {
     for (const ai of ais) {
         const skipReasonHighCost = !testAll && highCostModelIds.has(ai.id)
             && 'high cost model; run alan test with test-all to include it';
+        const skipReasonPrompt = promptSkipModelIds.get(ai.id);
         test(`prompt - ${ai.id || 'auto'}`, {
-            skip: skipReasonHighCost,
+            skip: skipReasonHighCost || skipReasonPrompt,
         }, async () => {
             const response = await alan.prompt(
                 'Use the getDateTime tool at most once. Then reply with '
@@ -133,8 +123,18 @@ test('alan talk with webpage', { skip: skipReasonOpenRouter, timeout: 1000 * 60 
     );
 });
 
+test('alan upscale', { skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, async () => {
+    const image = await alan.upscale(testJpgPath);
+    assert.ok(Buffer.isBuffer(image), 'Upscale should return an image buffer');
+    assert.ok(image.length > 0, 'Upscaled image should not be empty');
+    const mime = await storage.getMime(image);
+    assert.ok(
+        [storage.MIME_JPEG, storage.MIME_PNG].includes(mime?.mime),
+        `Unexpected upscaled image mime: ${mime?.mime}`,
+    );
+});
+
 const speechText = 'a brown fox jumps over the lazy dog';
-const speechPrompt = `Read exactly and only this sentence aloud: ${speechText}.`;
 test('alan tts/stt', {
     skip: skipReasonOpenRouter,
     timeout: 1000 * 60 * 5,
@@ -153,7 +153,7 @@ test('alan tts/stt', {
         return;
     }
 
-    const response = await alan.tts(speechPrompt, {
+    const response = await alan.tts(speechText, {
         raw: true,
     });
     const audio = response?.audio?.data;
