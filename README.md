@@ -61,6 +61,7 @@ Works in Node.js and modern browsers.
  | trimPrompt | Function | prompt, maxInputTokens, options | 
  | trimText | Function | text, options | 
  | tts | AsyncFunction | content, options | 
+ | upscale | AsyncFunction | image, options | 
 
 ### [bee](./lib/bee.mjs)
 
