@@ -31,8 +31,8 @@ Works in Node.js and modern browsers.
  | GEMINI_30_FLASH | String | gemini-3-flash-preview | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
+ | GPT_54_MINI | String | gpt-5.4-mini | 
  | GPT_55 | String | gpt-5.5 | 
- | GPT_55_MINI | String | gpt-5-mini | 
  | GPT_IMAGE_2 | String | gpt-5.4-image-2 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
