@@ -48,6 +48,25 @@ const smokeTool = {
         },
     },
 };
+const browseWebTool = {
+    type: 'function',
+    strict: true,
+    function: {
+        name: 'browseWeb',
+        description: 'Use this function to browse the web.',
+        parameters: {
+            type: 'object',
+            properties: {
+                url: {
+                    type: 'string',
+                    description: 'The URL to the page you need to access.',
+                },
+            },
+            required: ['url'],
+            additionalProperties: false,
+        },
+    },
+};
 const countToolUses = (text) => (text.match(/\nName: /g) || []).length;
 
 if (!skipReasonOpenRouter) {
@@ -72,6 +91,7 @@ if (!skipReasonGoogle) {
 
 const ais = hasAlanProvider ? await alan.getAi(null, { all: true, basic: true }) : [];
 const skipReasonAlan = !ais.length && 'alan models are not initialized';
+const streamToolAi = ais.find(ai => ai.id === 'gpt_5_4_mini');
 console.log('Alan models:', ais.map(ai => ai.id).join(', '));
 
 describe('alan prompt by initialized model', {
@@ -101,6 +121,38 @@ describe('alan prompt by initialized model', {
                 'Prompt response content should not be empty');
         });
     }
+});
+
+test('alan streaming tools block', {
+    skip: !streamToolAi && 'gpt_5_4_mini is not initialized',
+    timeout: 1000 * 60 * 2,
+}, async () => {
+    const streamEvents = [];
+    const response = await alan.prompt(
+        'Call browseWeb exactly once with url https://example.com/. '
+        + 'Then reply exactly: utilitas-ok',
+        {
+            aiId: streamToolAi.id,
+            tools: [browseWebTool],
+            stream: msg => streamEvents.push(msg.text || ''),
+        },
+    );
+    const finalStream = streamEvents.at(-1);
+    const toolsBlock = [
+        '```tools',
+        'Name: browseWeb',
+        'url: "https://example.com/"',
+        'Status: OK',
+        '```',
+    ].join('\n');
+    assert.ok(finalStream.includes(toolsBlock),
+        'Stream should include the formatted tools block');
+    assert.ok(response.text.includes(toolsBlock),
+        'Final response should include the formatted tools block');
+    assert.ok(!finalStream.includes('Description:'),
+        'Stream tools block should not include tool descriptions');
+    assert.ok(!finalStream.includes('Input:'),
+        'Stream tools block should not include generic Input JSON');
 });
 
 test('alan distillFile', { skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, async () => {
