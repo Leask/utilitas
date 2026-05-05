@@ -62,6 +62,13 @@ test('utilitas ensureDate', () => {
     assert.equal(x, 1601134314);
 });
 
+test('utilitas getZonedDateTimeISO', () => {
+    assert.match(
+        utilitas.getZonedDateTimeISO(),
+        /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}[+-]\d{2}:\d{2}\[[^\]]+\]$/
+    );
+});
+
 test('utilitas mapKeys', () => {
     const obj = { a: 1, b: 2, c: { a: { asdfasdf: '1' } } };
     const mapped1 = utilitas.mapKeys(obj, { a: 'z', b: 'x', c: 'c_mapped' });
