@@ -516,6 +516,7 @@ Works in Node.js and modern browsers.
  | getTimeIcon | Function | objTime | 
  | getType | Function | any | 
  | getUnixTimestampByDate | Function | date | 
+ | getZonedDateTimeISO | Function |  | 
  | hexDecode | Function | string, toBuf | 
  | hexEncode | Function | object, isBuf | 
  | humanReadableBoolean | Function | ensureString(any | 
