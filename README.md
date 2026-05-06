@@ -85,7 +85,7 @@ Works in Node.js and modern browsers.
  | MESSAGE_LENGTH_LIMIT | Number | 3809 | 
  | PARSE_MODE_MD | String | Markdown | 
  | PARSE_MODE_MD_V2 | String | MarkdownV2 | 
- | end | AsyncFunction | async, options | 
+ | end | AsyncFunction |  | 
  | init | AsyncFunction | options | 
  | lines | Function | arr, sep | 
  | parse_mode | String | Markdown | 
