@@ -1,4 +1,5 @@
 import './lib/horizon.mjs';
+import cluster from 'node:cluster';
 import { readdir } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -9,7 +10,9 @@ const normalizeTargets = (items = []) => items
 const cliTargets = normalizeTargets(process.argv.slice(2));
 const envTargets = normalizeTargets(process.env.LIB ? process.env.LIB.split(',') : []);
 const targets = cliTargets.length ? cliTargets : (envTargets.length ? envTargets : null);
-const targetSet = targets ? new Set(targets) : null;
+const targetSet = targets
+    ? new Set(targets)
+    : (cluster.isWorker ? new Set(['callosum']) : null);
 
 const testsDir = new URL('./tests/', import.meta.url);
 const entries = await readdir(testsDir, { withFileTypes: true });
