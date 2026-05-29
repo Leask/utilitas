@@ -23,14 +23,14 @@ Works in Node.js and modern browsers.
  | :--- | :--- | :--- | 
  | _NEED | Array | OpenAI,@google/genai | 
  | default | AsyncFunction | options | 
- | CLOUD_OPUS_47 | String | claude-opus-4.7 | 
+ | CLOUD_OPUS_48 | String | claude-opus-4.8 | 
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | FEATURE_ICONS | Object | {"audio":"🔊","deep-research":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","music":"🎵","reasoning":"🧠","structured":"📊","tools":"🧰","video":"🎬","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_25_PRO_TTS | String | gemini-2.5-pro-preview-tts | 
- | GEMINI_30_FLASH | String | gemini-3-flash-preview | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
+ | GEMINI_35_FLASH | String | gemini-3.5-flash | 
  | GPT_54_MINI | String | gpt-5.4-mini | 
  | GPT_55 | String | gpt-5.5 | 
  | GPT_IMAGE_2 | String | gpt-5.4-image-2 | 
