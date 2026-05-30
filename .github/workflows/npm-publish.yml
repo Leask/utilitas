@@ -1,36 +1,53 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
-
 name: Node.js Package
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
+  release:
+    types: [published]
+
+permissions:
+  contents: read
 
 jobs:
-  build:
+  test:
+    if: github.event_name != 'release'
     runs-on: ubuntu-latest
-    if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 25
-          registry-url: https://registry.npmjs.org/
-      - run: git config --global user.name 'Leask Wong'
-      - run: git config --global user.email 'i@leaskh.com'
-      - run: npm version patch -m "[RELEASE] %s"
-      - run: npm install --production=false
+          node-version: 26
+          registry-url: https://registry.npmjs.org
+
+      - run: npm ci
       - run: node build.mjs
-      - run: git add .
-      - run: git commit -m "[BUILD] ${{ github.sha }}"
-      - run: git push
+      - run: npm run pack
+      - run: npm test
+
+  publish:
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 26
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - run: npm ci
+      - run: node build.mjs
       - run: npm run pack
       - run: npm test
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
