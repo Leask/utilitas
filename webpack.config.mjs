@@ -44,6 +44,7 @@ export default {
         path: resolve(__dirname, 'dist'),
     },
     resolve: {
+        tsconfig: false,
         extensions: ['.mjs', '.cjs', '.js', '.json', '.node'],
         fallback: {
             'buffer': require.resolve('buffer/'),
