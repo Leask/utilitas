@@ -5,49 +5,67 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
-  release:
-    types: [published]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
   test:
-    if: github.event_name != 'release'
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v6
-
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 26
-          registry-url: https://registry.npmjs.org
-
-      - run: npm install --include=dev
-      - run: node build.mjs
-      - run: npm run pack
-      - run: npm test
-
-  publish:
-    if: github.event_name == 'release'
-    runs-on: ubuntu-latest
-    environment: npm
-    permissions:
-      contents: read
-      id-token: write
-
-    steps:
-      - uses: actions/checkout@v6
-
       - uses: actions/setup-node@v6
         with:
           node-version: 26
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
-
+      - run: node --test .github/scripts/release.test.mjs
       - run: npm install --include=dev
-      - run: node build.mjs
-      - run: npm run pack
+      - name: Build
+        run: |
+          if [ -f build.mjs ]; then node build.mjs; fi
+          npm run pack --if-present
       - run: npm test
-      - run: npm publish
+
+  publish:
+    if: >-
+      github.event_name != 'pull_request'
+      && github.ref == 'refs/heads/master'
+      && !startsWith(github.event.head_commit.message, '[RELEASE]')
+    runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      contents: write
+      id-token: write
+    concurrency:
+      group: npm-publish
+      cancel-in-progress: false
+    env:
+      RELEASE_BRANCH: master
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 26
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - run: node --test .github/scripts/release.test.mjs
+      - name: Prepare or resume release
+        id: release
+        run: node .github/scripts/release.mjs prepare
+      - if: steps.release.outputs.skip != 'true'
+        run: npm install --include=dev
+      - name: Build
+        if: steps.release.outputs.skip != 'true'
+        run: |
+          if [ -f build.mjs ]; then node build.mjs; fi
+          npm run pack --if-present
+      - if: steps.release.outputs.skip != 'true'
+        run: npm test
+      - name: Commit version and publish
+        if: steps.release.outputs.skip != 'true'
+        run: node .github/scripts/release.mjs publish
