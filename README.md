@@ -27,17 +27,17 @@ Works in Node.js and modern browsers.
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | FEATURE_ICONS | Object | {"audio":"🔊","deep-research":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","music":"🎵","reasoning":"🧠","structured":"📊","tools":"🧰","video":"🎬","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
- | GEMINI_31_FLASH_TTS | String | gemini-3.1-flash-tts-preview |
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
+ | GEMINI_31_FLASH_TTS | String | gemini-3.1-flash-tts-preview | 
  | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
- | GEMINI_35_FLASH | String | gemini-3.5-flash | 
+ | GEMINI_38_FLASH | String | gemini-3.8-flash | 
  | GPT_54_MINI | String | gpt-5.4-mini | 
  | GPT_55 | String | gpt-5.5 | 
  | GPT_IMAGE_2 | String | gpt-5.4-image-2 | 
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | TOP | String | top | 
- | VEO_31 | String | veo-3.1 |
+ | VEO_31 | String | veo-3.1 | 
  | _NO_RENDER | Array | INSTRUCTIONS,MODELS,DEFAULT_MODELS | 
  | analyzeSessions | AsyncFunction | sessionIds, options | 
  | countTokens | Function | input | 
