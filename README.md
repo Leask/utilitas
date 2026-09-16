@@ -27,7 +27,7 @@ Works in Node.js and modern browsers.
  | CODE_INTERPRETER | Object | {"type":"code_interpreter"} | 
  | FEATURE_ICONS | Object | {"audio":"🔊","deep-research":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","music":"🎵","reasoning":"🧠","structured":"📊","tools":"🧰","video":"🎬","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
- | GEMINI_25_PRO_TTS | String | gemini-2.5-pro-preview-tts | 
+ | GEMINI_31_FLASH_TTS | String | gemini-3.1-flash-tts-preview |
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
  | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
  | GEMINI_35_FLASH | String | gemini-3.5-flash | 

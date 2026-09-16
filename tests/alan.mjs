@@ -187,6 +187,49 @@ test('alan upscale', { skip: skipReasonOpenRouter, timeout: 1000 * 60 * 5 }, asy
 });
 
 const speechText = 'a brown fox jumps over the lazy dog';
+test('alan tts audio chunks', { skip: skipReasonOpenRouter }, async (t) => {
+    const ai = await alan.getAi(null, { select: { audio: true, fast: true } });
+    const pcm = Buffer.from([0, 0, 1, 0, 255, 127]);
+    const events = [];
+    t.mock.method(ai.client.chat.completions, 'create', () => {
+        assert.fail('TTS must use the speech endpoint, not chat completions');
+    });
+    t.mock.method(ai.client.audio.speech, 'create', async request => {
+        assert.equal(request.model, 'google/gemini-3.1-flash-tts-preview');
+        assert.equal(request.voice, 'Kore');
+        assert.equal(request.response_format, 'pcm');
+        return new Response(new ReadableStream({
+            start(controller) {
+                controller.enqueue(new Uint8Array(pcm.subarray(0, 2)));
+                controller.enqueue(new Uint8Array(pcm.subarray(2)));
+                controller.close();
+            },
+        }));
+    });
+    const audio = await alan.tts(speechText, {
+        voice: 'Kore', stream: message => events.push(message),
+    });
+    assert.ok(Buffer.isBuffer(audio));
+    assert.equal(audio.toString('ascii', 0, 4), 'RIFF');
+    assert.deepEqual(audio.subarray(44), pcm);
+    assert.equal(events.length, 2);
+    assert.deepEqual(events[0].audio.data.subarray(44), pcm.subarray(0, 2));
+    assert.deepEqual(events[1].audio.data, audio);
+    assert.deepEqual(await alan.tts(speechText, { voice: 'Kore' }), audio);
+    assert.equal(await alan.tts(speechText, {
+        voice: 'Kore', expected: storage.BASE64,
+    }), audio.toString('base64'));
+    const filename = await alan.tts(speechText, {
+        voice: 'Kore', expected: storage.FILE,
+    });
+    assert.equal(typeof filename, 'string');
+    t.after(() => storage.tryRm(filename));
+    assert.match(filename, /\.wav$/);
+    assert.deepEqual(await storage.convert(filename, {
+        input: storage.FILE, expected: storage.BUFFER,
+    }), audio);
+});
+
 test('alan tts/stt', {
     skip: skipReasonOpenRouter,
     timeout: 1000 * 60 * 5,
@@ -200,6 +243,8 @@ test('alan tts/stt', {
         select: { hearing: true, fast: true },
     });
     console.log(`TTS selected: ${ttsAi.id}; STT selected: ${sttAi.id}`);
+    assert.equal(ttsAi.provider, 'OpenRouter');
+    assert.equal(ttsAi.model.name, alan.GEMINI_31_FLASH_TTS);
     if (!testAll && highCostModelIds.has(ttsAi.id)) {
         t.skip('high cost TTS model selected; run alan test with test-all to include it');
         return;
@@ -209,12 +254,17 @@ test('alan tts/stt', {
         raw: true,
     });
     const audio = response?.audio?.data;
-    assert.ok(audio, 'TTS should return audio data');
+    assert.ok(Buffer.isBuffer(audio), 'TTS should return audio data');
+    assert.equal(response.audio.mime_type, storage.MIME_WAV);
+    assert.equal(audio.toString('ascii', 0, 4), 'RIFF');
+    assert.equal(audio.toString('ascii', 8, 12), 'WAVE');
+    assert.equal(audio.readUInt32LE(40), audio.length - 44);
 
     const transcription = await alan.stt(audio);
     assert.ok(typeof transcription === 'string', 'STT should return a string');
-    assert.match(
-        transcription.toLowerCase(), /fox|dog/,
-        'Transcription should match original text'
+    t.diagnostic(`Transcription: ${transcription}`);
+    assert.equal(
+        transcription.toLowerCase().replace(/[^a-z\s]/g, '').trim(), speechText,
+        'TTS should read the content without reading the instructions'
     );
 });
