@@ -26,7 +26,7 @@ const testJpgPath = path.join(__dirname, 'test.jpg');
 const testAll = process.argv.includes('test-all') || process.env.TEST_ALL === '1';
 const highCostModelIds = new Set([
     'lyria_3_pro_preview',
-    'veo_3_1_generate_preview',
+    'veo_3_1',
     'deep_research_max_preview_04_2026',
 ]);
 const promptSkipModelIds = new Map([
@@ -105,11 +105,18 @@ describe('alan prompt by initialized model', {
         const skipReasonPrompt = promptSkipModelIds.get(ai.id);
         test(`prompt - ${ai.id || 'auto'}`, {
             skip: skipReasonHighCost || skipReasonPrompt,
-        }, async () => {
+        }, async (t) => {
             const response = await alan.prompt(
-                'Use the getDateTime tool at most once. Then reply with '
+                ai.model.video
+                    ? 'A blue sphere slowly rotating on a white table.'
+                    : 'Use the getDateTime tool at most once. Then reply with '
                 + 'a short confirmation: utilitas-ok.',
-                { aiId: ai.id, tools: [smokeTool] },
+                {
+                    aiId: ai.id, tools: [smokeTool],
+                    ...ai.model.video ? { config: {
+                        duration: 4, resolution: '720p', generate_audio: false,
+                    } } : {},
+                },
             );
             assert.equal(typeof response, 'object', 'Prompt should return an object');
             assert.equal(typeof response.text, 'string',
@@ -119,8 +126,130 @@ describe('alan prompt by initialized model', {
             assert(response.text.length > 0 || response.audio
                 || response.images?.length > 0 || response.videos?.length > 0,
                 'Prompt response content should not be empty');
+            if (ai.model.video) {
+                assert.equal(ai.provider, 'OpenRouter');
+                const video = response.videos[0];
+                assert.ok(Buffer.isBuffer(video.data));
+                assert.equal(video.mime_type, storage.MIME_MP4);
+                assert.equal((await storage.getMime(video.data)).mime,
+                    storage.MIME_MP4);
+                assert.ok(video.jobId);
+                t.diagnostic(`Video: ${video.jobId}, ${video.data.length} bytes`);
+            }
         });
     }
+});
+
+test('alan video packaging', { skip: skipReasonOpenRouter }, async (t) => {
+    const ai = await alan.getAi(null, { select: { video: true } });
+    assert.equal(ai.provider, 'OpenRouter');
+    assert.equal(ai.model.name, alan.VEO_31);
+    const video = Buffer.from(
+        '000000206674797069736f6d0000020069736f6d69736f32617663316d703431',
+        'hex',
+    );
+    const submitted = { id: 'test-video', status: 'pending' };
+    const completed = {
+        ...submitted, status: 'completed', unsigned_urls: ['unused', 'unused'],
+    };
+    let result = completed, pending = 0;
+    const requests = [];
+    t.mock.method(ai.client, 'fetch', async (url, init) => {
+        url = new URL(url);
+        requests.push(`${init.method} ${url.pathname}`);
+        const headers = new Headers(init.headers);
+        assert.ok(headers.get('authorization')?.startsWith('Bearer '));
+        if (init.method === 'POST') {
+            assert.equal(url.pathname, '/api/v1/videos');
+            assert.match(headers.get('content-type'), /application\/json/);
+            const body = JSON.parse(init.body);
+            assert.equal(body.model, 'google/veo-3.1');
+            assert.equal(body.prompt, 'A blue sphere.');
+            assert.equal(body.aspect_ratio, '16:9');
+            assert.equal(body.duration, 4);
+            assert.equal(body.resolution, '720p');
+            assert.equal(body.generate_audio, false);
+            return Response.json(submitted, { status: 202 });
+        }
+        if (url.pathname === '/api/v1/videos/test-video') {
+            if (pending > 0) {
+                pending--;
+                return Response.json({ ...submitted, status: 'in_progress' });
+            }
+            return Response.json(result);
+        }
+        assert.equal(url.pathname, '/api/v1/videos/test-video/content');
+        assert.ok(['0', '1'].includes(url.searchParams.get('index')));
+        return new Response(video, { headers: {
+            'Content-Type': storage.MIME_MP4,
+        } });
+    });
+    const options = {
+        aiId: ai.id,
+        config: { duration: 4, resolution: '720p', generate_audio: false },
+    };
+    const events = [];
+    const response = await alan.prompt('A blue sphere.', {
+        ...options, stream: event => events.push(event),
+    });
+    assert.equal(response.text, '');
+    assert.equal(response.processing, false);
+    assert.match(response.model, /OpenRouter\/veo-3\.1$/);
+    assert.equal(response.videos.length, 2);
+    for (const item of response.videos) {
+        assert.deepEqual(item, {
+            data: video, mime_type: storage.MIME_MP4, jobId: 'test-video',
+        });
+    }
+    assert.deepEqual(events, [{ ...response, processing: true }]);
+    const base64 = await alan.prompt('A blue sphere.', {
+        ...options, expected: storage.BASE64,
+    });
+    assert.equal(base64.videos[0].data, video.toString('base64'));
+    const files = await alan.prompt('A blue sphere.', {
+        ...options, expected: storage.FILE,
+    });
+    for (const { data } of files.videos) {
+        t.after(() => storage.tryRm(data));
+        assert.match(data, /\.mp4$/);
+        assert.deepEqual(await storage.convert(data, {
+            input: storage.FILE, expected: storage.BUFFER,
+        }), video);
+    }
+    requests.length = 0;
+    assert.deepEqual(await alan.prompt('A blue sphere.', {
+        ...options, generateRaw: true,
+    }), submitted);
+    assert.deepEqual(requests, ['POST /api/v1/videos']);
+    requests.length = 0;
+    assert.deepEqual(await alan.prompt('A blue sphere.', {
+        ...options, videoRaw: true,
+    }), completed);
+    assert.equal(requests.length, 2);
+    for (const status of ['failed', 'cancelled', 'expired']) {
+        result = { ...submitted, status, error: `Video ${status}` };
+        requests.length = 0;
+        await assert.rejects(alan.prompt('A blue sphere.', options), {
+            message: `Video ${status}`,
+        });
+        assert.equal(requests.length, 2);
+    }
+    result = { ...completed, unsigned_urls: [] };
+    await assert.rejects(alan.prompt('A blue sphere.', options), {
+        message: 'Error generating content.',
+    });
+    await t.test('polls until completed', async (t) => {
+        t.mock.timers.enable({ apis: ['setTimeout'] });
+        result = completed;
+        pending = 1;
+        requests.length = 0;
+        const response = alan.prompt('A blue sphere.', options);
+        await new Promise(setImmediate);
+        assert.equal(requests.length, 2);
+        t.mock.timers.tick(1000 * 30);
+        assert.deepEqual((await response).videos[0].data, video);
+        assert.equal(requests.length, 5);
+    });
 });
 
 test('alan streaming tools block', {

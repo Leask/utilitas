@@ -37,7 +37,7 @@ Works in Node.js and modern browsers.
  | OPENAI_VOICE | String | OPENAI_VOICE | 
  | RETRIEVAL | Object | {"type":"retrieval"} | 
  | TOP | String | top | 
- | VEO_31 | String | veo-3.1-generate-preview | 
+ | VEO_31 | String | veo-3.1 |
  | _NO_RENDER | Array | INSTRUCTIONS,MODELS,DEFAULT_MODELS | 
  | analyzeSessions | AsyncFunction | sessionIds, options | 
  | countTokens | Function | input | 
