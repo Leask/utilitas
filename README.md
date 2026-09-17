@@ -31,8 +31,8 @@ Works in Node.js and modern browsers.
  | GEMINI_31_FLASH_TTS | String | gemini-3.1-flash-tts-preview | 
  | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
  | GEMINI_38_FLASH | String | gemini-3.8-flash | 
- | GEMINI_FLASH | String | gemini-flash-latest |
- | GEMINI_PRO | String | gemini-pro-latest |
+ | GEMINI_FLASH | String | gemini-flash-latest | 
+ | GEMINI_PRO | String | gemini-pro-latest | 
  | GPT_54_MINI | String | gpt-5.4-mini | 
  | GPT_55 | String | gpt-5.5 | 
  | GPT_IMAGE_2 | String | gpt-5.4-image-2 | 
