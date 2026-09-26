@@ -28,9 +28,9 @@ Works in Node.js and modern browsers.
  | FEATURE_ICONS | Object | {"audio":"🔊","deep-research":"🔍","fast":"⚡️","hearing":"👂","hidden":"🙈","image":"🎨","music":"🎵","reasoning":"🧠","structured":"📊","tools":"🧰","video":"🎬","vision":"👁️"} | 
  | FUNCTION | Object | {"type":"function"} | 
  | GEMINI_30_PRO_IMAGE | String | gemini-3-pro-image-preview | 
- | GEMINI_31_FLASH_TTS | String | gemini-3.1-flash-tts-preview | 
  | GEMINI_31_PRO | String | gemini-3.1-pro-preview | 
  | GEMINI_38_FLASH | String | gemini-3.8-flash | 
+ | GEMINI_38_FLASH_TTS | String | gemini-3.8-flash-tts |
  | GEMINI_FLASH | String | gemini-flash-latest | 
  | GEMINI_PRO | String | gemini-pro-latest | 
  | GPT_54_MINI | String | gpt-5.4-mini | 

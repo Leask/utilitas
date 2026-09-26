@@ -324,7 +324,7 @@ test('alan tts audio chunks', { skip: skipReasonOpenRouter }, async (t) => {
         assert.fail('TTS must use the speech endpoint, not chat completions');
     });
     t.mock.method(ai.client.audio.speech, 'create', async request => {
-        assert.equal(request.model, 'google/gemini-3.1-flash-tts-preview');
+        assert.equal(request.model, 'google/gemini-3.8-flash-tts');
         assert.equal(request.voice, 'Kore');
         assert.equal(request.response_format, 'pcm');
         return new Response(new ReadableStream({
@@ -373,7 +373,7 @@ test('alan tts/stt', {
     });
     console.log(`TTS selected: ${ttsAi.id}; STT selected: ${sttAi.id}`);
     assert.equal(ttsAi.provider, 'OpenRouter');
-    assert.equal(ttsAi.model.name, alan.GEMINI_31_FLASH_TTS);
+    assert.equal(ttsAi.model.name, alan.GEMINI_38_FLASH_TTS);
     if (!testAll && highCostModelIds.has(ttsAi.id)) {
         t.skip('high cost TTS model selected; run alan test with test-all to include it');
         return;
