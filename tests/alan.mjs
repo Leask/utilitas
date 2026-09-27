@@ -319,14 +319,17 @@ const speechText = 'a brown fox jumps over the lazy dog';
 test('alan tts audio chunks', { skip: skipReasonOpenRouter }, async (t) => {
     const ai = await alan.getAi(null, { select: { audio: true, fast: true } });
     const pcm = Buffer.from([0, 0, 1, 0, 255, 127]);
-    const events = [];
+    const events = [], styles = [];
     t.mock.method(ai.client.chat.completions, 'create', () => {
         assert.fail('TTS must use the speech endpoint, not chat completions');
     });
     t.mock.method(ai.client.audio.speech, 'create', async request => {
         assert.equal(request.model, 'google/gemini-3.8-flash-tts');
+        assert.equal(request.input, speechText);
         assert.equal(request.voice, 'Kore');
         assert.equal(request.response_format, 'pcm');
+        styles.push(request.provider.options['google-ai-studio']
+            .speech_metadata.style);
         return new Response(new ReadableStream({
             start(controller) {
                 controller.enqueue(new Uint8Array(pcm.subarray(0, 2)));
@@ -357,6 +360,15 @@ test('alan tts audio chunks', { skip: skipReasonOpenRouter }, async (t) => {
     assert.deepEqual(await storage.convert(filename, {
         input: storage.FILE, expected: storage.BUFFER,
     }), audio);
+    assert.match(styles[0], /warm, friendly and professional tone/);
+    const prompt = 'Speak slowly in a calm tone.';
+    assert.deepEqual(await alan.tts(speechText, { voice: 'Kore', prompt }), audio);
+    assert.equal(styles.at(-1), prompt);
+    const systemPrompt = 'Speak cheerfully.';
+    assert.deepEqual(await alan.tts(speechText, {
+        voice: 'Kore', prompt, systemPrompt,
+    }), audio);
+    assert.equal(styles.at(-1), systemPrompt);
 });
 
 test('alan tts/stt', {
